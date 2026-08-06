@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_markdown_preview">Vista previa de Markdown</string>
+    <string name="app_name">Complemento AutoJs6 - Vista previa de Markdown</string>
+    <string name="dialog_button_cancel">Cancelar</string>
+    <string name="dialog_button_confirm">Confirmar</string>
+    <string name="error_custom_css_file_too_large">El archivo CSS supera el límite de %1$s</string>
+    <string name="error_markdown_file_too_large">El archivo Markdown supera el límite de vista previa de %1$s</string>
+    <string name="plugin_description">Vista previa segura de solo lectura para archivos Markdown</string>
+    <string name="text_cannot_open_link">No se puede abrir el enlace</string>
+    <string name="text_cannot_read_file">No se puede leer el archivo Markdown</string>
+    <string name="text_clear_custom_css">Borrar CSS personalizado</string>
+    <string name="text_custom_css_cleared">CSS personalizado borrado</string>
+    <string name="text_custom_css_imported">CSS personalizado importado</string>
+    <string name="text_fullscreen_mode">Modo de pantalla completa</string>
+    <string name="text_failed_to_import">No se pudo importar el archivo CSS</string>
+    <string name="text_import_custom_css">Importar CSS personalizado</string>
+    <string name="text_preview">Vista previa</string>
+    <string name="text_preview_theme">Tema de vista previa</string>
+    <string name="text_preview_theme_custom">CSS personalizado</string>
+    <string name="text_preview_theme_github_auto">GitHub (Auto)</string>
+    <string name="text_preview_theme_github_dark">GitHub oscuro</string>
+    <string name="text_preview_theme_github_light">GitHub claro</string>
+    <string name="text_preview_theme_paper">Papel</string>
+    <string name="text_preview_theme_sepia">Sepia</string>
+    <string name="text_refresh">Actualizar</string>
+    <string name="text_settings">Configuración</string>
+    <string name="text_start_in_fullscreen_mode">Iniciar en modo de pantalla completa</string>
+</resources>

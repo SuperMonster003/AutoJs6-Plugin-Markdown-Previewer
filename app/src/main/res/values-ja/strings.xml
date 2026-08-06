@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_markdown_preview">Markdown をプレビュー</string>
+    <string name="app_name">AutoJs6 プラグイン - Markdown プレビュー</string>
+    <string name="dialog_button_cancel">キャンセル</string>
+    <string name="dialog_button_confirm">確認</string>
+    <string name="error_custom_css_file_too_large">CSS ファイルが %1$s の制限を超えています</string>
+    <string name="error_markdown_file_too_large">Markdown ファイルが %1$s のプレビュー制限を超えています</string>
+    <string name="plugin_description">Markdown ファイルの安全な読み取り専用プレビュー</string>
+    <string name="text_cannot_open_link">リンクを開けません</string>
+    <string name="text_cannot_read_file">Markdown ファイルを読み取れません</string>
+    <string name="text_clear_custom_css">カスタム CSS を消去</string>
+    <string name="text_custom_css_cleared">カスタム CSS を消去しました</string>
+    <string name="text_custom_css_imported">カスタム CSS をインポートしました</string>
+    <string name="text_fullscreen_mode">全画面モード</string>
+    <string name="text_failed_to_import">CSS ファイルをインポートできませんでした</string>
+    <string name="text_import_custom_css">カスタム CSS をインポート</string>
+    <string name="text_preview">プレビュー</string>
+    <string name="text_preview_theme">プレビューテーマ</string>
+    <string name="text_preview_theme_custom">カスタム CSS</string>
+    <string name="text_preview_theme_github_auto">GitHub (自動)</string>
+    <string name="text_preview_theme_github_dark">GitHub ダーク</string>
+    <string name="text_preview_theme_github_light">GitHub ライト</string>
+    <string name="text_preview_theme_paper">ペーパー</string>
+    <string name="text_preview_theme_sepia">セピア</string>
+    <string name="text_refresh">再読み込み</string>
+    <string name="text_settings">設定</string>
+    <string name="text_start_in_fullscreen_mode">全画面モードで開始</string>
+</resources>

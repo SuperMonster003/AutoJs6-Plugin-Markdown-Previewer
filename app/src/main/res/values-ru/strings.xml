@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_markdown_preview">Предпросмотр Markdown</string>
+    <string name="app_name">Плагин AutoJs6 - Просмотр Markdown</string>
+    <string name="dialog_button_cancel">Отмена</string>
+    <string name="dialog_button_confirm">Подтвердить</string>
+    <string name="error_custom_css_file_too_large">Файл CSS превышает ограничение %1$s</string>
+    <string name="error_markdown_file_too_large">Файл Markdown превышает ограничение просмотра %1$s</string>
+    <string name="plugin_description">Безопасный просмотр файлов Markdown только для чтения</string>
+    <string name="text_cannot_open_link">Не удалось открыть ссылку</string>
+    <string name="text_cannot_read_file">Не удалось прочитать файл Markdown</string>
+    <string name="text_clear_custom_css">Удалить пользовательский CSS</string>
+    <string name="text_custom_css_cleared">Пользовательский CSS удален</string>
+    <string name="text_custom_css_imported">Пользовательский CSS импортирован</string>
+    <string name="text_fullscreen_mode">Полноэкранный режим</string>
+    <string name="text_failed_to_import">Не удалось импортировать файл CSS</string>
+    <string name="text_import_custom_css">Импортировать пользовательский CSS</string>
+    <string name="text_preview">Предпросмотр</string>
+    <string name="text_preview_theme">Тема просмотра</string>
+    <string name="text_preview_theme_custom">Пользовательский CSS</string>
+    <string name="text_preview_theme_github_auto">GitHub (Авто)</string>
+    <string name="text_preview_theme_github_dark">GitHub темная</string>
+    <string name="text_preview_theme_github_light">GitHub светлая</string>
+    <string name="text_preview_theme_paper">Бумага</string>
+    <string name="text_preview_theme_sepia">Сепия</string>
+    <string name="text_refresh">Обновить</string>
+    <string name="text_settings">Настройки</string>
+    <string name="text_start_in_fullscreen_mode">Запускать в полноэкранном режиме</string>
+</resources>

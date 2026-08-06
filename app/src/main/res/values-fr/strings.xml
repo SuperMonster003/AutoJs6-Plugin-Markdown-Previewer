@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_markdown_preview">Prévisualiser Markdown</string>
+    <string name="app_name">Plugin AutoJs6 - Aperçu Markdown</string>
+    <string name="dialog_button_cancel">Annuler</string>
+    <string name="dialog_button_confirm">Confirmer</string>
+    <string name="error_custom_css_file_too_large">Le fichier CSS dépasse la limite de %1$s</string>
+    <string name="error_markdown_file_too_large">Le fichier Markdown dépasse la limite de prévisualisation de %1$s</string>
+    <string name="plugin_description">Aperçu sécurisé en lecture seule des fichiers Markdown</string>
+    <string name="text_cannot_open_link">Ouverture du lien impossible</string>
+    <string name="text_cannot_read_file">Lecture du fichier Markdown impossible</string>
+    <string name="text_clear_custom_css">Effacer le CSS personnalisé</string>
+    <string name="text_custom_css_cleared">CSS personnalisé effacé</string>
+    <string name="text_custom_css_imported">CSS personnalisé importé</string>
+    <string name="text_fullscreen_mode">Mode plein écran</string>
+    <string name="text_failed_to_import">Importation du fichier CSS impossible</string>
+    <string name="text_import_custom_css">Importer un CSS personnalisé</string>
+    <string name="text_preview">Aperçu</string>
+    <string name="text_preview_theme">Thème de prévisualisation</string>
+    <string name="text_preview_theme_custom">CSS personnalisé</string>
+    <string name="text_preview_theme_github_auto">GitHub (Auto)</string>
+    <string name="text_preview_theme_github_dark">GitHub sombre</string>
+    <string name="text_preview_theme_github_light">GitHub clair</string>
+    <string name="text_preview_theme_paper">Papier</string>
+    <string name="text_preview_theme_sepia">Sépia</string>
+    <string name="text_refresh">Actualiser</string>
+    <string name="text_settings">Paramètres</string>
+    <string name="text_start_in_fullscreen_mode">Démarrer en mode plein écran</string>
+</resources>

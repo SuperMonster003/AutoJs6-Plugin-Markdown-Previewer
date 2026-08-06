@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_markdown_preview">预览 Markdown</string>
+    <string name="app_name">AutoJs6 插件 - Markdown 预览</string>
+    <string name="dialog_button_cancel">取消</string>
+    <string name="dialog_button_confirm">确认</string>
+    <string name="error_custom_css_file_too_large">CSS 文件超过 %1$s 的大小限制</string>
+    <string name="error_markdown_file_too_large">Markdown 文件超过 %1$s 的预览限制</string>
+    <string name="plugin_description">安全只读预览 Markdown 文件</string>
+    <string name="text_cannot_open_link">无法打开链接</string>
+    <string name="text_cannot_read_file">无法读取 Markdown 文件</string>
+    <string name="text_clear_custom_css">清除自定义 CSS</string>
+    <string name="text_custom_css_cleared">已清除自定义 CSS</string>
+    <string name="text_custom_css_imported">已导入自定义 CSS</string>
+    <string name="text_fullscreen_mode">全屏模式</string>
+    <string name="text_failed_to_import">无法导入 CSS 文件</string>
+    <string name="text_import_custom_css">导入自定义 CSS</string>
+    <string name="text_preview">预览</string>
+    <string name="text_preview_theme">预览主题</string>
+    <string name="text_preview_theme_custom">自定义 CSS</string>
+    <string name="text_preview_theme_github_auto">GitHub (自动)</string>
+    <string name="text_preview_theme_github_dark">GitHub 深色</string>
+    <string name="text_preview_theme_github_light">GitHub 浅色</string>
+    <string name="text_preview_theme_paper">纸张</string>
+    <string name="text_preview_theme_sepia">棕褐色</string>
+    <string name="text_refresh">刷新</string>
+    <string name="text_settings">设置</string>
+    <string name="text_start_in_fullscreen_mode">以全屏模式启动</string>
+</resources>

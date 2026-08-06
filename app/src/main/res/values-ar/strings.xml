@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_markdown_preview">معاينة Markdown</string>
+    <string name="app_name">مكون AutoJs6 - معاينة Markdown</string>
+    <string name="dialog_button_cancel">إلغاء</string>
+    <string name="dialog_button_confirm">تأكيد</string>
+    <string name="error_custom_css_file_too_large">يتجاوز ملف CSS حد %1$s</string>
+    <string name="error_markdown_file_too_large">يتجاوز ملف Markdown حد المعاينة %1$s</string>
+    <string name="plugin_description">معاينة آمنة للقراءة فقط لملفات Markdown</string>
+    <string name="text_cannot_open_link">تعذر فتح الرابط</string>
+    <string name="text_cannot_read_file">تعذرت قراءة ملف Markdown</string>
+    <string name="text_clear_custom_css">مسح CSS المخصص</string>
+    <string name="text_custom_css_cleared">تم مسح CSS المخصص</string>
+    <string name="text_custom_css_imported">تم استيراد CSS المخصص</string>
+    <string name="text_fullscreen_mode">وضع ملء الشاشة</string>
+    <string name="text_failed_to_import">تعذر استيراد ملف CSS</string>
+    <string name="text_import_custom_css">استيراد CSS مخصص</string>
+    <string name="text_preview">معاينة</string>
+    <string name="text_preview_theme">سمة المعاينة</string>
+    <string name="text_preview_theme_custom">CSS مخصص</string>
+    <string name="text_preview_theme_github_auto">GitHub (تلقائي)</string>
+    <string name="text_preview_theme_github_dark">GitHub داكن</string>
+    <string name="text_preview_theme_github_light">GitHub فاتح</string>
+    <string name="text_preview_theme_paper">ورق</string>
+    <string name="text_preview_theme_sepia">بني داكن</string>
+    <string name="text_refresh">تحديث</string>
+    <string name="text_settings">الإعدادات</string>
+    <string name="text_start_in_fullscreen_mode">البدء في وضع ملء الشاشة</string>
+</resources>
