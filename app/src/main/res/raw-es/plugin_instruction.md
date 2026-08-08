@@ -1,4 +1,4 @@
-Use Markdown Preview desde el explorador principal de AutoJs6:
+Use Markdown Preview desde el gestor de archivos:
 
 1. Instale y active el complemento `Markdown Preview`.
 2. Abra el menú secundario de un archivo Markdown compatible.
@@ -10,4 +10,4 @@ Extensiones compatibles: `md`, `markdown`, `mdown`, `mkd`, `mkdn`, `mdwn`, `mdte
 
 El visor admite enlaces automáticos, tablas, tachado, anclas de encabezado, listas de tareas, imágenes del documento, temas integrados, CSS personalizado, actualización y pantalla completa.
 
-La versión 1 solo admite acciones de solo lectura para un archivo en el explorador principal de AutoJs6.
+La versión 1 solo admite acciones de solo lectura para un archivo en el gestor de archivos.

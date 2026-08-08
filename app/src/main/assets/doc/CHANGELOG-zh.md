@@ -4,12 +4,19 @@
 
 ******
 
+# v1.0.1
+
+###### 2026/08/08
+
+* `修复` 插件中心启用时因服务返回空绑定而失败的问题
+* `优化` 更简洁的插件名称, 描述和用户文档
+
 # v1.0.0
 
 ###### 2026/08/06
 
 * `新增` Markdown Preview 插件, 插件 ID 为 `markdown-preview`, 引擎为 `explorer-action`, 变体为 `default`
-* `新增` 通过 `org.autojs.plugin.EXPLORER_ACTION` 为 AutoJs6 主文件浏览器提供单文件只读溢出菜单动作
+* `新增` 通过 `org.autojs.plugin.EXPLORER_ACTION` 为文件管理器提供单文件只读溢出菜单动作
 * `新增` 通过 `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` 接收文件和父目录 content URI 的临时读取权限
 * `新增` 支持自动链接/表格/删除线/标题锚点/任务列表和文档内图片的 Markdown 渲染
 * `新增` 提供 GitHub 自动/浅色/深色/纸张/棕褐色/自定义 CSS 主题, 以及刷新和全屏控制

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_markdown_preview">預覽 Markdown</string>
-    <string name="app_name">AutoJs6 外掛 - Markdown 預覽</string>
+    <string name="app_name">Markdown 預覽</string>
     <string name="dialog_button_cancel">取消</string>
     <string name="dialog_button_confirm">確認</string>
     <string name="error_custom_css_file_too_large">CSS 檔案超過 %1$s 的大小限制</string>
     <string name="error_markdown_file_too_large">Markdown 檔案超過 %1$s 的預覽限制</string>
-    <string name="plugin_description">安全唯讀預覽 Markdown 檔案</string>
+    <string name="plugin_description">檔案管理器外掛程式. 安全唯讀預覽 Markdown 檔案</string>
     <string name="text_cannot_open_link">無法開啟連結</string>
     <string name="text_cannot_read_file">無法讀取 Markdown 檔案</string>
     <string name="text_clear_custom_css">清除自訂 CSS</string>

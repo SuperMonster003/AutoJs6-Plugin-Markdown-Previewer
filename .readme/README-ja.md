@@ -2,10 +2,10 @@
 
 <div align="center">
   <p>
-    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="autojs6-plugin-markdown-preview-ic-launcher" border="0" width="128" />
+    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-preview-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>AutoJs6 エクスプローラー用の安全な Markdown プレビュープラグイン</p>
+  <p>ファイルマネージャープラグイン. Markdown ファイルを安全に読み取り専用でプレビュー</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Preview?label=Release"/></a>
@@ -39,7 +39,7 @@
 
 ******
 
-AutoJs6 Markdown Preview プラグインは AutoJs6 エクスプローラーに単一ファイル用の読み取り専用 Markdown プレビューアクションを追加します. ホストアプリに実装を組み込まず専用ビューアーで内容を表示します.
+Markdown Preview はファイルマネージャーに単一ファイル用の読み取り専用 Markdown プレビューアクションを追加します. ホストアプリに実装を組み込まず, 専用ビューアーで内容を表示します.
 
 ******
 
@@ -71,7 +71,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 
 ******
 
-AutoJs6 は次の識別情報でプラグインを検出して実行します:
+ホストは次の識別情報でプラグインを検出して実行します:
 
 ```text
 service action: org.autojs.plugin.EXPLORER_ACTION
@@ -81,7 +81,7 @@ engine: explorer-action
 variant: default
 ```
 
-バージョン 1 は AutoJs6 のメインエクスプローラーにある単一ファイル用の読み取り専用オーバーフローアクションに限定されます.
+バージョン 1 はファイルマネージャーにある単一ファイル用の読み取り専用オーバーフローアクションに限定されます.
 
 ******
 
@@ -97,12 +97,19 @@ variant: default
 
 ******
 
+# v1.0.1
+
+###### 2026/08/08
+
+* `修正` プラグインセンターでの有効化を妨げていたサービスの null バインディング
+* `改善` より簡潔なプラグイン名, 説明, ユーザードキュメント
+
 # v1.0.0
 
 ###### 2026/08/06
 
 * `機能` プラグイン ID `markdown-preview`, エンジン `explorer-action`, バリアント `default` の Markdown Preview プラグイン
-* `機能` `org.autojs.plugin.EXPLORER_ACTION` による AutoJs6 メインエクスプローラーの単一ファイル用読み取り専用オーバーフローアクション
+* `機能` `org.autojs.plugin.EXPLORER_ACTION` によるファイルマネージャーの単一ファイル用読み取り専用オーバーフローアクション
 * `機能` `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` による実行とファイルおよび親ディレクトリ content URI への一時読み取り権限
 * `機能` 自動リンク/表/取り消し線/見出しアンカー/タスクリスト/文書内画像に対応する Markdown レンダリング
 * `機能` GitHub Auto/GitHub Light/GitHub Dark/Paper/Sepia/カスタム CSS テーマと再読み込みおよび全画面コントロール

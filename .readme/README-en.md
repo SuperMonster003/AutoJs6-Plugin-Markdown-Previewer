@@ -2,10 +2,10 @@
 
 <div align="center">
   <p>
-    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="autojs6-plugin-markdown-preview-ic-launcher" border="0" width="128" />
+    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-preview-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>Secure Markdown preview plugin for AutoJs6 Explorer</p>
+  <p>File manager plugin. Secure read-only preview for Markdown files</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Preview?label=Release"/></a>
@@ -39,7 +39,7 @@ The current README.md supports the following languages:
 
 ******
 
-The AutoJs6 Markdown Preview Plugin adds a single-file read-only Markdown preview action to AutoJs6 Explorer. It renders content in a focused viewer without embedding the preview implementation in the host application.
+Markdown Preview adds a single-file read-only Markdown preview action to the file manager. It renders content in a focused viewer without embedding the preview implementation in the host application.
 
 ******
 
@@ -71,7 +71,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 
 ******
 
-AutoJs6 discovers and executes the plugin with the following identities:
+The host discovers and executes the plugin with the following identities:
 
 ```text
 service action: org.autojs.plugin.EXPLORER_ACTION
@@ -81,7 +81,7 @@ engine: explorer-action
 variant: default
 ```
 
-Version 1 is limited to a single-file read-only overflow action in the main AutoJs6 Explorer.
+Version 1 is limited to a single-file read-only overflow action in the file manager.
 
 ******
 
@@ -97,12 +97,19 @@ The viewer sanitizes rendered output with an allowlist, disables JavaScript, Web
 
 ******
 
+# v1.0.1
+
+###### 2026/08/08
+
+* `Fix` Null service binding that prevented activation in Plugin Center
+* `Improvement` Clearer plugin name, description, and user documentation
+
 # v1.0.0
 
 ###### 2026/08/06
 
 * `Feature` Markdown Preview plugin with plugin ID `markdown-preview`, engine `explorer-action`, and variant `default`
-* `Feature` Single-file read-only overflow action in the main AutoJs6 Explorer through `org.autojs.plugin.EXPLORER_ACTION`
+* `Feature` Single-file read-only overflow action in the file manager through `org.autojs.plugin.EXPLORER_ACTION`
 * `Feature` Activity execution through `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` with temporary read access to file and parent directory content URIs
 * `Feature` Markdown rendering with automatic links, tables, strikethrough, heading anchors, task lists, and in-document images
 * `Feature` GitHub Auto, GitHub Light, GitHub Dark, Paper, Sepia, and custom CSS themes with refresh and fullscreen controls

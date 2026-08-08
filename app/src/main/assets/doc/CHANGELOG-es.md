@@ -4,12 +4,19 @@
 
 ******
 
+# v1.0.1
+
+###### 2026/08/08
+
+* `Corrección` Enlace de servicio nulo que impedía la activación en el centro de complementos
+* `Mejora` Nombre, descripción y documentación de usuario más claros
+
 # v1.0.0
 
 ###### 2026/08/06
 
 * `Función` Complemento Markdown Preview con ID `markdown-preview`, motor `explorer-action` y variante `default`
-* `Función` Acción secundaria de solo lectura para un archivo en el explorador AutoJs6 principal mediante `org.autojs.plugin.EXPLORER_ACTION`
+* `Función` Acción secundaria de solo lectura para un archivo en el gestor de archivos mediante `org.autojs.plugin.EXPLORER_ACTION`
 * `Función` Ejecución mediante `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` con acceso temporal de lectura a los URI de contenido del archivo y del directorio principal
 * `Función` Renderizado de Markdown con enlaces automáticos, tablas, tachado, anclas de encabezado, listas de tareas e imágenes del documento
 * `Función` Temas GitHub Auto, GitHub claro, GitHub oscuro, Papel, Sepia y CSS personalizado con controles de actualización y pantalla completa

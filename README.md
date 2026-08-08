@@ -2,10 +2,10 @@
 
 <div align="center">
   <p>
-    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="autojs6-plugin-markdown-preview-ic-launcher" border="0" width="128" />
+    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-preview-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>用于 AutoJs6 文件浏览器的安全 Markdown 预览插件</p>
+  <p>文件管理器插件. 安全只读预览 Markdown 文件</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Preview?label=Release"/></a>
@@ -39,7 +39,7 @@
 
 ******
 
-AutoJs6 Markdown Preview 插件为 AutoJs6 文件浏览器增加单文件只读 Markdown 预览动作. 插件在独立查看器中渲染内容, 无需将预览实现嵌入宿主应用.
+Markdown Preview 为文件管理器提供单文件只读 Markdown 预览动作. 内容在独立查看器中渲染, 无需将预览实现嵌入宿主应用.
 
 ******
 
@@ -71,7 +71,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 
 ******
 
-AutoJs6 使用以下标识发现并执行插件:
+宿主通过以下标识发现并执行插件:
 
 ```text
 service action: org.autojs.plugin.EXPLORER_ACTION
@@ -81,7 +81,7 @@ engine: explorer-action
 variant: default
 ```
 
-版本 1 仅支持 AutoJs6 主文件浏览器中的单文件只读溢出菜单动作.
+版本 1 仅支持文件管理器中的单文件只读溢出菜单动作.
 
 ******
 
@@ -97,12 +97,19 @@ variant: default
 
 ******
 
+# v1.0.1
+
+###### 2026/08/08
+
+* `修复` 插件中心启用时因服务返回空绑定而失败的问题
+* `优化` 更简洁的插件名称, 描述和用户文档
+
 # v1.0.0
 
 ###### 2026/08/06
 
 * `新增` Markdown Preview 插件, 插件 ID 为 `markdown-preview`, 引擎为 `explorer-action`, 变体为 `default`
-* `新增` 通过 `org.autojs.plugin.EXPLORER_ACTION` 为 AutoJs6 主文件浏览器提供单文件只读溢出菜单动作
+* `新增` 通过 `org.autojs.plugin.EXPLORER_ACTION` 为文件管理器提供单文件只读溢出菜单动作
 * `新增` 通过 `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` 接收文件和父目录 content URI 的临时读取权限
 * `新增` 支持自动链接/表格/删除线/标题锚点/任务列表和文档内图片的 Markdown 渲染
 * `新增` 提供 GitHub 自动/浅色/深色/纸张/棕褐色/自定义 CSS 主题, 以及刷新和全屏控制

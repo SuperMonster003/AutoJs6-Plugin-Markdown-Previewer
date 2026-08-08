@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_markdown_preview">Markdown 미리보기</string>
-    <string name="app_name">AutoJs6 플러그인 - Markdown 미리보기</string>
+    <string name="app_name">Markdown 미리보기</string>
     <string name="dialog_button_cancel">취소</string>
     <string name="dialog_button_confirm">확인</string>
     <string name="error_custom_css_file_too_large">CSS 파일이 %1$s 제한을 초과합니다</string>
     <string name="error_markdown_file_too_large">Markdown 파일이 %1$s 미리보기 제한을 초과합니다</string>
-    <string name="plugin_description">Markdown 파일의 안전한 읽기 전용 미리보기</string>
+    <string name="plugin_description">파일 관리자 플러그인. Markdown 파일의 안전한 읽기 전용 미리보기</string>
     <string name="text_cannot_open_link">링크를 열 수 없습니다</string>
     <string name="text_cannot_read_file">Markdown 파일을 읽을 수 없습니다</string>
     <string name="text_clear_custom_css">사용자 지정 CSS 지우기</string>

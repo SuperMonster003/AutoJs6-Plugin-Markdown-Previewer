@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_markdown_preview">Prévisualiser Markdown</string>
-    <string name="app_name">Plugin AutoJs6 - Aperçu Markdown</string>
+    <string name="app_name">Aperçu Markdown</string>
     <string name="dialog_button_cancel">Annuler</string>
     <string name="dialog_button_confirm">Confirmer</string>
     <string name="error_custom_css_file_too_large">Le fichier CSS dépasse la limite de %1$s</string>
     <string name="error_markdown_file_too_large">Le fichier Markdown dépasse la limite de prévisualisation de %1$s</string>
-    <string name="plugin_description">Aperçu sécurisé en lecture seule des fichiers Markdown</string>
+    <string name="plugin_description">Plugin de gestionnaire de fichiers. Aperçu sécurisé en lecture seule des fichiers Markdown</string>
     <string name="text_cannot_open_link">Ouverture du lien impossible</string>
     <string name="text_cannot_read_file">Lecture du fichier Markdown impossible</string>
     <string name="text_clear_custom_css">Effacer le CSS personnalisé</string>

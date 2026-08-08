@@ -1,15 +1,24 @@
 {
-  "changelog_label_hint": "Совет",
+  "changelog_label_hint": "Подсказка",
   "changelog_label_feature": "Функция",
   "changelog_label_fix": "Исправление",
   "changelog_label_improvement": "Улучшение",
   "changelog_label_dependency": "Зависимость",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/08/08",
+      "fix": [
+        "Нулевая привязка службы, препятствовавшая включению в центре плагинов"
+      ],
+      "improvement": [
+        "Более ясные название, описание и пользовательская документация"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/08/06",
       "feature": [
         "Плагин Markdown Preview с ID `markdown-preview`, движком `explorer-action` и вариантом `default`",
-        "Действие дополнительного меню только для чтения одного файла в основном проводнике AutoJs6 через `org.autojs.plugin.EXPLORER_ACTION`",
+        "Действие дополнительного меню только для чтения одного файла в файловом менеджере через `org.autojs.plugin.EXPLORER_ACTION`",
         "Запуск через `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` с временным доступом на чтение URI содержимого файла и родительского каталога",
         "Отображение Markdown с автоматическими ссылками, таблицами, зачеркиванием, якорями заголовков, списками задач и изображениями в документе",
         "Темы GitHub Auto, GitHub Light, GitHub Dark, Paper, Sepia и пользовательский CSS с обновлением и полноэкранным режимом",

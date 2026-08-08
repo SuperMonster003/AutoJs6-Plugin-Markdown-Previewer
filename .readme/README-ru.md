@@ -2,10 +2,10 @@
 
 <div align="center">
   <p>
-    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="autojs6-plugin-markdown-preview-ic-launcher" border="0" width="128" />
+    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-preview-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>Безопасный плагин предпросмотра Markdown для проводника AutoJs6</p>
+  <p>Плагин файлового менеджера. Безопасный просмотр файлов Markdown только для чтения</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Preview?label=Release"/></a>
@@ -39,7 +39,7 @@
 
 ******
 
-Плагин AutoJs6 Markdown Preview добавляет в проводник AutoJs6 действие для просмотра одного файла Markdown только для чтения. Содержимое отображается в отдельном средстве просмотра без встраивания реализации в приложение-хост.
+Markdown Preview добавляет в файловый менеджер действие для просмотра одного файла Markdown только для чтения. Содержимое отображается в отдельном средстве просмотра без встраивания реализации в приложение-хост.
 
 ******
 
@@ -71,7 +71,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 
 ******
 
-AutoJs6 обнаруживает и запускает плагин по следующим идентификаторам:
+Хост обнаруживает и запускает плагин по следующим идентификаторам:
 
 ```text
 service action: org.autojs.plugin.EXPLORER_ACTION
@@ -81,7 +81,7 @@ engine: explorer-action
 variant: default
 ```
 
-Версия 1 ограничена действием дополнительного меню только для чтения одного файла в основном проводнике AutoJs6.
+Версия 1 ограничена действием дополнительного меню только для чтения одного файла в файловом менеджере.
 
 ******
 
@@ -97,12 +97,19 @@ variant: default
 
 ******
 
+# v1.0.1
+
+###### 2026/08/08
+
+* `Исправление` Нулевая привязка службы, препятствовавшая включению в центре плагинов
+* `Улучшение` Более ясные название, описание и пользовательская документация
+
 # v1.0.0
 
 ###### 2026/08/06
 
 * `Функция` Плагин Markdown Preview с ID `markdown-preview`, движком `explorer-action` и вариантом `default`
-* `Функция` Действие дополнительного меню только для чтения одного файла в основном проводнике AutoJs6 через `org.autojs.plugin.EXPLORER_ACTION`
+* `Функция` Действие дополнительного меню только для чтения одного файла в файловом менеджере через `org.autojs.plugin.EXPLORER_ACTION`
 * `Функция` Запуск через `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` с временным доступом на чтение URI содержимого файла и родительского каталога
 * `Функция` Отображение Markdown с автоматическими ссылками, таблицами, зачеркиванием, якорями заголовков, списками задач и изображениями в документе
 * `Функция` Темы GitHub Auto, GitHub Light, GitHub Dark, Paper, Sepia и пользовательский CSS с обновлением и полноэкранным режимом
