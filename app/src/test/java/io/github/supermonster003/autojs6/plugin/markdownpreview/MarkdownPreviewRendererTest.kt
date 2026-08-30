@@ -13,6 +13,102 @@ class MarkdownPreviewRendererTest {
     private val renderer = MarkdownPreviewRenderer()
 
     @Test
+    fun yamlFrontMatterBecomesCollapsedSanitizedAndHighlightedMetadata() {
+        val yaml = """
+            title: "Safe </code><script id='front-matter-payload'>alert(1)</script>"
+            author:
+              - Ada Lovelace
+            format: html
+            url: https://example.com/
+        """.trimIndent()
+        val result = renderer.renderWithOutline(
+            markdown = "---\n$yaml\n---\n# Rendered body\n\nVisible content.",
+            stylesheetName = "github-light.css",
+            customCss = null,
+            frontMatterLabel = "YAML <metadata>",
+        )
+        val document = Jsoup.parse(result.html)
+        val details = requireNotNull(document.selectFirst("article > details.markdown-front-matter"))
+        val code = requireNotNull(details.selectFirst("pre > code.language-yaml.syntax-highlighted"))
+
+        assertFalse(details.hasAttr("open"))
+        assertEquals("YAML <metadata>", details.selectFirst("summary")?.text())
+        assertEquals(yaml, code.wholeText())
+        assertTrue(code.select("span.syntax-property").any { it.text() == "title" })
+        assertTrue(code.select("span.syntax-string").isNotEmpty())
+        assertTrue(document.select("script, summary img, details.markdown-front-matter a").isEmpty())
+        assertTrue(document.select("article > hr").isEmpty())
+        assertEquals("Rendered body", document.selectFirst("h1")?.text())
+        assertEquals(listOf("Rendered body"), result.outline.map { it.title })
+    }
+
+    @Test
+    fun horizontalRuleDocumentWithoutYamlMappingKeepsNormalMarkdownMeaning() {
+        val document = Jsoup.parse(
+            renderer.render(
+                markdown = "---\nOrdinary paragraph\n---\n\n# Body",
+                stylesheetName = "github-light.css",
+                customCss = null,
+            ),
+        )
+
+        assertTrue(document.select("details.markdown-front-matter").isEmpty())
+        assertNotNull(document.selectFirst("hr"))
+        assertTrue(document.body().text().contains("Ordinary paragraph"))
+    }
+
+    @Test
+    fun documentOutlineCollectsHeadingHierarchyAndTargetsSanitizedAnchors() {
+        val result = renderer.renderWithOutline(
+            markdown = """
+                # Top *heading*
+
+                ### Deep `code`
+
+                <h2 id="kept-anchor">Raw <span>heading</span></h2>
+
+                <div id="duplicate-anchor"></div>
+                <h4 id="duplicate-anchor">Duplicate anchor heading</h4>
+
+                <h5><img alt="Image heading" src="images/heading.png"></h5>
+            """.trimIndent(),
+            stylesheetName = "github-light.css",
+            customCss = null,
+        )
+        val document = Jsoup.parse(result.html)
+
+        assertEquals(listOf(1, 3, 2, 4, 5), result.outline.map { it.level })
+        assertEquals(
+            listOf(
+                "Top heading",
+                "Deep code",
+                "Raw heading",
+                "Duplicate anchor heading",
+                "Image heading",
+            ),
+            result.outline.map { it.title },
+        )
+        assertEquals("kept-anchor", result.outline[2].anchorId)
+        assertFalse(result.outline[3].anchorId == "duplicate-anchor")
+        result.outline.forEach { entry ->
+            val target = requireNotNull(document.getElementById(entry.anchorId))
+            assertEquals("h${entry.level}", target.normalName())
+        }
+    }
+
+    @Test
+    fun documentOutlineIsEmptyWhenRenderedDocumentHasNoHeadings() {
+        val result = renderer.renderWithOutline(
+            markdown = "A paragraph with **no headings**.",
+            stylesheetName = "github-light.css",
+            customCss = null,
+        )
+
+        assertTrue(result.outline.isEmpty())
+        assertTrue(Jsoup.parse(result.html).select("h1, h2, h3, h4, h5, h6").isEmpty())
+    }
+
+    @Test
     fun markdownIsRenderedWithExtensionsAndUnsafeInputIsNeutralized() {
         val markdown = """
             # Preview Heading
@@ -64,6 +160,100 @@ class MarkdownPreviewRendererTest {
             MarkdownPreviewSecurityPolicy.REFERRER_POLICY,
             document.selectFirst("meta[name=referrer]")?.attr("content"),
         )
+    }
+
+    @Test
+    fun namedRepeatedAndInlineFootnotesRenderWithBidirectionalAnchors() {
+        val document = Jsoup.parse(
+            renderer.render(
+                markdown = """
+                    Text with a named footnote[^guide], the same footnote again[^guide],
+                    and an inline note^[Inline *emphasis*].
+
+                    [^guide]: Named **definition** with a [safe link](https://example.com/footnote).
+                """.trimIndent(),
+                stylesheetName = "github-light.css",
+                customCss = null,
+            ),
+        )
+
+        val footnotes = requireNotNull(document.selectFirst("article > section.footnotes[data-footnotes]"))
+        val definitions = footnotes.select("ol > li")
+        val references = document.select("sup.footnote-ref > a[data-footnote-ref]")
+        val backReferences = footnotes.select("a.footnote-backref[data-footnote-backref]")
+
+        assertEquals(2, definitions.size)
+        assertEquals(3, references.size)
+        assertEquals(3, backReferences.size)
+        assertTrue(definitions.any { it.text().contains("Named definition") })
+        assertTrue(definitions.any { it.select("em").text() == "emphasis" })
+        assertEquals(
+            "https://example.com/footnote",
+            footnotes.selectFirst("a[href^=https://example.com/footnote]")?.attr("href"),
+        )
+
+        references.forEach { reference ->
+            val href = reference.attr("href")
+            assertTrue(href.startsWith("#"))
+            assertNotNull(document.getElementById(href.removePrefix("#")))
+            assertEquals("noopener noreferrer", reference.attr("rel"))
+            assertEquals("", reference.attr("data-footnote-ref"))
+        }
+        backReferences.forEach { backReference ->
+            val href = backReference.attr("href")
+            assertTrue(href.startsWith("#"))
+            assertNotNull(document.getElementById(href.removePrefix("#")))
+            assertEquals(setOf("footnote-backref"), backReference.classNames())
+            assertTrue(backReference.attr("data-footnote-backref-idx").matches(Regex("""\d+(?:-\d+)?""")))
+        }
+    }
+
+    @Test
+    fun footnoteMarkupUsesAClosedAttributeAndClassAllowlist() {
+        val document = Jsoup.parse(
+            renderer.render(
+                markdown = """
+                    Unsafe definition[^unsafe].
+
+                    [^unsafe]: <script id="footnote-script">footnote payload</script>
+                        [unsafe link](javascript:alert(1))
+
+                    <sup id="raw-footnote-ref" class="footnote-ref forged" onclick="alert(2)">raw ref</sup>
+                    <section id="raw-footnotes" class="footnotes forged" data-footnotes="forged" onclick="alert(3)">
+                      <a id="raw-footnote-backref" class="footnote-backref forged"
+                         data-footnote-backref="forged" data-footnote-backref-idx="1-2-3"
+                         href="javascript:alert(4)">raw backref</a>
+                    </section>
+                    <div id="wrong-footnote-tag" class="footnotes" data-footnotes>wrong tag</div>
+                """.trimIndent(),
+                stylesheetName = "github-light.css",
+                customCss = null,
+            ),
+        )
+
+        assertNull(document.selectFirst("script#footnote-script"))
+        assertFalse(document.body().text().contains("footnote payload"))
+        val unsafeLink = requireNotNull(document.select("a").firstOrNull { it.text() == "unsafe link" })
+        assertFalse(unsafeLink.hasAttr("href"))
+
+        val rawReference = requireNotNull(document.selectFirst("sup#raw-footnote-ref"))
+        assertEquals(setOf("footnote-ref"), rawReference.classNames())
+        assertFalse(rawReference.hasAttr("onclick"))
+
+        val rawSection = requireNotNull(document.selectFirst("section#raw-footnotes"))
+        assertEquals(setOf("footnotes"), rawSection.classNames())
+        assertEquals("", rawSection.attr("data-footnotes"))
+        assertFalse(rawSection.hasAttr("onclick"))
+
+        val rawBackReference = requireNotNull(document.selectFirst("a#raw-footnote-backref"))
+        assertEquals(setOf("footnote-backref"), rawBackReference.classNames())
+        assertEquals("", rawBackReference.attr("data-footnote-backref"))
+        assertFalse(rawBackReference.hasAttr("data-footnote-backref-idx"))
+        assertFalse(rawBackReference.hasAttr("href"))
+
+        val wrongTag = requireNotNull(document.selectFirst("div#wrong-footnote-tag"))
+        assertFalse(wrongTag.hasAttr("class"))
+        assertFalse(wrongTag.hasAttr("data-footnotes"))
     }
 
     @Test
@@ -221,6 +411,79 @@ class MarkdownPreviewRendererTest {
         assertEquals("left", document.selectFirst("th")?.attr("align"))
         assertEquals("center", document.select("th").getOrNull(1)?.attr("align"))
         assertEquals("right", document.select("th").getOrNull(2)?.attr("align"))
+    }
+
+    @Test
+    fun fencedCodeIsHighlightedAfterSanitizationWithoutScripts() {
+        val source = """
+            // tokenized on the Kotlin side
+            val answer: Int = 42
+            val payload = "</span><script id='code-payload'>alert(1)</script>"
+        """.trimIndent()
+        val markdown = buildString {
+            appendLine("```kotlin")
+            appendLine(source)
+            appendLine("```")
+            appendLine()
+            appendLine(
+                "<span id=\"raw-token\" class=\"syntax-keyword\" " +
+                    "onclick=\"alert(2)\">raw token</span>",
+            )
+        }
+
+        val output = renderer.render(
+            markdown = markdown,
+            stylesheetName = "github-dark.css",
+            customCss = null,
+        )
+        val document = Jsoup.parse(output)
+        val code = requireNotNull(document.selectFirst("pre > code.language-kotlin.syntax-highlighted"))
+        val rawToken = requireNotNull(document.selectFirst("span#raw-token"))
+        val tokenElements = code.select("span.syntax-token")
+        val allowedTokenClasses = MarkdownPreviewSyntaxTokenKind.entries.map { it.cssClassName }.toSet()
+
+        assertEquals(source, code.wholeText().trimEnd('\r', '\n'))
+        assertTrue(tokenElements.isNotEmpty())
+        assertTrue(code.select(".syntax-comment").isNotEmpty())
+        assertTrue(code.select(".syntax-keyword").any { it.text() == "val" })
+        assertTrue(code.select(".syntax-type").any { it.text() == "Int" })
+        assertTrue(code.select(".syntax-number").any { it.text() == "42" })
+        assertTrue(code.select(".syntax-string").isNotEmpty())
+        assertTrue(document.select("script").isEmpty())
+        assertFalse(document.body().html().contains("<script id=\"code-payload\""))
+        assertFalse(rawToken.hasAttr("class"))
+        assertFalse(rawToken.hasAttr("onclick"))
+        tokenElements.forEach { token ->
+            assertEquals(2, token.classNames().size)
+            assertTrue(token.hasClass("syntax-token"))
+            assertTrue(token.classNames().any { it in allowedTokenClasses })
+            assertTrue(token.attributes().asList().all { it.key == "class" })
+        }
+
+        val csp = document.selectFirst("meta[http-equiv=Content-Security-Policy]")
+            ?.attr("content")
+            .orEmpty()
+        assertTrue(csp.contains("script-src 'none'"))
+    }
+
+    @Test
+    fun unknownCodeLanguageRemainsPlainText() {
+        val document = Jsoup.parse(
+            renderer.render(
+                markdown = """
+                    ```unknown-language
+                    let value = 42
+                    ```
+                """.trimIndent(),
+                stylesheetName = "github-light.css",
+                customCss = null,
+            ),
+        )
+        val code = requireNotNull(document.selectFirst("pre > code.language-unknown-language"))
+
+        assertFalse(code.hasClass("syntax-highlighted"))
+        assertTrue(code.select("span.syntax-token").isEmpty())
+        assertEquals("let value = 42", code.text())
     }
 
     @Test

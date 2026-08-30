@@ -63,6 +63,14 @@ class MarkdownPreviewPreferences(context: Context) {
         get() = preferences.getBoolean(KEY_START_IN_FULLSCREEN_MODE, false)
         set(value) = preferences.edit { putBoolean(KEY_START_IN_FULLSCREEN_MODE, value) }
 
+    var textZoomPercent: Int
+        get() = MarkdownPreviewTextZoom.normalize(
+            preferences.getInt(KEY_TEXT_ZOOM_PERCENT, MarkdownPreviewTextZoom.DEFAULT_PERCENT),
+        )
+        set(value) = preferences.edit {
+            putInt(KEY_TEXT_ZOOM_PERCENT, MarkdownPreviewTextZoom.normalize(value))
+        }
+
     val hasCustomCss: Boolean
         get() = customCssFile.baseFile.isFile
 
@@ -130,9 +138,9 @@ class MarkdownPreviewPreferences(context: Context) {
 
         private const val PREFERENCES_NAME = "markdown_preview"
         private const val KEY_START_IN_FULLSCREEN_MODE = "start_in_fullscreen_mode"
+        private const val KEY_TEXT_ZOOM_PERCENT = "text_zoom_percent"
         private const val KEY_THEME = "theme"
         private const val CUSTOM_CSS_RELATIVE_PATH = "markdown-preview/custom.css"
         private const val DEFAULT_BUFFER_SIZE = 8 * 1024
     }
 }
-

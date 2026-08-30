@@ -32,13 +32,69 @@
 
 {{ p_introduction }}
 
+{{ p_introduction_secure }}
+
 ******
 
 ### {{ h3_functions }}
 
 ******
 
-{{ placeholder_features }}
+{{ placeholder_highlights }}
+
+******
+
+### {{ h3_screenshots }}
+
+******
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="{{ repo_url }}/blob/master/docs/images/screenshots/file-menu-action.png?raw=true" alt="{{ text_screenshot_file_menu_action }}" width="300" />
+      <br />
+      <sub>{{ text_screenshot_file_menu_action }}</sub>
+    </td>
+    <td align="center">
+      <img src="{{ repo_url }}/blob/master/docs/images/screenshots/viewer.png?raw=true" alt="{{ text_screenshot_viewer }}" width="300" />
+      <br />
+      <sub>{{ text_screenshot_viewer }}</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="{{ repo_url }}/blob/master/docs/images/screenshots/theme-dialog.png?raw=true" alt="{{ text_screenshot_theme_dialog }}" width="300" />
+      <br />
+      <sub>{{ text_screenshot_theme_dialog }}</sub>
+    </td>
+    <td align="center">
+      <img src="{{ repo_url }}/blob/master/docs/images/screenshots/fullscreen.png?raw=true" alt="{{ text_screenshot_fullscreen }}" width="300" />
+      <br />
+      <sub>{{ text_screenshot_fullscreen }}</sub>
+    </td>
+  </tr>
+</table>
+
+******
+
+### {{ h3_usage }}
+
+******
+
+{{ p_usage_prerequisites }}:
+
+```text
+host app: AutoJs6 ({{ host_package }})
+minimum host build: {{ required_host_build }}
+minimum android: {{ min_android }}
+plugin package: {{ plugin_package }}
+```
+
+{{ p_usage_steps_intro }}:
+
+{{ placeholder_usage_steps }}
+
+{{ p_usage_viewer_tips }}
 
 ******
 
@@ -51,6 +107,26 @@
 ```text
 {{ supported_formats }}
 ```
+
+{{ p_supported_formats_note }}
+
+******
+
+### {{ h3_faq }}
+
+******
+
+{{ placeholder_faq }}
+
+******
+
+### {{ h3_security }}
+
+******
+
+{{ p_security_intro }}:
+
+{{ placeholder_security_points }}
 
 ******
 
@@ -66,17 +142,20 @@ execute action: {{ plugin_execute_action }}
 plugin id: {{ plugin_id }}
 engine: {{ plugin_engine }}
 variant: {{ plugin_variant }}
+required host build: {{ required_host_build }}
 ```
 
 {{ p_plugin_scope }}
 
 ******
 
-### {{ h3_security }}
+### {{ h3_roadmap }}
 
 ******
 
-{{ p_security }}
+{{ p_roadmap_status }}
+
+- [{{ text_open_roadmap }}]({{ repo_url }}/blob/master/ROADMAP.md)
 
 ******
 
@@ -133,3 +212,4 @@ app/src/main/res/raw-*/plugin_instruction.md
 
 - {{ text_link_autojs6_docs }}: {{ docs_autojs6_url }}
 - {{ text_link_format_reference }}: {{ format_reference_url }}
+- {{ text_link_html_preview }}: {{ html_preview_repo_url }}

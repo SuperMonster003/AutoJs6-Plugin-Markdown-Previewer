@@ -1,24 +1,32 @@
-******
+# 版本记录
 
-### 发行历史
+## v1.1.0
 
-******
+###### 2026/08/31
 
-# v1.0.1
+* `新增` 新增文档大纲, 页内查找, 持久化字号调节与渲染期语法高亮, 全程不启用 JavaScript
+* `新增` 新增宿主授权目录内的相对 Markdown 文档安全跳转, 支持查看器内历史返回与锚点处理
+* `新增` 新增 Android 打印 / PDF 导出与有界 YAML front matter 展示
+* `新增` 新增定义式与内联式 Footnotes, 并提供净化后的双向回链
+* `优化` 强化 explorer-action v1 Intent, URI, 路径, 链接, 资源, HTML 与 Footnotes 校验, 保持单文件只读边界
+* `优化` 新增可勾选 Roadmap, 4 张仅含合成数据的真实设备截图, 以及覆盖 10 种语言的可复现 README / CHANGELOG 生成链路
+* `依赖` 从旧 Atlassian 0.9.0 fork 迁移至 Maven Central 官方 CommonMark 0.30.0 core 与扩展模块, 并通过 core library desugaring 保持 API 24 兼容
+
+## v1.0.1
 
 ###### 2026/08/08
 
-* `修复` 插件中心启用时因服务返回空绑定而失败的问题
-* `优化` 更简洁的插件名称, 描述和用户文档
+* `修复` 在 AutoJs6 插件中心启用插件时因服务返回空绑定 (onNullBinding) 而无法启用的问题
+* `优化` 精简插件名称与描述, 统一各语言用户文档的表述
 
-# v1.0.0
+## v1.0.0
 
 ###### 2026/08/06
 
-* `新增` Markdown Preview 插件, 插件 ID 为 `markdown-preview`, 引擎为 `explorer-action`, 变体为 `default`
-* `新增` 通过 `org.autojs.plugin.EXPLORER_ACTION` 为文件管理器提供单文件只读溢出菜单动作
-* `新增` 通过 `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` 接收文件和父目录 content URI 的临时读取权限
-* `新增` 支持自动链接/表格/删除线/标题锚点/任务列表和文档内图片的 Markdown 渲染
-* `新增` 提供 GitHub 自动/浅色/深色/纸张/棕褐色/自定义 CSS 主题, 以及刷新和全屏控制
-* `新增` 通过允许列表净化/CSP/受控 URI 导航/禁用 JavaScript 和存储/有界输入强化 WebView 安全
-* `新增` 插件信息/界面文本/使用说明/README/changelog 支持西班牙语/法语/俄语/阿拉伯语/日语/韩语/英语/简体中文/香港繁体/台湾繁体
+* `新增` Markdown Preview 首个版本: 为 AutoJs6 文件管理器提供 `预览 Markdown` 溢出菜单动作, 以只读方式渲染单个文档
+* `新增` 识别 md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 共 10 种扩展名以及 `text/markdown` 与 `text/x-markdown` MIME 类型
+* `新增` 支持表格, 任务列表, 删除线, 自动链接, 标题锚点与文档内图片渲染
+* `新增` 内置 GitHub (自动 / 浅色 / 深色), 纸张与棕褐色主题, 支持导入自定义 CSS, 手动刷新与全屏模式
+* `新增` 以允许列表净化, CSP 约束, 禁用 JavaScript 与存储, 私网地址过滤及输入上限 (Markdown 8 MiB, CSS 256 KiB) 构建只读安全沙盒
+* `新增` 基于 `org.autojs.plugin.EXPLORER_ACTION` 协议注册插件服务, 经宿主临时 content URI 授权访问所选文件及其父目录
+* `新增` 插件信息, 界面, 使用说明与文档支持简体中文, 繁体中文 (香港 / 台湾), 英语, 法语, 西班牙语, 日语, 韩语, 俄语与阿拉伯语

@@ -8,6 +8,16 @@
     --preview-code-bg: #818b981f;
     --preview-block-bg: #f6f8fa;
     --preview-mark-bg: #fff8c5;
+    --preview-syntax-attribute: #0550ae;
+    --preview-syntax-comment: #6e7781;
+    --preview-syntax-function: #8250df;
+    --preview-syntax-keyword: #cf222e;
+    --preview-syntax-meta: #8250df;
+    --preview-syntax-number: #0550ae;
+    --preview-syntax-string: #0a3069;
+    --preview-syntax-tag: #116329;
+    --preview-syntax-type: #953800;
+    --preview-syntax-variable: #953800;
 }
 
 * {
@@ -126,6 +136,37 @@ body {
     margin-top: 0.25em;
 }
 
+.markdown-body .footnotes {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--preview-border);
+    color: var(--preview-muted);
+    font-size: 0.875em;
+}
+
+.markdown-body .footnotes > ol {
+    margin-bottom: 0;
+}
+
+.markdown-body .footnotes li > :last-child {
+    margin-bottom: 0;
+}
+
+.markdown-body .footnote-ref {
+    line-height: 0;
+    white-space: nowrap;
+}
+
+.markdown-body a[data-footnote-ref] {
+    padding: 0 0.12em;
+    font-weight: 600;
+}
+
+.markdown-body .footnote-backref {
+    margin-left: 0.2em;
+    white-space: nowrap;
+}
+
 .markdown-body .task-list {
     padding-left: 0;
     list-style: none;
@@ -167,6 +208,50 @@ body {
     background: transparent;
     font-size: 100%;
     white-space: pre;
+}
+
+.markdown-body pre code .syntax-comment {
+    color: var(--preview-syntax-comment);
+    font-style: italic;
+}
+
+.markdown-body pre code .syntax-keyword,
+.markdown-body pre code .syntax-operator {
+    color: var(--preview-syntax-keyword);
+}
+
+.markdown-body pre code .syntax-literal,
+.markdown-body pre code .syntax-number {
+    color: var(--preview-syntax-number);
+}
+
+.markdown-body pre code .syntax-string {
+    color: var(--preview-syntax-string);
+}
+
+.markdown-body pre code .syntax-function {
+    color: var(--preview-syntax-function);
+}
+
+.markdown-body pre code .syntax-meta {
+    color: var(--preview-syntax-meta);
+}
+
+.markdown-body pre code .syntax-type {
+    color: var(--preview-syntax-type);
+}
+
+.markdown-body pre code .syntax-property,
+.markdown-body pre code .syntax-attribute {
+    color: var(--preview-syntax-attribute);
+}
+
+.markdown-body pre code .syntax-variable {
+    color: var(--preview-syntax-variable);
+}
+
+.markdown-body pre code .syntax-tag {
+    color: var(--preview-syntax-tag);
 }
 
 .markdown-body .markdown-table-wrapper {
@@ -244,9 +329,80 @@ body {
     margin-bottom: 16px;
 }
 
+.markdown-body .markdown-front-matter {
+    border: 1px solid var(--preview-border);
+    border-radius: 6px;
+    background: var(--preview-block-bg);
+}
+
+.markdown-body .markdown-front-matter > summary {
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: var(--preview-muted);
+    font-weight: 600;
+}
+
+.markdown-body .markdown-front-matter[open] > summary {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--preview-border);
+    border-radius: 6px 6px 0 0;
+}
+
+.markdown-body .markdown-front-matter > pre {
+    margin-bottom: 0;
+    border-radius: 0 0 6px 6px;
+    background: var(--preview-bg);
+}
+
 @media (max-width: 767px) {
     .markdown-body {
         padding: 16px 16px 40px;
     }
 }
 
+@media print {
+    html,
+    body {
+        min-height: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .markdown-body {
+        max-width: none;
+        padding: 0;
+    }
+
+    .markdown-body .markdown-table-wrapper {
+        overflow: visible;
+    }
+
+    .markdown-body .markdown-table-wrapper table {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .markdown-body th,
+    .markdown-body td {
+        overflow-wrap: anywhere;
+    }
+
+    .markdown-body thead {
+        display: table-header-group;
+    }
+
+    .markdown-body tr,
+    .markdown-body img,
+    .markdown-body pre,
+    .markdown-body blockquote,
+    .markdown-body details {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .markdown-body pre {
+        overflow: visible;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+}

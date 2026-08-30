@@ -39,19 +39,80 @@
 
 ******
 
-Markdown Preview 為檔案管理器提供單一檔案唯讀 Markdown 預覽動作. 內容在獨立檢視器中呈現, 無需將預覽實作嵌入主程式.
+Markdown Preview 是 AutoJs6 檔案管理器的預覽外掛. 啟用後, 檔案管理器中每個 Markdown 檔案的更多選單都會出現 `預覽 Markdown` 動作, 點擊即可像閱讀網頁一樣檢視排版後的文件, 而不再是一整片原始碼文字.
+
+外掛只做一件事並把它做穩: 唯讀轉譯. 檢視器不執行任何指令碼, 只能讀取宿主暫時授權的檔案, 轉譯在外掛的獨立介面中完成, 不改動 AutoJs6 本體, 也不影響指令碼執行環境.
 
 ******
 
-### 功能
+### 功能亮點
 
 ******
 
-- 透過共用的 `org.autojs.plugin.EXPLORER_ACTION` 協定註冊單一檔案唯讀檔案瀏覽器動作.
-- 透過 content URI 暫時讀取所選 Markdown 檔案及其上層目錄資源, 不接收原始檔案系統路徑.
-- 支援自動連結, 表格, 刪除線, 標題錨點, 工作清單和文件內圖片.
-- 提供 GitHub 自動/淺色/深色, 紙張, 棕褐色和自訂 CSS 主題.
-- 支援重新整理, 全螢幕模式, 啟動時全螢幕偏好和有界的 Markdown/CSS 輸入大小.
+- 在 AutoJs6 檔案管理器內直接閱讀排版後的 Markdown 文件, 無需匯出檔案或安裝第三方閱讀器.
+- 支援表格, 工作清單, 刪除線, 自動連結, 標題錨點與文件內圖片, 常見 GitHub 風格寫法開箱即用.
+- 內建 GitHub (自動), GitHub 淺色, GitHub 深色, 紙張, 棕褐色共 5 種預覽主題, 自動模式跟隨系統深淺色切換.
+- 支援匯入自訂 CSS 打造個人閱讀樣式, 樣式疊加在內建排版之上, 可隨時一鍵清除還原.
+- 全螢幕模式沉浸閱讀, 可開啟 `以全螢幕模式啟動`, 按返回鍵優先退出全螢幕而不會誤關頁面.
+- 支援雙指縮放, 手動重新整理與表格橫向捲動, 並按 BOM 自動識別 UTF-8 / UTF-16 / UTF-32 編碼.
+- 唯讀安全沙箱: 不執行 JavaScript, 不寫入磁碟快取, 除宿主授權的檔案外不存取任何資料.
+
+******
+
+### 介面截圖
+
+******
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/file-menu-action.png?raw=true" alt="檔案選單動作" width="300" />
+      <br />
+      <sub>檔案選單動作</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/viewer.png?raw=true" alt="文件檢視器" width="300" />
+      <br />
+      <sub>文件檢視器</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/theme-dialog.png?raw=true" alt="主題選擇" width="300" />
+      <br />
+      <sub>主題選擇</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/fullscreen.png?raw=true" alt="全螢幕閱讀" width="300" />
+      <br />
+      <sub>全螢幕閱讀</sub>
+    </td>
+  </tr>
+</table>
+
+******
+
+### 安裝與使用
+
+******
+
+開始前請確認以下環境要求:
+
+```text
+host app: AutoJs6 (org.autojs.autojs6)
+minimum host build: 5268
+minimum android: 7.0 (API 24)
+plugin package: io.github.supermonster003.autojs6.plugin.markdownpreview
+```
+
+從安裝到開啟第一篇文件共 4 步:
+
+1. 下載並安裝本外掛 APK. 外掛沒有獨立桌面圖示, 安裝後統一由 AutoJs6 管理.
+2. 開啟 AutoJs6, 進入 `外掛中心`, 找到 `Markdown 預覽` 並啟用.
+3. 在 AutoJs6 檔案管理器中定位任意 Markdown 檔案 (如 `README.md`), 展開該檔案的更多選單.
+4. 點選 `預覽 Markdown`, 文件隨即在獨立檢視器中轉譯開啟.
+
+進入檢視器後, 右上角選單提供 `重新整理`, `預覽主題`, `匯入自訂 CSS`, `全螢幕模式` 與 `設定` 等操作, 其中 `設定` 可開啟 `以全螢幕模式啟動`. 文件內的 http/https 連結會交由系統瀏覽器開啟, 標題錨點連結則在檢視器內跳轉.
 
 ******
 
@@ -59,29 +120,43 @@ Markdown Preview 為檔案管理器提供單一檔案唯讀 Markdown 預覽動�
 
 ******
 
-第一版識別以下檔案副檔名:
+外掛識別以下副檔名:
 
 ```text
 md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 ```
 
-******
-
-### 外掛介面
+副檔名不在清單中但 MIME 類型為 `text/markdown` 或 `text/x-markdown` 的檔案同樣可以預覽. 單一文件的預覽上限為 8 MiB, 超限時會明確提示而不是截斷轉譯.
 
 ******
 
-主程式透過以下識別資訊探索並執行外掛程式:
+### 常見問題
 
-```text
-service action: org.autojs.plugin.EXPLORER_ACTION
-execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
-plugin id: markdown-preview
-engine: explorer-action
-variant: default
-```
+******
 
-版本 1 僅支援檔案管理器中的單一檔案唯讀更多選單動作.
+**檔案的選單裡沒有出現 `預覽 Markdown`?**
+
+請依序檢查: AutoJs6 版本代碼是否不低於 5268 (6.8.0 及以上版本滿足); 外掛是否已在 `外掛中心` 啟用; 副檔名是否在支援清單中. 三者任一不滿足, 選單動作都不會出現.
+
+**開啟時提示 `無法讀取 Markdown 檔案`?**
+
+常見原因: 檔案在開啟瞬間被移動, 重新命名或刪除; 檔案大小超過 8 MiB; 或呼叫並非來自 AutoJs6 檔案管理器. 出於安全考量, 外掛會拒絕其他來源的呼叫.
+
+**文件裡的圖片為什麼不顯示?**
+
+檢視器僅載入三類圖片: 相對路徑指向文件所在目錄 (含子目錄) 的本機圖片, `data:` 內嵌圖片, 以及公網 `https` 圖片. 明文 `http` 圖片與內部網路, 保留位址會被安全策略攔截.
+
+**能用它預覽 HTML 檔案嗎?**
+
+不能. 本外掛專注 Markdown, HTML 預覽由獨立的 HTML Preview 外掛提供, 見下方相關連結.
+
+**自訂 CSS 是如何生效的?**
+
+在選單中選擇 `匯入自訂 CSS` 並挑選一個不超過 256 KiB 的樣式檔案後, 主題自動切換為 `自訂 CSS`. 樣式疊加在基礎排版之上, 只需編寫想覆蓋的規則; 選擇 `清除自訂 CSS` 即可恢復為 `GitHub (自動)`.
+
+**語法醒目提示如何實作, 為什麼 Mermaid 與數學公式仍不轉譯?**
+
+可辨識語言的程式碼區塊會在 Markdown 轉譯階段產生靜態語法醒目提示, 不需要 JavaScript. Mermaid 與數學公式仍依賴用戶端指令碼, 檢視器保持停用 JavaScript, 因此不會轉譯這些內容.
 
 ******
 
@@ -89,36 +164,84 @@ variant: default
 
 ******
 
-檢視器依允許清單淨化呈現結果, 停用 JavaScript/WebView 儲存空間/Cookie 和直接檔案存取, 透過 CSP 與 URI 約束限制資源和導覽, 並只接受宿主授予的暫時讀取權限.
+檢視器按預設拒絕原則建置, 以下措施全部預設開啟且無法關閉:
+
+- 轉譯結果經允許清單淨化: 指令碼, 表單, iframe, 內嵌事件等危險內容一律移除, JavaScript 全程停用.
+- WebView 關閉儲存, Cookie, 表單儲存與檔案系統存取, 轉譯結果僅存於記憶體, 頁面關閉即銷毀.
+- 僅憑宿主授予的暫時 content URI 讀取所選檔案及其所在目錄, 不接收檔案系統路徑, 也不申請額外執行階段權限.
+- CSP 與請求攔截雙重限制資源載入: 僅放行內建樣式, 文件目錄內資源, `data:` 與 `https` 圖片, 其餘請求一律拒絕.
+- 遠端圖片經內部網路與保留位址過濾 (防 SSRF), 以 no-referrer 策略載入; 外部連結僅能交由系統瀏覽器開啟.
+- 輸入有界: Markdown 上限 8 MiB, 自訂 CSS 上限 256 KiB, 顯示名稱與路徑長度同樣受限.
 
 ******
 
-### 發行歷史
+### 外掛介面 (面向開發者)
 
 ******
 
-# v1.0.1
+宿主透過以下標識發現並呼叫外掛:
+
+```text
+service action: org.autojs.plugin.EXPLORER_ACTION
+execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
+plugin id: markdown-preview
+engine: explorer-action
+variant: default
+required host build: 5268
+```
+
+目前實作基於 explorer-action 協定版本 1: 僅支援檔案管理器中的單一檔案唯讀選單動作. 多檔案與目錄級動作依賴協定後續版本, 相關計畫見開發路線圖.
+
+******
+
+### 開發路線圖
+
+******
+
+已完成能力與後續計畫以可勾選清單維護在 ROADMAP.md 中. 未勾選條目表示規劃意向, 不代表目前版本能力.
+
+- [檢視可勾選的 ROADMAP.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/ROADMAP.md)
+
+******
+
+### 版本記錄
+
+******
+
+#### v1.1.0
+
+###### 2026/08/31
+
+* `新增` 新增文件大綱, 頁內尋找, 持久化字體大小調整與渲染階段語法高亮, 全程不啟用 JavaScript
+* `新增` 新增宿主授權目錄內的相對 Markdown 文件安全跳轉, 支援檢視器內歷史返回與錨點處理
+* `新增` 新增 Android 列印 / PDF 匯出與有界 YAML front matter 顯示
+* `新增` 新增定義式與內聯式 Footnotes, 並提供淨化後的雙向返回連結
+* `優化` 強化 explorer-action v1 Intent, URI, 路徑, 連結, 資源, HTML 與 Footnotes 驗證, 保持單一檔案唯讀邊界
+* `優化` 新增可勾選 Roadmap, 4 張只含合成資料的實體裝置截圖, 以及涵蓋 10 種語言的可重現 README / CHANGELOG 生成流程
+* `相依性` 從舊 Atlassian 0.9.0 fork 遷移至 Maven Central 官方 CommonMark 0.30.0 core 與擴展模組, 並透過 core library desugaring 保持 API 24 相容
+
+#### v1.0.1
 
 ###### 2026/08/08
 
-* `修復` 外掛程式中心啟用時因服務傳回空繫結而失敗的問題
-* `優化` 更簡潔的外掛程式名稱, 描述和使用者文件
+* `修復` 在 AutoJs6 外掛中心啟用外掛時因服務回傳空繫結 (onNullBinding) 而無法啟用的問題
+* `優化` 精簡外掛名稱與描述, 統一各語言使用者文件的表述
 
-# v1.0.0
+#### v1.0.0
 
 ###### 2026/08/06
 
-* `新增` Markdown Preview 外掛, 外掛 ID 為 `markdown-preview`, 引擎為 `explorer-action`, 變體為 `default`
-* `新增` 透過 `org.autojs.plugin.EXPLORER_ACTION` 為檔案管理器提供單一檔案唯讀更多選單動作
-* `新增` 透過 `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` 接收檔案和上層目錄 content URI 的暫時讀取權限
-* `新增` 支援自動連結/表格/刪除線/標題錨點/工作清單和文件內圖片的 Markdown 呈現
-* `新增` 提供 GitHub 自動/淺色/深色/紙張/棕褐色/自訂 CSS 主題, 以及重新整理和全螢幕控制
-* `新增` 透過允許清單淨化/CSP/受控 URI 導覽/停用 JavaScript 和儲存空間/有界輸入強化 WebView 安全
-* `新增` 外掛資訊/介面文字/使用說明/README/changelog 支援西班牙文/法文/俄文/阿拉伯文/日文/韓文/英文/簡體中文/香港繁體/台灣繁體
+* `新增` Markdown Preview 首個版本: 為 AutoJs6 檔案管理器提供 `預覽 Markdown` 選單動作, 以唯讀方式轉譯單一文件
+* `新增` 識別 md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 共 10 種副檔名以及 `text/markdown` 與 `text/x-markdown` MIME 類型
+* `新增` 支援表格, 工作清單, 刪除線, 自動連結, 標題錨點與文件內圖片轉譯
+* `新增` 內建 GitHub (自動 / 淺色 / 深色), 紙張與棕褐色主題, 支援匯入自訂 CSS, 手動重新整理與全螢幕模式
+* `新增` 以允許清單淨化, CSP 約束, 停用 JavaScript 與儲存, 內部網路位址過濾及輸入上限 (Markdown 8 MiB, CSS 256 KiB) 建置唯讀安全沙箱
+* `新增` 基於 `org.autojs.plugin.EXPLORER_ACTION` 協定註冊外掛服務, 經宿主暫時 content URI 授權存取所選檔案及其上層目錄
+* `新增` 外掛資訊, 介面, 使用說明與文件支援簡體中文, 繁體中文 (香港 / 台灣), 英文, 法文, 西班牙文, 日文, 韓文, 俄文與阿拉伯文
 
-##### 更多發行歷史可參閱
+##### 完整記錄
 
-* [CHANGELOG.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hant-TW.md)
+* [CHANGELOG-zh-Hant-TW.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hant-TW.md)
 
 ******
 
@@ -153,7 +276,7 @@ app/src/main/res/values-*/strings.xml
 app/src/main/res/raw-*/plugin_instruction.md
 ```
 
-`strings.xml` 提供外掛資訊和檢視器介面的本地化, `plugin_instruction.md` 提供宿主端顯示的使用說明. README 與 changelog 檔案由 `.python/generate_markdown.py` 根據 JSON 來源檔案產生.
+`strings.xml` 提供外掛資訊與檢視器介面的本地化, `plugin_instruction.md` 提供宿主側展示的使用說明. 全部 README 與 CHANGELOG 由 `.python/generate_markdown.py` 依據 JSON 源生成: 修改文件時請編輯 `.readme` 與 `.changelog` 下的 `lang_*.json` 並重新執行指令碼, 不要直接編輯生成的 Markdown 檔案.
 
 ******
 
@@ -162,4 +285,5 @@ app/src/main/res/raw-*/plugin_instruction.md
 ******
 
 - AutoJs6 文件: https://docs.autojs6.com
-- CommonMark: https://commonmark.org
+- CommonMark 規範: https://commonmark.org
+- HTML Preview 外掛 (預覽 HTML 檔案): https://github.com/SuperMonster003/AutoJs6-Plugin-HTML-Preview

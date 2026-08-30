@@ -8,5 +8,14 @@
     --preview-code-bg: #6e768166;
     --preview-block-bg: #161b22;
     --preview-mark-bg: #bb800966;
+    --preview-syntax-attribute: #79c0ff;
+    --preview-syntax-comment: #8b949e;
+    --preview-syntax-function: #d2a8ff;
+    --preview-syntax-keyword: #ff7b72;
+    --preview-syntax-meta: #d2a8ff;
+    --preview-syntax-number: #79c0ff;
+    --preview-syntax-string: #a5d6ff;
+    --preview-syntax-tag: #7ee787;
+    --preview-syntax-type: #ffa657;
+    --preview-syntax-variable: #ffa657;
 }
-

@@ -1,24 +1,32 @@
-******
+# Historique des versions
 
-### Historique des versions
+## v1.1.0
 
-******
+###### 2026/08/31
 
-# v1.0.1
+* `Fonctionnalité` Ajout du plan du document, de la recherche dans la page, du zoom de texte persistant et de la coloration syntaxique au rendu sans activer JavaScript
+* `Fonctionnalité` Ajout de la navigation sécurisée vers les documents Markdown relatifs dans le répertoire autorisé par l'hôte, avec historique interne et gestion des ancres
+* `Fonctionnalité` Ajout de l'impression Android / export PDF et de l'affichage borné du front matter YAML
+* `Fonctionnalité` Ajout des notes de bas de page définies ou en ligne avec liens de retour bidirectionnels nettoyés
+* `Amélioration` Renforcement de la validation des intents explorer-action v1, URI, chemins, liens, ressources, HTML et notes de bas de page tout en conservant la limite de lecture seule sur un fichier
+* `Amélioration` Ajout d'une Roadmap à cocher, de 4 captures réelles sur appareil utilisant uniquement des données synthétiques et de la génération reproductible README / CHANGELOG pour 10 langues
+* `Dépendance` Migration de l'ancien fork Atlassian CommonMark 0.9.0 vers les modules officiels core et extensions 0.30.0 de Maven Central, avec core library desugaring pour l'API 24
+
+## v1.0.1
 
 ###### 2026/08/08
 
-* `Correctif` Liaison de service nulle qui empêchait l'activation dans le centre de plugins
-* `Amélioration` Nom, description et documentation utilisateur plus clairs
+* `Correctif` Échec de l'activation du plugin dans le centre des plugins d'AutoJs6 car le service renvoyait une liaison vide (onNullBinding)
+* `Amélioration` Simplification du nom et de la description du plugin et harmonisation de la documentation utilisateur entre les langues
 
-# v1.0.0
+## v1.0.0
 
 ###### 2026/08/06
 
-* `Fonctionnalité` Plugin Markdown Preview avec ID `markdown-preview`, moteur `explorer-action` et variante `default`
-* `Fonctionnalité` Action de menu secondaire en lecture seule pour un fichier dans le gestionnaire de fichiers via `org.autojs.plugin.EXPLORER_ACTION`
-* `Fonctionnalité` Exécution via `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` avec accès temporaire en lecture aux URI de contenu du fichier et du dossier parent
-* `Fonctionnalité` Rendu Markdown avec liens automatiques, tableaux, texte barré, ancres de titres, listes de tâches et images du document
-* `Fonctionnalité` Thèmes GitHub Auto, GitHub clair, GitHub sombre, Papier, Sépia et CSS personnalisé avec actualisation et plein écran
-* `Fonctionnalité` Politique WebView renforcée avec nettoyage par liste autorisée, CSP, navigation URI contrôlée, JavaScript et stockage désactivés et entrées limitées
-* `Fonctionnalité` Métadonnées, interface, instructions, README et changelog localisés en espagnol, français, russe, arabe, japonais, coréen, anglais, chinois simplifié, chinois traditionnel de Hong Kong et chinois traditionnel de Taïwan
+* `Fonctionnalité` Première version de Markdown Preview: une action de menu secondaire `Prévisualiser Markdown` pour le gestionnaire de fichiers d'AutoJs6 qui affiche un document en lecture seule
+* `Fonctionnalité` Reconnaissance de 10 extensions (md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd) ainsi que des types MIME `text/markdown` et `text/x-markdown`
+* `Fonctionnalité` Rendu des tableaux, listes de tâches, texte barré, liens automatiques, ancres de titres et images du document
+* `Fonctionnalité` Thèmes GitHub (Auto / clair / sombre), Papier et Sépia, avec import de CSS personnalisé, actualisation manuelle et mode plein écran
+* `Fonctionnalité` Bac à sable en lecture seule avec assainissement par liste d'autorisation, contraintes CSP, JavaScript et stockage désactivés, filtrage des adresses privées et limites d'entrée (Markdown 8 MiB, CSS 256 KiB)
+* `Fonctionnalité` Enregistrement du service du plugin via le protocole `org.autojs.plugin.EXPLORER_ACTION` et accès au fichier choisi et à son dossier parent par des URI de contenu temporaires accordés par l'hôte
+* `Fonctionnalité` Localisation des informations du plugin, de l'interface, des instructions et de la documentation en chinois simplifié, chinois traditionnel (Hong Kong / Taïwan), anglais, français, espagnol, japonais, coréen, russe et arabe

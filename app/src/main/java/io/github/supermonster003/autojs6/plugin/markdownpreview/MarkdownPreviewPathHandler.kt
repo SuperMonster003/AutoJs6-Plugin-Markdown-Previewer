@@ -17,26 +17,37 @@ class MarkdownPreviewDocumentPathHandler(
 
     private val resourceRoot = MarkdownPreviewPathPolicy.normalizeRoot(rootUri)
         ?: throw IllegalArgumentException("Preview resource root must be a content URI without a query or fragment")
-    private val documentBytes = AtomicReference<ByteArray?>(null)
+    private val document = AtomicReference<InMemoryDocument?>(null)
 
-    fun updateDocument(html: String) {
-        documentBytes.set(html.toByteArray(Charsets.UTF_8))
+    fun updateDocument(
+        html: String,
+        relativePath: String = MarkdownPreviewWebOrigin.DOCUMENT_FILE_NAME,
+    ) {
+        require(MarkdownPreviewPathPolicy.isSafeRelativePath(relativePath)) {
+            "Preview document path must stay below the virtual document root"
+        }
+        document.set(
+            InMemoryDocument(
+                relativePath = relativePath,
+                bytes = html.toByteArray(Charsets.UTF_8),
+            ),
+        )
     }
 
     fun clearDocument() {
-        documentBytes.set(null)
+        document.set(null)
     }
 
     override fun handle(path: String): WebResourceResponse {
-        if (path == MarkdownPreviewWebOrigin.DOCUMENT_FILE_NAME) {
-            val bytes = documentBytes.get() ?: return notFound()
+        val activeDocument = document.get()
+        if (activeDocument != null && path == activeDocument.relativePath) {
             return WebResourceResponse(
                 "text/html",
                 Charsets.UTF_8.name(),
                 200,
                 "OK",
                 DOCUMENT_RESPONSE_HEADERS,
-                ByteArrayInputStream(bytes),
+                ByteArrayInputStream(activeDocument.bytes),
             )
         }
 
@@ -59,6 +70,11 @@ class MarkdownPreviewDocumentPathHandler(
             input,
         )
     }
+
+    private data class InMemoryDocument(
+        val relativePath: String,
+        val bytes: ByteArray,
+    )
 }
 
 class MarkdownPreviewAssetPathHandler(
@@ -109,6 +125,8 @@ internal object MarkdownPreviewPathPolicy {
     )
 
     private const val MAX_PATH_LENGTH = 2048
+    private const val MAX_PATH_SEGMENTS = 64
+    private const val MAX_PATH_SEGMENT_LENGTH = 255
 
     fun normalizeRoot(rootUri: Uri): Uri? {
         if (!rootUri.scheme.equals(ContentResolver.SCHEME_CONTENT, ignoreCase = true)) return null
@@ -117,14 +135,26 @@ internal object MarkdownPreviewPathPolicy {
     }
 
     fun resolve(rootUri: Uri, path: String): Resource? {
-        val root = normalizeRoot(rootUri) ?: return null
-        if (!isSafeRelativePath(path)) return null
         val mimeType = mimeType(path) ?: return null
-        val builder = root.buildUpon()
-        path.split('/').forEach(builder::appendPath)
-        val uri = builder.build()
-        if (!isDescendant(root, uri)) return null
+        val uri = resolveDescendant(rootUri, path) ?: return null
         return Resource(uri, mimeType)
+    }
+
+    fun resolveDescendant(rootUri: Uri, relativePath: String): Uri? {
+        val root = normalizeRoot(rootUri) ?: return null
+        if (!isSafeRelativePath(relativePath)) return null
+        val builder = root.buildUpon()
+        relativePath.split('/').forEach(builder::appendPath)
+        return builder.build().takeIf { candidate -> isDescendant(root, candidate) }
+    }
+
+    fun relativePath(rootUri: Uri, candidateUri: Uri): String? {
+        val root = normalizeRoot(rootUri) ?: return null
+        if (!isDescendant(root, candidateUri)) return null
+        val relativePath = candidateUri.pathSegments
+            .drop(root.pathSegments.size)
+            .joinToString("/")
+        return relativePath.takeIf(::isSafeRelativePath)
     }
 
     fun isDescendant(rootUri: Uri, candidateUri: Uri): Boolean {
@@ -145,7 +175,8 @@ internal object MarkdownPreviewPathPolicy {
             return false
         }
         if (path.any { it.code < 0x20 || it.code == 0x7f }) return false
-        return path.split('/').none { it.isEmpty() || it == "." || it == ".." }
+        val segments = path.split('/')
+        return segments.size <= MAX_PATH_SEGMENTS && segments.all(::isSafeUriSegment)
     }
 
     fun mimeType(path: String): String? = when (path.substringAfterLast('.').lowercase(Locale.ROOT)) {
@@ -176,9 +207,20 @@ internal object MarkdownPreviewPathPolicy {
 
     private fun isSafeUriSegment(segment: String): Boolean =
         segment.isNotEmpty() &&
+            segment.length <= MAX_PATH_SEGMENT_LENGTH &&
             segment != "." &&
             segment != ".." &&
-            segment.none { it == '/' || it == '\\' || it == '\u0000' || it.code < 0x20 || it.code == 0x7f }
+            segment.none {
+                it == '/' ||
+                    it == '\\' ||
+                    it == '\u0000' ||
+                    it == '%' ||
+                    it == '?' ||
+                    it == '#' ||
+                    it == ':' ||
+                    it.code < 0x20 ||
+                    it.code == 0x7f
+            }
 }
 
 private val RESPONSE_HEADERS = mapOf(

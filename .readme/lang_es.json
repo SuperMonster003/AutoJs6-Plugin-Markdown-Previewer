@@ -5,30 +5,88 @@
   "h3_languages_with_ascii": "Idiomas (Languages)",
   "p_languages_all_supported_for_readme": "El README.md actual admite los siguientes idiomas",
   "h3_introduction": "Introducción",
-  "p_introduction": "Markdown Preview añade al gestor de archivos una acción de vista previa de Markdown de solo lectura para un único archivo. Muestra el contenido en un visor dedicado sin integrar la implementación en la aplicación anfitriona.",
-  "h3_functions": "Funciones",
-  "features": [
-    "Registra una acción de explorador de solo lectura para un archivo mediante el protocolo compartido `{{ plugin_action }}`.",
-    "Recibe acceso temporal de lectura mediante URI de contenido al archivo Markdown seleccionado y a los recursos de su directorio principal, sin rutas directas del sistema de archivos.",
-    "Admite enlaces automáticos, tablas, tachado, anclas de encabezado, listas de tareas e imágenes del documento.",
-    "Ofrece temas GitHub Auto, GitHub claro, GitHub oscuro, Papel, Sepia y CSS personalizado.",
-    "Admite actualización, modo de pantalla completa, una preferencia de inicio en pantalla completa y tamaños limitados de entrada Markdown y CSS."
+  "p_introduction": "Markdown Preview es un complemento de vista previa para el gestor de archivos de AutoJs6. Una vez activado, cada archivo Markdown del gestor de archivos muestra la acción `Vista previa de Markdown` en su menú secundario. Tóquela para leer el documento con formato, como una página web, en lugar de un bloque de texto fuente.",
+  "p_introduction_secure": "El complemento hace una sola cosa y la hace con seguridad: renderizado de solo lectura. El visor nunca ejecuta scripts, solo puede leer los archivos autorizados temporalmente por el anfitrión y realiza todo el renderizado en su propia pantalla. No modifica AutoJs6 ni afecta al entorno de ejecución de scripts.",
+  "h3_functions": "Puntos destacados",
+  "highlights": [
+    "Lea documentos Markdown con formato directamente en el gestor de archivos de AutoJs6, sin exportar archivos ni instalar lectores de terceros.",
+    "Tablas, listas de tareas, tachado, enlaces automáticos, anclas de encabezado e imágenes del documento funcionan de inmediato y cubren la escritura al estilo de GitHub.",
+    "Cinco temas integrados: GitHub (Auto), GitHub claro, GitHub oscuro, Papel y Sepia. El tema automático sigue el modo claro/oscuro del sistema.",
+    "Importe un archivo CSS personalizado para crear su propio estilo de lectura. Se superpone al estilo integrado y puede borrarse con un toque.",
+    "Modo de pantalla completa inmersivo con la opción `Iniciar en modo de pantalla completa`. El botón atrás sale primero de la pantalla completa en lugar de cerrar la página.",
+    "Zoom con dos dedos, actualización manual, tablas con desplazamiento horizontal y detección automática por BOM de las codificaciones UTF-8 / UTF-16 / UTF-32.",
+    "Un entorno aislado de solo lectura: sin ejecución de JavaScript, sin cachés en disco y sin acceso a datos distintos de los archivos autorizados por el anfitrión."
   ],
+  "h3_screenshots": "Capturas de pantalla",
+  "text_screenshot_file_menu_action": "Acción del menú de archivo",
+  "text_screenshot_viewer": "Visor de documentos",
+  "text_screenshot_theme_dialog": "Selector de tema",
+  "text_screenshot_fullscreen": "Lectura a pantalla completa",
+  "h3_usage": "Instalación y uso",
+  "p_usage_prerequisites": "Antes de empezar, confirme los siguientes requisitos",
+  "p_usage_steps_intro": "Desde la instalación hasta el primer documento renderizado hay 4 pasos",
+  "usage_steps": [
+    "Descargue e instale el APK del complemento. El complemento no tiene icono de inicio; tras la instalación queda gestionado por completo por AutoJs6.",
+    "Abra AutoJs6, entre en el `Centro de plugins`, localice `Vista previa de Markdown` y actívelo.",
+    "En el gestor de archivos de AutoJs6, localice cualquier archivo Markdown (por ejemplo `README.md`) y abra su menú secundario.",
+    "Seleccione `Vista previa de Markdown`. El documento se abre renderizado en un visor dedicado."
+  ],
+  "p_usage_viewer_tips": "Dentro del visor, el menú superior derecho ofrece `Actualizar`, `Tema de vista previa`, `Importar CSS personalizado`, `Modo de pantalla completa` y `Configuración`, donde `Configuración` incluye el interruptor `Iniciar en modo de pantalla completa`. Los enlaces http/https del documento se abren en el navegador del sistema, mientras que los enlaces de anclas de encabezado saltan dentro del visor.",
   "h3_supported_formats": "Formatos compatibles",
-  "p_supported_formats": "La primera versión reconoce las siguientes extensiones de archivo",
-  "h3_plugin_interface": "Interfaz del complemento",
-  "p_plugin_interface": "El anfitrión descubre y ejecuta el complemento con las siguientes identidades",
-  "p_plugin_scope": "La versión 1 se limita a una acción secundaria de solo lectura para un único archivo en el gestor de archivos.",
+  "p_supported_formats": "El complemento reconoce las siguientes extensiones de archivo",
+  "p_supported_formats_note": "Los archivos cuya extensión no aparece en la lista pero cuyo tipo MIME es `text/markdown` o `text/x-markdown` también pueden previsualizarse. Un documento puede ocupar como máximo {{ limit_markdown_size }}; los archivos que superan el límite generan un mensaje claro en lugar de un renderizado truncado.",
+  "h3_faq": "Preguntas frecuentes",
+  "faq": [
+    {
+      "question": "El menú del archivo no muestra `Vista previa de Markdown`?",
+      "answer": "Compruebe en orden: que el código de versión de AutoJs6 sea al menos {{ required_host_build }} (la versión 6.8.0 o posterior es válida); que el complemento esté activado en el `Centro de plugins`; y que la extensión del archivo figure en la lista compatible. Si falla cualquiera de las tres condiciones, la acción no aparece."
+    },
+    {
+      "question": "Al abrir aparece `No se puede leer el archivo Markdown`?",
+      "answer": "Causas habituales: el archivo se movió, se renombró o se eliminó en el momento de abrirlo; el archivo supera {{ limit_markdown_size }}; o la llamada no procede del gestor de archivos de AutoJs6. Por motivos de seguridad, el complemento rechaza las invocaciones de cualquier otro origen."
+    },
+    {
+      "question": "Por qué no se muestran las imágenes del documento?",
+      "answer": "El visor solo carga tres tipos de imágenes: imágenes locales referenciadas con rutas relativas dentro del directorio del documento (incluidos los subdirectorios), imágenes en línea `data:` e imágenes públicas `https`. Las imágenes `http` sin cifrar y las direcciones privadas o reservadas quedan bloqueadas por la política de seguridad."
+    },
+    {
+      "question": "Puede previsualizar archivos HTML?",
+      "answer": "No. Este complemento se centra en Markdown. La vista previa de HTML la ofrece el complemento independiente HTML Preview; consulte los enlaces más abajo."
+    },
+    {
+      "question": "Cómo funciona el CSS personalizado?",
+      "answer": "Elija `Importar CSS personalizado` en el menú y seleccione una hoja de estilos de como máximo {{ limit_custom_css_size }}. El tema cambia automáticamente a `CSS personalizado`. La hoja se superpone al estilo base, así que solo debe escribir las reglas que quiera sobrescribir. Elija `Borrar CSS personalizado` para volver a `GitHub (Auto)`."
+    },
+    {
+      "question": "Cómo funciona el resaltado de sintaxis y por qué no se renderizan Mermaid ni las fórmulas matemáticas?",
+      "answer": "El resaltado de sintaxis se genera durante el renderizado de Markdown para los lenguajes reconocidos y no requiere JavaScript. Mermaid y las fórmulas matemáticas aún dependen de scripts del cliente, por lo que no se renderizan porque el visor mantiene JavaScript desactivado."
+    }
+  ],
   "h3_security": "Seguridad",
-  "p_security": "El visor sanea el resultado con una lista permitida, desactiva JavaScript, el almacenamiento WebView, las cookies y el acceso directo a archivos, limita los recursos y la navegación mediante CSP y reglas URI, y solo acepta permisos temporales otorgados por el anfitrión.",
+  "p_security_intro": "El visor se construye sobre el principio de denegación por defecto. Todas las medidas siguientes están siempre activas y no pueden desactivarse",
+  "security_points": [
+    "La salida renderizada se depura con una lista de permitidos: scripts, formularios, iframes, controladores de eventos en línea y otros contenidos peligrosos se eliminan, y JavaScript permanece desactivado en todo momento.",
+    "El WebView funciona sin almacenamiento, sin cookies, sin guardado de formularios y sin acceso al sistema de archivos. El resultado renderizado vive solo en memoria y se destruye al cerrar la página.",
+    "El complemento lee el archivo seleccionado y su directorio únicamente mediante URI de contenido temporales concedidos por el anfitrión. No recibe rutas del sistema de archivos ni solicita permisos adicionales.",
+    "La CSP y la interceptación de solicitudes restringen doblemente la carga de recursos: solo pasan las hojas de estilo integradas, los recursos del directorio del documento, las imágenes `data:` y las imágenes `https`; cualquier otra solicitud se rechaza.",
+    "Las imágenes remotas se filtran contra direcciones privadas y reservadas (anti-SSRF) y se cargan con una política no-referrer; los enlaces externos solo pueden abrirse en el navegador del sistema.",
+    "Las entradas están acotadas: Markdown hasta {{ limit_markdown_size }}, CSS personalizado hasta {{ limit_custom_css_size }}, con longitudes de nombres y rutas igualmente limitadas."
+  ],
+  "h3_plugin_interface": "Interfaz del complemento (para desarrolladores)",
+  "p_plugin_interface": "El anfitrión descubre e invoca el complemento con las siguientes identidades",
+  "p_plugin_scope": "La implementación actual se basa en la versión 1 del protocolo explorer-action: una acción de menú secundario de solo lectura sobre un único archivo en el gestor de archivos. Las acciones multiarchivo y de directorio dependen de versiones futuras del protocolo y se siguen en la hoja de ruta.",
+  "h3_roadmap": "Hoja de ruta",
+  "p_roadmap_status": "Las capacidades completadas y los planes futuros se mantienen como una lista verificable en ROADMAP.md. Los elementos sin marcar expresan una intención y no describen capacidades actuales.",
+  "text_open_roadmap": "Abrir el ROADMAP.md verificable",
   "h3_release_history": "Historial de versiones",
-  "h5_for_more_release_history": "Para consultar más historial de versiones",
+  "h5_for_more_release_history": "Historial completo",
   "h3_build": "Compilación",
   "text_release_build": "Compilación Release",
   "p_build_params": "Los parámetros de compilación provienen de `version.properties`. El SDK mínimo actual es 24 y el SDK de destino es 36",
   "h3_resource_layout": "Estructura de recursos",
-  "p_resource_layout": "`strings.xml` localiza los metadatos del complemento y la interfaz, mientras que `plugin_instruction.md` proporciona instrucciones visibles para el anfitrión. Los archivos README y changelog se generan desde fuentes JSON mediante `.python/generate_markdown.py`",
+  "p_resource_layout": "`strings.xml` localiza la información del complemento y la interfaz del visor, mientras que `plugin_instruction.md` proporciona las instrucciones mostradas por el anfitrión. Todos los archivos README y CHANGELOG se generan desde fuentes JSON con `.python/generate_markdown.py`: para modificar la documentación, edite los archivos `lang_*.json` de `.readme` y `.changelog` y vuelva a ejecutar el script en lugar de editar los archivos Markdown generados",
   "h3_links": "Enlaces",
   "text_link_autojs6_docs": "Documentación de AutoJs6",
-  "text_link_format_reference": "CommonMark"
+  "text_link_format_reference": "Especificación CommonMark",
+  "text_link_html_preview": "Complemento HTML Preview (vista previa de archivos HTML)"
 }

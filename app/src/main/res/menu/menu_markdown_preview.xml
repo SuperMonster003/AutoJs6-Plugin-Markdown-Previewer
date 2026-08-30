@@ -4,8 +4,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/action_find_in_page"
+        android:icon="@drawable/ic_find_in_page"
+        android:title="@string/text_find_in_page"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_document_outline"
+        android:icon="@drawable/ic_document_outline"
+        android:title="@string/text_document_outline"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/action_refresh"
         android:title="@string/text_refresh"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_print_or_export_pdf"
+        android:enabled="false"
+        android:title="@string/text_print_or_export_pdf"
+        android:visible="false"
         app:showAsAction="never" />
 
     <item

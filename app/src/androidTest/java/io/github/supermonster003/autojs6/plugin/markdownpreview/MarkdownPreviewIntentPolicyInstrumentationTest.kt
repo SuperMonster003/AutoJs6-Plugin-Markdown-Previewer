@@ -12,8 +12,10 @@ import org.autojs.plugin.explorer.api.ExplorerActionIntentValues
 import org.autojs.plugin.explorer.api.ExplorerActionPluginActions
 import org.autojs.plugin.explorer.api.ExplorerActionProtocol
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -93,6 +95,24 @@ class MarkdownPreviewIntentPolicyInstrumentationTest {
         }
 
         assertNull(MarkdownPreviewIntentPolicy.resolve(intent))
+    }
+
+    @Test
+    fun documentPathsRoundTripOnlyBelowTheAuthorizedParent() {
+        val relativePath = "指南/开始 阅读.md"
+        val resolved = MarkdownPreviewPathPolicy.resolveDescendant(parentUri, relativePath)
+
+        assertNotNull(resolved)
+        assertTrue(MarkdownPreviewPathPolicy.isDescendant(parentUri, requireNotNull(resolved)))
+        assertEquals(relativePath, MarkdownPreviewPathPolicy.relativePath(parentUri, resolved))
+        assertNull(MarkdownPreviewPathPolicy.resolveDescendant(parentUri, "../outside.md"))
+        assertNull(MarkdownPreviewPathPolicy.resolveDescendant(parentUri, "%2e%2e/outside.md"))
+        assertFalse(
+            MarkdownPreviewPathPolicy.isDescendant(
+                parentUri,
+                Uri.parse("content://org.autojs.test.fileprovider/root/outside.md"),
+            ),
+        )
     }
 
     private fun validIntent(): Intent {

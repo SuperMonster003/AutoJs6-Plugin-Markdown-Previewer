@@ -4,10 +4,17 @@
   "icon_alt": "markdown-preview-ic-launcher",
   "docs_autojs6_url": "https://docs.autojs6.com",
   "format_reference_url": "https://commonmark.org",
+  "html_preview_repo_url": "https://github.com/SuperMonster003/AutoJs6-Plugin-HTML-Preview",
   "plugin_action": "org.autojs.plugin.EXPLORER_ACTION",
   "plugin_execute_action": "org.autojs.plugin.EXPLORER_ACTION_EXECUTE",
   "plugin_id": "markdown-preview",
   "plugin_engine": "explorer-action",
   "plugin_variant": "default",
+  "host_package": "org.autojs.autojs6",
+  "plugin_package": "io.github.supermonster003.autojs6.plugin.markdownpreview",
+  "required_host_build": "5268",
+  "min_android": "7.0 (API 24)",
+  "limit_markdown_size": "8 MiB",
+  "limit_custom_css_size": "256 KiB",
   "supported_formats": "md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd"
 }

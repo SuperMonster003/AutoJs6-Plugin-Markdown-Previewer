@@ -5,25 +5,41 @@
   "changelog_label_improvement": "Improvement",
   "changelog_label_dependency": "Dependency",
   "$data": {
+    "v1.1.0": {
+      "released_date": "2026/08/31",
+      "feature": [
+        "Added a document outline, in-page search, persistent text zoom, and render-time syntax highlighting without enabling JavaScript",
+        "Added safe navigation to relative Markdown documents inside the host-authorized directory, with in-viewer history and anchor handling",
+        "Added Android printing / PDF export and bounded YAML front matter rendering",
+        "Added definition and inline Footnotes with sanitized bidirectional backlinks"
+      ],
+      "improvement": [
+        "Hardened explorer-action v1 Intent, URI, path, link, resource, HTML, and Footnotes validation while preserving the single-file read-only boundary",
+        "Added a checkable Roadmap, 4 synthetic-data real-device screenshots, and reproducible README / CHANGELOG generation for 10 languages"
+      ],
+      "dependency": [
+        "Migrated CommonMark from the legacy Atlassian 0.9.0 fork to the official Maven Central 0.30.0 core and extension modules, with core library desugaring for API 24"
+      ]
+    },
     "v1.0.1": {
       "released_date": "2026/08/08",
       "fix": [
-        "Null service binding that prevented activation in Plugin Center"
+        "Plugin enablement failing in the AutoJs6 plugin center because the service returned an empty binding (onNullBinding)"
       ],
       "improvement": [
-        "Clearer plugin name, description, and user documentation"
+        "Streamlined the plugin name and description and unified the wording of user documentation across languages"
       ]
     },
     "v1.0.0": {
       "released_date": "2026/08/06",
       "feature": [
-        "Markdown Preview plugin with plugin ID `markdown-preview`, engine `explorer-action`, and variant `default`",
-        "Single-file read-only overflow action in the file manager through `org.autojs.plugin.EXPLORER_ACTION`",
-        "Activity execution through `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` with temporary read access to file and parent directory content URIs",
-        "Markdown rendering with automatic links, tables, strikethrough, heading anchors, task lists, and in-document images",
-        "GitHub Auto, GitHub Light, GitHub Dark, Paper, Sepia, and custom CSS themes with refresh and fullscreen controls",
-        "Hardened WebView policy with allowlist sanitization, CSP, guarded URI navigation, disabled JavaScript and storage, and bounded inputs",
-        "Localized plugin metadata, interface text, usage instructions, README files, and changelogs in Spanish, French, Russian, Arabic, Japanese, Korean, English, Simplified Chinese, Hong Kong Traditional Chinese, and Taiwan Traditional Chinese"
+        "First release of Markdown Preview: a `Preview Markdown` overflow menu action for the AutoJs6 file manager that renders a single document read-only",
+        "Recognizes 10 extensions (md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd) plus the `text/markdown` and `text/x-markdown` MIME types",
+        "Renders tables, task lists, strikethrough, automatic links, heading anchors, and in-document images",
+        "Ships GitHub (Auto / Light / Dark), Paper, and Sepia themes with custom CSS import, manual refresh, and fullscreen mode",
+        "Builds a read-only security sandbox with allowlist sanitization, CSP constraints, disabled JavaScript and storage, private address filtering, and input caps (Markdown 8 MiB, CSS 256 KiB)",
+        "Registers the plugin service through the `org.autojs.plugin.EXPLORER_ACTION` protocol and accesses the selected file and its parent directory via temporary host-granted content URIs",
+        "Localizes plugin metadata, UI, instructions, and documentation into Simplified Chinese, Traditional Chinese (Hong Kong / Taiwan), English, French, Spanish, Japanese, Korean, Russian, and Arabic"
       ]
     }
   }

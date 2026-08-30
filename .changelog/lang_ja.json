@@ -5,25 +5,41 @@
   "changelog_label_improvement": "改善",
   "changelog_label_dependency": "依存関係",
   "$data": {
+    "v1.1.0": {
+      "released_date": "2026/08/31",
+      "feature": [
+        "JavaScript を有効にせず, ドキュメントアウトライン, ページ内検索, 永続的な文字サイズ調整, レンダリング時のシンタックスハイライトを追加",
+        "ホストが許可したディレクトリ内の相対 Markdown 文書への安全な移動を追加し, ビューア内履歴とアンカー処理に対応",
+        "Android 印刷 / PDF 書き出しと上限付き YAML front matter 表示を追加",
+        "定義形式とインライン形式の Footnotes を追加し, サニタイズ済み双方向バックリンクに対応"
+      ],
+      "improvement": [
+        "単一ファイル読み取り専用境界を維持しながら, explorer-action v1 Intent, URI, パス, リンク, リソース, HTML, Footnotes の検証を強化",
+        "チェック可能な Roadmap, 合成データのみを使った実機スクリーンショット 4 枚, 10 言語向けの再現可能な README / CHANGELOG 生成を追加"
+      ],
+      "dependency": [
+        "CommonMark を旧 Atlassian 0.9.0 fork から Maven Central 公式 0.30.0 core / 拡張モジュールへ移行し, core library desugaring で API 24 互換性を維持"
+      ]
+    },
     "v1.0.1": {
       "released_date": "2026/08/08",
       "fix": [
-        "プラグインセンターでの有効化を妨げていたサービスの null バインディング"
+        "AutoJs6 プラグインセンターでプラグインを有効化する際, サービスが空のバインディング (onNullBinding) を返して有効化に失敗する問題"
       ],
       "improvement": [
-        "より簡潔なプラグイン名, 説明, ユーザードキュメント"
+        "プラグインの名称と説明を簡潔にし, 各言語のユーザードキュメントの表現を統一"
       ]
     },
     "v1.0.0": {
       "released_date": "2026/08/06",
       "feature": [
-        "プラグイン ID `markdown-preview`, エンジン `explorer-action`, バリアント `default` の Markdown Preview プラグイン",
-        "`org.autojs.plugin.EXPLORER_ACTION` によるファイルマネージャーの単一ファイル用読み取り専用オーバーフローアクション",
-        "`org.autojs.plugin.EXPLORER_ACTION_EXECUTE` による実行とファイルおよび親ディレクトリ content URI への一時読み取り権限",
-        "自動リンク/表/取り消し線/見出しアンカー/タスクリスト/文書内画像に対応する Markdown レンダリング",
-        "GitHub Auto/GitHub Light/GitHub Dark/Paper/Sepia/カスタム CSS テーマと再読み込みおよび全画面コントロール",
-        "許可リストサニタイズ/CSP/制御された URI ナビゲーション/JavaScript とストレージの無効化/入力サイズ制限による WebView 保護",
-        "スペイン語/フランス語/ロシア語/アラビア語/日本語/韓国語/英語/簡体字中国語/香港繁体字/台湾繁体字のプラグイン情報/インターフェース/使用説明/README/changelog"
+        "Markdown Preview 初回リリース: AutoJs6 ファイルマネージャーに単一文書を読み取り専用で表示する `Markdown をプレビュー` オーバーフローメニューアクションを提供",
+        "md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd の 10 種類の拡張子と `text/markdown` および `text/x-markdown` MIME タイプを認識",
+        "表, タスクリスト, 取り消し線, 自動リンク, 見出しアンカー, 文書内画像のレンダリングに対応",
+        "GitHub (自動 / ライト / ダーク), ペーパー, セピアのテーマを搭載し, カスタム CSS のインポート, 手動再読み込み, 全画面モードに対応",
+        "許可リストによるサニタイズ, CSP 制約, JavaScript とストレージの無効化, プライベートアドレスのフィルタリング, 入力上限 (Markdown 8 MiB, CSS 256 KiB) による読み取り専用サンドボックスを構築",
+        "`org.autojs.plugin.EXPLORER_ACTION` プロトコルでプラグインサービスを登録し, ホストが付与する一時的な content URI で選択ファイルと親ディレクトリにアクセス",
+        "プラグイン情報, UI, 使用説明, ドキュメントを簡体字中国語, 繁体字中国語 (香港 / 台湾), 英語, フランス語, スペイン語, 日本語, 韓国語, ロシア語, アラビア語に対応"
       ]
     }
   }

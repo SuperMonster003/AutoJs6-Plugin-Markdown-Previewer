@@ -1,24 +1,32 @@
-******
+# 릴리스 기록
 
-### 릴리스 기록
+## v1.1.0
 
-******
+###### 2026/08/31
 
-# v1.0.1
+* `기능` JavaScript를 활성화하지 않고 문서 개요, 페이지 내 찾기, 영구 텍스트 크기 조절 및 렌더링 시 구문 강조 기능 추가
+* `기능` 호스트가 승인한 디렉터리 내 상대 Markdown 문서로 안전하게 이동하고 뷰어 내 기록 및 앵커 처리를 지원
+* `기능` Android 인쇄 / PDF 내보내기와 제한된 YAML front matter 표시 기능 추가
+* `기능` 정의형 및 인라인 Footnotes와 정제된 양방향 돌아가기 링크 추가
+* `개선` 단일 파일 읽기 전용 경계를 유지하면서 explorer-action v1 Intent, URI, 경로, 링크, 리소스, HTML 및 Footnotes 검증 강화
+* `개선` 체크 가능한 Roadmap, 합성 데이터만 사용한 실제 기기 스크린샷 4장, 10개 언어용 재현 가능한 README / CHANGELOG 생성 추가
+* `의존성` CommonMark를 기존 Atlassian 0.9.0 fork에서 Maven Central 공식 0.30.0 core 및 확장 모듈로 이전하고 core library desugaring으로 API 24 호환성 유지
+
+## v1.0.1
 
 ###### 2026/08/08
 
-* `수정` 플러그인 센터 활성화를 막던 null 서비스 바인딩
-* `개선` 더 간결한 플러그인 이름, 설명 및 사용자 문서
+* `수정` AutoJs6 플러그인 센터에서 플러그인을 활성화할 때 서비스가 빈 바인딩 (onNullBinding)을 반환하여 활성화에 실패하던 문제
+* `개선` 플러그인 이름과 설명을 간결하게 다듬고 각 언어 사용자 문서의 표현을 통일
 
-# v1.0.0
+## v1.0.0
 
 ###### 2026/08/06
 
-* `기능` 플러그인 ID `markdown-preview`, 엔진 `explorer-action`, 변형 `default`인 Markdown Preview 플러그인
-* `기능` `org.autojs.plugin.EXPLORER_ACTION`을 통한 파일 관리자의 단일 파일 읽기 전용 더보기 작업
-* `기능` `org.autojs.plugin.EXPLORER_ACTION_EXECUTE`을 통한 실행과 파일 및 상위 디렉터리 content URI 임시 읽기 권한
-* `기능` 자동 링크/표/취소선/제목 앵커/작업 목록/문서 내 이미지를 지원하는 Markdown 렌더링
-* `기능` GitHub Auto/GitHub Light/GitHub Dark/Paper/Sepia/사용자 지정 CSS 테마와 새로 고침 및 전체 화면 제어
-* `기능` 허용 목록 정리/CSP/제어된 URI 탐색/JavaScript 및 저장소 비활성화/입력 크기 제한으로 강화된 WebView 정책
-* `기능` 스페인어/프랑스어/러시아어/아랍어/일본어/한국어/영어/중국어 간체/홍콩 번체/대만 번체 플러그인 정보/인터페이스/사용 설명/README/changelog
+* `기능` Markdown Preview 첫 릴리스: AutoJs6 파일 관리자에 단일 문서를 읽기 전용으로 렌더링하는 `Markdown 미리보기` 더보기 메뉴 동작 제공
+* `기능` md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 등 10가지 확장자와 `text/markdown` 및 `text/x-markdown` MIME 유형 인식
+* `기능` 표, 작업 목록, 취소선, 자동 링크, 제목 앵커, 문서 내 이미지 렌더링 지원
+* `기능` GitHub (자동 / 라이트 / 다크), 종이, 세피아 테마 내장, 사용자 지정 CSS 가져오기, 수동 새로 고침, 전체 화면 모드 지원
+* `기능` 허용 목록 정화, CSP 제약, JavaScript 및 저장소 비활성화, 사설 주소 필터링, 입력 상한 (Markdown 8 MiB, CSS 256 KiB)으로 읽기 전용 보안 샌드박스 구축
+* `기능` `org.autojs.plugin.EXPLORER_ACTION` 프로토콜로 플러그인 서비스를 등록하고 호스트가 부여한 임시 content URI로 선택한 파일과 상위 디렉터리에 접근
+* `기능` 플러그인 정보, UI, 사용 설명, 문서를 중국어 간체, 중국어 번체 (홍콩 / 대만), 영어, 프랑스어, 스페인어, 일본어, 한국어, 러시아어, 아랍어로 지원

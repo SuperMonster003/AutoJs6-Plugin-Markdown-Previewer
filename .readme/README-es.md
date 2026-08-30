@@ -39,19 +39,80 @@ El README.md actual admite los siguientes idiomas:
 
 ******
 
-Markdown Preview añade al gestor de archivos una acción de vista previa de Markdown de solo lectura para un único archivo. Muestra el contenido en un visor dedicado sin integrar la implementación en la aplicación anfitriona.
+Markdown Preview es un complemento de vista previa para el gestor de archivos de AutoJs6. Una vez activado, cada archivo Markdown del gestor de archivos muestra la acción `Vista previa de Markdown` en su menú secundario. Tóquela para leer el documento con formato, como una página web, en lugar de un bloque de texto fuente.
+
+El complemento hace una sola cosa y la hace con seguridad: renderizado de solo lectura. El visor nunca ejecuta scripts, solo puede leer los archivos autorizados temporalmente por el anfitrión y realiza todo el renderizado en su propia pantalla. No modifica AutoJs6 ni afecta al entorno de ejecución de scripts.
 
 ******
 
-### Funciones
+### Puntos destacados
 
 ******
 
-- Registra una acción de explorador de solo lectura para un archivo mediante el protocolo compartido `org.autojs.plugin.EXPLORER_ACTION`.
-- Recibe acceso temporal de lectura mediante URI de contenido al archivo Markdown seleccionado y a los recursos de su directorio principal, sin rutas directas del sistema de archivos.
-- Admite enlaces automáticos, tablas, tachado, anclas de encabezado, listas de tareas e imágenes del documento.
-- Ofrece temas GitHub Auto, GitHub claro, GitHub oscuro, Papel, Sepia y CSS personalizado.
-- Admite actualización, modo de pantalla completa, una preferencia de inicio en pantalla completa y tamaños limitados de entrada Markdown y CSS.
+- Lea documentos Markdown con formato directamente en el gestor de archivos de AutoJs6, sin exportar archivos ni instalar lectores de terceros.
+- Tablas, listas de tareas, tachado, enlaces automáticos, anclas de encabezado e imágenes del documento funcionan de inmediato y cubren la escritura al estilo de GitHub.
+- Cinco temas integrados: GitHub (Auto), GitHub claro, GitHub oscuro, Papel y Sepia. El tema automático sigue el modo claro/oscuro del sistema.
+- Importe un archivo CSS personalizado para crear su propio estilo de lectura. Se superpone al estilo integrado y puede borrarse con un toque.
+- Modo de pantalla completa inmersivo con la opción `Iniciar en modo de pantalla completa`. El botón atrás sale primero de la pantalla completa en lugar de cerrar la página.
+- Zoom con dos dedos, actualización manual, tablas con desplazamiento horizontal y detección automática por BOM de las codificaciones UTF-8 / UTF-16 / UTF-32.
+- Un entorno aislado de solo lectura: sin ejecución de JavaScript, sin cachés en disco y sin acceso a datos distintos de los archivos autorizados por el anfitrión.
+
+******
+
+### Capturas de pantalla
+
+******
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/file-menu-action.png?raw=true" alt="Acción del menú de archivo" width="300" />
+      <br />
+      <sub>Acción del menú de archivo</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/viewer.png?raw=true" alt="Visor de documentos" width="300" />
+      <br />
+      <sub>Visor de documentos</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/theme-dialog.png?raw=true" alt="Selector de tema" width="300" />
+      <br />
+      <sub>Selector de tema</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/fullscreen.png?raw=true" alt="Lectura a pantalla completa" width="300" />
+      <br />
+      <sub>Lectura a pantalla completa</sub>
+    </td>
+  </tr>
+</table>
+
+******
+
+### Instalación y uso
+
+******
+
+Antes de empezar, confirme los siguientes requisitos:
+
+```text
+host app: AutoJs6 (org.autojs.autojs6)
+minimum host build: 5268
+minimum android: 7.0 (API 24)
+plugin package: io.github.supermonster003.autojs6.plugin.markdownpreview
+```
+
+Desde la instalación hasta el primer documento renderizado hay 4 pasos:
+
+1. Descargue e instale el APK del complemento. El complemento no tiene icono de inicio; tras la instalación queda gestionado por completo por AutoJs6.
+2. Abra AutoJs6, entre en el `Centro de plugins`, localice `Vista previa de Markdown` y actívelo.
+3. En el gestor de archivos de AutoJs6, localice cualquier archivo Markdown (por ejemplo `README.md`) y abra su menú secundario.
+4. Seleccione `Vista previa de Markdown`. El documento se abre renderizado en un visor dedicado.
+
+Dentro del visor, el menú superior derecho ofrece `Actualizar`, `Tema de vista previa`, `Importar CSS personalizado`, `Modo de pantalla completa` y `Configuración`, donde `Configuración` incluye el interruptor `Iniciar en modo de pantalla completa`. Los enlaces http/https del documento se abren en el navegador del sistema, mientras que los enlaces de anclas de encabezado saltan dentro del visor.
 
 ******
 
@@ -59,29 +120,43 @@ Markdown Preview añade al gestor de archivos una acción de vista previa de Mar
 
 ******
 
-La primera versión reconoce las siguientes extensiones de archivo:
+El complemento reconoce las siguientes extensiones de archivo:
 
 ```text
 md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 ```
 
-******
-
-### Interfaz del complemento
+Los archivos cuya extensión no aparece en la lista pero cuyo tipo MIME es `text/markdown` o `text/x-markdown` también pueden previsualizarse. Un documento puede ocupar como máximo 8 MiB; los archivos que superan el límite generan un mensaje claro en lugar de un renderizado truncado.
 
 ******
 
-El anfitrión descubre y ejecuta el complemento con las siguientes identidades:
+### Preguntas frecuentes
 
-```text
-service action: org.autojs.plugin.EXPLORER_ACTION
-execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
-plugin id: markdown-preview
-engine: explorer-action
-variant: default
-```
+******
 
-La versión 1 se limita a una acción secundaria de solo lectura para un único archivo en el gestor de archivos.
+**El menú del archivo no muestra `Vista previa de Markdown`?**
+
+Compruebe en orden: que el código de versión de AutoJs6 sea al menos 5268 (la versión 6.8.0 o posterior es válida); que el complemento esté activado en el `Centro de plugins`; y que la extensión del archivo figure en la lista compatible. Si falla cualquiera de las tres condiciones, la acción no aparece.
+
+**Al abrir aparece `No se puede leer el archivo Markdown`?**
+
+Causas habituales: el archivo se movió, se renombró o se eliminó en el momento de abrirlo; el archivo supera 8 MiB; o la llamada no procede del gestor de archivos de AutoJs6. Por motivos de seguridad, el complemento rechaza las invocaciones de cualquier otro origen.
+
+**Por qué no se muestran las imágenes del documento?**
+
+El visor solo carga tres tipos de imágenes: imágenes locales referenciadas con rutas relativas dentro del directorio del documento (incluidos los subdirectorios), imágenes en línea `data:` e imágenes públicas `https`. Las imágenes `http` sin cifrar y las direcciones privadas o reservadas quedan bloqueadas por la política de seguridad.
+
+**Puede previsualizar archivos HTML?**
+
+No. Este complemento se centra en Markdown. La vista previa de HTML la ofrece el complemento independiente HTML Preview; consulte los enlaces más abajo.
+
+**Cómo funciona el CSS personalizado?**
+
+Elija `Importar CSS personalizado` en el menú y seleccione una hoja de estilos de como máximo 256 KiB. El tema cambia automáticamente a `CSS personalizado`. La hoja se superpone al estilo base, así que solo debe escribir las reglas que quiera sobrescribir. Elija `Borrar CSS personalizado` para volver a `GitHub (Auto)`.
+
+**Cómo funciona el resaltado de sintaxis y por qué no se renderizan Mermaid ni las fórmulas matemáticas?**
+
+El resaltado de sintaxis se genera durante el renderizado de Markdown para los lenguajes reconocidos y no requiere JavaScript. Mermaid y las fórmulas matemáticas aún dependen de scripts del cliente, por lo que no se renderizan porque el visor mantiene JavaScript desactivado.
 
 ******
 
@@ -89,7 +164,43 @@ La versión 1 se limita a una acción secundaria de solo lectura para un único 
 
 ******
 
-El visor sanea el resultado con una lista permitida, desactiva JavaScript, el almacenamiento WebView, las cookies y el acceso directo a archivos, limita los recursos y la navegación mediante CSP y reglas URI, y solo acepta permisos temporales otorgados por el anfitrión.
+El visor se construye sobre el principio de denegación por defecto. Todas las medidas siguientes están siempre activas y no pueden desactivarse:
+
+- La salida renderizada se depura con una lista de permitidos: scripts, formularios, iframes, controladores de eventos en línea y otros contenidos peligrosos se eliminan, y JavaScript permanece desactivado en todo momento.
+- El WebView funciona sin almacenamiento, sin cookies, sin guardado de formularios y sin acceso al sistema de archivos. El resultado renderizado vive solo en memoria y se destruye al cerrar la página.
+- El complemento lee el archivo seleccionado y su directorio únicamente mediante URI de contenido temporales concedidos por el anfitrión. No recibe rutas del sistema de archivos ni solicita permisos adicionales.
+- La CSP y la interceptación de solicitudes restringen doblemente la carga de recursos: solo pasan las hojas de estilo integradas, los recursos del directorio del documento, las imágenes `data:` y las imágenes `https`; cualquier otra solicitud se rechaza.
+- Las imágenes remotas se filtran contra direcciones privadas y reservadas (anti-SSRF) y se cargan con una política no-referrer; los enlaces externos solo pueden abrirse en el navegador del sistema.
+- Las entradas están acotadas: Markdown hasta 8 MiB, CSS personalizado hasta 256 KiB, con longitudes de nombres y rutas igualmente limitadas.
+
+******
+
+### Interfaz del complemento (para desarrolladores)
+
+******
+
+El anfitrión descubre e invoca el complemento con las siguientes identidades:
+
+```text
+service action: org.autojs.plugin.EXPLORER_ACTION
+execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
+plugin id: markdown-preview
+engine: explorer-action
+variant: default
+required host build: 5268
+```
+
+La implementación actual se basa en la versión 1 del protocolo explorer-action: una acción de menú secundario de solo lectura sobre un único archivo en el gestor de archivos. Las acciones multiarchivo y de directorio dependen de versiones futuras del protocolo y se siguen en la hoja de ruta.
+
+******
+
+### Hoja de ruta
+
+******
+
+Las capacidades completadas y los planes futuros se mantienen como una lista verificable en ROADMAP.md. Los elementos sin marcar expresan una intención y no describen capacidades actuales.
+
+- [Abrir el ROADMAP.md verificable](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/ROADMAP.md)
 
 ******
 
@@ -97,28 +208,40 @@ El visor sanea el resultado con una lista permitida, desactiva JavaScript, el al
 
 ******
 
-# v1.0.1
+#### v1.1.0
+
+###### 2026/08/31
+
+* `Función` Se añadieron el esquema del documento, la búsqueda en la página, el zoom de texto persistente y el resaltado de sintaxis durante el renderizado sin habilitar JavaScript
+* `Función` Se añadió la navegación segura a documentos Markdown relativos dentro del directorio autorizado por el host, con historial interno y manejo de anclas
+* `Función` Se añadieron la impresión de Android / exportación a PDF y la visualización acotada de front matter YAML
+* `Función` Se añadieron notas al pie definidas y en línea con enlaces de retorno bidireccionales saneados
+* `Mejora` Se reforzó la validación de intents explorer-action v1, URI, rutas, enlaces, recursos, HTML y notas al pie, manteniendo el límite de solo lectura de un archivo
+* `Mejora` Se añadieron una Roadmap verificable, 4 capturas reales con datos sintéticos y generación reproducible de README / CHANGELOG para 10 idiomas
+* `Dependencia` Se migró CommonMark del fork heredado de Atlassian 0.9.0 a los módulos oficiales core y extensiones 0.30.0 de Maven Central, con core library desugaring para API 24
+
+#### v1.0.1
 
 ###### 2026/08/08
 
-* `Corrección` Enlace de servicio nulo que impedía la activación en el centro de complementos
-* `Mejora` Nombre, descripción y documentación de usuario más claros
+* `Corrección` Fallo al activar el complemento en el centro de plugins de AutoJs6 porque el servicio devolvía un enlace vacío (onNullBinding)
+* `Mejora` Se simplificaron el nombre y la descripción del complemento y se unificó la redacción de la documentación de usuario en todos los idiomas
 
-# v1.0.0
+#### v1.0.0
 
 ###### 2026/08/06
 
-* `Función` Complemento Markdown Preview con ID `markdown-preview`, motor `explorer-action` y variante `default`
-* `Función` Acción secundaria de solo lectura para un archivo en el gestor de archivos mediante `org.autojs.plugin.EXPLORER_ACTION`
-* `Función` Ejecución mediante `org.autojs.plugin.EXPLORER_ACTION_EXECUTE` con acceso temporal de lectura a los URI de contenido del archivo y del directorio principal
-* `Función` Renderizado de Markdown con enlaces automáticos, tablas, tachado, anclas de encabezado, listas de tareas e imágenes del documento
-* `Función` Temas GitHub Auto, GitHub claro, GitHub oscuro, Papel, Sepia y CSS personalizado con controles de actualización y pantalla completa
-* `Función` Política WebView reforzada con saneamiento por lista permitida, CSP, navegación URI controlada, JavaScript y almacenamiento desactivados y entradas limitadas
-* `Función` Metadatos, interfaz, instrucciones, README y changelog localizados en español, francés, ruso, árabe, japonés, coreano, inglés, chino simplificado, chino tradicional de Hong Kong y chino tradicional de Taiwán
+* `Función` Primera versión de Markdown Preview: una acción de menú secundario `Vista previa de Markdown` para el gestor de archivos de AutoJs6 que renderiza un documento en modo de solo lectura
+* `Función` Reconoce 10 extensiones (md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd) junto con los tipos MIME `text/markdown` y `text/x-markdown`
+* `Función` Renderiza tablas, listas de tareas, tachado, enlaces automáticos, anclas de encabezado e imágenes del documento
+* `Función` Incluye los temas GitHub (Auto / claro / oscuro), Papel y Sepia, con importación de CSS personalizado, actualización manual y modo de pantalla completa
+* `Función` Construye un entorno aislado de solo lectura con depuración por lista de permitidos, restricciones CSP, JavaScript y almacenamiento desactivados, filtrado de direcciones privadas y límites de entrada (Markdown 8 MiB, CSS 256 KiB)
+* `Función` Registra el servicio del complemento mediante el protocolo `org.autojs.plugin.EXPLORER_ACTION` y accede al archivo seleccionado y a su directorio principal mediante URI de contenido temporales concedidos por el anfitrión
+* `Función` Localiza la información del complemento, la interfaz, las instrucciones y la documentación en chino simplificado, chino tradicional (Hong Kong / Taiwán), inglés, francés, español, japonés, coreano, ruso y árabe
 
-##### Para consultar más historial de versiones
+##### Historial completo
 
-* [CHANGELOG.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/assets/doc/CHANGELOG-es.md)
+* [CHANGELOG-es.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/assets/doc/CHANGELOG-es.md)
 
 ******
 
@@ -153,7 +276,7 @@ app/src/main/res/values-*/strings.xml
 app/src/main/res/raw-*/plugin_instruction.md
 ```
 
-`strings.xml` localiza los metadatos del complemento y la interfaz, mientras que `plugin_instruction.md` proporciona instrucciones visibles para el anfitrión. Los archivos README y changelog se generan desde fuentes JSON mediante `.python/generate_markdown.py`.
+`strings.xml` localiza la información del complemento y la interfaz del visor, mientras que `plugin_instruction.md` proporciona las instrucciones mostradas por el anfitrión. Todos los archivos README y CHANGELOG se generan desde fuentes JSON con `.python/generate_markdown.py`: para modificar la documentación, edite los archivos `lang_*.json` de `.readme` y `.changelog` y vuelva a ejecutar el script en lugar de editar los archivos Markdown generados.
 
 ******
 
@@ -162,4 +285,5 @@ app/src/main/res/raw-*/plugin_instruction.md
 ******
 
 - Documentación de AutoJs6: https://docs.autojs6.com
-- CommonMark: https://commonmark.org
+- Especificación CommonMark: https://commonmark.org
+- Complemento HTML Preview (vista previa de archivos HTML): https://github.com/SuperMonster003/AutoJs6-Plugin-HTML-Preview

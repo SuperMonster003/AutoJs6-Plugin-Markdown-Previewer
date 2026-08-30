@@ -74,6 +74,10 @@ android {
         viewBinding = true
     }
 
+    compileOptions {
+        isCoreLibraryDesugaringEnabled = true
+    }
+
     sourceSets.named("main") {
         kotlin.directories += "src/main/java"
     }
@@ -121,6 +125,8 @@ androidComponents {
 }
 
 dependencies {
+    coreLibraryDesugaring(libs.desugar)
+
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.21")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
 
@@ -129,7 +135,12 @@ dependencies {
 
     implementation(libs.activity.ktx)
     implementation(libs.appcompat)
-    implementation(libs.commonmark)
+    implementation(libs.commonmark.core)
+    implementation(libs.commonmark.autolink)
+    implementation(libs.commonmark.footnotes)
+    implementation(libs.commonmark.heading.anchor)
+    implementation(libs.commonmark.strikethrough)
+    implementation(libs.commonmark.tables)
     implementation(libs.core.ktx)
     implementation(libs.jsoup)
     implementation(libs.material)

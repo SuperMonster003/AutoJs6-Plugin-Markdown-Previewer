@@ -8,6 +8,16 @@
     --preview-code-bg: #775c3824;
     --preview-block-bg: #eadfc5;
     --preview-mark-bg: #e8cf78;
+    --preview-syntax-attribute: #375f8c;
+    --preview-syntax-comment: #88765f;
+    --preview-syntax-function: #704c86;
+    --preview-syntax-keyword: #9c2f1b;
+    --preview-syntax-meta: #704c86;
+    --preview-syntax-number: #375f8c;
+    --preview-syntax-string: #416d38;
+    --preview-syntax-tag: #3f6b3a;
+    --preview-syntax-type: #8a4b20;
+    --preview-syntax-variable: #8a4b20;
 }
 
 body {
@@ -18,4 +28,3 @@ body {
 .markdown-body {
     max-width: 860px;
 }
-

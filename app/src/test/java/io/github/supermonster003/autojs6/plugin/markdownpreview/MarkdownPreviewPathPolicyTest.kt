@@ -55,6 +55,18 @@ class MarkdownPreviewPathPolicyTest {
     @Test
     fun ordinaryNestedRelativePathIsAccepted() {
         assertTrue(MarkdownPreviewPathPolicy.isSafeRelativePath("images/diagrams/preview.svg"))
+        assertTrue(MarkdownPreviewPathPolicy.isSafeRelativePath("指南/开始 阅读.md"))
+    }
+
+    @Test
+    fun overlongPathsSegmentsAndSegmentCountsAreRejected() {
+        assertFalse(MarkdownPreviewPathPolicy.isSafeRelativePath("a".repeat(2049)))
+        assertFalse(MarkdownPreviewPathPolicy.isSafeRelativePath("a".repeat(256) + ".md"))
+        assertFalse(
+            MarkdownPreviewPathPolicy.isSafeRelativePath(
+                List(65) { "segment" }.joinToString("/"),
+            ),
+        )
     }
 
     @Test

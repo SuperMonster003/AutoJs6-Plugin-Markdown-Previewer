@@ -23,6 +23,80 @@
             app:titleTextColor="@color/toolbar_text"
             tools:title="@string/text_preview" />
 
+        <LinearLayout
+            android:id="@+id/find_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/window_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <EditText
+                android:id="@+id/find_query"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/find_bar_icon"
+                android:hint="@string/text_find_in_page"
+                android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
+                android:inputType="text|textNoSuggestions"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:saveEnabled="false"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textColorHint="?android:attr/textColorHint"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/find_result_count"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:accessibilityLiveRegion="polite"
+                android:gravity="center"
+                android:text="@string/text_find_match_count_initial"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/find_previous"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/text_find_previous"
+                android:padding="12dp"
+                android:src="@drawable/ic_find_previous"
+                app:tint="@color/find_bar_icon" />
+
+            <ImageButton
+                android:id="@+id/find_next"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/text_find_next"
+                android:padding="12dp"
+                android:src="@drawable/ic_find_next"
+                app:tint="@color/find_bar_icon" />
+
+            <ImageButton
+                android:id="@+id/find_close"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/text_find_close"
+                android:padding="12dp"
+                android:src="@drawable/ic_find_close"
+                app:tint="@color/find_bar_icon" />
+
+        </LinearLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout

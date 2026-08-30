@@ -3,6 +3,7 @@
     <color name="color_primary">#3F51B5</color>
     <color name="color_primary_dark">#303F9F</color>
     <color name="color_secondary">#FF9800</color>
+    <color name="find_bar_icon">#FF5F6368</color>
     <color name="toolbar_text">#FFFFFFFF</color>
     <color name="window_background">#FFFFFFFF</color>
 </resources>

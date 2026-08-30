@@ -2,6 +2,7 @@ package io.github.supermonster003.autojs6.plugin.markdownpreview
 
 import org.commonmark.Extension
 import org.commonmark.ext.autolink.AutolinkExtension
+import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
 import org.commonmark.ext.gfm.tables.TablesExtension
 import org.commonmark.ext.heading.anchor.HeadingAnchorExtension
@@ -17,12 +18,24 @@ import java.net.InetAddress
 import java.net.URI
 import java.util.Locale
 
+internal data class MarkdownPreviewOutlineEntry(
+    val level: Int,
+    val title: String,
+    val anchorId: String,
+)
+
+internal data class MarkdownPreviewRenderResult(
+    val html: String,
+    val outline: List<MarkdownPreviewOutlineEntry>,
+)
+
 class MarkdownPreviewRenderer {
 
     private val extensions: List<Extension> = listOf(
         AutolinkExtension.create(),
         TablesExtension.create(),
         StrikethroughExtension.create(),
+        FootnotesExtension.builder().inlineFootnotes(true).build(),
         HeadingAnchorExtension.Builder().build(),
     )
 
@@ -56,16 +69,29 @@ class MarkdownPreviewRenderer {
         markdown: String,
         stylesheetName: String,
         customCss: String?,
-    ): String {
-        val renderedBody = renderer.render(parser.parse(markdown))
-        val body = prepareMarkdownBody(renderedBody)
+        frontMatterLabel: String = DEFAULT_FRONT_MATTER_LABEL,
+    ): String = renderWithOutline(markdown, stylesheetName, customCss, frontMatterLabel).html
+
+    internal fun renderWithOutline(
+        markdown: String,
+        stylesheetName: String,
+        customCss: String?,
+        frontMatterLabel: String = DEFAULT_FRONT_MATTER_LABEL,
+    ): MarkdownPreviewRenderResult {
+        val frontMatter = MarkdownPreviewFrontMatterParser.extract(markdown)
+        val renderedBody = renderer.render(parser.parse(frontMatter?.markdownBody ?: markdown))
+        val preparedBody = prepareMarkdownBody(
+            renderedBody = renderedBody,
+            frontMatterYaml = frontMatter?.yaml,
+            frontMatterLabel = frontMatterLabel,
+        )
         val customStyle = customCss
             ?.takeIf(String::isNotBlank)
             ?.let(MarkdownPreviewSecurityPolicy::escapeInlineStyle)
             ?.let { """<style id="markdown-preview-custom-style">$it</style>""" }
             .orEmpty()
 
-        return """
+        val html = """
             <!doctype html>
             <html>
             <head>
@@ -79,13 +105,22 @@ class MarkdownPreviewRenderer {
                 $customStyle
             </head>
             <body>
-                <article class="markdown-body">$body</article>
+                <article class="markdown-body">${preparedBody.html}</article>
             </body>
             </html>
         """.trimIndent()
+
+        return MarkdownPreviewRenderResult(
+            html = html,
+            outline = preparedBody.outline,
+        )
     }
 
-    private fun prepareMarkdownBody(renderedBody: String): String {
+    private fun prepareMarkdownBody(
+        renderedBody: String,
+        frontMatterYaml: String?,
+        frontMatterLabel: String,
+    ): PreparedMarkdownBody {
         val fragment = Jsoup.parseBodyFragment(renderedBody)
         fragment.outputSettings().prettyPrint(false)
         val body = fragment.body()
@@ -109,10 +144,93 @@ class MarkdownPreviewRenderer {
             }
         }
 
+        frontMatterYaml?.let { yaml ->
+            prependFrontMatter(body, yaml, frontMatterLabel)
+        }
         enhanceTaskLists(body)
         wrapTables(body)
-        return body.html()
+        highlightCodeBlocks(body)
+        val outline = extractDocumentOutline(body)
+        return PreparedMarkdownBody(
+            html = body.html(),
+            outline = outline,
+        )
     }
+
+    private fun prependFrontMatter(
+        body: Element,
+        yaml: String,
+        label: String,
+    ) {
+        val safeLabel = label.normalizeOutlineWhitespace()
+            .take(MAX_FRONT_MATTER_LABEL_LENGTH)
+            .ifEmpty { DEFAULT_FRONT_MATTER_LABEL }
+        val details = Element("details").addClass(FRONT_MATTER_CLASS)
+        details.appendElement("summary").appendChild(TextNode(safeLabel))
+        details.appendElement("pre")
+            .appendElement("code")
+            .addClass("language-yaml")
+            .appendChild(TextNode(yaml))
+        body.prependChild(details)
+    }
+
+    private fun extractDocumentOutline(body: Element): List<MarkdownPreviewOutlineEntry> {
+        val elementsById = mutableMapOf<String, Element>()
+        val reservedIds = mutableSetOf<String>()
+        body.select("[id]").forEach { element ->
+            val id = element.id()
+            if (id.isNotEmpty()) {
+                elementsById.putIfAbsent(id, element)
+                reservedIds += id
+            }
+        }
+
+        val outline = mutableListOf<MarkdownPreviewOutlineEntry>()
+        var generatedAnchorIndex = 0
+        for (heading in body.select(HEADING_SELECTOR)) {
+            if (outline.size >= MAX_OUTLINE_ITEMS) break
+
+            val existingId = heading.id().takeIf { id ->
+                isUsableOutlineAnchor(id) && elementsById[id] === heading
+            }
+            val anchorId = existingId ?: run {
+                var candidate: String
+                do {
+                    generatedAnchorIndex++
+                    candidate = "$GENERATED_OUTLINE_ANCHOR_PREFIX$generatedAnchorIndex"
+                } while (candidate in reservedIds)
+                reservedIds += candidate
+                heading.attr("id", candidate)
+                candidate
+            }
+
+            outline += MarkdownPreviewOutlineEntry(
+                level = heading.normalName().removePrefix("h").toInt(),
+                title = extractOutlineTitle(heading),
+                anchorId = anchorId,
+            )
+        }
+        return outline
+    }
+
+    private fun extractOutlineTitle(heading: Element): String {
+        val visibleText = heading.text().normalizeOutlineWhitespace()
+        val imageAlternativeText = heading.select("img[alt]")
+            .joinToString(" ") { it.attr("alt") }
+            .normalizeOutlineWhitespace()
+        return visibleText
+            .ifEmpty { imageAlternativeText }
+            .ifEmpty { OUTLINE_UNTITLED_MARKER }
+            .take(MAX_OUTLINE_TITLE_LENGTH)
+    }
+
+    private fun String.normalizeOutlineWhitespace(): String =
+        replace(OUTLINE_WHITESPACE_PATTERN, " ").trim()
+
+    private fun isUsableOutlineAnchor(id: String): Boolean =
+        id.isNotBlank() &&
+            id.length <= MAX_OUTLINE_ANCHOR_LENGTH &&
+            id.none { it == '\u0000' || it.code < 0x20 || it.code == 0x7f }
 
     private fun sanitizeMarkdownElement(element: Element) {
         val tagName = element.normalName()
@@ -123,6 +241,19 @@ class MarkdownPreviewRenderer {
             .map { it.key }
             .filter { it.lowercase(Locale.ROOT) !in allowedAttributes }
             .forEach(element::removeAttr)
+
+        sanitizeMarkdownClasses(element, tagName)
+        MARKDOWN_FOOTNOTE_BOOLEAN_ATTRIBUTES.forEach { attribute ->
+            if (element.hasAttr(attribute)) {
+                element.attr(attribute, "")
+            }
+        }
+        if (
+            element.hasAttr("data-footnote-backref-idx") &&
+            !SAFE_FOOTNOTE_BACKREF_INDEX.matches(element.attr("data-footnote-backref-idx"))
+        ) {
+            element.removeAttr("data-footnote-backref-idx")
+        }
 
         if (element.hasAttr("align") && element.attr("align").lowercase(Locale.ROOT) !in SAFE_ALIGNMENTS) {
             element.removeAttr("align")
@@ -147,6 +278,19 @@ class MarkdownPreviewRenderer {
                 element.removeAttr("src")
             }
             configureRemoteImage(element)
+        }
+    }
+
+    private fun sanitizeMarkdownClasses(element: Element, tagName: String) {
+        if (!element.hasAttr("class") || tagName == "code") return
+
+        val allowedClasses = MARKDOWN_SAFE_CLASS_NAMES[tagName].orEmpty()
+        val safeClasses = element.classNames()
+            .filter { className -> className in allowedClasses }
+        if (safeClasses.isEmpty()) {
+            element.removeAttr("class")
+        } else {
+            element.attr("class", safeClasses.joinToString(" "))
         }
     }
 
@@ -186,6 +330,44 @@ class MarkdownPreviewRenderer {
         }
     }
 
+    private fun highlightCodeBlocks(body: Element) {
+        var remainingCharacterBudget = MAX_HIGHLIGHTED_CODE_CHARACTERS_PER_DOCUMENT
+        body.select("pre > code[class]").forEach { code ->
+            if (remainingCharacterBudget <= 0) return@forEach
+            val source = code.wholeText()
+            if (source.isEmpty() || source.length > remainingCharacterBudget) return@forEach
+
+            val tokens = code.classNames().asSequence()
+                .filter { className -> className.startsWith(LANGUAGE_CLASS_PREFIX) }
+                .map { className -> className.removePrefix(LANGUAGE_CLASS_PREFIX) }
+                .mapNotNull { languageAlias ->
+                    MarkdownPreviewSyntaxHighlighter.tokenize(languageAlias, source)
+                }
+                .firstOrNull()
+                ?: return@forEach
+            if (tokens.isEmpty()) return@forEach
+
+            remainingCharacterBudget -= source.length
+            code.empty()
+            code.addClass(SYNTAX_HIGHLIGHTED_CLASS)
+            var cursor = 0
+            tokens.forEach { token ->
+                if (token.start > cursor) {
+                    code.appendChild(TextNode(source.substring(cursor, token.start)))
+                }
+                val tokenElement = Element("span")
+                    .addClass(SYNTAX_TOKEN_CLASS)
+                    .addClass(token.kind.cssClassName)
+                    .appendChild(TextNode(source.substring(token.start, token.endExclusive)))
+                code.appendChild(tokenElement)
+                cursor = token.endExclusive
+            }
+            if (cursor < source.length) {
+                code.appendChild(TextNode(source.substring(cursor)))
+            }
+        }
+    }
+
     private fun firstTextNode(node: Node): TextNode? {
         node.childNodes().forEach { child ->
             if (child is TextNode) return child
@@ -194,14 +376,40 @@ class MarkdownPreviewRenderer {
         return null
     }
 
+    private data class PreparedMarkdownBody(
+        val html: String,
+        val outline: List<MarkdownPreviewOutlineEntry>,
+    )
+
     companion object {
+        private const val HEADING_SELECTOR = "h1, h2, h3, h4, h5, h6"
+        private const val GENERATED_OUTLINE_ANCHOR_PREFIX = "markdown-preview-outline-"
+        private const val OUTLINE_UNTITLED_MARKER = "\u2026"
+        private const val MAX_OUTLINE_ITEMS = 10_000
+        private const val MAX_OUTLINE_TITLE_LENGTH = 512
+        private const val MAX_OUTLINE_ANCHOR_LENGTH = 512
+        private const val MAX_FRONT_MATTER_LABEL_LENGTH = 128
+        private const val MAX_HIGHLIGHTED_CODE_CHARACTERS_PER_DOCUMENT = 512 * 1024
+        private const val DEFAULT_FRONT_MATTER_LABEL = "YAML metadata"
+        private const val FRONT_MATTER_CLASS = "markdown-front-matter"
+        private const val LANGUAGE_CLASS_PREFIX = "language-"
+        private const val SYNTAX_HIGHLIGHTED_CLASS = "syntax-highlighted"
+        private const val SYNTAX_TOKEN_CLASS = "syntax-token"
+
+        private val OUTLINE_WHITESPACE_PATTERN = Regex("""\s+""")
         private val TASK_ITEM_PATTERN = Regex("""^\s*\[([ xX])]\s+""")
         private val MARKDOWN_HIDDEN_COMMENT_PATTERN = Regex(
             """^\s*\[(?:comment|//)]\s*:\s*(?:<>|#)\s*(?:\(.*\))?\s*$""",
             RegexOption.IGNORE_CASE,
         )
         private val SAFE_INTEGER_ATTRIBUTE = Regex("""^[0-9]{1,5}$""")
+        private val SAFE_FOOTNOTE_BACKREF_INDEX = Regex("""^[1-9][0-9]{0,5}(?:-[1-9][0-9]{0,5})?$""")
         private val SAFE_ALIGNMENTS = setOf("left", "right", "center", "justify")
+        private val MARKDOWN_FOOTNOTE_BOOLEAN_ATTRIBUTES = setOf(
+            "data-footnotes",
+            "data-footnote-ref",
+            "data-footnote-backref",
+        )
 
         private const val MARKDOWN_REMOVED_TAGS =
             "script, style, link, meta, base, iframe, frame, frameset, object, embed, applet, " +
@@ -212,7 +420,7 @@ class MarkdownPreviewRenderer {
             "a", "abbr", "b", "blockquote", "br", "caption", "cite", "code", "col", "colgroup",
             "dd", "del", "details", "dfn", "div", "dl", "dt", "em", "figcaption", "figure",
             "h1", "h2", "h3", "h4", "h5", "h6", "hr", "i", "img", "ins", "kbd", "li", "mark",
-            "ol", "p", "pre", "q", "rp", "rt", "ruby", "s", "samp", "small", "span", "strike",
+            "ol", "p", "pre", "q", "rp", "rt", "ruby", "s", "samp", "section", "small", "span", "strike",
             "strong", "sub", "summary", "sup", "table", "tbody", "td", "tfoot", "th", "thead",
             "time", "tr", "tt", "u", "ul", "var", "wbr",
         )
@@ -223,7 +431,15 @@ class MarkdownPreviewRenderer {
         )
 
         private val MARKDOWN_TAG_ATTRIBUTES = mapOf(
-            "a" to setOf("href", "name", "title"),
+            "a" to setOf(
+                "href",
+                "name",
+                "title",
+                "class",
+                "data-footnote-ref",
+                "data-footnote-backref",
+                "data-footnote-backref-idx",
+            ),
             "blockquote" to setOf("cite"),
             "code" to setOf("class"),
             "col" to setOf("span"),
@@ -242,10 +458,18 @@ class MarkdownPreviewRenderer {
             "ol" to setOf("start", "type", "reversed"),
             "p" to setOf("align"),
             "q" to setOf("cite"),
+            "section" to setOf("class", "data-footnotes"),
+            "sup" to setOf("class"),
             "table" to setOf("align"),
             "td" to setOf("align", "colspan", "rowspan", "headers"),
             "th" to setOf("align", "colspan", "rowspan", "headers", "scope"),
             "time" to setOf("datetime"),
+        )
+
+        private val MARKDOWN_SAFE_CLASS_NAMES = mapOf(
+            "a" to setOf("footnote-backref"),
+            "section" to setOf("footnotes"),
+            "sup" to setOf("footnote-ref"),
         )
     }
 }
@@ -402,4 +626,3 @@ internal object MarkdownPreviewWebOrigin {
     fun isDomain(host: String?): Boolean =
         host?.trimEnd('.')?.equals(DOMAIN, ignoreCase = true) == true
 }
-
