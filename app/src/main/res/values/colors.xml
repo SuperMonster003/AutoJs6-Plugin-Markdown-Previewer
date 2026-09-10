@@ -6,4 +6,5 @@
     <color name="find_bar_icon">#FF5F6368</color>
     <color name="toolbar_text">#FFFFFFFF</color>
     <color name="window_background">#FFFFFFFF</color>
+    <color name="dialog_foreground">#FF202124</color>
 </resources>

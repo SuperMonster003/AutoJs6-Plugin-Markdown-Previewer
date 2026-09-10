@@ -21,7 +21,6 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -42,8 +41,9 @@ import java.util.ArrayDeque
 import java.util.Locale
 import kotlin.math.roundToInt
 
-class MarkdownPreviewerActivity : AppCompatActivity() {
+class MarkdownPreviewerActivity : PreviewerHostActivity() {
 
+    private lateinit var chrome: PreviewerChrome
     private lateinit var binding: ActivityMarkdownPreviewerBinding
     private lateinit var rootPreviewerRequest: MarkdownPreviewerRequest
     private lateinit var currentDocument: PreviewerDocument
@@ -114,6 +114,7 @@ class MarkdownPreviewerActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             title = currentDocument.request.displayName
         }
+        chrome = PreviewerChrome(this, binding.root, binding.appBar, binding.toolbar, binding.previewerWebView)
         configureFindBar()
 
         setFullscreenMode(fullscreenMode, invalidateMenu = false)
@@ -129,6 +130,7 @@ class MarkdownPreviewerActivity : AppCompatActivity() {
             onPageFinished = {
                 binding.loadingIndicator.isVisible = false
                 documentReady = true
+                chrome.samplePage()
                 updateDocumentOutline(pendingDocumentOutline)
                 pendingDocumentAnchor?.let(webController::scrollToAnchor)
                 pendingDocumentAnchor = null
@@ -153,6 +155,7 @@ class MarkdownPreviewerActivity : AppCompatActivity() {
         }
         menu.findItem(R.id.action_clear_custom_css)?.isVisible = preferences.hasCustomCss
         menu.findItem(R.id.action_fullscreen_mode)?.isChecked = fullscreenMode
+        if (::chrome.isInitialized) chrome.tintIcons()
         return super.onPrepareOptionsMenu(menu)
     }
 
@@ -192,6 +195,7 @@ class MarkdownPreviewerActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
+        if (::chrome.isInitialized) chrome.destroy()
         destroying = true
         loadGeneration++
         loadJob?.cancel()
@@ -234,6 +238,12 @@ class MarkdownPreviewerActivity : AppCompatActivity() {
 
         val selectedTheme = preferences.theme
         val stylesheetName = selectedTheme.stylesheetName(isNightMode())
+        chrome.beginPage(when (stylesheetName) {
+            "github-dark.css" -> 0xFF0D1117.toInt()
+            "paper.css" -> 0xFFFAF8F2.toInt()
+            "sepia.css" -> 0xFFF4ECD8.toInt()
+            else -> 0xFFFFFFFF.toInt()
+        })
         val frontMatterLabel = getString(R.string.text_yaml_metadata)
         loadJob = lifecycleScope.launch {
             try {
@@ -533,7 +543,8 @@ class MarkdownPreviewerActivity : AppCompatActivity() {
 
     private fun showSettingsDialog() {
         val currentTextZoomPercent = preferences.textZoomPercent
-        val settingsBinding = DialogMarkdownPreviewerSettingsBinding.inflate(layoutInflater).apply {
+        val builder = MaterialAlertDialogBuilder(this)
+        val settingsBinding = DialogMarkdownPreviewerSettingsBinding.inflate(android.view.LayoutInflater.from(builder.context)).apply {
             startInFullscreenMode.isChecked = preferences.startInFullscreenMode
             fontSizeSlider.apply {
                 valueFrom = MarkdownPreviewerTextZoom.MIN_PERCENT.toFloat()
@@ -555,7 +566,7 @@ class MarkdownPreviewerActivity : AppCompatActivity() {
                 currentTextZoomPercent,
             )
         }
-        MaterialAlertDialogBuilder(this)
+        builder
             .setTitle(R.string.text_settings)
             .setView(settingsBinding.root)
             .setNegativeButton(R.string.dialog_button_cancel, null)
