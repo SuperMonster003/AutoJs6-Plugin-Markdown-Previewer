@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_markdown_preview">معاينة Markdown</string>
-    <string name="app_name">معاينة Markdown</string>
+    <string name="action_markdown_previewer">معاينة Markdown</string>
+    <string name="app_name">عارض Markdown</string>
     <string name="dialog_button_cancel">إلغاء</string>
     <string name="dialog_button_confirm">تأكيد</string>
     <string name="error_custom_css_file_too_large">يتجاوز ملف CSS حد %1$s</string>
@@ -27,14 +27,14 @@
     <string name="text_fullscreen_mode">وضع ملء الشاشة</string>
     <string name="text_failed_to_import">تعذر استيراد ملف CSS</string>
     <string name="text_import_custom_css">استيراد CSS مخصص</string>
-    <string name="text_preview">معاينة</string>
-    <string name="text_preview_theme">سمة المعاينة</string>
-    <string name="text_preview_theme_custom">CSS مخصص</string>
-    <string name="text_preview_theme_github_auto">GitHub (تلقائي)</string>
-    <string name="text_preview_theme_github_dark">GitHub داكن</string>
-    <string name="text_preview_theme_github_light">GitHub فاتح</string>
-    <string name="text_preview_theme_paper">ورق</string>
-    <string name="text_preview_theme_sepia">بني داكن</string>
+    <string name="text_previewer">عارض</string>
+    <string name="text_previewer_theme">سمة المعاينة</string>
+    <string name="text_previewer_theme_custom">CSS مخصص</string>
+    <string name="text_previewer_theme_github_auto">GitHub (تلقائي)</string>
+    <string name="text_previewer_theme_github_dark">GitHub داكن</string>
+    <string name="text_previewer_theme_github_light">GitHub فاتح</string>
+    <string name="text_previewer_theme_paper">ورق</string>
+    <string name="text_previewer_theme_sepia">بني داكن</string>
     <string name="text_print_or_export_pdf">طباعة / تصدير PDF</string>
     <string name="text_refresh">تحديث</string>
     <string name="text_settings">الإعدادات</string>

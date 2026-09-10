@@ -5,7 +5,7 @@
   "h3_languages_with_ascii": "언어 (Languages)",
   "p_languages_all_supported_for_readme": "현재 README.md는 다음 언어를 지원합니다",
   "h3_introduction": "소개",
-  "p_introduction": "Markdown Preview는 AutoJs6 파일 관리자를 위한 미리보기 플러그인입니다. 활성화하면 파일 관리자의 모든 Markdown 파일 더보기 메뉴에 `Markdown 미리보기` 동작이 추가됩니다. 이를 탭하면 원시 소스 텍스트 덩어리 대신 웹 페이지처럼 보기 좋게 렌더링된 문서를 읽을 수 있습니다.",
+  "p_introduction": "Markdown Previewer는 AutoJs6 파일 관리자를 위한 미리보기 플러그인입니다. 활성화하면 파일 관리자의 모든 Markdown 파일 더보기 메뉴에 `Markdown 미리보기` 동작이 추가됩니다. 이를 탭하면 원시 소스 텍스트 덩어리 대신 웹 페이지처럼 보기 좋게 렌더링된 문서를 읽을 수 있습니다.",
   "p_introduction_secure": "이 플러그인은 한 가지 일을 안전하게 수행합니다: 읽기 전용 렌더링입니다. 뷰어는 스크립트를 전혀 실행하지 않고, 호스트가 임시로 허가한 파일만 읽을 수 있으며, 모든 렌더링을 자체 화면 안에서 끝냅니다. AutoJs6 본체를 수정하지 않으며 스크립트 실행 환경에도 영향을 주지 않습니다.",
   "h3_functions": "주요 기능",
   "highlights": [
@@ -51,7 +51,7 @@
     },
     {
       "question": "HTML 파일도 미리 볼 수 있나요?",
-      "answer": "아니요. 이 플러그인은 Markdown 전용입니다. HTML 미리보기는 별도의 HTML Preview 플러그인이 제공합니다. 아래 링크를 참고하세요."
+      "answer": "아니요. 이 플러그인은 Markdown 전용입니다. HTML 미리보기는 별도의 HTML Previewer 플러그인이 제공합니다. 아래 링크를 참고하세요."
     },
     {
       "question": "사용자 지정 CSS는 어떻게 동작하나요?",
@@ -88,5 +88,5 @@
   "h3_links": "링크",
   "text_link_autojs6_docs": "AutoJs6 문서",
   "text_link_format_reference": "CommonMark 명세",
-  "text_link_html_preview": "HTML Preview 플러그인 (HTML 파일 미리보기)"
+  "text_link_html_previewer": "HTML Previewer 플러그인 (HTML 파일 미리보기)"
 }

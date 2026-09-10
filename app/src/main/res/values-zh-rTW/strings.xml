@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_markdown_preview">預覽 Markdown</string>
-    <string name="app_name">Markdown 預覽</string>
+    <string name="action_markdown_previewer">預覽 Markdown</string>
+    <string name="app_name">Markdown 預覽器</string>
     <string name="dialog_button_cancel">取消</string>
     <string name="dialog_button_confirm">確認</string>
     <string name="error_custom_css_file_too_large">CSS 檔案超過 %1$s 的大小限制</string>
@@ -27,14 +27,14 @@
     <string name="text_fullscreen_mode">全螢幕模式</string>
     <string name="text_failed_to_import">無法匯入 CSS 檔案</string>
     <string name="text_import_custom_css">匯入自訂 CSS</string>
-    <string name="text_preview">預覽</string>
-    <string name="text_preview_theme">預覽主題</string>
-    <string name="text_preview_theme_custom">自訂 CSS</string>
-    <string name="text_preview_theme_github_auto">GitHub (自動)</string>
-    <string name="text_preview_theme_github_dark">GitHub 深色</string>
-    <string name="text_preview_theme_github_light">GitHub 淺色</string>
-    <string name="text_preview_theme_paper">紙張</string>
-    <string name="text_preview_theme_sepia">棕褐色</string>
+    <string name="text_previewer">預覽器</string>
+    <string name="text_previewer_theme">預覽主題</string>
+    <string name="text_previewer_theme_custom">自訂 CSS</string>
+    <string name="text_previewer_theme_github_auto">GitHub (自動)</string>
+    <string name="text_previewer_theme_github_dark">GitHub 深色</string>
+    <string name="text_previewer_theme_github_light">GitHub 淺色</string>
+    <string name="text_previewer_theme_paper">紙張</string>
+    <string name="text_previewer_theme_sepia">棕褐色</string>
     <string name="text_print_or_export_pdf">列印 / 匯出 PDF</string>
     <string name="text_refresh">重新整理</string>
     <string name="text_settings">設定</string>

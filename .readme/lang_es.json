@@ -5,7 +5,7 @@
   "h3_languages_with_ascii": "Idiomas (Languages)",
   "p_languages_all_supported_for_readme": "El README.md actual admite los siguientes idiomas",
   "h3_introduction": "Introducción",
-  "p_introduction": "Markdown Preview es un complemento de vista previa para el gestor de archivos de AutoJs6. Una vez activado, cada archivo Markdown del gestor de archivos muestra la acción `Vista previa de Markdown` en su menú secundario. Tóquela para leer el documento con formato, como una página web, en lugar de un bloque de texto fuente.",
+  "p_introduction": "Markdown Previewer es un complemento de vista previa para el gestor de archivos de AutoJs6. Una vez activado, cada archivo Markdown del gestor de archivos muestra la acción `Vista previa de Markdown` en su menú secundario. Tóquela para leer el documento con formato, como una página web, en lugar de un bloque de texto fuente.",
   "p_introduction_secure": "El complemento hace una sola cosa y la hace con seguridad: renderizado de solo lectura. El visor nunca ejecuta scripts, solo puede leer los archivos autorizados temporalmente por el anfitrión y realiza todo el renderizado en su propia pantalla. No modifica AutoJs6 ni afecta al entorno de ejecución de scripts.",
   "h3_functions": "Puntos destacados",
   "highlights": [
@@ -51,7 +51,7 @@
     },
     {
       "question": "Puede previsualizar archivos HTML?",
-      "answer": "No. Este complemento se centra en Markdown. La vista previa de HTML la ofrece el complemento independiente HTML Preview; consulte los enlaces más abajo."
+      "answer": "No. Este complemento se centra en Markdown. La vista previa de HTML la ofrece el complemento independiente HTML Previewer; consulte los enlaces más abajo."
     },
     {
       "question": "Cómo funciona el CSS personalizado?",
@@ -88,5 +88,5 @@
   "h3_links": "Enlaces",
   "text_link_autojs6_docs": "Documentación de AutoJs6",
   "text_link_format_reference": "Especificación CommonMark",
-  "text_link_html_preview": "Complemento HTML Preview (vista previa de archivos HTML)"
+  "text_link_html_previewer": "Complemento HTML Previewer (vista previa de archivos HTML)"
 }

@@ -23,7 +23,7 @@
 
 ###### 2026/08/06
 
-* `Feature` First release of Markdown Preview: a `Preview Markdown` overflow menu action for the AutoJs6 file manager that renders a single document read-only
+* `Feature` First release of Markdown Previewer: a `Markdown Previewer` overflow menu action for the AutoJs6 file manager that renders a single document read-only
 * `Feature` Recognizes 10 extensions (md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd) plus the `text/markdown` and `text/x-markdown` MIME types
 * `Feature` Renders tables, task lists, strikethrough, automatic links, heading anchors, and in-document images
 * `Feature` Ships GitHub (Auto / Light / Dark), Paper, and Sepia themes with custom CSS import, manual refresh, and fullscreen mode

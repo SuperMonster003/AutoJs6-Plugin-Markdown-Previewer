@@ -1,6 +1,6 @@
-ファイルマネージャーで Markdown Preview を使用します:
+ファイルマネージャーで Markdown Previewer を使用します:
 
-1. `Markdown Preview` プラグインをインストールして有効にします.
+1. `Markdown Previewer` プラグインをインストールして有効にします.
 2. 対応する Markdown ファイルのオーバーフローメニューを開きます.
 3. `Markdown をプレビュー` を選択します.
 

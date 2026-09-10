@@ -1,6 +1,6 @@
-在檔案管理器中使用 Markdown Preview:
+在檔案管理器中使用 Markdown Previewer:
 
-1. 安裝並啟用 `Markdown Preview` 外掛.
+1. 安裝並啟用 `Markdown Previewer` 外掛.
 2. 開啟一個受支援 Markdown 檔案的更多選單.
 3. 選擇 `預覽 Markdown`.
 

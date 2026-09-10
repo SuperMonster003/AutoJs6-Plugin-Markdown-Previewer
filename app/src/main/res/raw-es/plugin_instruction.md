@@ -1,6 +1,6 @@
-Use Markdown Preview desde el gestor de archivos:
+Use Markdown Previewer desde el gestor de archivos:
 
-1. Instale y active el complemento `Markdown Preview`.
+1. Instale y active el complemento `Markdown Previewer`.
 2. Abra el menú secundario de un archivo Markdown compatible.
 3. Seleccione `Vista previa de Markdown`.
 

@@ -1,0 +1,30 @@
+:root {
+    color-scheme: light;
+    --previewer-bg: #faf8f2;
+    --previewer-fg: #27231d;
+    --previewer-muted: #746c60;
+    --previewer-border: #d8d0c2;
+    --previewer-link: #315f8a;
+    --previewer-code-bg: #8b7b681a;
+    --previewer-block-bg: #f1ede4;
+    --previewer-mark-bg: #f5df91;
+    --previewer-syntax-attribute: #2c5282;
+    --previewer-syntax-comment: #746c60;
+    --previewer-syntax-function: #6b46c1;
+    --previewer-syntax-keyword: #9b2c2c;
+    --previewer-syntax-meta: #6b46c1;
+    --previewer-syntax-number: #2b6cb0;
+    --previewer-syntax-string: #285e61;
+    --previewer-syntax-tag: #276749;
+    --previewer-syntax-type: #9c4221;
+    --previewer-syntax-variable: #975a16;
+}
+
+body {
+    font-family: Georgia, "Noto Serif", serif;
+    line-height: 1.75;
+}
+
+.markdown-body {
+    max-width: 820px;
+}

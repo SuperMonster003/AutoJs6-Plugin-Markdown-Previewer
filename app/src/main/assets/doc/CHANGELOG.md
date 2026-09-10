@@ -23,7 +23,7 @@
 
 ###### 2026/08/06
 
-* `新增` Markdown Preview 首个版本: 为 AutoJs6 文件管理器提供 `预览 Markdown` 溢出菜单动作, 以只读方式渲染单个文档
+* `新增` Markdown Previewer 首个版本: 为 AutoJs6 文件管理器提供 `预览 Markdown` 溢出菜单动作, 以只读方式渲染单个文档
 * `新增` 识别 md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 共 10 种扩展名以及 `text/markdown` 与 `text/x-markdown` MIME 类型
 * `新增` 支持表格, 任务列表, 删除线, 自动链接, 标题锚点与文档内图片渲染
 * `新增` 内置 GitHub (自动 / 浅色 / 深色), 纸张与棕褐色主题, 支持导入自定义 CSS, 手动刷新与全屏模式

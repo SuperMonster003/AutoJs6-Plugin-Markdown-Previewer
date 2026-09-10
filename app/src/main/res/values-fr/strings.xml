@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_markdown_preview">Prévisualiser Markdown</string>
-    <string name="app_name">Aperçu Markdown</string>
+    <string name="action_markdown_previewer">Prévisualiser Markdown</string>
+    <string name="app_name">Prévisualiseur Markdown</string>
     <string name="dialog_button_cancel">Annuler</string>
     <string name="dialog_button_confirm">Confirmer</string>
     <string name="error_custom_css_file_too_large">Le fichier CSS dépasse la limite de %1$s</string>
@@ -27,14 +27,14 @@
     <string name="text_fullscreen_mode">Mode plein écran</string>
     <string name="text_failed_to_import">Importation du fichier CSS impossible</string>
     <string name="text_import_custom_css">Importer un CSS personnalisé</string>
-    <string name="text_preview">Aperçu</string>
-    <string name="text_preview_theme">Thème de prévisualisation</string>
-    <string name="text_preview_theme_custom">CSS personnalisé</string>
-    <string name="text_preview_theme_github_auto">GitHub (Auto)</string>
-    <string name="text_preview_theme_github_dark">GitHub sombre</string>
-    <string name="text_preview_theme_github_light">GitHub clair</string>
-    <string name="text_preview_theme_paper">Papier</string>
-    <string name="text_preview_theme_sepia">Sépia</string>
+    <string name="text_previewer">Prévisualiseur</string>
+    <string name="text_previewer_theme">Thème de prévisualisation</string>
+    <string name="text_previewer_theme_custom">CSS personnalisé</string>
+    <string name="text_previewer_theme_github_auto">GitHub (Auto)</string>
+    <string name="text_previewer_theme_github_dark">GitHub sombre</string>
+    <string name="text_previewer_theme_github_light">GitHub clair</string>
+    <string name="text_previewer_theme_paper">Papier</string>
+    <string name="text_previewer_theme_sepia">Sépia</string>
     <string name="text_print_or_export_pdf">Imprimer / exporter en PDF</string>
     <string name="text_refresh">Actualiser</string>
     <string name="text_settings">Paramètres</string>

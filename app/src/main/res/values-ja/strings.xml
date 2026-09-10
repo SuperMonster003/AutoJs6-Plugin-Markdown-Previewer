@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_markdown_preview">Markdown をプレビュー</string>
-    <string name="app_name">Markdown プレビュー</string>
+    <string name="action_markdown_previewer">Markdown をプレビュー</string>
+    <string name="app_name">Markdown プレビューアー</string>
     <string name="dialog_button_cancel">キャンセル</string>
     <string name="dialog_button_confirm">確認</string>
     <string name="error_custom_css_file_too_large">CSS ファイルが %1$s の制限を超えています</string>
@@ -27,14 +27,14 @@
     <string name="text_fullscreen_mode">全画面モード</string>
     <string name="text_failed_to_import">CSS ファイルをインポートできませんでした</string>
     <string name="text_import_custom_css">カスタム CSS をインポート</string>
-    <string name="text_preview">プレビュー</string>
-    <string name="text_preview_theme">プレビューテーマ</string>
-    <string name="text_preview_theme_custom">カスタム CSS</string>
-    <string name="text_preview_theme_github_auto">GitHub (自動)</string>
-    <string name="text_preview_theme_github_dark">GitHub ダーク</string>
-    <string name="text_preview_theme_github_light">GitHub ライト</string>
-    <string name="text_preview_theme_paper">ペーパー</string>
-    <string name="text_preview_theme_sepia">セピア</string>
+    <string name="text_previewer">プレビューアー</string>
+    <string name="text_previewer_theme">プレビューテーマ</string>
+    <string name="text_previewer_theme_custom">カスタム CSS</string>
+    <string name="text_previewer_theme_github_auto">GitHub (自動)</string>
+    <string name="text_previewer_theme_github_dark">GitHub ダーク</string>
+    <string name="text_previewer_theme_github_light">GitHub ライト</string>
+    <string name="text_previewer_theme_paper">ペーパー</string>
+    <string name="text_previewer_theme_sepia">セピア</string>
     <string name="text_print_or_export_pdf">印刷 / PDF にエクスポート</string>
     <string name="text_refresh">再読み込み</string>
     <string name="text_settings">設定</string>

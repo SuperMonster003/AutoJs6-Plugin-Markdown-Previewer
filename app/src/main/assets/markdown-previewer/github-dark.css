@@ -1,0 +1,21 @@
+:root {
+    color-scheme: dark;
+    --previewer-bg: #0d1117;
+    --previewer-fg: #e6edf3;
+    --previewer-muted: #8d96a0;
+    --previewer-border: #30363d;
+    --previewer-link: #4493f8;
+    --previewer-code-bg: #6e768166;
+    --previewer-block-bg: #161b22;
+    --previewer-mark-bg: #bb800966;
+    --previewer-syntax-attribute: #79c0ff;
+    --previewer-syntax-comment: #8b949e;
+    --previewer-syntax-function: #d2a8ff;
+    --previewer-syntax-keyword: #ff7b72;
+    --previewer-syntax-meta: #d2a8ff;
+    --previewer-syntax-number: #79c0ff;
+    --previewer-syntax-string: #a5d6ff;
+    --previewer-syntax-tag: #7ee787;
+    --previewer-syntax-type: #ffa657;
+    --previewer-syntax-variable: #ffa657;
+}

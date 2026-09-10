@@ -23,7 +23,7 @@
 
 ###### 2026/08/06
 
-* `新增` Markdown Preview 首個版本: 為 AutoJs6 檔案管理器提供 `預覽 Markdown` 選單動作, 以唯讀方式渲染單一文件
+* `新增` Markdown Previewer 首個版本: 為 AutoJs6 檔案管理器提供 `預覽 Markdown` 選單動作, 以唯讀方式渲染單一文件
 * `新增` 識別 md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 共 10 種副檔名以及 `text/markdown` 與 `text/x-markdown` MIME 類型
 * `新增` 支援表格, 工作清單, 刪除線, 自動連結, 標題錨點與文件內圖片渲染
 * `新增` 內置 GitHub (自動 / 淺色 / 深色), 紙張與棕褐色主題, 支援匯入自訂 CSS, 手動重新整理與全螢幕模式

@@ -23,7 +23,7 @@
 
 ###### 2026/08/06
 
-* `Función` Primera versión de Markdown Preview: una acción de menú secundario `Vista previa de Markdown` para el gestor de archivos de AutoJs6 que renderiza un documento en modo de solo lectura
+* `Función` Primera versión de Markdown Previewer: una acción de menú secundario `Vista previa de Markdown` para el gestor de archivos de AutoJs6 que renderiza un documento en modo de solo lectura
 * `Función` Reconoce 10 extensiones (md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd) junto con los tipos MIME `text/markdown` y `text/x-markdown`
 * `Función` Renderiza tablas, listas de tareas, tachado, enlaces automáticos, anclas de encabezado e imágenes del documento
 * `Función` Incluye los temas GitHub (Auto / claro / oscuro), Papel y Sepia, con importación de CSS personalizado, actualización manual y modo de pantalla completa

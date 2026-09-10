@@ -1,15 +1,15 @@
 ---
-title: Markdown Preview
+title: Markdown Previewer
 description: Safe, focused reading inside AutoJs6
 status: Ready
 updated: 2026-08-31
 ---
 
-# Markdown Preview
+# Markdown Previewer
 
 **Read safely. Navigate quickly. Export cleanly.**
 
-Markdown Preview turns source text into a calm, readable document without leaving the AutoJs6 file manager.
+Markdown Previewer turns source text into a calm, readable document without leaving the AutoJs6 file manager.
 
 > Documents stay read-only. JavaScript remains disabled, links are validated, and rendered HTML is sanitized before it reaches the WebView.
 
@@ -32,7 +32,7 @@ Markdown Preview turns source text into a calm, readable document without leavin
 ## Code sample
 
 ```kotlin
-val preview = MarkdownPreview(
+val previewer = MarkdownPreviewer(
     scriptsEnabled = false,
     access = AccessMode.ReadOnly,
 )

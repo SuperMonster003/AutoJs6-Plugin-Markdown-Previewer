@@ -23,7 +23,7 @@
 
 ###### 2026/08/06
 
-* `기능` Markdown Preview 첫 릴리스: AutoJs6 파일 관리자에 단일 문서를 읽기 전용으로 렌더링하는 `Markdown 미리보기` 더보기 메뉴 동작 제공
+* `기능` Markdown Previewer 첫 릴리스: AutoJs6 파일 관리자에 단일 문서를 읽기 전용으로 렌더링하는 `Markdown 미리보기` 더보기 메뉴 동작 제공
 * `기능` md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 등 10가지 확장자와 `text/markdown` 및 `text/x-markdown` MIME 유형 인식
 * `기능` 표, 작업 목록, 취소선, 자동 링크, 제목 앵커, 문서 내 이미지 렌더링 지원
 * `기능` GitHub (자동 / 라이트 / 다크), 종이, 세피아 테마 내장, 사용자 지정 CSS 가져오기, 수동 새로 고침, 전체 화면 모드 지원

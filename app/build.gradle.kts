@@ -11,7 +11,7 @@ plugins {
     id("com.android.application")
 }
 
-val globalApplicationId = "io.github.supermonster003.autojs6.plugin.markdownpreview"
+val globalApplicationId = "io.github.supermonster003.autojs6.plugin.markdownpreviewer"
 
 val buildTypeDebug = "debug"
 val buildTypeRelease = "release"

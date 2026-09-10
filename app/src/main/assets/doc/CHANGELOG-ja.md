@@ -23,7 +23,7 @@
 
 ###### 2026/08/06
 
-* `機能` Markdown Preview 初回リリース: AutoJs6 ファイルマネージャーに単一文書を読み取り専用で表示する `Markdown をプレビュー` オーバーフローメニューアクションを提供
+* `機能` Markdown Previewer 初回リリース: AutoJs6 ファイルマネージャーに単一文書を読み取り専用で表示する `Markdown をプレビュー` オーバーフローメニューアクションを提供
 * `機能` md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd の 10 種類の拡張子と `text/markdown` および `text/x-markdown` MIME タイプを認識
 * `機能` 表, タスクリスト, 取り消し線, 自動リンク, 見出しアンカー, 文書内画像のレンダリングに対応
 * `機能` GitHub (自動 / ライト / ダーク), ペーパー, セピアのテーマを搭載し, カスタム CSS のインポート, 手動再読み込み, 全画面モードに対応

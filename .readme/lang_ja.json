@@ -5,7 +5,7 @@
   "h3_languages_with_ascii": "言語 (Languages)",
   "p_languages_all_supported_for_readme": "現在の README.md は次の言語をサポートします",
   "h3_introduction": "概要",
-  "p_introduction": "Markdown Preview は AutoJs6 ファイルマネージャー向けのプレビュープラグインです. 有効にすると, ファイルマネージャー内の各 Markdown ファイルのオーバーフローメニューに `Markdown をプレビュー` アクションが追加されます. タップすれば, 生のソーステキストではなく, Web ページのように整形された文書を読めます.",
+  "p_introduction": "Markdown Previewer は AutoJs6 ファイルマネージャー向けのプレビュープラグインです. 有効にすると, ファイルマネージャー内の各 Markdown ファイルのオーバーフローメニューに `Markdown をプレビュー` アクションが追加されます. タップすれば, 生のソーステキストではなく, Web ページのように整形された文書を読めます.",
   "p_introduction_secure": "このプラグインはひとつのことを安全に行います: 読み取り専用レンダリングです. ビューアーはスクリプトを一切実行せず, ホストが一時的に許可したファイルだけを読み取り, すべての描画を専用画面内で完結させます. AutoJs6 本体を変更せず, スクリプト実行環境にも影響しません.",
   "h3_functions": "主な特長",
   "highlights": [
@@ -51,7 +51,7 @@
     },
     {
       "question": "HTML ファイルもプレビューできる?",
-      "answer": "できません. このプラグインは Markdown 専用です. HTML のプレビューは独立した HTML Preview プラグインが提供します. 下のリンクを参照してください."
+      "answer": "できません. このプラグインは Markdown 専用です. HTML のプレビューは独立した HTML Previewer プラグインが提供します. 下のリンクを参照してください."
     },
     {
       "question": "カスタム CSS はどのように機能する?",
@@ -88,5 +88,5 @@
   "h3_links": "リンク",
   "text_link_autojs6_docs": "AutoJs6 ドキュメント",
   "text_link_format_reference": "CommonMark 仕様",
-  "text_link_html_preview": "HTML Preview プラグイン (HTML ファイルのプレビュー)"
+  "text_link_html_previewer": "HTML Previewer プラグイン (HTML ファイルのプレビュー)"
 }

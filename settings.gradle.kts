@@ -1,6 +1,6 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "autojs6-plugin-markdown-preview"
+rootProject.name = "autojs6-plugin-markdown-previewer"
 
 pluginManagement {
     repositories {

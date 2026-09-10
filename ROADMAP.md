@@ -1,8 +1,8 @@
-# Markdown Preview Roadmap
+# Markdown Previewer Roadmap
 
 更新日期: 2026-08-31
 
-本文档是 Markdown Preview 从单文件只读查看器逐步演进为更完整 Markdown 阅读方案的执行清单. 每个条目只有在代码/测试与可验证的验收条件同时满足后才可勾选.
+本文档是 Markdown Previewer 从单文件只读查看器逐步演进为更完整 Markdown 阅读方案的执行清单. 每个条目只有在代码/测试与可验证的验收条件同时满足后才可勾选.
 
 ## 状态与证据规则
 
@@ -70,7 +70,7 @@ M0 ──> M1 ──> M2
 - [x] (API/宿主审计) 截至 2026-08-31, vendored `explorer-action-api.aar` 的 `VERSION`, `MIN_SUPPORTED_VERSION`, `MAX_SUPPORTED_VERSION` 均为 `1`, 目标类型仅定义 `TARGET_FILE = 1`; AutoJs6 官方公开上游的 [最新 Release v6.7.0](https://github.com/SuperMonster003/AutoJs6/releases/tag/v6.7.0) 与 [`master/plugin-api`](https://github.com/SuperMonster003/AutoJs6/tree/master/plugin-api) 尚未发布 explorer-action v2. 因此继续固定 v1 兼容边界, 下述实现项保持未勾选.
 - [ ] (API/宿主) 跟进 explorer-action 协议 v2 的多选与目录目标类型, 在保持 v1 兼容的前提下扩展动作目录.
 - [x] (发布) 界面截图物料: `docs/images/screenshots` 提供 4 张 1096 x 2560 真实设备截图, 内容仅使用 `docs/fixtures` 合成文档, 覆盖文件菜单动作, 查看器, 主题对话框与全屏模式; 图片已接入 README 模板及 10 种语言生成链路.
-- [x] (发布) 文档整改后的首个对外版本: `version.properties` 已升级至 v1.1.0 (versionCode 6), 10 种语言 CHANGELOG 已补齐, 签名 APK 已发布至 [GitHub Release v1.1.0](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/releases/tag/v1.1.0).
+- [x] (发布) 文档整改后的首个对外版本: `version.properties` 已升级至 v1.1.0 (versionCode 6), 10 种语言 CHANGELOG 已补齐, 签名 APK 已发布至 [GitHub Release v1.1.0](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/releases/tag/v1.1.0).
 
 验收条件: 升级后的渲染引擎通过现有净化与安全测试全集 (已满足); 协议 v2 条目仅在宿主发布对应能力后开始实施; README 截图在 GitHub 深浅色模式下显示正常.
 
@@ -78,5 +78,5 @@ M0 ──> M1 ──> M2
 
 - 不执行 JavaScript: Mermaid, MathJax 等依赖脚本的动态渲染不在任何里程碑内; 数学与图表如需支持将采用渲染期静态方案另行立项.
 - 不提供编辑能力: 插件保持只读, 写操作超出 explorer-action 只读访问模式的设计边界.
-- 不预览 HTML: HTML 由姊妹插件 [AutoJs6-Plugin-HTML-Preview](https://github.com/SuperMonster003/AutoJs6-Plugin-HTML-Preview) 负责, 本插件仅保留扩展名与 MIME 冲突检测.
+- 不预览 HTML: HTML 由姊妹插件 [AutoJs6-Plugin-HTML-Previewer](https://github.com/SuperMonster003/AutoJs6-Plugin-HTML-Previewer) 负责, 本插件仅保留扩展名与 MIME 冲突检测.
 - 不脱离宿主运行: 不添加桌面入口, 不接受第三方应用调用.

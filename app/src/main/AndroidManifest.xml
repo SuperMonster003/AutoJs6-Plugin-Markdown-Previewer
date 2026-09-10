@@ -36,7 +36,7 @@
         </activity>
 
         <activity
-            android:name=".MarkdownPreviewActivity"
+            android:name=".MarkdownPreviewerActivity"
             android:exported="true"
             android:permission="org.autojs.permission.PLUGIN"
             android:theme="@style/AppTheme">

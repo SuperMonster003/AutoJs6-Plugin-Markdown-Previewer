@@ -1,0 +1,408 @@
+:root {
+    color-scheme: light dark;
+    --previewer-bg: #ffffff;
+    --previewer-fg: #1f2328;
+    --previewer-muted: #656d76;
+    --previewer-border: #d0d7de;
+    --previewer-link: #0969da;
+    --previewer-code-bg: #818b981f;
+    --previewer-block-bg: #f6f8fa;
+    --previewer-mark-bg: #fff8c5;
+    --previewer-syntax-attribute: #0550ae;
+    --previewer-syntax-comment: #6e7781;
+    --previewer-syntax-function: #8250df;
+    --previewer-syntax-keyword: #cf222e;
+    --previewer-syntax-meta: #8250df;
+    --previewer-syntax-number: #0550ae;
+    --previewer-syntax-string: #0a3069;
+    --previewer-syntax-tag: #116329;
+    --previewer-syntax-type: #953800;
+    --previewer-syntax-variable: #953800;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--previewer-bg);
+    color: var(--previewer-fg);
+}
+
+body {
+    overflow-wrap: anywhere;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.markdown-body {
+    width: 100%;
+    max-width: 980px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 24px 20px 48px;
+}
+
+.markdown-body > :first-child {
+    margin-top: 0 !important;
+}
+
+.markdown-body > :last-child {
+    margin-bottom: 0 !important;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.markdown-body h1 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--previewer-border);
+    font-size: 2em;
+}
+
+.markdown-body h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--previewer-border);
+    font-size: 1.5em;
+}
+
+.markdown-body h3 {
+    font-size: 1.25em;
+}
+
+.markdown-body h4 {
+    font-size: 1em;
+}
+
+.markdown-body h5 {
+    font-size: 0.875em;
+}
+
+.markdown-body h6 {
+    color: var(--previewer-muted);
+    font-size: 0.85em;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body .markdown-table-wrapper,
+.markdown-body pre,
+.markdown-body details {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.markdown-body a {
+    color: var(--previewer-link);
+    text-decoration: none;
+}
+
+.markdown-body a:hover {
+    text-decoration: underline;
+}
+
+.markdown-body strong {
+    font-weight: 600;
+}
+
+.markdown-body blockquote {
+    padding: 0 1em;
+    border-left: 0.25em solid var(--previewer-border);
+    color: var(--previewer-muted);
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    padding-left: 2em;
+}
+
+.markdown-body li + li {
+    margin-top: 0.25em;
+}
+
+.markdown-body .footnotes {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--previewer-border);
+    color: var(--previewer-muted);
+    font-size: 0.875em;
+}
+
+.markdown-body .footnotes > ol {
+    margin-bottom: 0;
+}
+
+.markdown-body .footnotes li > :last-child {
+    margin-bottom: 0;
+}
+
+.markdown-body .footnote-ref {
+    line-height: 0;
+    white-space: nowrap;
+}
+
+.markdown-body a[data-footnote-ref] {
+    padding: 0 0.12em;
+    font-weight: 600;
+}
+
+.markdown-body .footnote-backref {
+    margin-left: 0.2em;
+    white-space: nowrap;
+}
+
+.markdown-body .task-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.markdown-body .task-list-item {
+    list-style: none;
+}
+
+.markdown-body .task-list-item input {
+    width: 1em;
+    height: 1em;
+    margin: 0 0.45em 0.2em 0;
+    vertical-align: middle;
+}
+
+.markdown-body code,
+.markdown-body tt {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    background: var(--previewer-code-bg);
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: 85%;
+}
+
+.markdown-body pre {
+    overflow: auto;
+    padding: 16px;
+    border-radius: 6px;
+    background: var(--previewer-block-bg);
+    line-height: 1.45;
+}
+
+.markdown-body pre code {
+    display: inline;
+    overflow: visible;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 100%;
+    white-space: pre;
+}
+
+.markdown-body pre code .syntax-comment {
+    color: var(--previewer-syntax-comment);
+    font-style: italic;
+}
+
+.markdown-body pre code .syntax-keyword,
+.markdown-body pre code .syntax-operator {
+    color: var(--previewer-syntax-keyword);
+}
+
+.markdown-body pre code .syntax-literal,
+.markdown-body pre code .syntax-number {
+    color: var(--previewer-syntax-number);
+}
+
+.markdown-body pre code .syntax-string {
+    color: var(--previewer-syntax-string);
+}
+
+.markdown-body pre code .syntax-function {
+    color: var(--previewer-syntax-function);
+}
+
+.markdown-body pre code .syntax-meta {
+    color: var(--previewer-syntax-meta);
+}
+
+.markdown-body pre code .syntax-type {
+    color: var(--previewer-syntax-type);
+}
+
+.markdown-body pre code .syntax-property,
+.markdown-body pre code .syntax-attribute {
+    color: var(--previewer-syntax-attribute);
+}
+
+.markdown-body pre code .syntax-variable {
+    color: var(--previewer-syntax-variable);
+}
+
+.markdown-body pre code .syntax-tag {
+    color: var(--previewer-syntax-tag);
+}
+
+.markdown-body .markdown-table-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.markdown-body .markdown-table-wrapper table {
+    display: table;
+    width: max-content;
+    max-width: none;
+    margin: 0;
+    overflow: visible;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.markdown-body th,
+.markdown-body td {
+    padding: 6px 13px;
+    border: 1px solid var(--previewer-border);
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.markdown-body th {
+    font-weight: 600;
+}
+
+.markdown-body tr {
+    border-top: 1px solid var(--previewer-border);
+    background: var(--previewer-bg);
+}
+
+.markdown-body tr:nth-child(2n) {
+    background: var(--previewer-block-bg);
+}
+
+.markdown-body hr {
+    height: 0.25em;
+    margin: 24px 0;
+    padding: 0;
+    border: 0;
+    background: var(--previewer-border);
+}
+
+.markdown-body img {
+    max-width: 100%;
+    box-sizing: content-box;
+}
+
+.markdown-body video,
+.markdown-body svg,
+.markdown-body canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.markdown-body mark {
+    background: var(--previewer-mark-bg);
+}
+
+.markdown-body [align="center"] {
+    text-align: center;
+}
+
+.markdown-body summary {
+    cursor: pointer;
+}
+
+.markdown-body details[open] > summary {
+    margin-bottom: 16px;
+}
+
+.markdown-body .markdown-front-matter {
+    border: 1px solid var(--previewer-border);
+    border-radius: 6px;
+    background: var(--previewer-block-bg);
+}
+
+.markdown-body .markdown-front-matter > summary {
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: var(--previewer-muted);
+    font-weight: 600;
+}
+
+.markdown-body .markdown-front-matter[open] > summary {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--previewer-border);
+    border-radius: 6px 6px 0 0;
+}
+
+.markdown-body .markdown-front-matter > pre {
+    margin-bottom: 0;
+    border-radius: 0 0 6px 6px;
+    background: var(--previewer-bg);
+}
+
+@media (max-width: 767px) {
+    .markdown-body {
+        padding: 16px 16px 40px;
+    }
+}
+
+@media print {
+    html,
+    body {
+        min-height: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .markdown-body {
+        max-width: none;
+        padding: 0;
+    }
+
+    .markdown-body .markdown-table-wrapper {
+        overflow: visible;
+    }
+
+    .markdown-body .markdown-table-wrapper table {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .markdown-body th,
+    .markdown-body td {
+        overflow-wrap: anywhere;
+    }
+
+    .markdown-body thead {
+        display: table-header-group;
+    }
+
+    .markdown-body tr,
+    .markdown-body img,
+    .markdown-body pre,
+    .markdown-body blockquote,
+    .markdown-body details {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .markdown-body pre {
+        overflow: visible;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+}

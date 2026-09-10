@@ -212,4 +212,4 @@ app/src/main/res/raw-*/plugin_instruction.md
 
 - {{ text_link_autojs6_docs }}: {{ docs_autojs6_url }}
 - {{ text_link_format_reference }}: {{ format_reference_url }}
-- {{ text_link_html_preview }}: {{ html_preview_repo_url }}
+- {{ text_link_html_previewer }}: {{ html_previewer_repo_url }}

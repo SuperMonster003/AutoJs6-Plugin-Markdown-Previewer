@@ -1,4 +1,4 @@
--keep class io.github.supermonster003.autojs6.plugin.markdownpreview.** { *; }
+-keep class io.github.supermonster003.autojs6.plugin.markdownpreviewer.** { *; }
 -keep class org.autojs.plugin.common.api.PluginInfo { *; }
 -keep class org.autojs.plugin.explorer.api.** { *; }
 

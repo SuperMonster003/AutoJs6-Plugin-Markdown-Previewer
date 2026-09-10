@@ -5,7 +5,7 @@
   "h3_languages_with_ascii": "語言 (Languages)",
   "p_languages_all_supported_for_readme": "目前 README.md 支援以下語言",
   "h3_introduction": "簡介",
-  "p_introduction": "Markdown Preview 是 AutoJs6 檔案管理器的預覽外掛. 啟用後, 檔案管理器中每個 Markdown 檔案的更多選單都會出現 `預覽 Markdown` 動作, 點擊即可像閱讀網頁一樣檢視排版後的文件, 而不再是一整片原始碼文字.",
+  "p_introduction": "Markdown Previewer 是 AutoJs6 檔案管理器的預覽外掛. 啟用後, 檔案管理器中每個 Markdown 檔案的更多選單都會出現 `預覽 Markdown` 動作, 點擊即可像閱讀網頁一樣檢視排版後的文件, 而不再是一整片原始碼文字.",
   "p_introduction_secure": "外掛只做一件事並把它做穩: 唯讀轉譯. 檢視器不執行任何指令碼, 只能讀取宿主暫時授權的檔案, 轉譯在外掛的獨立介面中完成, 不改動 AutoJs6 本體, 也不影響指令碼執行環境.",
   "h3_functions": "功能亮點",
   "highlights": [
@@ -51,7 +51,7 @@
     },
     {
       "question": "能用它預覽 HTML 檔案嗎?",
-      "answer": "不能. 本外掛專注 Markdown, HTML 預覽由獨立的 HTML Preview 外掛提供, 見下方相關連結."
+      "answer": "不能. 本外掛專注 Markdown, HTML 預覽由獨立的 HTML Previewer 外掛提供, 見下方相關連結."
     },
     {
       "question": "自訂 CSS 是如何生效的?",
@@ -88,5 +88,5 @@
   "h3_links": "相關連結",
   "text_link_autojs6_docs": "AutoJs6 文件",
   "text_link_format_reference": "CommonMark 規範",
-  "text_link_html_preview": "HTML Preview 外掛 (預覽 HTML 檔案)"
+  "text_link_html_previewer": "HTML Previewer 外掛 (預覽 HTML 檔案)"
 }

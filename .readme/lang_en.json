@@ -1,17 +1,17 @@
 {
   "$name": "English",
   "text_current_lowercase": "current",
-  "text_plugin_synopsis": "File manager plugin. Secure read-only preview for Markdown files",
+  "text_plugin_synopsis": "File manager plugin. Secure read-only previewer for Markdown files",
   "h3_languages_with_ascii": "Languages",
   "p_languages_all_supported_for_readme": "The current README.md supports the following languages",
   "h3_introduction": "Introduction",
-  "p_introduction": "Markdown Preview is a preview plugin for the AutoJs6 file manager. Once enabled, every Markdown file in the file manager gains a `Preview Markdown` action in its overflow menu. Tap it to read the document nicely rendered, like a web page, instead of a wall of raw source text.",
+  "p_introduction": "Markdown Previewer is a previewer plugin for the AutoJs6 file manager. Once enabled, every Markdown file in the file manager gains a `Markdown Previewer` action in its overflow menu. Tap it to read the document nicely rendered, like a web page, instead of a wall of raw source text.",
   "p_introduction_secure": "The plugin does one thing and does it safely: read-only rendering. The viewer never executes scripts, can only read files temporarily authorized by the host, and renders everything in its own screen. It does not modify AutoJs6 itself and has no effect on the script runtime.",
   "h3_functions": "Highlights",
   "highlights": [
     "Read rendered Markdown documents right inside the AutoJs6 file manager, with no file exports and no third-party reader apps.",
     "Tables, task lists, strikethrough, automatic links, heading anchors, and in-document images work out of the box, covering common GitHub-style writing.",
-    "Five built-in preview themes: GitHub (Auto), GitHub Light, GitHub Dark, Paper, and Sepia. The auto theme follows the system light/dark mode.",
+    "Five built-in previewer themes: GitHub (Auto), GitHub Light, GitHub Dark, Paper, and Sepia. The auto theme follows the system light/dark mode.",
     "Import a custom CSS file to build your own reading style. It layers on top of the built-in styling and can be cleared with one tap.",
     "Immersive fullscreen mode with an optional `Start in fullscreen mode` preference. The back button leaves fullscreen first instead of closing the page.",
     "Pinch to zoom, manual refresh, horizontally scrollable tables, and automatic BOM-based detection of UTF-8 / UTF-16 / UTF-32 encodings.",
@@ -27,18 +27,18 @@
   "p_usage_steps_intro": "It takes 4 steps from installation to your first rendered document",
   "usage_steps": [
     "Download and install the plugin APK. The plugin has no launcher icon; after installation it is managed entirely by AutoJs6.",
-    "Open AutoJs6, enter the `Plugin center`, locate `Markdown Preview`, and enable it.",
+    "Open AutoJs6, enter the `Plugin center`, locate `Markdown Previewer`, and enable it.",
     "In the AutoJs6 file manager, locate any Markdown file (such as `README.md`) and open its overflow menu.",
-    "Select `Preview Markdown`. The document opens rendered in a dedicated viewer."
+    "Select `Markdown Previewer`. The document opens rendered in a dedicated viewer."
   ],
-  "p_usage_viewer_tips": "Inside the viewer, the top-right menu offers `Refresh`, `Preview theme`, `Import custom CSS`, `Fullscreen mode`, and `Settings`, where `Settings` provides the `Start in fullscreen mode` switch. http/https links in the document open in the system browser, while heading anchor links jump within the viewer.",
+  "p_usage_viewer_tips": "Inside the viewer, the top-right menu offers `Refresh`, `Previewer theme`, `Import custom CSS`, `Fullscreen mode`, and `Settings`, where `Settings` provides the `Start in fullscreen mode` switch. http/https links in the document open in the system browser, while heading anchor links jump within the viewer.",
   "h3_supported_formats": "Supported Formats",
   "p_supported_formats": "The plugin recognizes the following filename extensions",
-  "p_supported_formats_note": "Files whose extension is not listed but whose MIME type is `text/markdown` or `text/x-markdown` can be previewed as well. A single document may be at most {{ limit_markdown_size }}; oversized files produce a clear message instead of a truncated rendering.",
+  "p_supported_formats_note": "Files whose extension is not listed but whose MIME type is `text/markdown` or `text/x-markdown` can be viewed as well. A single document may be at most {{ limit_markdown_size }}; oversized files produce a clear message instead of a truncated rendering.",
   "h3_faq": "FAQ",
   "faq": [
     {
-      "question": "The file menu does not show `Preview Markdown`?",
+      "question": "The file menu does not show `Markdown Previewer`?",
       "answer": "Check the following in order: the AutoJs6 version code is at least {{ required_host_build }} (version 6.8.0 or later qualifies); the plugin is enabled in the `Plugin center`; and the file extension is in the supported list. If any of the three fails, the menu action will not appear."
     },
     {
@@ -50,8 +50,8 @@
       "answer": "The viewer loads only three kinds of images: local images referenced by relative paths within the document directory (including subdirectories), inline `data:` images, and public `https` images. Plain `http` images and private or reserved network addresses are blocked by the security policy."
     },
     {
-      "question": "Can it preview HTML files?",
-      "answer": "No. This plugin focuses on Markdown. HTML previewing is provided by the separate HTML Preview plugin; see the links below."
+      "question": "Can it display HTML files?",
+      "answer": "No. This plugin focuses on Markdown. HTML viewing is provided by the separate HTML Previewer plugin; see the links below."
     },
     {
       "question": "How does custom CSS work?",
@@ -88,5 +88,5 @@
   "h3_links": "Links",
   "text_link_autojs6_docs": "AutoJs6 documentation",
   "text_link_format_reference": "CommonMark specification",
-  "text_link_html_preview": "HTML Preview plugin (previews HTML files)"
+  "text_link_html_previewer": "HTML Previewer plugin (renders HTML files)"
 }

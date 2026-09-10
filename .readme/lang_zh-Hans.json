@@ -5,7 +5,7 @@
   "h3_languages_with_ascii": "语言 (Languages)",
   "p_languages_all_supported_for_readme": "当前 README.md 支持以下语言",
   "h3_introduction": "简介",
-  "p_introduction": "Markdown Preview 是 AutoJs6 文件管理器的预览插件. 启用后, 文件管理器中每个 Markdown 文件的溢出菜单都会出现 `预览 Markdown` 动作, 点击即可像阅读网页一样查看排版后的文档, 而不再是一整片源码文本.",
+  "p_introduction": "Markdown Previewer 是 AutoJs6 文件管理器的预览插件. 启用后, 文件管理器中每个 Markdown 文件的溢出菜单都会出现 `预览 Markdown` 动作, 点击即可像阅读网页一样查看排版后的文档, 而不再是一整片源码文本.",
   "p_introduction_secure": "插件只做一件事并把它做稳: 只读渲染. 查看器不执行任何脚本, 只能读取宿主临时授权的文件, 渲染在插件的独立界面中完成, 不改动 AutoJs6 本体, 也不影响脚本运行环境.",
   "h3_functions": "功能亮点",
   "highlights": [
@@ -51,7 +51,7 @@
     },
     {
       "question": "能用它预览 HTML 文件吗?",
-      "answer": "不能. 本插件专注 Markdown, HTML 预览由独立的 HTML Preview 插件提供, 见下方相关链接."
+      "answer": "不能. 本插件专注 Markdown, HTML 预览由独立的 HTML Previewer 插件提供, 见下方相关链接."
     },
     {
       "question": "自定义 CSS 是如何生效的?",
@@ -88,5 +88,5 @@
   "h3_links": "相关链接",
   "text_link_autojs6_docs": "AutoJs6 文档",
   "text_link_format_reference": "CommonMark 规范",
-  "text_link_html_preview": "HTML Preview 插件 (预览 HTML 文件)"
+  "text_link_html_previewer": "HTML Previewer 插件 (预览 HTML 文件)"
 }

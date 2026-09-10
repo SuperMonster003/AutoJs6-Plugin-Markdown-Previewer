@@ -9,11 +9,11 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/markdown_preview_test_file_paths" />
+                android:resource="@xml/markdown_previewer_test_file_paths" />
         </provider>
 
         <activity
-            android:name=".MarkdownPreviewWebViewTestActivity"
+            android:name=".MarkdownPreviewerWebViewTestActivity"
             android:exported="false"
             android:hardwareAccelerated="true"
             android:theme="@style/AppTheme" />

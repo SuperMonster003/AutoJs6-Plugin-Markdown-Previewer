@@ -2,15 +2,15 @@
 
 <div align="center">
   <p>
-    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-preview-ic-launcher" border="0" width="128" />
+    <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
   <p>파일 관리자 플러그인. Markdown 파일의 안전한 읽기 전용 미리보기</p>
 
   <p>
-    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Preview?label=Release"/></a>
-    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/issues"><img alt="GitHub closed issues" src="https://img.shields.io/github/issues/SuperMonster003/AutoJs6-Plugin-Markdown-Preview?color=A24232&label=Issues"/></a>
-    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/SuperMonster003/AutoJs6-Plugin-Markdown-Preview?color=534BAE&label=License"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer?label=Release"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/issues"><img alt="GitHub closed issues" src="https://img.shields.io/github/issues/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer?color=A24232&label=Issues"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer?color=534BAE&label=License"/></a>
   </p>
 </div>
 
@@ -22,16 +22,16 @@
 
 현재 README.md는 다음 언어를 지원합니다:
 
-- [简体中文 [zh-Hans]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/.readme/README-zh-Hans.md)
-- [繁體中文 (香港) [zh-Hant-HK]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/.readme/README-zh-Hant-HK.md)
-- [繁體中文 (台灣) [zh-Hant-TW]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/.readme/README-zh-Hant-TW.md)
-- [English [en]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/.readme/README-en.md)
-- [Français [fr]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/.readme/README-fr.md)
-- [Español [es]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/.readme/README-es.md)
-- [日本語 [ja]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/.readme/README-ja.md)
+- [简体中文 [zh-Hans]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/.readme/README-zh-Hans.md)
+- [繁體中文 (香港) [zh-Hant-HK]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/.readme/README-zh-Hant-HK.md)
+- [繁體中文 (台灣) [zh-Hant-TW]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/.readme/README-zh-Hant-TW.md)
+- [English [en]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/.readme/README-en.md)
+- [Français [fr]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/.readme/README-fr.md)
+- [Español [es]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/.readme/README-es.md)
+- [日本語 [ja]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/.readme/README-ja.md)
 - 한국어 [ko] # 현재
-- [Русский [ru]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/.readme/README-ru.md)
-- [العربية [ar]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/.readme/README-ar.md)
+- [Русский [ru]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/.readme/README-ru.md)
+- [العربية [ar]](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/.readme/README-ar.md)
 
 ******
 
@@ -39,7 +39,7 @@
 
 ******
 
-Markdown Preview는 AutoJs6 파일 관리자를 위한 미리보기 플러그인입니다. 활성화하면 파일 관리자의 모든 Markdown 파일 더보기 메뉴에 `Markdown 미리보기` 동작이 추가됩니다. 이를 탭하면 원시 소스 텍스트 덩어리 대신 웹 페이지처럼 보기 좋게 렌더링된 문서를 읽을 수 있습니다.
+Markdown Previewer는 AutoJs6 파일 관리자를 위한 미리보기 플러그인입니다. 활성화하면 파일 관리자의 모든 Markdown 파일 더보기 메뉴에 `Markdown 미리보기` 동작이 추가됩니다. 이를 탭하면 원시 소스 텍스트 덩어리 대신 웹 페이지처럼 보기 좋게 렌더링된 문서를 읽을 수 있습니다.
 
 이 플러그인은 한 가지 일을 안전하게 수행합니다: 읽기 전용 렌더링입니다. 뷰어는 스크립트를 전혀 실행하지 않고, 호스트가 임시로 허가한 파일만 읽을 수 있으며, 모든 렌더링을 자체 화면 안에서 끝냅니다. AutoJs6 본체를 수정하지 않으며 스크립트 실행 환경에도 영향을 주지 않습니다.
 
@@ -66,24 +66,24 @@ Markdown Preview는 AutoJs6 파일 관리자를 위한 미리보기 플러그인
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/file-menu-action.png?raw=true" alt="파일 메뉴 동작" width="300" />
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/docs/images/screenshots/file-menu-action.png?raw=true" alt="파일 메뉴 동작" width="300" />
       <br />
       <sub>파일 메뉴 동작</sub>
     </td>
     <td align="center">
-      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/viewer.png?raw=true" alt="문서 뷰어" width="300" />
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/docs/images/screenshots/viewer.png?raw=true" alt="문서 뷰어" width="300" />
       <br />
       <sub>문서 뷰어</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/theme-dialog.png?raw=true" alt="테마 선택" width="300" />
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/docs/images/screenshots/theme-dialog.png?raw=true" alt="테마 선택" width="300" />
       <br />
       <sub>테마 선택</sub>
     </td>
     <td align="center">
-      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/docs/images/screenshots/fullscreen.png?raw=true" alt="전체 화면 읽기" width="300" />
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/docs/images/screenshots/fullscreen.png?raw=true" alt="전체 화면 읽기" width="300" />
       <br />
       <sub>전체 화면 읽기</sub>
     </td>
@@ -102,7 +102,7 @@ Markdown Preview는 AutoJs6 파일 관리자를 위한 미리보기 플러그인
 host app: AutoJs6 (org.autojs.autojs6)
 minimum host build: 5268
 minimum android: 7.0 (API 24)
-plugin package: io.github.supermonster003.autojs6.plugin.markdownpreview
+plugin package: io.github.supermonster003.autojs6.plugin.markdownpreviewer
 ```
 
 설치부터 첫 문서를 여는 것까지 4단계입니다:
@@ -148,7 +148,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 
 **HTML 파일도 미리 볼 수 있나요?**
 
-아니요. 이 플러그인은 Markdown 전용입니다. HTML 미리보기는 별도의 HTML Preview 플러그인이 제공합니다. 아래 링크를 참고하세요.
+아니요. 이 플러그인은 Markdown 전용입니다. HTML 미리보기는 별도의 HTML Previewer 플러그인이 제공합니다. 아래 링크를 참고하세요.
 
 **사용자 지정 CSS는 어떻게 동작하나요?**
 
@@ -184,7 +184,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 ```text
 service action: org.autojs.plugin.EXPLORER_ACTION
 execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
-plugin id: markdown-preview
+plugin id: markdown-previewer
 engine: explorer-action
 variant: default
 required host build: 5268
@@ -200,7 +200,7 @@ required host build: 5268
 
 완료된 기능과 향후 계획은 체크 가능한 목록으로 ROADMAP.md에서 관리합니다. 체크되지 않은 항목은 의향을 나타내며 현재 기능을 설명하지 않습니다.
 
-- [체크 가능한 ROADMAP.md 열기](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/ROADMAP.md)
+- [체크 가능한 ROADMAP.md 열기](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/ROADMAP.md)
 
 ******
 
@@ -231,7 +231,7 @@ required host build: 5268
 
 ###### 2026/08/06
 
-* `기능` Markdown Preview 첫 릴리스: AutoJs6 파일 관리자에 단일 문서를 읽기 전용으로 렌더링하는 `Markdown 미리보기` 더보기 메뉴 동작 제공
+* `기능` Markdown Previewer 첫 릴리스: AutoJs6 파일 관리자에 단일 문서를 읽기 전용으로 렌더링하는 `Markdown 미리보기` 더보기 메뉴 동작 제공
 * `기능` md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 등 10가지 확장자와 `text/markdown` 및 `text/x-markdown` MIME 유형 인식
 * `기능` 표, 작업 목록, 취소선, 자동 링크, 제목 앵커, 문서 내 이미지 렌더링 지원
 * `기능` GitHub (자동 / 라이트 / 다크), 종이, 세피아 테마 내장, 사용자 지정 CSS 가져오기, 수동 새로 고침, 전체 화면 모드 지원
@@ -241,7 +241,7 @@ required host build: 5268
 
 ##### 전체 기록
 
-* [CHANGELOG-ko.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Preview/blob/master/app/src/main/assets/doc/CHANGELOG-ko.md)
+* [CHANGELOG-ko.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/assets/doc/CHANGELOG-ko.md)
 
 ******
 
@@ -286,4 +286,4 @@ app/src/main/res/raw-*/plugin_instruction.md
 
 - AutoJs6 문서: https://docs.autojs6.com
 - CommonMark 명세: https://commonmark.org
-- HTML Preview 플러그인 (HTML 파일 미리보기): https://github.com/SuperMonster003/AutoJs6-Plugin-HTML-Preview
+- HTML Previewer 플러그인 (HTML 파일 미리보기): https://github.com/SuperMonster003/AutoJs6-Plugin-HTML-Previewer

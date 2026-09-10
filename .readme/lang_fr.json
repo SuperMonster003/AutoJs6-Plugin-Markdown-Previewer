@@ -5,7 +5,7 @@
   "h3_languages_with_ascii": "Langues (Languages)",
   "p_languages_all_supported_for_readme": "Le fichier README.md actuel prend en charge les langues suivantes",
   "h3_introduction": "Introduction",
-  "p_introduction": "Markdown Preview est un plugin d'aperçu pour le gestionnaire de fichiers d'AutoJs6. Une fois active, chaque fichier Markdown du gestionnaire de fichiers propose l'action `Prévisualiser Markdown` dans son menu secondaire. Touchez-la pour lire le document mis en forme comme une page web, au lieu d'un bloc de texte source brut.",
+  "p_introduction": "Markdown Previewer est un plugin d'aperçu pour le gestionnaire de fichiers d'AutoJs6. Une fois active, chaque fichier Markdown du gestionnaire de fichiers propose l'action `Prévisualiser Markdown` dans son menu secondaire. Touchez-la pour lire le document mis en forme comme une page web, au lieu d'un bloc de texte source brut.",
   "p_introduction_secure": "Le plugin fait une seule chose et la fait en toute sécurité: un rendu en lecture seule. La visionneuse n'exécute jamais de scripts, ne peut lire que les fichiers temporairement autorisés par l'hôte et effectue tout le rendu dans son propre écran. Elle ne modifie pas AutoJs6 et n'a aucun effet sur l'environnement d'exécution des scripts.",
   "h3_functions": "Points forts",
   "highlights": [
@@ -51,7 +51,7 @@
     },
     {
       "question": "Peut-il prévisualiser des fichiers HTML?",
-      "answer": "Non. Ce plugin se concentre sur Markdown. L'aperçu HTML est assuré par le plugin distinct HTML Preview; voir les liens ci-dessous."
+      "answer": "Non. Ce plugin se concentre sur Markdown. L'aperçu HTML est assuré par le plugin distinct HTML Previewer; voir les liens ci-dessous."
     },
     {
       "question": "Comment fonctionne le CSS personnalisé?",
@@ -88,5 +88,5 @@
   "h3_links": "Liens",
   "text_link_autojs6_docs": "Documentation AutoJs6",
   "text_link_format_reference": "Spécification CommonMark",
-  "text_link_html_preview": "Plugin HTML Preview (aperçu des fichiers HTML)"
+  "text_link_html_previewer": "Plugin HTML Previewer (aperçu des fichiers HTML)"
 }

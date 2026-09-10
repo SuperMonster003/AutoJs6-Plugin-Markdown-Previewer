@@ -5,7 +5,7 @@
   "h3_languages_with_ascii": "اللغات (Languages)",
   "p_languages_all_supported_for_readme": "يدعم README.md الحالي اللغات التالية",
   "h3_introduction": "مقدمة",
-  "p_introduction": "Markdown Preview هو ملحق معاينة لمدير الملفات في AutoJs6. بعد التمكين, يظهر إجراء `معاينة Markdown` في القائمة الإضافية لكل ملف Markdown في مدير الملفات. اضغط عليه لقراءة المستند بتنسيق جميل مثل صفحة ويب, بدلا من كتلة نص مصدري خام.",
+  "p_introduction": "Markdown Previewer هو ملحق معاينة لمدير الملفات في AutoJs6. بعد التمكين, يظهر إجراء `معاينة Markdown` في القائمة الإضافية لكل ملف Markdown في مدير الملفات. اضغط عليه لقراءة المستند بتنسيق جميل مثل صفحة ويب, بدلا من كتلة نص مصدري خام.",
   "p_introduction_secure": "يقوم الملحق بمهمة واحدة وينجزها بأمان: العرض للقراءة فقط. لا ينفذ العارض أي نصوص برمجية, ولا يقرأ سوى الملفات المصرح بها مؤقتا من المضيف, وينجز كل العرض داخل شاشته الخاصة. لا يعدل AutoJs6 نفسه ولا يؤثر على بيئة تشغيل النصوص البرمجية.",
   "h3_functions": "أبرز الميزات",
   "highlights": [
@@ -51,7 +51,7 @@
     },
     {
       "question": "هل يمكنه معاينة ملفات HTML؟",
-      "answer": "لا. يركز هذا الملحق على Markdown. توفر معاينة HTML عبر ملحق HTML Preview المستقل; انظر الروابط أدناه."
+      "answer": "لا. يركز هذا الملحق على Markdown. توفر معاينة HTML عبر ملحق HTML Previewer المستقل; انظر الروابط أدناه."
     },
     {
       "question": "كيف يعمل CSS المخصص؟",
@@ -88,5 +88,5 @@
   "h3_links": "الروابط",
   "text_link_autojs6_docs": "وثائق AutoJs6",
   "text_link_format_reference": "مواصفة CommonMark",
-  "text_link_html_preview": "ملحق HTML Preview (معاينة ملفات HTML)"
+  "text_link_html_previewer": "ملحق HTML Previewer (معاينة ملفات HTML)"
 }

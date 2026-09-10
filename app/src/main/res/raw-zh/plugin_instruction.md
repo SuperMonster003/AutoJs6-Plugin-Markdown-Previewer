@@ -1,6 +1,6 @@
-在文件管理器中使用 Markdown Preview:
+在文件管理器中使用 Markdown Previewer:
 
-1. 安装并启用 `Markdown Preview` 插件.
+1. 安装并启用 `Markdown Previewer` 插件.
 2. 打开一个受支持 Markdown 文件的溢出菜单.
 3. 选择 `预览 Markdown`.
 

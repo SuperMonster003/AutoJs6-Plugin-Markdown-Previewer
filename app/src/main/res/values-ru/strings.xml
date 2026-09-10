@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_markdown_preview">Предпросмотр Markdown</string>
-    <string name="app_name">Просмотр Markdown</string>
+    <string name="action_markdown_previewer">Предпросмотр Markdown</string>
+    <string name="app_name">Средство просмотра Markdown</string>
     <string name="dialog_button_cancel">Отмена</string>
     <string name="dialog_button_confirm">Подтвердить</string>
     <string name="error_custom_css_file_too_large">Файл CSS превышает ограничение %1$s</string>
@@ -27,14 +27,14 @@
     <string name="text_fullscreen_mode">Полноэкранный режим</string>
     <string name="text_failed_to_import">Не удалось импортировать файл CSS</string>
     <string name="text_import_custom_css">Импортировать пользовательский CSS</string>
-    <string name="text_preview">Предпросмотр</string>
-    <string name="text_preview_theme">Тема просмотра</string>
-    <string name="text_preview_theme_custom">Пользовательский CSS</string>
-    <string name="text_preview_theme_github_auto">GitHub (Авто)</string>
-    <string name="text_preview_theme_github_dark">GitHub темная</string>
-    <string name="text_preview_theme_github_light">GitHub светлая</string>
-    <string name="text_preview_theme_paper">Бумага</string>
-    <string name="text_preview_theme_sepia">Сепия</string>
+    <string name="text_previewer">Средство просмотра</string>
+    <string name="text_previewer_theme">Тема просмотра</string>
+    <string name="text_previewer_theme_custom">Пользовательский CSS</string>
+    <string name="text_previewer_theme_github_auto">GitHub (Авто)</string>
+    <string name="text_previewer_theme_github_dark">GitHub темная</string>
+    <string name="text_previewer_theme_github_light">GitHub светлая</string>
+    <string name="text_previewer_theme_paper">Бумага</string>
+    <string name="text_previewer_theme_sepia">Сепия</string>
     <string name="text_print_or_export_pdf">Печать / экспорт в PDF</string>
     <string name="text_refresh">Обновить</string>
     <string name="text_settings">Настройки</string>

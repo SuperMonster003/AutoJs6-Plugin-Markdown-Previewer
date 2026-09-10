@@ -1,6 +1,6 @@
-Utilisez Markdown Preview depuis le gestionnaire de fichiers:
+Utilisez Markdown Previewer depuis le gestionnaire de fichiers:
 
-1. Installez et activez le plugin `Markdown Preview`.
+1. Installez et activez le plugin `Markdown Previewer`.
 2. Ouvrez le menu secondaire d'un fichier Markdown pris en charge.
 3. Sélectionnez `Prévisualiser Markdown`.
 

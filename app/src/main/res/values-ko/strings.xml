@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_markdown_preview">Markdown 미리보기</string>
-    <string name="app_name">Markdown 미리보기</string>
+    <string name="action_markdown_previewer">Markdown 미리보기</string>
+    <string name="app_name">Markdown 미리보기 도구</string>
     <string name="dialog_button_cancel">취소</string>
     <string name="dialog_button_confirm">확인</string>
     <string name="error_custom_css_file_too_large">CSS 파일이 %1$s 제한을 초과합니다</string>
@@ -27,14 +27,14 @@
     <string name="text_fullscreen_mode">전체 화면 모드</string>
     <string name="text_failed_to_import">CSS 파일을 가져오지 못했습니다</string>
     <string name="text_import_custom_css">사용자 지정 CSS 가져오기</string>
-    <string name="text_preview">미리보기</string>
-    <string name="text_preview_theme">미리보기 테마</string>
-    <string name="text_preview_theme_custom">사용자 지정 CSS</string>
-    <string name="text_preview_theme_github_auto">GitHub (자동)</string>
-    <string name="text_preview_theme_github_dark">GitHub 다크</string>
-    <string name="text_preview_theme_github_light">GitHub 라이트</string>
-    <string name="text_preview_theme_paper">종이</string>
-    <string name="text_preview_theme_sepia">세피아</string>
+    <string name="text_previewer">미리보기 도구</string>
+    <string name="text_previewer_theme">미리보기 테마</string>
+    <string name="text_previewer_theme_custom">사용자 지정 CSS</string>
+    <string name="text_previewer_theme_github_auto">GitHub (자동)</string>
+    <string name="text_previewer_theme_github_dark">GitHub 다크</string>
+    <string name="text_previewer_theme_github_light">GitHub 라이트</string>
+    <string name="text_previewer_theme_paper">종이</string>
+    <string name="text_previewer_theme_sepia">세피아</string>
     <string name="text_print_or_export_pdf">인쇄 / PDF 내보내기</string>
     <string name="text_refresh">새로 고침</string>
     <string name="text_settings">설정</string>

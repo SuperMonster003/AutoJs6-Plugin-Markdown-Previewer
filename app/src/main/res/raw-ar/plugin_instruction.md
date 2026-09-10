@@ -1,6 +1,6 @@
-استخدم Markdown Preview من مدير الملفات:
+استخدم Markdown Previewer من مدير الملفات:
 
-1. ثبت المكون `Markdown Preview` وقم بتمكينه.
+1. ثبت المكون `Markdown Previewer` وقم بتمكينه.
 2. افتح القائمة الإضافية لملف Markdown مدعوم.
 3. اختر `معاينة Markdown`.
 

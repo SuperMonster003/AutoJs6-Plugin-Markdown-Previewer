@@ -7,7 +7,7 @@ These release assets are unedited screenshots captured from a physical Android d
 - Device: physical Android 12 device at 1096 x 2560 pixels.
 - Locale: `en-US`.
 - Host: AutoJs6 6.8.0, build 5276.
-- Plugin: Markdown Preview 1.0.1, version code 5.
+- Plugin build at capture: 1.0.1, version code 5. These historical captures predate the current Previewer naming.
 - Viewer theme: GitHub (Auto) with the device in dark mode.
 - Capture method: Android `screencap` PNG output. No compositing, cropping, AI generation, or post-processing was applied.
 
@@ -20,7 +20,7 @@ These release assets are unedited screenshots captured from a physical Android d
 
 | File | Screen state |
 |---|---|
-| `file-menu-action.png` | AutoJs6 file overflow menu with the `Markdown Preview: Preview Markdown` action visible. |
+| `file-menu-action.png` | AutoJs6 file overflow menu with the plugin's document action visible. |
 | `viewer.png` | Rendered document at its initial scroll position. |
 | `theme-dialog.png` | Five-theme picker over the rendered document. |
 | `fullscreen.png` | Immersive viewer with system bars and third-party overlays hidden. |
