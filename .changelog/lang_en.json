@@ -19,6 +19,9 @@
       ],
       "dependency": [
         "Migrated CommonMark from the legacy Atlassian 0.9.0 fork to the official Maven Central 0.30.0 core and extension modules, with core library desugaring for API 24"
+      ],
+      "fix": [
+        "Fixed primary previewer protocol rejection and settings crashes; synchronized the host appearance, page chrome, and monochrome dialog controls"
       ]
     },
     "v1.0.1": {

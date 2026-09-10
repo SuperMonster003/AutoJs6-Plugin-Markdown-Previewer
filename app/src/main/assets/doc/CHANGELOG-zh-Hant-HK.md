@@ -8,6 +8,7 @@
 * `新增` 新增宿主授權目錄內的相對 Markdown 文件安全跳轉, 支援檢視器內歷史返回與錨點處理
 * `新增` 新增 Android 列印 / PDF 匯出與有界 YAML front matter 顯示
 * `新增` 新增定義式與內聯式 Footnotes, 並提供淨化後的雙向返回連結
+* `修復` 修復主預覽按鈕協議拒絕和設定崩潰; 同步宿主個人化配置, 頁面列配色及對話框黑白控制項
 * `優化` 強化 explorer-action v1 Intent, URI, 路徑, 連結, 資源, HTML 與 Footnotes 驗證, 保持單一檔案唯讀邊界
 * `優化` 新增可勾選 Roadmap, 4 張只含合成資料的實體裝置截圖, 以及涵蓋 10 種語言的可重現 README / CHANGELOG 生成流程
 * `依賴` 從舊 Atlassian 0.9.0 fork 遷移至 Maven Central 官方 CommonMark 0.30.0 core 與擴展模組, 並透過 core library desugaring 保持 API 24 相容

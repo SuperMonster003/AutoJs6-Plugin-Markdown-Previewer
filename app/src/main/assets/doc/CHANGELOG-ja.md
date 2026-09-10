@@ -8,6 +8,7 @@
 * `機能` ホストが許可したディレクトリ内の相対 Markdown 文書への安全な移動を追加し, ビューア内履歴とアンカー処理に対応
 * `機能` Android 印刷 / PDF 書き出しと上限付き YAML front matter 表示を追加
 * `機能` 定義形式とインライン形式の Footnotes を追加し, サニタイズ済み双方向バックリンクに対応
+* `修正` メインプレビューボタンのプロトコル拒否と設定のクラッシュを修正し, ホストの外観, バーの配色, ダイアログの白黒コントロールを同期
 * `改善` 単一ファイル読み取り専用境界を維持しながら, explorer-action v1 Intent, URI, パス, リンク, リソース, HTML, Footnotes の検証を強化
 * `改善` チェック可能な Roadmap, 合成データのみを使った実機スクリーンショット 4 枚, 10 言語向けの再現可能な README / CHANGELOG 生成を追加
 * `依存関係` CommonMark を旧 Atlassian 0.9.0 fork から Maven Central 公式 0.30.0 core / 拡張モジュールへ移行し, core library desugaring で API 24 互換性を維持

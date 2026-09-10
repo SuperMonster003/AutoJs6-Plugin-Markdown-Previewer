@@ -51,7 +51,7 @@ The plugin does one thing and does it safely: read-only rendering. The viewer ne
 
 - Read rendered Markdown documents right inside the AutoJs6 file manager, with no file exports and no third-party reader apps.
 - Tables, task lists, strikethrough, automatic links, heading anchors, and in-document images work out of the box, covering common GitHub-style writing.
-- Five built-in previewer themes: GitHub (Auto), GitHub Light, GitHub Dark, Paper, and Sepia. The auto theme follows the system light/dark mode.
+- GitHub (Auto), GitHub Light, GitHub Dark, Paper, Sepia. Menus and dialogs follow the AutoJs6 language and dark mode. GitHub (Auto), or the automatic HTML theme, follows AutoJs6 as well. The toolbar and system bars use one representative color sampled from the rendered page edges, with contrasting black or white text and icons. For gradients, images, and animation, that color stays fixed until reload to avoid flicker.
 - Import a custom CSS file to build your own reading style. It layers on top of the built-in styling and can be cleared with one tap.
 - Immersive fullscreen mode with an optional `Start in fullscreen mode` preference. The back button leaves fullscreen first instead of closing the page.
 - Pinch to zoom, manual refresh, horizontally scrollable tables, and automatic BOM-based detection of UTF-8 / UTF-16 / UTF-32 encodings.
@@ -216,6 +216,7 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 * `Feature` Added safe navigation to relative Markdown documents inside the host-authorized directory, with in-viewer history and anchor handling
 * `Feature` Added Android printing / PDF export and bounded YAML front matter rendering
 * `Feature` Added definition and inline Footnotes with sanitized bidirectional backlinks
+* `Fix` Fixed primary previewer protocol rejection and settings crashes; synchronized the host appearance, page chrome, and monochrome dialog controls
 * `Improvement` Hardened explorer-action v1 Intent, URI, path, link, resource, HTML, and Footnotes validation while preserving the single-file read-only boundary
 * `Improvement` Added a checkable Roadmap, 4 synthetic-data real-device screenshots, and reproducible README / CHANGELOG generation for 10 languages
 * `Dependency` Migrated CommonMark from the legacy Atlassian 0.9.0 fork to the official Maven Central 0.30.0 core and extension modules, with core library desugaring for API 24

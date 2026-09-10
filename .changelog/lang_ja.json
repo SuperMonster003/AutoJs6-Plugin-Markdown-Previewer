@@ -19,6 +19,9 @@
       ],
       "dependency": [
         "CommonMark を旧 Atlassian 0.9.0 fork から Maven Central 公式 0.30.0 core / 拡張モジュールへ移行し, core library desugaring で API 24 互換性を維持"
+      ],
+      "fix": [
+        "メインプレビューボタンのプロトコル拒否と設定のクラッシュを修正し, ホストの外観, バーの配色, ダイアログの白黒コントロールを同期"
       ]
     },
     "v1.0.1": {

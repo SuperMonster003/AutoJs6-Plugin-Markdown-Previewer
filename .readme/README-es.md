@@ -51,7 +51,7 @@ El complemento hace una sola cosa y la hace con seguridad: renderizado de solo l
 
 - Lea documentos Markdown con formato directamente en el gestor de archivos de AutoJs6, sin exportar archivos ni instalar lectores de terceros.
 - Tablas, listas de tareas, tachado, enlaces automáticos, anclas de encabezado e imágenes del documento funcionan de inmediato y cubren la escritura al estilo de GitHub.
-- Cinco temas integrados: GitHub (Auto), GitHub claro, GitHub oscuro, Papel y Sepia. El tema automático sigue el modo claro/oscuro del sistema.
+- GitHub (Auto), GitHub Light, GitHub Dark, Paper, Sepia. Los menús y diálogos siguen el idioma y modo oscuro de AutoJs6, al igual que GitHub (Auto) y el tema HTML automático. Las barras usan un color representativo de los bordes de la página y texto e iconos negros o blancos con contraste. Para degradados, imágenes y animaciones, el color permanece fijo hasta recargar para evitar parpadeos.
 - Importe un archivo CSS personalizado para crear su propio estilo de lectura. Se superpone al estilo integrado y puede borrarse con un toque.
 - Modo de pantalla completa inmersivo con la opción `Iniciar en modo de pantalla completa`. El botón atrás sale primero de la pantalla completa en lugar de cerrar la página.
 - Zoom con dos dedos, actualización manual, tablas con desplazamiento horizontal y detección automática por BOM de las codificaciones UTF-8 / UTF-16 / UTF-32.
@@ -216,6 +216,7 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 * `Función` Se añadió la navegación segura a documentos Markdown relativos dentro del directorio autorizado por el host, con historial interno y manejo de anclas
 * `Función` Se añadieron la impresión de Android / exportación a PDF y la visualización acotada de front matter YAML
 * `Función` Se añadieron notas al pie definidas y en línea con enlaces de retorno bidireccionales saneados
+* `Corrección` Corregidos el rechazo de protocolo del botón principal y los cierres de ajustes; sincronizados la apariencia de AutoJs6, las barras y los controles monocromos
 * `Mejora` Se reforzó la validación de intents explorer-action v1, URI, rutas, enlaces, recursos, HTML y notas al pie, manteniendo el límite de solo lectura de un archivo
 * `Mejora` Se añadieron una Roadmap verificable, 4 capturas reales con datos sintéticos y generación reproducible de README / CHANGELOG para 10 idiomas
 * `Dependencia` Se migró CommonMark del fork heredado de Atlassian 0.9.0 a los módulos oficiales core y extensiones 0.30.0 de Maven Central, con core library desugaring para API 24

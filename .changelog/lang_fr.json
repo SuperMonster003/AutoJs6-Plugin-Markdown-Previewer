@@ -19,6 +19,9 @@
       ],
       "dependency": [
         "Migration de l'ancien fork Atlassian CommonMark 0.9.0 vers les modules officiels core et extensions 0.30.0 de Maven Central, avec core library desugaring pour l'API 24"
+      ],
+      "fix": [
+        "Correction du rejet du protocole du bouton principal et des plantages des paramètres; apparence AutoJs6, couleurs des barres et contrôles monochromes synchronisés"
       ]
     },
     "v1.0.1": {

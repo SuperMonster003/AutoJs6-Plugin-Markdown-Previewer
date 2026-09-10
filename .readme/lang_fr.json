@@ -11,7 +11,7 @@
   "highlights": [
     "Lisez les documents Markdown mis en forme directement dans le gestionnaire de fichiers d'AutoJs6, sans exporter de fichiers ni installer de lecteur tiers.",
     "Tableaux, listes de tâches, texte barré, liens automatiques, ancres de titres et images du document fonctionnent immédiatement et couvrent l'écriture de style GitHub.",
-    "Cinq thèmes intégrés: GitHub (Auto), GitHub clair, GitHub sombre, Papier et Sépia. Le thème automatique suit le mode clair/sombre du système.",
+    "GitHub (Auto), GitHub Light, GitHub Dark, Paper, Sepia. Les menus et dialogues suivent la langue et le mode sombre AutoJs6, tout comme GitHub (Auto) et le thème HTML automatique. Les barres utilisent une couleur représentative des bords de la page avec du texte et des icônes noirs ou blancs contrastés. Pour les dégradés, images et animations, cette couleur reste fixe jusqu'au rechargement pour éviter le scintillement.",
     "Importez un fichier CSS personnalisé pour créer votre propre style de lecture. Il se superpose au style intégré et peut être effacé d'un geste.",
     "Mode plein écran immersif avec l'option `Démarrer en mode plein écran`. Le bouton retour quitte d'abord le plein écran au lieu de fermer la page.",
     "Zoom par pincement, actualisation manuelle, tableaux à défilement horizontal et détection automatique par BOM des encodages UTF-8 / UTF-16 / UTF-32.",

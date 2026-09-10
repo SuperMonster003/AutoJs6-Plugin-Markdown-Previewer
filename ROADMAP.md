@@ -1,6 +1,6 @@
 # Markdown Previewer Roadmap
 
-更新日期: 2026-08-31
+更新日期: 2026-09-10
 
 本文档是 Markdown Previewer 从单文件只读查看器逐步演进为更完整 Markdown 阅读方案的执行清单. 每个条目只有在代码/测试与可验证的验收条件同时满足后才可勾选.
 
@@ -17,7 +17,7 @@
 | M0 基线 | 已完成 | 单文件只读预览与安全沙盒 | 插件 |
 | M1 阅读体验 | 已完成 | 大纲, 页内查找, 字号, 语法高亮 | 插件 |
 | M2 导航与输出 | 已完成 | 文档间跳转, 打印/PDF, YAML front matter | 插件 |
-| M3 格式与协议 | 进行中 | CommonMark 0.30.0, Footnotes 与截图物料已完成; 协议 v2 等待宿主发布 | 插件/API/宿主/发布 |
+| M3 格式与协议 | 进行中 | CommonMark 0.30.0, Footnotes 与截图物料已完成; 协议 v2 主入口已接入 | 插件/API/宿主/发布 |
 
 依赖顺序:
 
@@ -67,12 +67,13 @@ M0 ──> M1 ──> M2
 - [x] (插件) 渲染引擎升级: 从 JitPack atlassian fork (commonmark 0.9.0) 迁移至 Maven Central 上游 `org.commonmark:0.30.0`; core 与 Autolink / Tables / Strikethrough / HeadingAnchor / Footnotes 使用独立官方模块, Footnotes 同时支持定义式与内联式语法.
 - [x] (插件/安全) Footnotes 输出仅新增 `section` 标签及 `footnotes` / `footnote-ref` / `footnote-backref` 三个固定 class, 4 个已知 footnote data 属性按标签闭集放行并校验回链序号; 任意 class, data 属性, 事件与危险 URI 仍被剥离. 为上游 Java 11 API 启用 core library desugaring, 保持 API 24 最低版本兼容.
 - [x] (测试) 依赖图与源码已无旧 Atlassian 坐标; JVM 53/53, Android 9 / 10 / 12 / 13 / 15 / 16 各 21/21 (合计 126/126), Lint 0 errors / 36 warnings, Release R8 + L8 均通过. v1.1.0 Release APK 为 2,568,596 bytes, SHA-256 `504548D857B6B386124E4188C1023FBE7FF507A5155B0D08B76C341FB7F13603`, APK Signature Scheme v2 与签名证书均验证通过. 根 JitPack 仓库因 CircularReveal / EasyWindow / OpenCC / Toaster 等既有依赖仍需保留, 但 CommonMark 已不再经过 JitPack.
-- [x] (API/宿主审计) 截至 2026-08-31, vendored `explorer-action-api.aar` 的 `VERSION`, `MIN_SUPPORTED_VERSION`, `MAX_SUPPORTED_VERSION` 均为 `1`, 目标类型仅定义 `TARGET_FILE = 1`; AutoJs6 官方公开上游的 [最新 Release v6.7.0](https://github.com/SuperMonster003/AutoJs6/releases/tag/v6.7.0) 与 [`master/plugin-api`](https://github.com/SuperMonster003/AutoJs6/tree/master/plugin-api) 尚未发布 explorer-action v2. 因此继续固定 v1 兼容边界, 下述实现项保持未勾选.
-- [ ] (API/宿主) 跟进 explorer-action 协议 v2 的多选与目录目标类型, 在保持 v1 兼容的前提下扩展动作目录.
+- [x] (API/宿主审计) 当前宿主构建 5279 的协议 v22 继续支持 v2 主入口及两 URI envelope. 插件显式声明 v2, 最低宿主构建 5269; 冻结 AAR 的 Binder 描述符保持适用.
+- [x] (插件/测试) Explorer Action v2 同时注册主预览与溢出菜单动作, 对两入口校验同一单文件只读授权. 多选/目录属于 v4+ 的独立资源模型, 不在本次范围.
+- [x] (插件/测试) 跟随宿主语言与暗色模式, GitHub (Auto) 使用宿主配置; 页面边缘取色统一三处栏位, 黑白前景保持对比度; 设置开关及对话框黑白配色具备设备回归.
 - [x] (发布) 界面截图物料: `docs/images/screenshots` 提供 4 张 1096 x 2560 真实设备截图, 内容仅使用 `docs/fixtures` 合成文档, 覆盖文件菜单动作, 查看器, 主题对话框与全屏模式; 图片已接入 README 模板及 10 种语言生成链路.
 - [x] (发布) 文档整改后的首个对外版本: `version.properties` 已升级至 v1.1.0 (versionCode 6), 10 种语言 CHANGELOG 已补齐, 签名 APK 已发布至 [GitHub Release v1.1.0](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/releases/tag/v1.1.0).
 
-验收条件: 升级后的渲染引擎通过现有净化与安全测试全集 (已满足); 协议 v2 条目仅在宿主发布对应能力后开始实施; README 截图在 GitHub 深浅色模式下显示正常.
+验收条件: 升级后的渲染引擎通过现有净化与安全测试全集 (已满足); 协议 v2 主入口与既有溢出入口均须接受合法授权; README 截图在 GitHub 深浅色模式下显示正常.
 
 ## 边界 (非目标)
 

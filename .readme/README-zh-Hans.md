@@ -51,7 +51,7 @@ Markdown Previewer 是 AutoJs6 文件管理器的预览插件. 启用后, 文件
 
 - 在 AutoJs6 文件管理器内直接阅读排版后的 Markdown 文档, 无需导出文件或安装第三方阅读器.
 - 支持表格, 任务列表, 删除线, 自动链接, 标题锚点与文档内图片, 常见 GitHub 风格写法开箱即用.
-- 内置 GitHub (自动), GitHub 浅色, GitHub 深色, 纸张, 棕褐色共 5 种预览主题, 自动模式跟随系统深浅色切换.
+- GitHub (Auto), GitHub Light, GitHub Dark, Paper, Sepia. 菜单和对话框跟随 AutoJs6 的语言与暗色模式. GitHub (Auto) 和 HTML 自动主题也跟随 AutoJs6. 工具栏及系统栏使用渲染页面边缘的代表色, 配合有对比度的黑色或白色文字与图标. 渐变, 图片和动画背景取色后保持稳定, 重新加载时更新, 避免闪烁.
 - 支持导入自定义 CSS 打造个人阅读样式, 样式叠加在内置排版之上, 可随时一键清除还原.
 - 全屏模式沉浸阅读, 可开启 `以全屏模式启动`, 按返回键优先退出全屏而不会误关页面.
 - 支持双指缩放, 手动刷新与表格横向滚动, 并按 BOM 自动识别 UTF-8 / UTF-16 / UTF-32 编码.
@@ -216,6 +216,7 @@ Explorer Action v2 同时支持单文件的主预览按钮和溢出菜单, 通�
 * `新增` 新增宿主授权目录内的相对 Markdown 文档安全跳转, 支持查看器内历史返回与锚点处理
 * `新增` 新增 Android 打印 / PDF 导出与有界 YAML front matter 展示
 * `新增` 新增定义式与内联式 Footnotes, 并提供净化后的双向回链
+* `修复` 修复主预览按钮协议拒绝和设置崩溃; 同步宿主个性化配置, 页面栏位配色及对话框黑白控件
 * `优化` 强化 explorer-action v1 Intent, URI, 路径, 链接, 资源, HTML 与 Footnotes 校验, 保持单文件只读边界
 * `优化` 新增可勾选 Roadmap, 4 张仅含合成数据的真实设备截图, 以及覆盖 10 种语言的可复现 README / CHANGELOG 生成链路
 * `依赖` 从旧 Atlassian 0.9.0 fork 迁移至 Maven Central 官方 CommonMark 0.30.0 core 与扩展模块, 并通过 core library desugaring 保持 API 24 兼容

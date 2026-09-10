@@ -19,6 +19,9 @@
       ],
       "dependency": [
         "从旧 Atlassian 0.9.0 fork 迁移至 Maven Central 官方 CommonMark 0.30.0 core 与扩展模块, 并通过 core library desugaring 保持 API 24 兼容"
+      ],
+      "fix": [
+        "修复主预览按钮协议拒绝和设置崩溃; 同步宿主个性化配置, 页面栏位配色及对话框黑白控件"
       ]
     },
     "v1.0.1": {
