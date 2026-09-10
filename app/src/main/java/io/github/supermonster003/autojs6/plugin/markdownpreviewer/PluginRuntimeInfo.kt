@@ -8,13 +8,16 @@ import org.autojs.plugin.common.api.PluginInfo
 import org.autojs.plugin.explorer.api.ExplorerActionCapabilityKeys
 import org.autojs.plugin.explorer.api.ExplorerActionCatalogKeys
 import org.autojs.plugin.explorer.api.ExplorerActionPluginIds
-import org.autojs.plugin.explorer.api.ExplorerActionProtocol
 import org.autojs.plugin.explorer.api.ExplorerActionValues
 
 internal object MarkdownPreviewerPlugin {
     const val ID = "markdown-previewer"
+    const val PRIMARY_ACTION_ID = "$ID.primary"
+    // Explorer Action v2 adds primary placement to the unchanged single-file envelope.
+    const val PRIMARY_PLACEMENT = 2
     const val VARIANT = "default"
-    const val REQUIRED_HOST_VERSION = 5268L
+    const val PROTOCOL_VERSION = 2
+    const val REQUIRED_HOST_VERSION = 5269L
     const val LABEL_RESOURCE_NAME = "action_markdown_previewer"
     const val LABEL_FALLBACK = "Markdown Previewer"
     const val ACTIVITY_CLASS_NAME =
@@ -59,21 +62,21 @@ internal fun Context.markdownPreviewerPluginInfo(): PluginInfo {
         supportedAbis = emptyArray()
         capabilities = Bundle().apply {
             putLong(PluginCapabilityKeys.REQUIRES_HOST_VERSION, MarkdownPreviewerPlugin.REQUIRED_HOST_VERSION)
-            putInt(ExplorerActionCapabilityKeys.PROTOCOL_VERSION, ExplorerActionProtocol.VERSION)
+            putInt(ExplorerActionCapabilityKeys.PROTOCOL_VERSION, MarkdownPreviewerPlugin.PROTOCOL_VERSION)
         }
     }
 }
 
 internal fun markdownPreviewerActionCatalog(): Bundle {
-    val action = Bundle().apply {
-        putString(ExplorerActionCatalogKeys.ID, MarkdownPreviewerPlugin.ID)
+    fun action(id: String, placement: Int) = Bundle().apply {
+        putString(ExplorerActionCatalogKeys.ID, id)
         putString(ExplorerActionCatalogKeys.LABEL_RESOURCE_NAME, MarkdownPreviewerPlugin.LABEL_RESOURCE_NAME)
         putString(ExplorerActionCatalogKeys.LABEL_FALLBACK, MarkdownPreviewerPlugin.LABEL_FALLBACK)
         putString(ExplorerActionCatalogKeys.ACTIVITY_CLASS_NAME, MarkdownPreviewerPlugin.ACTIVITY_CLASS_NAME)
         putInt(ExplorerActionCatalogKeys.PRIORITY, 100)
         putInt(ExplorerActionCatalogKeys.TARGET_KIND, ExplorerActionValues.TARGET_FILE)
         putInt(ExplorerActionCatalogKeys.ACCESS_MODE, ExplorerActionValues.ACCESS_READ_ONLY)
-        putInt(ExplorerActionCatalogKeys.PLACEMENT, ExplorerActionValues.PLACEMENT_OVERFLOW)
+        putInt(ExplorerActionCatalogKeys.PLACEMENT, placement)
         putStringArrayList(
             ExplorerActionCatalogKeys.MIME_TYPES,
             ArrayList(MarkdownPreviewerPlugin.MIME_TYPES.asList()),
@@ -84,7 +87,13 @@ internal fun markdownPreviewerActionCatalog(): Bundle {
         )
     }
     return Bundle().apply {
-        putInt(ExplorerActionCatalogKeys.PROTOCOL_VERSION, ExplorerActionProtocol.VERSION)
-        putParcelableArrayList(ExplorerActionCatalogKeys.ACTIONS, arrayListOf(action))
+        putInt(ExplorerActionCatalogKeys.PROTOCOL_VERSION, MarkdownPreviewerPlugin.PROTOCOL_VERSION)
+        putParcelableArrayList(
+            ExplorerActionCatalogKeys.ACTIONS,
+            arrayListOf(
+                action(MarkdownPreviewerPlugin.PRIMARY_ACTION_ID, MarkdownPreviewerPlugin.PRIMARY_PLACEMENT),
+                action(MarkdownPreviewerPlugin.ID, ExplorerActionValues.PLACEMENT_OVERFLOW),
+            ),
+        )
     }
 }

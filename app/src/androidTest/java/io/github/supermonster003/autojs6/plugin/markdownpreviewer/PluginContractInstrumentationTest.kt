@@ -13,7 +13,6 @@ import org.autojs.plugin.explorer.api.ExplorerActionCatalogKeys
 import org.autojs.plugin.explorer.api.ExplorerActionPluginActions
 import org.autojs.plugin.explorer.api.ExplorerActionPluginIds
 import org.autojs.plugin.explorer.api.ExplorerActionPluginPermissions
-import org.autojs.plugin.explorer.api.ExplorerActionProtocol
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
@@ -46,7 +45,7 @@ class PluginContractInstrumentationTest {
             info.capabilities?.getLong(PluginCapabilityKeys.REQUIRES_HOST_VERSION),
         )
         assertEquals(
-            ExplorerActionProtocol.VERSION,
+            MarkdownPreviewerPlugin.PROTOCOL_VERSION,
             info.capabilities?.getInt(ExplorerActionCapabilityKeys.PROTOCOL_VERSION),
         )
     }
@@ -55,9 +54,13 @@ class PluginContractInstrumentationTest {
     fun catalogUsesParcelableBundleAndStringArrayLists() {
         val catalog = markdownPreviewerActionCatalog()
         val actions = catalog.getParcelableArrayList<Bundle>(ExplorerActionCatalogKeys.ACTIONS)
-        val action = actions?.single()
+        val action = actions?.single { it.getString(ExplorerActionCatalogKeys.ID) == MarkdownPreviewerPlugin.ID }
+        assertEquals(2, actions?.size)
+        val primary = actions?.single { it.getString(ExplorerActionCatalogKeys.ID) == MarkdownPreviewerPlugin.PRIMARY_ACTION_ID }
+        assertEquals(2, primary?.getInt(ExplorerActionCatalogKeys.PLACEMENT))
+        assertEquals(MarkdownPreviewerPlugin.ACTIVITY_CLASS_NAME, primary?.getString(ExplorerActionCatalogKeys.ACTIVITY_CLASS_NAME))
 
-        assertEquals(ExplorerActionProtocol.VERSION, catalog.getInt(ExplorerActionCatalogKeys.PROTOCOL_VERSION))
+        assertEquals(MarkdownPreviewerPlugin.PROTOCOL_VERSION, catalog.getInt(ExplorerActionCatalogKeys.PROTOCOL_VERSION))
         assertNotNull(action)
         assertEquals(MarkdownPreviewerPlugin.ID, action?.getString(ExplorerActionCatalogKeys.ID))
         assertEquals(

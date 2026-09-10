@@ -100,7 +100,7 @@ Markdown Previewer は AutoJs6 ファイルマネージャー向けのプレビ�
 
 ```text
 host app: AutoJs6 (org.autojs.autojs6)
-minimum host build: 5268
+minimum host build: 5269
 minimum android: 7.0 (API 24)
 plugin package: io.github.supermonster003.autojs6.plugin.markdownpreviewer
 ```
@@ -112,7 +112,7 @@ plugin package: io.github.supermonster003.autojs6.plugin.markdownpreviewer
 3. AutoJs6 ファイルマネージャーで任意の Markdown ファイル (例: `README.md`) を探し, そのオーバーフローメニューを開きます.
 4. `Markdown をプレビュー` を選択すると, 文書が専用ビューアーで整形表示されます.
 
-ビューアーでは右上のメニューから `再読み込み`, `プレビューテーマ`, `カスタム CSS をインポート`, `全画面モード`, `設定` を利用でき, `設定` には `全画面モードで開始` スイッチがあります. 文書内の http/https リンクはシステムブラウザで開き, 見出しアンカーへのリンクはビューアー内で移動します.
+ビューアーでは右上のメニューから `再読み込み`, `プレビューテーマ`, `カスタム CSS をインポート`, `全画面モード`, `設定` を利用でき, `設定` には `全画面モードで開始` スイッチがあります. 文書内の http/https リンクはシステムブラウザで開き, 見出しアンカーへのリンクはビューアー内で移動します. Explorer Action v2 は単一ファイルのメインプレビューボタンとメニューに対応し, 文書と親ディレクトリへの一時的な読み取り権限を使用します. AutoJs6 ビルド 5269 以降が必要です.
 
 ******
 
@@ -136,7 +136,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 
 **ファイルのメニューに `Markdown をプレビュー` が表示されない?**
 
-次の順に確認してください: AutoJs6 のバージョンコードが 5268 以上か (バージョン 6.8.0 以降なら条件を満たします); プラグインが `プラグインセンター` で有効になっているか; ファイル拡張子が対応リストに含まれているか. どれかひとつでも満たさないと, メニューアクションは表示されません.
+次の順に確認してください: AutoJs6 のバージョンコードが 5269 以上か (バージョン 6.8.0 以降なら条件を満たします); プラグインが `プラグインセンター` で有効になっているか; ファイル拡張子が対応リストに含まれているか. どれかひとつでも満たさないと, メニューアクションは表示されません.
 
 **開くと `Markdown ファイルを読み取れません` と表示される?**
 
@@ -187,10 +187,10 @@ execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
 plugin id: markdown-previewer
 engine: explorer-action
 variant: default
-required host build: 5268
+required host build: 5269
 ```
 
-現在の実装は explorer-action プロトコルバージョン 1 に基づきます: ファイルマネージャーでの単一ファイル読み取り専用オーバーフローメニューアクションのみです. 複数ファイルやディレクトリ単位のアクションはプロトコルの将来バージョンに依存し, ロードマップで追跡しています.
+Explorer Action v2 は単一ファイルのメインプレビューボタンとメニューに対応し, 文書と親ディレクトリへの一時的な読み取り権限を使用します. AutoJs6 ビルド 5269 以降が必要です.
 
 ******
 

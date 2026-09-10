@@ -10,4 +10,4 @@ Supported extensions: `md`, `markdown`, `mdown`, `mkd`, `mkdn`, `mdwn`, `mdtext`
 
 The viewer supports automatic links, tables, strikethrough, heading anchors, task lists, in-document images, built-in themes, custom CSS, refresh, and fullscreen mode.
 
-Version 1 supports only single-file read-only actions in the file manager.
+Explorer Action v2 supports both the primary previewer button and the overflow menu for a single file, using temporary read grants for the document and its parent directory. AutoJs6 build 5269 or later is required.

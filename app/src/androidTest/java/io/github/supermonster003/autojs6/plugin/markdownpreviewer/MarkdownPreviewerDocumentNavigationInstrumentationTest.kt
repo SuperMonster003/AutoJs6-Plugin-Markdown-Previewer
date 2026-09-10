@@ -14,7 +14,6 @@ import androidx.test.runner.AndroidJUnit4
 import org.autojs.plugin.explorer.api.ExplorerActionIntentExtras
 import org.autojs.plugin.explorer.api.ExplorerActionIntentValues
 import org.autojs.plugin.explorer.api.ExplorerActionPluginActions
-import org.autojs.plugin.explorer.api.ExplorerActionProtocol
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -146,7 +145,7 @@ class MarkdownPreviewerDocumentNavigationInstrumentationTest {
                     Intent.FLAG_GRANT_PREFIX_URI_PERMISSION,
             )
             .putExtra(ExplorerActionIntentExtras.ACTION_ID, MarkdownPreviewerPlugin.ID)
-            .putExtra(ExplorerActionIntentExtras.PROTOCOL_VERSION, ExplorerActionProtocol.VERSION)
+            .putExtra(ExplorerActionIntentExtras.PROTOCOL_VERSION, MarkdownPreviewerPlugin.PROTOCOL_VERSION)
             .putExtra(ExplorerActionIntentExtras.DISPLAY_NAME, INITIAL_FILE_NAME)
             .putExtra(ExplorerActionIntentExtras.SIZE, size)
             .putExtra(ExplorerActionIntentExtras.PARENT_URI, parentUri)

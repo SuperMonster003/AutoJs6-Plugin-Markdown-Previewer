@@ -10,7 +10,6 @@ import androidx.test.runner.AndroidJUnit4
 import org.autojs.plugin.explorer.api.ExplorerActionIntentExtras
 import org.autojs.plugin.explorer.api.ExplorerActionIntentValues
 import org.autojs.plugin.explorer.api.ExplorerActionPluginActions
-import org.autojs.plugin.explorer.api.ExplorerActionProtocol
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -40,7 +39,7 @@ class MarkdownPreviewerIntentPolicyInstrumentationTest {
         assertNull(MarkdownPreviewerIntentPolicy.resolve(Intent(validIntent()).setAction(Intent.ACTION_VIEW)))
         assertNull(
             MarkdownPreviewerIntentPolicy.resolve(
-                Intent(validIntent()).putExtra(ExplorerActionIntentExtras.PROTOCOL_VERSION, 2),
+                Intent(validIntent()).putExtra(ExplorerActionIntentExtras.PROTOCOL_VERSION, 3),
             ),
         )
         assertNull(
@@ -126,7 +125,7 @@ class MarkdownPreviewerIntentPolicyInstrumentationTest {
             .setDataAndType(documentUri, "text/markdown")
             .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_PREFIX_URI_PERMISSION)
             .putExtra(ExplorerActionIntentExtras.ACTION_ID, MarkdownPreviewerPlugin.ID)
-            .putExtra(ExplorerActionIntentExtras.PROTOCOL_VERSION, ExplorerActionProtocol.VERSION)
+            .putExtra(ExplorerActionIntentExtras.PROTOCOL_VERSION, MarkdownPreviewerPlugin.PROTOCOL_VERSION)
             .putExtra(ExplorerActionIntentExtras.DISPLAY_NAME, "README.md")
             .putExtra(ExplorerActionIntentExtras.SIZE, 1024L)
             .putExtra(ExplorerActionIntentExtras.PARENT_URI, parentUri)

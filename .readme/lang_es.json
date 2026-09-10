@@ -31,7 +31,7 @@
     "En el gestor de archivos de AutoJs6, localice cualquier archivo Markdown (por ejemplo `README.md`) y abra su menú secundario.",
     "Seleccione `Vista previa de Markdown`. El documento se abre renderizado en un visor dedicado."
   ],
-  "p_usage_viewer_tips": "Dentro del visor, el menú superior derecho ofrece `Actualizar`, `Tema de vista previa`, `Importar CSS personalizado`, `Modo de pantalla completa` y `Configuración`, donde `Configuración` incluye el interruptor `Iniciar en modo de pantalla completa`. Los enlaces http/https del documento se abren en el navegador del sistema, mientras que los enlaces de anclas de encabezado saltan dentro del visor.",
+  "p_usage_viewer_tips": "Dentro del visor, el menú superior derecho ofrece `Actualizar`, `Tema de vista previa`, `Importar CSS personalizado`, `Modo de pantalla completa` y `Configuración`, donde `Configuración` incluye el interruptor `Iniciar en modo de pantalla completa`. Los enlaces http/https del documento se abren en el navegador del sistema, mientras que los enlaces de anclas de encabezado saltan dentro del visor. Explorer Action v2 admite el botón principal y el menú contextual para un archivo, con permisos temporales de lectura del documento y su carpeta. Se requiere AutoJs6 build 5269 o posterior.",
   "h3_supported_formats": "Formatos compatibles",
   "p_supported_formats": "El complemento reconoce las siguientes extensiones de archivo",
   "p_supported_formats_note": "Los archivos cuya extensión no aparece en la lista pero cuyo tipo MIME es `text/markdown` o `text/x-markdown` también pueden previsualizarse. Un documento puede ocupar como máximo {{ limit_markdown_size }}; los archivos que superan el límite generan un mensaje claro en lugar de un renderizado truncado.",
@@ -74,7 +74,7 @@
   ],
   "h3_plugin_interface": "Interfaz del complemento (para desarrolladores)",
   "p_plugin_interface": "El anfitrión descubre e invoca el complemento con las siguientes identidades",
-  "p_plugin_scope": "La implementación actual se basa en la versión 1 del protocolo explorer-action: una acción de menú secundario de solo lectura sobre un único archivo en el gestor de archivos. Las acciones multiarchivo y de directorio dependen de versiones futuras del protocolo y se siguen en la hoja de ruta.",
+  "p_plugin_scope": "Explorer Action v2 admite el botón principal y el menú contextual para un archivo, con permisos temporales de lectura del documento y su carpeta. Se requiere AutoJs6 build 5269 o posterior.",
   "h3_roadmap": "Hoja de ruta",
   "p_roadmap_status": "Las capacidades completadas y los planes futuros se mantienen como una lista verificable en ROADMAP.md. Los elementos sin marcar expresan una intención y no describen capacidades actuales.",
   "text_open_roadmap": "Abrir el ROADMAP.md verificable",

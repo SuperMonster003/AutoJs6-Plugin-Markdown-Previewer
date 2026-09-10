@@ -31,7 +31,7 @@
     "在 AutoJs6 檔案管理器中定位任意 Markdown 檔案 (如 `README.md`), 展開該檔案的更多選單.",
     "點選 `預覽 Markdown`, 文件隨即在獨立檢視器中渲染開啟."
   ],
-  "p_usage_viewer_tips": "進入檢視器後, 右上角選單提供 `重新整理`, `預覽主題`, `匯入自訂 CSS`, `全螢幕模式` 與 `設定` 等操作, 其中 `設定` 可開啟 `以全螢幕模式啟動`. 文件內的 http/https 連結會交由系統瀏覽器開啟, 標題錨點連結則在檢視器內跳轉.",
+  "p_usage_viewer_tips": "進入檢視器後, 右上角選單提供 `重新整理`, `預覽主題`, `匯入自訂 CSS`, `全螢幕模式` 與 `設定` 等操作, 其中 `設定` 可開啟 `以全螢幕模式啟動`. 文件內的 http/https 連結會交由系統瀏覽器開啟, 標題錨點連結則在檢視器內跳轉. Explorer Action v2 同時支援單檔案的主預覽按鈕和溢出選單, 透過臨時唯讀授權存取文件及其父目錄. 需要 AutoJs6 組建 5269 或更新版本.",
   "h3_supported_formats": "支援的格式",
   "p_supported_formats": "插件識別以下副檔名",
   "p_supported_formats_note": "副檔名不在清單中但 MIME 類型為 `text/markdown` 或 `text/x-markdown` 的檔案同樣可以預覽. 單一文件的預覽上限為 {{ limit_markdown_size }}, 超限時會明確提示而不是截斷渲染.",
@@ -74,7 +74,7 @@
   ],
   "h3_plugin_interface": "插件介面 (面向開發者)",
   "p_plugin_interface": "宿主透過以下標識發現並呼叫插件",
-  "p_plugin_scope": "目前實現基於 explorer-action 協定版本 1: 僅支援檔案管理器中的單一檔案唯讀選單動作. 多檔案與目錄級動作依賴協定後續版本, 相關計劃見開發路線圖.",
+  "p_plugin_scope": "Explorer Action v2 同時支援單檔案的主預覽按鈕和溢出選單, 透過臨時唯讀授權存取文件及其父目錄. 需要 AutoJs6 組建 5269 或更新版本.",
   "h3_roadmap": "開發路線圖",
   "p_roadmap_status": "已完成能力與後續計劃以可勾選清單維護在 ROADMAP.md 中. 未勾選條目表示規劃意向, 不代表目前版本能力.",
   "text_open_roadmap": "查看可勾選的 ROADMAP.md",

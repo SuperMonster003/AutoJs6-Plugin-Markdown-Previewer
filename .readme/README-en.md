@@ -100,7 +100,7 @@ Before starting, confirm the following requirements:
 
 ```text
 host app: AutoJs6 (org.autojs.autojs6)
-minimum host build: 5268
+minimum host build: 5269
 minimum android: 7.0 (API 24)
 plugin package: io.github.supermonster003.autojs6.plugin.markdownpreviewer
 ```
@@ -112,7 +112,7 @@ It takes 4 steps from installation to your first rendered document:
 3. In the AutoJs6 file manager, locate any Markdown file (such as `README.md`) and open its overflow menu.
 4. Select `Markdown Previewer`. The document opens rendered in a dedicated viewer.
 
-Inside the viewer, the top-right menu offers `Refresh`, `Previewer theme`, `Import custom CSS`, `Fullscreen mode`, and `Settings`, where `Settings` provides the `Start in fullscreen mode` switch. http/https links in the document open in the system browser, while heading anchor links jump within the viewer.
+Inside the viewer, the top-right menu offers `Refresh`, `Previewer theme`, `Import custom CSS`, `Fullscreen mode`, and `Settings`, where `Settings` provides the `Start in fullscreen mode` switch. http/https links in the document open in the system browser, while heading anchor links jump within the viewer. Explorer Action v2 supports both the primary previewer button and the overflow menu for a single file, using temporary read grants for the document and its parent directory. AutoJs6 build 5269 or later is required.
 
 ******
 
@@ -136,7 +136,7 @@ Files whose extension is not listed but whose MIME type is `text/markdown` or `t
 
 **The file menu does not show `Markdown Previewer`?**
 
-Check the following in order: the AutoJs6 version code is at least 5268 (version 6.8.0 or later qualifies); the plugin is enabled in the `Plugin center`; and the file extension is in the supported list. If any of the three fails, the menu action will not appear.
+Check the following in order: the AutoJs6 version code is at least 5269 (version 6.8.0 or later qualifies); the plugin is enabled in the `Plugin center`; and the file extension is in the supported list. If any of the three fails, the menu action will not appear.
 
 **Opening fails with `Cannot read the Markdown file`?**
 
@@ -187,10 +187,10 @@ execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
 plugin id: markdown-previewer
 engine: explorer-action
 variant: default
-required host build: 5268
+required host build: 5269
 ```
 
-The current implementation targets explorer-action protocol version 1: a single-file read-only overflow menu action in the file manager. Multi-file and directory-level actions depend on future protocol versions and are tracked on the roadmap.
+Explorer Action v2 supports both the primary previewer button and the overflow menu for a single file, using temporary read grants for the document and its parent directory. AutoJs6 build 5269 or later is required.
 
 ******
 

@@ -10,4 +10,4 @@ Extensiones compatibles: `md`, `markdown`, `mdown`, `mkd`, `mkdn`, `mdwn`, `mdte
 
 El visor admite enlaces automáticos, tablas, tachado, anclas de encabezado, listas de tareas, imágenes del documento, temas integrados, CSS personalizado, actualización y pantalla completa.
 
-La versión 1 solo admite acciones de solo lectura para un archivo en el gestor de archivos.
+Explorer Action v2 admite el botón principal y el menú contextual para un archivo, con permisos temporales de lectura del documento y su carpeta. Se requiere AutoJs6 build 5269 o posterior.

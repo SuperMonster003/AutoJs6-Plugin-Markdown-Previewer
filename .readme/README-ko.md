@@ -100,7 +100,7 @@ Markdown Previewer는 AutoJs6 파일 관리자를 위한 미리보기 플러그�
 
 ```text
 host app: AutoJs6 (org.autojs.autojs6)
-minimum host build: 5268
+minimum host build: 5269
 minimum android: 7.0 (API 24)
 plugin package: io.github.supermonster003.autojs6.plugin.markdownpreviewer
 ```
@@ -112,7 +112,7 @@ plugin package: io.github.supermonster003.autojs6.plugin.markdownpreviewer
 3. AutoJs6 파일 관리자에서 아무 Markdown 파일 (예: `README.md`)을 찾아 해당 파일의 더보기 메뉴를 엽니다.
 4. `Markdown 미리보기`를 선택하면 문서가 전용 뷰어에서 렌더링되어 열립니다.
 
-뷰어에서는 오른쪽 위 메뉴로 `새로 고침`, `미리보기 테마`, `사용자 지정 CSS 가져오기`, `전체 화면 모드`, `설정`을 사용할 수 있으며, `설정`에는 `전체 화면 모드로 시작` 스위치가 있습니다. 문서 안의 http/https 링크는 시스템 브라우저에서 열리고, 제목 앵커 링크는 뷰어 안에서 이동합니다.
+뷰어에서는 오른쪽 위 메뉴로 `새로 고침`, `미리보기 테마`, `사용자 지정 CSS 가져오기`, `전체 화면 모드`, `설정`을 사용할 수 있으며, `설정`에는 `전체 화면 모드로 시작` 스위치가 있습니다. 문서 안의 http/https 링크는 시스템 브라우저에서 열리고, 제목 앵커 링크는 뷰어 안에서 이동합니다. Explorer Action v2는 단일 파일의 기본 미리보기 버튼과 메뉴를 지원하며 문서와 상위 폴더의 임시 읽기 권한을 사용합니다. AutoJs6 빌드 5269 이상이 필요합니다.
 
 ******
 
@@ -136,7 +136,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 
 **파일 메뉴에 `Markdown 미리보기`가 보이지 않나요?**
 
-다음 순서로 확인하세요: AutoJs6 버전 코드가 5268 이상인지 (버전 6.8.0 이상이면 충족); 플러그인이 `플러그인 센터`에서 활성화되어 있는지; 파일 확장자가 지원 목록에 있는지. 셋 중 하나라도 충족하지 않으면 메뉴 동작이 나타나지 않습니다.
+다음 순서로 확인하세요: AutoJs6 버전 코드가 5269 이상인지 (버전 6.8.0 이상이면 충족); 플러그인이 `플러그인 센터`에서 활성화되어 있는지; 파일 확장자가 지원 목록에 있는지. 셋 중 하나라도 충족하지 않으면 메뉴 동작이 나타나지 않습니다.
 
 **열 때 `Markdown 파일을 읽을 수 없습니다`라고 표시되나요?**
 
@@ -187,10 +187,10 @@ execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
 plugin id: markdown-previewer
 engine: explorer-action
 variant: default
-required host build: 5268
+required host build: 5269
 ```
 
-현재 구현은 explorer-action 프로토콜 버전 1을 대상으로 합니다: 파일 관리자의 단일 파일 읽기 전용 더보기 메뉴 동작만 지원합니다. 다중 파일과 디렉터리 수준 동작은 프로토콜의 이후 버전에 달려 있으며 로드맵에서 추적합니다.
+Explorer Action v2는 단일 파일의 기본 미리보기 버튼과 메뉴를 지원하며 문서와 상위 폴더의 임시 읽기 권한을 사용합니다. AutoJs6 빌드 5269 이상이 필요합니다.
 
 ******
 

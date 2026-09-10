@@ -12,7 +12,7 @@
   "plugin_variant": "default",
   "host_package": "org.autojs.autojs6",
   "plugin_package": "io.github.supermonster003.autojs6.plugin.markdownpreviewer",
-  "required_host_build": "5268",
+  "required_host_build": "5269",
   "min_android": "7.0 (API 24)",
   "limit_markdown_size": "8 MiB",
   "limit_custom_css_size": "256 KiB",

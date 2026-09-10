@@ -100,7 +100,7 @@ Avant de commencer, vérifiez les prérequis suivants:
 
 ```text
 host app: AutoJs6 (org.autojs.autojs6)
-minimum host build: 5268
+minimum host build: 5269
 minimum android: 7.0 (API 24)
 plugin package: io.github.supermonster003.autojs6.plugin.markdownpreviewer
 ```
@@ -112,7 +112,7 @@ Il faut 4 étapes entre l'installation et le premier document affiché:
 3. Dans le gestionnaire de fichiers d'AutoJs6, localisez un fichier Markdown (par exemple `README.md`) et ouvrez son menu secondaire.
 4. Sélectionnez `Prévisualiser Markdown`. Le document s'ouvre mis en forme dans une visionneuse dédiée.
 
-Dans la visionneuse, le menu en haut à droite propose `Actualiser`, `Thème de prévisualisation`, `Importer un CSS personnalisé`, `Mode plein écran` et `Paramètres`, où `Paramètres` contient l'option `Démarrer en mode plein écran`. Les liens http/https du document s'ouvrent dans le navigateur du système, tandis que les liens d'ancres de titres restent dans la visionneuse.
+Dans la visionneuse, le menu en haut à droite propose `Actualiser`, `Thème de prévisualisation`, `Importer un CSS personnalisé`, `Mode plein écran` et `Paramètres`, où `Paramètres` contient l'option `Démarrer en mode plein écran`. Les liens http/https du document s'ouvrent dans le navigateur du système, tandis que les liens d'ancres de titres restent dans la visionneuse. Explorer Action v2 prend en charge le bouton principal et le menu contextuel pour un fichier, avec une autorisation temporaire de lecture du document et de son dossier parent. AutoJs6 build 5269 ou ultérieur est requis.
 
 ******
 
@@ -136,7 +136,7 @@ Les fichiers dont l'extension n'est pas listée mais dont le type MIME est `text
 
 **Le menu du fichier n'affiche pas `Prévisualiser Markdown`?**
 
-Vérifiez dans l'ordre: le code de version d'AutoJs6 est au moins 5268 (la version 6.8.0 ou ultérieure convient); le plugin est activé dans le `Centre des plugins`; l'extension du fichier figure dans la liste prise en charge. Si l'une des trois conditions manque, l'action n'apparaît pas.
+Vérifiez dans l'ordre: le code de version d'AutoJs6 est au moins 5269 (la version 6.8.0 ou ultérieure convient); le plugin est activé dans le `Centre des plugins`; l'extension du fichier figure dans la liste prise en charge. Si l'une des trois conditions manque, l'action n'apparaît pas.
 
 **L'ouverture échoue avec `Lecture du fichier Markdown impossible`?**
 
@@ -187,10 +187,10 @@ execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
 plugin id: markdown-previewer
 engine: explorer-action
 variant: default
-required host build: 5268
+required host build: 5269
 ```
 
-L'implémentation actuelle vise la version 1 du protocole explorer-action: une action de menu secondaire en lecture seule sur un seul fichier dans le gestionnaire de fichiers. Les actions multi-fichiers et au niveau des dossiers dépendent des versions futures du protocole et sont suivies dans la feuille de route.
+Explorer Action v2 prend en charge le bouton principal et le menu contextuel pour un fichier, avec une autorisation temporaire de lecture du document et de son dossier parent. AutoJs6 build 5269 ou ultérieur est requis.
 
 ******
 

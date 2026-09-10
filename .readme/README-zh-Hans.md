@@ -100,7 +100,7 @@ Markdown Previewer 是 AutoJs6 文件管理器的预览插件. 启用后, 文件
 
 ```text
 host app: AutoJs6 (org.autojs.autojs6)
-minimum host build: 5268
+minimum host build: 5269
 minimum android: 7.0 (API 24)
 plugin package: io.github.supermonster003.autojs6.plugin.markdownpreviewer
 ```
@@ -112,7 +112,7 @@ plugin package: io.github.supermonster003.autojs6.plugin.markdownpreviewer
 3. 在 AutoJs6 文件管理器中定位任意 Markdown 文件 (如 `README.md`), 展开该文件的溢出菜单.
 4. 点选 `预览 Markdown`, 文档随即在独立查看器中渲染打开.
 
-进入查看器后, 右上角菜单提供 `刷新`, `预览主题`, `导入自定义 CSS`, `全屏模式` 与 `设置` 等操作, 其中 `设置` 可开启 `以全屏模式启动`. 文档内的 http/https 链接会交由系统浏览器打开, 标题锚点链接则在查看器内跳转.
+进入查看器后, 右上角菜单提供 `刷新`, `预览主题`, `导入自定义 CSS`, `全屏模式` 与 `设置` 等操作, 其中 `设置` 可开启 `以全屏模式启动`. 文档内的 http/https 链接会交由系统浏览器打开, 标题锚点链接则在查看器内跳转. Explorer Action v2 同时支持单文件的主预览按钮和溢出菜单, 通过临时只读授权访问文档及其父目录. 需要 AutoJs6 构建 5269 或更高版本.
 
 ******
 
@@ -136,7 +136,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 
 **文件的菜单里没有出现 `预览 Markdown`?**
 
-请依次检查: AutoJs6 版本代码是否不低于 5268 (6.8.0 及以上版本满足); 插件是否已在 `插件中心` 启用; 文件扩展名是否在支持列表中. 三者任一不满足, 菜单动作都不会出现.
+请依次检查: AutoJs6 版本代码是否不低于 5269 (6.8.0 及以上版本满足); 插件是否已在 `插件中心` 启用; 文件扩展名是否在支持列表中. 三者任一不满足, 菜单动作都不会出现.
 
 **打开时提示 `无法读取 Markdown 文件`?**
 
@@ -187,10 +187,10 @@ execute action: org.autojs.plugin.EXPLORER_ACTION_EXECUTE
 plugin id: markdown-previewer
 engine: explorer-action
 variant: default
-required host build: 5268
+required host build: 5269
 ```
 
-当前实现基于 explorer-action 协议版本 1: 仅支持文件管理器中的单文件只读溢出菜单动作. 多文件与目录级动作依赖协议后续版本, 相关计划见开发路线图.
+Explorer Action v2 同时支持单文件的主预览按钮和溢出菜单, 通过临时只读授权访问文档及其父目录. 需要 AutoJs6 构建 5269 或更高版本.
 
 ******
 

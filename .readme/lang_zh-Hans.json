@@ -31,7 +31,7 @@
     "在 AutoJs6 文件管理器中定位任意 Markdown 文件 (如 `README.md`), 展开该文件的溢出菜单.",
     "点选 `预览 Markdown`, 文档随即在独立查看器中渲染打开."
   ],
-  "p_usage_viewer_tips": "进入查看器后, 右上角菜单提供 `刷新`, `预览主题`, `导入自定义 CSS`, `全屏模式` 与 `设置` 等操作, 其中 `设置` 可开启 `以全屏模式启动`. 文档内的 http/https 链接会交由系统浏览器打开, 标题锚点链接则在查看器内跳转.",
+  "p_usage_viewer_tips": "进入查看器后, 右上角菜单提供 `刷新`, `预览主题`, `导入自定义 CSS`, `全屏模式` 与 `设置` 等操作, 其中 `设置` 可开启 `以全屏模式启动`. 文档内的 http/https 链接会交由系统浏览器打开, 标题锚点链接则在查看器内跳转. Explorer Action v2 同时支持单文件的主预览按钮和溢出菜单, 通过临时只读授权访问文档及其父目录. 需要 AutoJs6 构建 5269 或更高版本.",
   "h3_supported_formats": "支持的格式",
   "p_supported_formats": "插件识别以下文件扩展名",
   "p_supported_formats_note": "扩展名不在列表中但 MIME 类型为 `text/markdown` 或 `text/x-markdown` 的文件同样可以预览. 单个文档的预览上限为 {{ limit_markdown_size }}, 超限时会明确提示而不是截断渲染.",
@@ -74,7 +74,7 @@
   ],
   "h3_plugin_interface": "插件接口 (面向开发者)",
   "p_plugin_interface": "宿主通过以下标识发现并调用插件",
-  "p_plugin_scope": "当前实现基于 explorer-action 协议版本 1: 仅支持文件管理器中的单文件只读溢出菜单动作. 多文件与目录级动作依赖协议后续版本, 相关计划见开发路线图.",
+  "p_plugin_scope": "Explorer Action v2 同时支持单文件的主预览按钮和溢出菜单, 通过临时只读授权访问文档及其父目录. 需要 AutoJs6 构建 5269 或更高版本.",
   "h3_roadmap": "开发路线图",
   "p_roadmap_status": "已完成能力与后续计划以可勾选清单维护在 ROADMAP.md 中. 未勾选条目表示规划意向, 不代表当前版本能力.",
   "text_open_roadmap": "查看可勾选的 ROADMAP.md",

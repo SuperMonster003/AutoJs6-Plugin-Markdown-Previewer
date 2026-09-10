@@ -31,7 +31,7 @@
     "In the AutoJs6 file manager, locate any Markdown file (such as `README.md`) and open its overflow menu.",
     "Select `Markdown Previewer`. The document opens rendered in a dedicated viewer."
   ],
-  "p_usage_viewer_tips": "Inside the viewer, the top-right menu offers `Refresh`, `Previewer theme`, `Import custom CSS`, `Fullscreen mode`, and `Settings`, where `Settings` provides the `Start in fullscreen mode` switch. http/https links in the document open in the system browser, while heading anchor links jump within the viewer.",
+  "p_usage_viewer_tips": "Inside the viewer, the top-right menu offers `Refresh`, `Previewer theme`, `Import custom CSS`, `Fullscreen mode`, and `Settings`, where `Settings` provides the `Start in fullscreen mode` switch. http/https links in the document open in the system browser, while heading anchor links jump within the viewer. Explorer Action v2 supports both the primary previewer button and the overflow menu for a single file, using temporary read grants for the document and its parent directory. AutoJs6 build 5269 or later is required.",
   "h3_supported_formats": "Supported Formats",
   "p_supported_formats": "The plugin recognizes the following filename extensions",
   "p_supported_formats_note": "Files whose extension is not listed but whose MIME type is `text/markdown` or `text/x-markdown` can be viewed as well. A single document may be at most {{ limit_markdown_size }}; oversized files produce a clear message instead of a truncated rendering.",
@@ -74,7 +74,7 @@
   ],
   "h3_plugin_interface": "Plugin Interface (for Developers)",
   "p_plugin_interface": "The host discovers and invokes the plugin with the following identities",
-  "p_plugin_scope": "The current implementation targets explorer-action protocol version 1: a single-file read-only overflow menu action in the file manager. Multi-file and directory-level actions depend on future protocol versions and are tracked on the roadmap.",
+  "p_plugin_scope": "Explorer Action v2 supports both the primary previewer button and the overflow menu for a single file, using temporary read grants for the document and its parent directory. AutoJs6 build 5269 or later is required.",
   "h3_roadmap": "Roadmap",
   "p_roadmap_status": "Completed capabilities and upcoming plans are maintained as a checkable list in ROADMAP.md. Unchecked items express intent and do not describe current abilities.",
   "text_open_roadmap": "Open the checkable ROADMAP.md",

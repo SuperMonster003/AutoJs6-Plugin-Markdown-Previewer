@@ -6,7 +6,6 @@ import android.net.Uri
 import org.autojs.plugin.explorer.api.ExplorerActionIntentExtras
 import org.autojs.plugin.explorer.api.ExplorerActionIntentValues
 import org.autojs.plugin.explorer.api.ExplorerActionPluginActions
-import org.autojs.plugin.explorer.api.ExplorerActionProtocol
 import java.util.Locale
 
 private enum class PreviewerFormat {
@@ -34,10 +33,11 @@ internal object MarkdownPreviewerIntentPolicy {
 
     fun resolve(intent: Intent): MarkdownPreviewerRequest? {
         if (intent.action != ExplorerActionPluginActions.EXECUTE) return null
-        if (intent.getStringExtra(ExplorerActionIntentExtras.ACTION_ID) != MarkdownPreviewerPlugin.ID) return null
+        if (intent.getStringExtra(ExplorerActionIntentExtras.ACTION_ID) !in
+            setOf(MarkdownPreviewerPlugin.ID, MarkdownPreviewerPlugin.PRIMARY_ACTION_ID)) return null
         if (
             intent.getIntExtra(ExplorerActionIntentExtras.PROTOCOL_VERSION, Int.MIN_VALUE) !=
-            ExplorerActionProtocol.VERSION
+            MarkdownPreviewerPlugin.PROTOCOL_VERSION
         ) {
             return null
         }

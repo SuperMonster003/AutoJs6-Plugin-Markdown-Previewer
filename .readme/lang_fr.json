@@ -31,7 +31,7 @@
     "Dans le gestionnaire de fichiers d'AutoJs6, localisez un fichier Markdown (par exemple `README.md`) et ouvrez son menu secondaire.",
     "Sélectionnez `Prévisualiser Markdown`. Le document s'ouvre mis en forme dans une visionneuse dédiée."
   ],
-  "p_usage_viewer_tips": "Dans la visionneuse, le menu en haut à droite propose `Actualiser`, `Thème de prévisualisation`, `Importer un CSS personnalisé`, `Mode plein écran` et `Paramètres`, où `Paramètres` contient l'option `Démarrer en mode plein écran`. Les liens http/https du document s'ouvrent dans le navigateur du système, tandis que les liens d'ancres de titres restent dans la visionneuse.",
+  "p_usage_viewer_tips": "Dans la visionneuse, le menu en haut à droite propose `Actualiser`, `Thème de prévisualisation`, `Importer un CSS personnalisé`, `Mode plein écran` et `Paramètres`, où `Paramètres` contient l'option `Démarrer en mode plein écran`. Les liens http/https du document s'ouvrent dans le navigateur du système, tandis que les liens d'ancres de titres restent dans la visionneuse. Explorer Action v2 prend en charge le bouton principal et le menu contextuel pour un fichier, avec une autorisation temporaire de lecture du document et de son dossier parent. AutoJs6 build 5269 ou ultérieur est requis.",
   "h3_supported_formats": "Formats pris en charge",
   "p_supported_formats": "Le plugin reconnaît les extensions de fichiers suivantes",
   "p_supported_formats_note": "Les fichiers dont l'extension n'est pas listée mais dont le type MIME est `text/markdown` ou `text/x-markdown` peuvent aussi être prévisualisés. Un document ne peut pas dépasser {{ limit_markdown_size }}; un fichier trop volumineux produit un message clair plutôt qu'un rendu tronqué.",
@@ -74,7 +74,7 @@
   ],
   "h3_plugin_interface": "Interface du plugin (pour les développeurs)",
   "p_plugin_interface": "L'hôte détecte et invoque le plugin avec les identités suivantes",
-  "p_plugin_scope": "L'implémentation actuelle vise la version 1 du protocole explorer-action: une action de menu secondaire en lecture seule sur un seul fichier dans le gestionnaire de fichiers. Les actions multi-fichiers et au niveau des dossiers dépendent des versions futures du protocole et sont suivies dans la feuille de route.",
+  "p_plugin_scope": "Explorer Action v2 prend en charge le bouton principal et le menu contextuel pour un fichier, avec une autorisation temporaire de lecture du document et de son dossier parent. AutoJs6 build 5269 ou ultérieur est requis.",
   "h3_roadmap": "Feuille de route",
   "p_roadmap_status": "Les capacités achevées et les projets à venir sont tenus sous forme de liste cochable dans ROADMAP.md. Les cases non cochées expriment une intention et ne décrivent pas les capacités actuelles.",
   "text_open_roadmap": "Ouvrir le ROADMAP.md cochable",
