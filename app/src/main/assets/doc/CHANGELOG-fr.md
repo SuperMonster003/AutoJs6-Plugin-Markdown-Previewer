@@ -2,7 +2,7 @@
 
 ## v1.1.0
 
-###### 2026/08/31
+###### 2026/09/11
 
 * `Fonctionnalité` Ajout du plan du document, de la recherche dans la page, du zoom de texte persistant et de la coloration syntaxique au rendu sans activer JavaScript
 * `Fonctionnalité` Ajout de la navigation sécurisée vers les documents Markdown relatifs dans le répertoire autorisé par l'hôte, avec historique interne et gestion des ancres
@@ -11,6 +11,7 @@
 * `Correctif` Correction du rejet du protocole du bouton principal et des plantages des paramètres; apparence AutoJs6, couleurs des barres et contrôles monochromes synchronisés
 * `Amélioration` Renforcement de la validation des intents explorer-action v1, URI, chemins, liens, ressources, HTML et notes de bas de page tout en conservant la limite de lecture seule sur un fichier
 * `Amélioration` Ajout d'une Roadmap à cocher, de 4 captures réelles sur appareil utilisant uniquement des données synthétiques et de la génération reproductible README / CHANGELOG pour 10 langues
+* `Amélioration` La vérification de compilation rejette les dépendances natives involontaires et produit un rapport JSON
 * `Dépendance` Migration de l'ancien fork Atlassian CommonMark 0.9.0 vers les modules officiels core et extensions 0.30.0 de Maven Central, avec core library desugaring pour l'API 24
 
 ## v1.0.1

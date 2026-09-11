@@ -6,7 +6,7 @@
   "changelog_label_dependency": "相依性",
   "$data": {
     "v1.1.0": {
-      "released_date": "2026/08/31",
+      "released_date": "2026/09/11",
       "feature": [
         "新增文件大綱, 頁內尋找, 持久化字體大小調整與渲染階段語法高亮, 全程不啟用 JavaScript",
         "新增宿主授權目錄內的相對 Markdown 文件安全跳轉, 支援檢視器內歷史返回與錨點處理",
@@ -15,7 +15,8 @@
       ],
       "improvement": [
         "強化 explorer-action v1 Intent, URI, 路徑, 連結, 資源, HTML 與 Footnotes 驗證, 保持單一檔案唯讀邊界",
-        "新增可勾選 Roadmap, 4 張只含合成資料的實體裝置截圖, 以及涵蓋 10 種語言的可重現 README / CHANGELOG 生成流程"
+        "新增可勾選 Roadmap, 4 張只含合成資料的實體裝置截圖, 以及涵蓋 10 種語言的可重現 README / CHANGELOG 生成流程",
+        "建置階段阻止意外引入原生相依套件, 並輸出 JSON 校驗報告"
       ],
       "dependency": [
         "從舊 Atlassian 0.9.0 fork 遷移至 Maven Central 官方 CommonMark 0.30.0 core 與擴展模組, 並透過 core library desugaring 保持 API 24 相容"

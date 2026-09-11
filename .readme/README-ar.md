@@ -210,7 +210,7 @@ required host build: 5269
 
 #### v1.1.0
 
-###### 2026/08/31
+###### 2026/09/11
 
 * `ميزة` إضافة مخطط المستند والبحث داخل الصفحة وتكبير النص المحفوظ وتمييز بناء الجملة وقت العرض من دون تفعيل JavaScript
 * `ميزة` إضافة تنقل آمن إلى مستندات Markdown النسبية داخل الدليل المصرح به من المضيف مع سجل داخل العارض ومعالجة الروابط المرساة
@@ -219,6 +219,7 @@ required host build: 5269
 * `إصلاح` إصلاح رفض بروتوكول زر العرض الرئيسي وتعطل الإعدادات; مزامنة مظهر المضيف وألوان الأشرطة وعناصر الحوارات بالأبيض والأسود
 * `تحسين` تعزيز التحقق من explorer-action v1 Intent و URI والمسارات والروابط والموارد و HTML و Footnotes مع الحفاظ على حد ملف واحد للقراءة فقط
 * `تحسين` إضافة Roadmap قابلة للتحديد و 4 لقطات من جهاز حقيقي ببيانات اصطناعية فقط وتوليد README / CHANGELOG قابل لإعادة الإنتاج لعشر لغات
+* `تحسين` التحقق أثناء البناء لمنع إدخال تبعيات أصلية غير مقصودة, مع تقرير JSON
 * `تبعية` نقل CommonMark من fork Atlassian 0.9.0 القديم إلى وحدات core والامتدادات الرسمية 0.30.0 من Maven Central مع core library desugaring للتوافق مع API 24
 
 #### v1.0.1
@@ -288,3 +289,6 @@ app/src/main/res/raw-*/plugin_instruction.md
 - وثائق AutoJs6: https://docs.autojs6.com
 - مواصفة CommonMark: https://commonmark.org
 - ملحق HTML Previewer (معاينة ملفات HTML): https://github.com/SuperMonster003/AutoJs6-Plugin-HTML-Previewer
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/docs/16kb.md)

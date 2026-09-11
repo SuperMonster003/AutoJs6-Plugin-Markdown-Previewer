@@ -210,7 +210,7 @@ Explorer Action v2 同時支援單一檔案的主預覽按鈕和溢位選單, �
 
 #### v1.1.0
 
-###### 2026/08/31
+###### 2026/09/11
 
 * `新增` 新增文件大綱, 頁內尋找, 持久化字體大小調整與渲染階段語法高亮, 全程不啟用 JavaScript
 * `新增` 新增宿主授權目錄內的相對 Markdown 文件安全跳轉, 支援檢視器內歷史返回與錨點處理
@@ -219,6 +219,7 @@ Explorer Action v2 同時支援單一檔案的主預覽按鈕和溢位選單, �
 * `修復` 修復主預覽按鈕協定拒絕和設定當機; 同步宿主個人化組態, 頁面列配色及對話方塊黑白控制項
 * `優化` 強化 explorer-action v1 Intent, URI, 路徑, 連結, 資源, HTML 與 Footnotes 驗證, 保持單一檔案唯讀邊界
 * `優化` 新增可勾選 Roadmap, 4 張只含合成資料的實體裝置截圖, 以及涵蓋 10 種語言的可重現 README / CHANGELOG 生成流程
+* `優化` 建置階段阻止意外引入原生相依套件, 並輸出 JSON 校驗報告
 * `相依性` 從舊 Atlassian 0.9.0 fork 遷移至 Maven Central 官方 CommonMark 0.30.0 core 與擴展模組, 並透過 core library desugaring 保持 API 24 相容
 
 #### v1.0.1
@@ -288,3 +289,6 @@ app/src/main/res/raw-*/plugin_instruction.md
 - AutoJs6 文件: https://docs.autojs6.com
 - CommonMark 規範: https://commonmark.org
 - HTML Previewer 外掛 (預覽 HTML 檔案): https://github.com/SuperMonster003/AutoJs6-Plugin-HTML-Previewer
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/docs/16kb.md)

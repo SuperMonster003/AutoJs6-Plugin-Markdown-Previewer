@@ -2,7 +2,7 @@
 
 ## v1.1.0
 
-###### 2026/08/31
+###### 2026/09/11
 
 * `Función` Se añadieron el esquema del documento, la búsqueda en la página, el zoom de texto persistente y el resaltado de sintaxis durante el renderizado sin habilitar JavaScript
 * `Función` Se añadió la navegación segura a documentos Markdown relativos dentro del directorio autorizado por el host, con historial interno y manejo de anclas
@@ -11,6 +11,7 @@
 * `Corrección` Corregidos el rechazo de protocolo del botón principal y los cierres de ajustes; sincronizados la apariencia de AutoJs6, las barras y los controles monocromos
 * `Mejora` Se reforzó la validación de intents explorer-action v1, URI, rutas, enlaces, recursos, HTML y notas al pie, manteniendo el límite de solo lectura de un archivo
 * `Mejora` Se añadieron una Roadmap verificable, 4 capturas reales con datos sintéticos y generación reproducible de README / CHANGELOG para 10 idiomas
+* `Mejora` La verificación de compilación rechaza dependencias nativas accidentales y genera un informe JSON
 * `Dependencia` Se migró CommonMark del fork heredado de Atlassian 0.9.0 a los módulos oficiales core y extensiones 0.30.0 de Maven Central, con core library desugaring para API 24
 
 ## v1.0.1
