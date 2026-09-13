@@ -5,6 +5,21 @@
   "changelog_label_improvement": "개선",
   "changelog_label_dependency": "의존성",
   "$data": {
+    "v1.2.0": {
+      "released_date": "2026/09/13",
+      "feature": [
+        "화면에서 현지화된 로컬 릴리스 기록을 표시하고 영어 대체 제공"
+      ],
+      "fix": [
+        "HTTPS 리소스의 공용 DNS 주소와 각 리디렉션을 검증하고 WebView 직접 통신 차단; 리소스 요청은 GET 및 HEAD만 지원"
+      ],
+      "improvement": [
+        "릴리스 서명 설정, 예상 APK 구성 및 문서 재생성 결과 검증"
+      ],
+      "dependency": [
+        "제어된 HTTPS 리소스 로드를 위해 OkHttp 4.12.0 추가"
+      ]
+    },
     "v1.1.0": {
       "released_date": "2026/09/11",
       "feature": [

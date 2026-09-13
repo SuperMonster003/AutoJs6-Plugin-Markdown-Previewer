@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="action_markdown_previewer">Markdown をプレビュー</string>
-    <string name="app_name">Markdown プレビューアー</string>
     <string name="dialog_button_cancel">キャンセル</string>
     <string name="dialog_button_confirm">確認</string>
     <string name="error_custom_css_file_too_large">CSS ファイルが %1$s の制限を超えています</string>
     <string name="error_markdown_file_too_large">Markdown ファイルが %1$s のプレビュー制限を超えています</string>
-    <string name="plugin_description">ファイルマネージャープラグイン. Markdown ファイルを安全に読み取り専用でプレビュー</string>
+    <string name="plugin_description">Markdown ドキュメントをプレビュー</string>
+    <string name="release_history">リリース履歴</string>
+    <string name="release_history_unavailable">リリース履歴を表示できません</string>
     <string name="text_cannot_open_link">リンクを開けません</string>
     <string name="text_cannot_print_document">印刷を開始できません</string>
     <string name="text_cannot_read_file">Markdown ファイルを読み取れません</string>
@@ -14,18 +15,17 @@
     <string name="text_custom_css_cleared">カスタム CSS を消去しました</string>
     <string name="text_custom_css_imported">カスタム CSS をインポートしました</string>
     <string name="text_document_outline">ドキュメントのアウトライン</string>
-    <string name="text_yaml_metadata">YAML メタデータ</string>
+    <string name="text_failed_to_import">CSS ファイルをインポートできませんでした</string>
     <string name="text_find_close">検索を閉じる</string>
-    <string name="text_find_counting">…</string>
+    <string name="text_find_counting" tools:ignore="TypographyEllipsis">...</string>
     <string name="text_find_in_page">ページ内検索</string>
-    <string name="text_font_size">文字サイズ</string>
-    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_find_match_count">%1$d/%2$d</string>
     <string name="text_find_match_count_initial">0/0</string>
     <string name="text_find_next">次の一致</string>
     <string name="text_find_previous">前の一致</string>
+    <string name="text_font_size">文字サイズ</string>
+    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_fullscreen_mode">全画面モード</string>
-    <string name="text_failed_to_import">CSS ファイルをインポートできませんでした</string>
     <string name="text_import_custom_css">カスタム CSS をインポート</string>
     <string name="text_previewer">プレビューアー</string>
     <string name="text_previewer_theme">プレビューテーマ</string>
@@ -39,4 +39,5 @@
     <string name="text_refresh">再読み込み</string>
     <string name="text_settings">設定</string>
     <string name="text_start_in_fullscreen_mode">全画面モードで開始</string>
+    <string name="text_yaml_metadata">YAML メタデータ</string>
 </resources>

@@ -5,7 +5,7 @@
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>文件管理器插件. 安全只读预览 Markdown 文件</p>
+  <p>预览 Markdown 文档</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer?label=Release"/></a>
@@ -172,6 +172,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 - CSP 与请求拦截双重限制资源加载: 仅放行内置样式, 文档目录内资源, `data:` 与 `https` 图片, 其余请求一律拒绝.
 - 远程图片经私网与保留地址过滤 (防 SSRF), 以 no-referrer 策略加载; 外部链接仅能交由系统浏览器打开.
 - 输入有界: Markdown 上限 8 MiB, 自定义 CSS 上限 256 KiB, 显示名与路径长度同样受限.
+- HTTPS 资源连接仅使用经检查的公网 DNS 地址并逐次校验重定向; 禁止 WebView 直接联网, 资源请求仅支持 GET 和 HEAD
 
 ******
 
@@ -208,6 +209,15 @@ Explorer Action v2 同时支持单文件的主预览按钮和溢出菜单, 通�
 
 ******
 
+#### v1.2.0
+
+###### 2026/09/13
+
+* `新增` 界面提供本地发行历史, 支持多语言及英语回退
+* `修复` HTTPS 资源连接仅使用经检查的公网 DNS 地址并逐次校验重定向; 禁止 WebView 直接联网, 资源请求仅支持 GET 和 HEAD
+* `优化` 校验发行签名配置, 预期 APK 集合与可复现文档
+* `依赖` 附加 OkHttp 4.12.0 用于受控 HTTPS 资源加载
+
 #### v1.1.0
 
 ###### 2026/09/11
@@ -228,18 +238,6 @@ Explorer Action v2 同时支持单文件的主预览按钮和溢出菜单, 通�
 
 * `修复` 在 AutoJs6 插件中心启用插件时因服务返回空绑定 (onNullBinding) 而无法启用的问题
 * `优化` 精简插件名称与描述, 统一各语言用户文档的表述
-
-#### v1.0.0
-
-###### 2026/08/06
-
-* `新增` Markdown Previewer 首个版本: 为 AutoJs6 文件管理器提供 `预览 Markdown` 溢出菜单动作, 以只读方式渲染单个文档
-* `新增` 识别 md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 共 10 种扩展名以及 `text/markdown` 与 `text/x-markdown` MIME 类型
-* `新增` 支持表格, 任务列表, 删除线, 自动链接, 标题锚点与文档内图片渲染
-* `新增` 内置 GitHub (自动 / 浅色 / 深色), 纸张与棕褐色主题, 支持导入自定义 CSS, 手动刷新与全屏模式
-* `新增` 以允许列表净化, CSP 约束, 禁用 JavaScript 与存储, 私网地址过滤及输入上限 (Markdown 8 MiB, CSS 256 KiB) 构建只读安全沙盒
-* `新增` 基于 `org.autojs.plugin.EXPLORER_ACTION` 协议注册插件服务, 经宿主临时 content URI 授权访问所选文件及其父目录
-* `新增` 插件信息, 界面, 使用说明与文档支持简体中文, 繁体中文 (香港 / 台湾), 英语, 法语, 西班牙语, 日语, 韩语, 俄语与阿拉伯语
 
 ##### 完整记录
 

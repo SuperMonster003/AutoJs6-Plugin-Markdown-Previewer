@@ -5,6 +5,21 @@
   "changelog_label_improvement": "Improvement",
   "changelog_label_dependency": "Dependency",
   "$data": {
+    "v1.2.0": {
+      "released_date": "2026/09/13",
+      "feature": [
+        "Local release history is available from the interface, with localized text and an English fallback"
+      ],
+      "fix": [
+        "HTTPS resources use verified public DNS addresses with every redirect checked; direct WebView networking is blocked and resource requests support GET and HEAD only"
+      ],
+      "improvement": [
+        "Release packages are checked for a complete signing configuration, exact APK contents and reproducible documentation"
+      ],
+      "dependency": [
+        "Add OkHttp 4.12.0 for controlled HTTPS resource loading"
+      ]
+    },
     "v1.1.0": {
       "released_date": "2026/09/11",
       "feature": [

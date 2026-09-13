@@ -1,7 +1,7 @@
 {
   "$name": "Español",
   "text_current_lowercase": "actual",
-  "text_plugin_synopsis": "Complemento del gestor de archivos. Vista previa segura de solo lectura de archivos Markdown",
+  "text_plugin_synopsis": "Previsualiza documentos Markdown",
   "h3_languages_with_ascii": "Idiomas (Languages)",
   "p_languages_all_supported_for_readme": "El README.md actual admite los siguientes idiomas",
   "h3_introduction": "Introducción",
@@ -70,7 +70,8 @@
     "El complemento lee el archivo seleccionado y su directorio únicamente mediante URI de contenido temporales concedidos por el anfitrión. No recibe rutas del sistema de archivos ni solicita permisos adicionales.",
     "La CSP y la interceptación de solicitudes restringen doblemente la carga de recursos: solo pasan las hojas de estilo integradas, los recursos del directorio del documento, las imágenes `data:` y las imágenes `https`; cualquier otra solicitud se rechaza.",
     "Las imágenes remotas se filtran contra direcciones privadas y reservadas (anti-SSRF) y se cargan con una política no-referrer; los enlaces externos solo pueden abrirse en el navegador del sistema.",
-    "Las entradas están acotadas: Markdown hasta {{ limit_markdown_size }}, CSS personalizado hasta {{ limit_custom_css_size }}, con longitudes de nombres y rutas igualmente limitadas."
+    "Las entradas están acotadas: Markdown hasta {{ limit_markdown_size }}, CSS personalizado hasta {{ limit_custom_css_size }}, con longitudes de nombres y rutas igualmente limitadas.",
+    "Los recursos HTTPS usan direcciones DNS públicas verificadas y se comprueba cada redirección; se bloquea la red directa de WebView y solo se admiten GET y HEAD"
   ],
   "h3_plugin_interface": "Interfaz del complemento (para desarrolladores)",
   "p_plugin_interface": "El anfitrión descubre e invoca el complemento con las siguientes identidades",

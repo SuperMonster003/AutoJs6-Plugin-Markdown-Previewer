@@ -5,6 +5,21 @@
   "changelog_label_improvement": "優化",
   "changelog_label_dependency": "依賴",
   "$data": {
+    "v1.2.0": {
+      "released_date": "2026/09/13",
+      "feature": [
+        "介面提供本地發行歷史, 支援多語言及英語回退"
+      ],
+      "fix": [
+        "HTTPS 資源連線只使用經檢查的公網 DNS 位址並逐次校驗重新導向; 禁止 WebView 直接連網, 資源請求只支援 GET 和 HEAD"
+      ],
+      "improvement": [
+        "校驗發行簽署設定, 預期 APK 集合與可重現文件"
+      ],
+      "dependency": [
+        "附加 OkHttp 4.12.0 用於受控 HTTPS 資源載入"
+      ]
+    },
     "v1.1.0": {
       "released_date": "2026/09/11",
       "feature": [

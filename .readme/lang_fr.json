@@ -1,7 +1,7 @@
 {
   "$name": "Français",
   "text_current_lowercase": "actuel",
-  "text_plugin_synopsis": "Plugin de gestionnaire de fichiers. Aperçu sécurisé en lecture seule des fichiers Markdown",
+  "text_plugin_synopsis": "Affiche un aperçu des documents Markdown",
   "h3_languages_with_ascii": "Langues (Languages)",
   "p_languages_all_supported_for_readme": "Le fichier README.md actuel prend en charge les langues suivantes",
   "h3_introduction": "Introduction",
@@ -70,7 +70,8 @@
     "Le plugin lit le fichier choisi et son dossier uniquement via des URI de contenu temporaires accordés par l'hôte. Il ne reçoit aucun chemin du système de fichiers et ne demande aucune permission supplémentaire.",
     "La CSP et l'interception des requêtes limitent doublement le chargement des ressources: seuls les styles intégrés, les ressources du dossier du document, les images `data:` et les images `https` passent; toute autre requête est rejetée.",
     "Les images distantes sont filtrées contre les adresses privées et réservées (anti-SSRF) et chargées avec une politique no-referrer; les liens externes ne peuvent s'ouvrir que dans le navigateur du système.",
-    "Les entrées sont bornées: Markdown jusqu'à {{ limit_markdown_size }}, CSS personnalisé jusqu'à {{ limit_custom_css_size }}, avec des longueurs de noms et de chemins également limitées."
+    "Les entrées sont bornées: Markdown jusqu'à {{ limit_markdown_size }}, CSS personnalisé jusqu'à {{ limit_custom_css_size }}, avec des longueurs de noms et de chemins également limitées.",
+    "Les ressources HTTPS utilisent des adresses DNS publiques vérifiées et chaque redirection est contrôlée; le réseau direct de WebView est bloqué et seuls GET et HEAD sont autorisés"
   ],
   "h3_plugin_interface": "Interface du plugin (pour les développeurs)",
   "p_plugin_interface": "L'hôte détecte et invoque le plugin avec les identités suivantes",

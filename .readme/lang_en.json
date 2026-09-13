@@ -1,7 +1,7 @@
 {
   "$name": "English",
   "text_current_lowercase": "current",
-  "text_plugin_synopsis": "File manager plugin. Secure read-only previewer for Markdown files",
+  "text_plugin_synopsis": "Preview Markdown documents",
   "h3_languages_with_ascii": "Languages",
   "p_languages_all_supported_for_readme": "The current README.md supports the following languages",
   "h3_introduction": "Introduction",
@@ -70,7 +70,8 @@
     "The plugin reads the selected file and its directory solely through temporary content URIs granted by the host. It receives no filesystem paths and requests no additional runtime permissions.",
     "CSP plus request interception restrict resource loading twice over: only built-in stylesheets, resources inside the document directory, `data:` images, and `https` images pass; every other request is rejected.",
     "Remote images are filtered against private and reserved addresses (anti-SSRF) and loaded with a no-referrer policy; external links can only open in the system browser.",
-    "Inputs are bounded: Markdown up to {{ limit_markdown_size }}, custom CSS up to {{ limit_custom_css_size }}, with display name and path lengths limited as well."
+    "Inputs are bounded: Markdown up to {{ limit_markdown_size }}, custom CSS up to {{ limit_custom_css_size }}, with display name and path lengths limited as well.",
+    "HTTPS resources use verified public DNS addresses with every redirect checked; direct WebView networking is blocked and resource requests support GET and HEAD only"
   ],
   "h3_plugin_interface": "Plugin Interface (for Developers)",
   "p_plugin_interface": "The host discovers and invokes the plugin with the following identities",

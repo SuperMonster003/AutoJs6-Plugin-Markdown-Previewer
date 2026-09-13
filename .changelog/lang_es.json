@@ -5,6 +5,21 @@
   "changelog_label_improvement": "Mejora",
   "changelog_label_dependency": "Dependencia",
   "$data": {
+    "v1.2.0": {
+      "released_date": "2026/09/13",
+      "feature": [
+        "Historial de versiones local desde la interfaz con traducciones y alternativa en inglés"
+      ],
+      "fix": [
+        "Los recursos HTTPS usan direcciones DNS públicas verificadas y se comprueba cada redirección; se bloquea la red directa de WebView y solo se admiten GET y HEAD"
+      ],
+      "improvement": [
+        "Comprobación de la firma completa, los APK esperados y la documentación reproducible de cada versión"
+      ],
+      "dependency": [
+        "Añadir OkHttp 4.12.0 para la carga controlada de recursos HTTPS"
+      ]
+    },
     "v1.1.0": {
       "released_date": "2026/09/11",
       "feature": [

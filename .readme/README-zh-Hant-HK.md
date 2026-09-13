@@ -5,7 +5,7 @@
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>檔案管理器外掛程式. 安全唯讀預覽 Markdown 檔案</p>
+  <p>預覽 Markdown 文件</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer?label=Release"/></a>
@@ -172,6 +172,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 - CSP 與請求攔截雙重限制資源載入: 僅放行內置樣式, 文件目錄內資源, `data:` 與 `https` 圖片, 其餘請求一律拒絕.
 - 遠端圖片經內部網絡與保留位址過濾 (防 SSRF), 以 no-referrer 策略載入; 外部連結僅能交由系統瀏覽器開啟.
 - 輸入有界: Markdown 上限 8 MiB, 自訂 CSS 上限 256 KiB, 顯示名稱與路徑長度同樣受限.
+- HTTPS 資源連線只使用經檢查的公網 DNS 位址並逐次校驗重新導向; 禁止 WebView 直接連網, 資源請求只支援 GET 和 HEAD
 
 ******
 
@@ -208,6 +209,15 @@ Explorer Action v2 同時支援單檔案的主預覽按鈕和溢出選單, 透�
 
 ******
 
+#### v1.2.0
+
+###### 2026/09/13
+
+* `新增` 介面提供本地發行歷史, 支援多語言及英語回退
+* `修復` HTTPS 資源連線只使用經檢查的公網 DNS 位址並逐次校驗重新導向; 禁止 WebView 直接連網, 資源請求只支援 GET 和 HEAD
+* `優化` 校驗發行簽署設定, 預期 APK 集合與可重現文件
+* `依賴` 附加 OkHttp 4.12.0 用於受控 HTTPS 資源載入
+
 #### v1.1.0
 
 ###### 2026/09/11
@@ -228,18 +238,6 @@ Explorer Action v2 同時支援單檔案的主預覽按鈕和溢出選單, 透�
 
 * `修復` 在 AutoJs6 插件中心啟用插件時因服務回傳空繫結 (onNullBinding) 而無法啟用的問題
 * `優化` 精簡插件名稱與描述, 統一各語言使用者文件的表述
-
-#### v1.0.0
-
-###### 2026/08/06
-
-* `新增` Markdown Previewer 首個版本: 為 AutoJs6 檔案管理器提供 `預覽 Markdown` 選單動作, 以唯讀方式渲染單一文件
-* `新增` 識別 md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 共 10 種副檔名以及 `text/markdown` 與 `text/x-markdown` MIME 類型
-* `新增` 支援表格, 工作清單, 刪除線, 自動連結, 標題錨點與文件內圖片渲染
-* `新增` 內置 GitHub (自動 / 淺色 / 深色), 紙張與棕褐色主題, 支援匯入自訂 CSS, 手動重新整理與全螢幕模式
-* `新增` 以允許清單淨化, CSP 約束, 停用 JavaScript 與儲存, 內部網絡位址過濾及輸入上限 (Markdown 8 MiB, CSS 256 KiB) 構建唯讀安全沙盒
-* `新增` 基於 `org.autojs.plugin.EXPLORER_ACTION` 協定註冊插件服務, 經宿主臨時 content URI 授權存取所選檔案及其上層目錄
-* `新增` 插件資訊, 介面, 使用說明與文件支援簡體中文, 繁體中文 (香港 / 台灣), 英文, 法文, 西班牙文, 日文, 韓文, 俄文與阿拉伯文
 
 ##### 完整記錄
 

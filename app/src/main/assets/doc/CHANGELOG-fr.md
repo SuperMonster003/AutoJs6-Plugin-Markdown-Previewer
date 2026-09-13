@@ -1,5 +1,14 @@
 # Historique des versions
 
+## v1.2.0
+
+###### 2026/09/13
+
+* `Fonctionnalité` Historique local accessible depuis l'interface, avec traductions et repli en anglais
+* `Correctif` Les ressources HTTPS utilisent des adresses DNS publiques vérifiées et chaque redirection est contrôlée; le réseau direct de WebView est bloqué et seuls GET et HEAD sont autorisés
+* `Amélioration` Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation
+* `Dépendance` Ajout de OkHttp 4.12.0 pour le chargement contrôlé des ressources HTTPS
+
 ## v1.1.0
 
 ###### 2026/09/11

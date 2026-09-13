@@ -5,7 +5,7 @@
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>File manager plugin. Secure read-only previewer for Markdown files</p>
+  <p>Preview Markdown documents</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer?label=Release"/></a>
@@ -172,6 +172,7 @@ The viewer is built on a deny-by-default principle. All of the following measure
 - CSP plus request interception restrict resource loading twice over: only built-in stylesheets, resources inside the document directory, `data:` images, and `https` images pass; every other request is rejected.
 - Remote images are filtered against private and reserved addresses (anti-SSRF) and loaded with a no-referrer policy; external links can only open in the system browser.
 - Inputs are bounded: Markdown up to 8 MiB, custom CSS up to 256 KiB, with display name and path lengths limited as well.
+- HTTPS resources use verified public DNS addresses with every redirect checked; direct WebView networking is blocked and resource requests support GET and HEAD only
 
 ******
 
@@ -208,6 +209,15 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 ******
 
+#### v1.2.0
+
+###### 2026/09/13
+
+* `Feature` Local release history is available from the interface, with localized text and an English fallback
+* `Fix` HTTPS resources use verified public DNS addresses with every redirect checked; direct WebView networking is blocked and resource requests support GET and HEAD only
+* `Improvement` Release packages are checked for a complete signing configuration, exact APK contents and reproducible documentation
+* `Dependency` Add OkHttp 4.12.0 for controlled HTTPS resource loading
+
 #### v1.1.0
 
 ###### 2026/09/11
@@ -228,18 +238,6 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 * `Fix` Plugin enablement failing in the AutoJs6 plugin center because the service returned an empty binding (onNullBinding)
 * `Improvement` Streamlined the plugin name and description and unified the wording of user documentation across languages
-
-#### v1.0.0
-
-###### 2026/08/06
-
-* `Feature` First release of Markdown Previewer: a `Markdown Previewer` overflow menu action for the AutoJs6 file manager that renders a single document read-only
-* `Feature` Recognizes 10 extensions (md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd) plus the `text/markdown` and `text/x-markdown` MIME types
-* `Feature` Renders tables, task lists, strikethrough, automatic links, heading anchors, and in-document images
-* `Feature` Ships GitHub (Auto / Light / Dark), Paper, and Sepia themes with custom CSS import, manual refresh, and fullscreen mode
-* `Feature` Builds a read-only security sandbox with allowlist sanitization, CSP constraints, disabled JavaScript and storage, private address filtering, and input caps (Markdown 8 MiB, CSS 256 KiB)
-* `Feature` Registers the plugin service through the `org.autojs.plugin.EXPLORER_ACTION` protocol and accesses the selected file and its parent directory via temporary host-granted content URIs
-* `Feature` Localizes plugin metadata, UI, instructions, and documentation into Simplified Chinese, Traditional Chinese (Hong Kong / Taiwan), English, French, Spanish, Japanese, Korean, Russian, and Arabic
 
 ##### Full history
 
