@@ -11,7 +11,8 @@
         "Local release history is available from the interface, with localized text and an English fallback"
       ],
       "fix": [
-        "HTTPS resources use verified public DNS addresses with every redirect checked; direct WebView networking is blocked and resource requests support GET and HEAD only"
+        "HTTPS resources use verified public DNS addresses with every redirect checked; direct WebView networking is blocked and resource requests support GET and HEAD only",
+        "Preserve HTTP 206 and other successful status codes when loading remote resources"
       ],
       "improvement": [
         "Release packages are checked for a complete signing configuration, exact APK contents and reproducible documentation"

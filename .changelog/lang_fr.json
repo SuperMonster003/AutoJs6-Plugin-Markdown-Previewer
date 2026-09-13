@@ -11,7 +11,8 @@
         "Historique local accessible depuis l'interface, avec traductions et repli en anglais"
       ],
       "fix": [
-        "Les ressources HTTPS utilisent des adresses DNS publiques vérifiées et chaque redirection est contrôlée; le réseau direct de WebView est bloqué et seuls GET et HEAD sont autorisés"
+        "Les ressources HTTPS utilisent des adresses DNS publiques vérifiées et chaque redirection est contrôlée; le réseau direct de WebView est bloqué et seuls GET et HEAD sont autorisés",
+        "Conserver HTTP 206 et les autres codes de succès lors du chargement des ressources distantes"
       ],
       "improvement": [
         "Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation"

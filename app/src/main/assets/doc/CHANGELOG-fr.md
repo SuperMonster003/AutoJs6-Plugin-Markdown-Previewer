@@ -6,6 +6,7 @@
 
 * `Fonctionnalité` Historique local accessible depuis l'interface, avec traductions et repli en anglais
 * `Correctif` Les ressources HTTPS utilisent des adresses DNS publiques vérifiées et chaque redirection est contrôlée; le réseau direct de WebView est bloqué et seuls GET et HEAD sont autorisés
+* `Correctif` Conserver HTTP 206 et les autres codes de succès lors du chargement des ressources distantes
 * `Amélioration` Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation
 * `Dépendance` Ajout de OkHttp 4.12.0 pour le chargement contrôlé des ressources HTTPS
 
