@@ -5,6 +5,21 @@
   "changelog_label_improvement": "改善",
   "changelog_label_dependency": "依存関係",
   "$data": {
+    "v1.2.0": {
+      "released_date": "2026/09/13",
+      "feature": [
+        "画面からローカルのリリース履歴を表示し, 各言語と英語へのフォールバックに対応"
+      ],
+      "fix": [
+        "HTTPS リソースの接続先 DNS アドレスと各リダイレクトを検証し, WebView の直接通信を無効化; リソース要求は GET と HEAD のみ対応"
+      ],
+      "improvement": [
+        "リリース署名の設定, APK の構成, ドキュメントの再生成結果を検証"
+      ],
+      "dependency": [
+        "制御された HTTPS リソース読み込みに OkHttp 4.12.0 を追加"
+      ]
+    },
     "v1.1.0": {
       "released_date": "2026/09/11",
       "feature": [

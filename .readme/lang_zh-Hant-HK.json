@@ -1,7 +1,7 @@
 {
   "$name": "繁體中文 (香港)",
   "text_current_lowercase": "目前",
-  "text_plugin_synopsis": "檔案管理器外掛程式. 安全唯讀預覽 Markdown 檔案",
+  "text_plugin_synopsis": "預覽 Markdown 文件",
   "h3_languages_with_ascii": "語言 (Languages)",
   "p_languages_all_supported_for_readme": "目前 README.md 支援以下語言",
   "h3_introduction": "簡介",
@@ -70,7 +70,8 @@
     "僅憑宿主授予的臨時 content URI 讀取所選檔案及其所在目錄, 不接收檔案系統路徑, 也不申請額外執行階段權限.",
     "CSP 與請求攔截雙重限制資源載入: 僅放行內置樣式, 文件目錄內資源, `data:` 與 `https` 圖片, 其餘請求一律拒絕.",
     "遠端圖片經內部網絡與保留位址過濾 (防 SSRF), 以 no-referrer 策略載入; 外部連結僅能交由系統瀏覽器開啟.",
-    "輸入有界: Markdown 上限 {{ limit_markdown_size }}, 自訂 CSS 上限 {{ limit_custom_css_size }}, 顯示名稱與路徑長度同樣受限."
+    "輸入有界: Markdown 上限 {{ limit_markdown_size }}, 自訂 CSS 上限 {{ limit_custom_css_size }}, 顯示名稱與路徑長度同樣受限.",
+    "HTTPS 資源連線只使用經檢查的公網 DNS 位址並逐次校驗重新導向; 禁止 WebView 直接連網, 資源請求只支援 GET 和 HEAD"
   ],
   "h3_plugin_interface": "插件介面 (面向開發者)",
   "p_plugin_interface": "宿主透過以下標識發現並呼叫插件",

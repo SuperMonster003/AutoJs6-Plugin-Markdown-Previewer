@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="action_markdown_previewer">預覽 Markdown</string>
-    <string name="app_name">Markdown 預覽器</string>
     <string name="dialog_button_cancel">取消</string>
     <string name="dialog_button_confirm">確認</string>
     <string name="error_custom_css_file_too_large">CSS 檔案超過 %1$s 的大小限制</string>
     <string name="error_markdown_file_too_large">Markdown 檔案超過 %1$s 的預覽限制</string>
-    <string name="plugin_description">檔案管理器外掛程式. 安全唯讀預覽 Markdown 檔案</string>
+    <string name="plugin_description">預覽 Markdown 文件</string>
+    <string name="release_history">發行歷史</string>
+    <string name="release_history_unavailable">發行歷史暫不可用</string>
     <string name="text_cannot_open_link">無法開啟連結</string>
     <string name="text_cannot_print_document">無法開始列印</string>
     <string name="text_cannot_read_file">無法讀取 Markdown 檔案</string>
@@ -14,18 +15,17 @@
     <string name="text_custom_css_cleared">已清除自訂 CSS</string>
     <string name="text_custom_css_imported">已匯入自訂 CSS</string>
     <string name="text_document_outline">文件大綱</string>
-    <string name="text_yaml_metadata">YAML 中繼資料</string>
+    <string name="text_failed_to_import">無法匯入 CSS 檔案</string>
     <string name="text_find_close">關閉尋找</string>
-    <string name="text_find_counting">…</string>
+    <string name="text_find_counting" tools:ignore="TypographyEllipsis">...</string>
     <string name="text_find_in_page">在頁面中尋找</string>
-    <string name="text_font_size">字體大小</string>
-    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_find_match_count">%1$d/%2$d</string>
     <string name="text_find_match_count_initial">0/0</string>
     <string name="text_find_next">下一個相符項目</string>
     <string name="text_find_previous">上一個相符項目</string>
+    <string name="text_font_size">字體大小</string>
+    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_fullscreen_mode">全螢幕模式</string>
-    <string name="text_failed_to_import">無法匯入 CSS 檔案</string>
     <string name="text_import_custom_css">匯入自訂 CSS</string>
     <string name="text_previewer">預覽器</string>
     <string name="text_previewer_theme">預覽主題</string>
@@ -39,4 +39,5 @@
     <string name="text_refresh">重新整理</string>
     <string name="text_settings">設定</string>
     <string name="text_start_in_fullscreen_mode">以全螢幕模式啟動</string>
+    <string name="text_yaml_metadata">YAML 中繼資料</string>
 </resources>

@@ -1,7 +1,7 @@
 {
   "$name": "한국어",
   "text_current_lowercase": "현재",
-  "text_plugin_synopsis": "파일 관리자 플러그인. Markdown 파일의 안전한 읽기 전용 미리보기",
+  "text_plugin_synopsis": "Markdown 문서 미리보기",
   "h3_languages_with_ascii": "언어 (Languages)",
   "p_languages_all_supported_for_readme": "현재 README.md는 다음 언어를 지원합니다",
   "h3_introduction": "소개",
@@ -70,7 +70,8 @@
     "호스트가 부여한 임시 content URI로만 선택한 파일과 해당 디렉터리를 읽습니다. 파일 시스템 경로를 받지 않으며 추가 런타임 권한도 요청하지 않습니다.",
     "CSP와 요청 가로채기가 리소스 로드를 이중으로 제한합니다: 내장 스타일시트, 문서 디렉터리 안의 리소스, `data:` 이미지, `https` 이미지만 통과하며 그 외 요청은 모두 거부됩니다.",
     "원격 이미지는 사설/예약 주소 필터 (SSRF 방지)를 거치고 no-referrer 정책으로 로드됩니다. 외부 링크는 시스템 브라우저로만 열 수 있습니다.",
-    "입력에는 상한이 있습니다: Markdown은 {{ limit_markdown_size }}까지, 사용자 지정 CSS는 {{ limit_custom_css_size }}까지이며 표시 이름과 경로 길이도 제한됩니다."
+    "입력에는 상한이 있습니다: Markdown은 {{ limit_markdown_size }}까지, 사용자 지정 CSS는 {{ limit_custom_css_size }}까지이며 표시 이름과 경로 길이도 제한됩니다.",
+    "HTTPS 리소스의 공용 DNS 주소와 각 리디렉션을 검증하고 WebView 직접 통신 차단; 리소스 요청은 GET 및 HEAD만 지원"
   ],
   "h3_plugin_interface": "플러그인 인터페이스 (개발자용)",
   "p_plugin_interface": "호스트는 다음 식별 정보로 플러그인을 발견하고 호출합니다",

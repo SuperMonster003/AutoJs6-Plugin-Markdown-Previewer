@@ -7,7 +7,7 @@ import org.autojs.plugin.common.api.IPluginInfoProvider
 
 class PluginInfoService : Service() {
     private val binder = object : IPluginInfoProvider.Stub() {
-        override fun getInfo() = markdownPreviewerPluginInfo()
+        override fun getInfo() = markdownPreviewerPluginInfo().apply { supportedAbis = emptyArray() }
     }
 
     override fun onBind(intent: Intent?): IBinder = binder

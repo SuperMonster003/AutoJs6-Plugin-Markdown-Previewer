@@ -1,7 +1,7 @@
 {
   "$name": "日本語",
   "text_current_lowercase": "現在",
-  "text_plugin_synopsis": "ファイルマネージャープラグイン. Markdown ファイルを安全に読み取り専用でプレビュー",
+  "text_plugin_synopsis": "Markdown ドキュメントをプレビュー",
   "h3_languages_with_ascii": "言語 (Languages)",
   "p_languages_all_supported_for_readme": "現在の README.md は次の言語をサポートします",
   "h3_introduction": "概要",
@@ -70,7 +70,8 @@
     "ホストが付与した一時的な content URI だけで選択ファイルとそのディレクトリを読み取り, ファイルシステムパスを受け取らず, 追加の実行時権限も要求しません.",
     "CSP とリクエスト遮断がリソース読み込みを二重に制限します: 内蔵スタイル, 文書ディレクトリ内のリソース, `data:` 画像, `https` 画像のみを許可し, それ以外のリクエストはすべて拒否します.",
     "リモート画像はプライベート/予約アドレスのフィルター (SSRF 対策) を通し, no-referrer ポリシーで読み込みます. 外部リンクはシステムブラウザでのみ開けます.",
-    "入力には上限があります: Markdown は {{ limit_markdown_size }} まで, カスタム CSS は {{ limit_custom_css_size }} まで, 表示名とパスの長さも制限されます."
+    "入力には上限があります: Markdown は {{ limit_markdown_size }} まで, カスタム CSS は {{ limit_custom_css_size }} まで, 表示名とパスの長さも制限されます.",
+    "HTTPS リソースの接続先 DNS アドレスと各リダイレクトを検証し, WebView の直接通信を無効化; リソース要求は GET と HEAD のみ対応"
   ],
   "h3_plugin_interface": "プラグインインターフェース (開発者向け)",
   "p_plugin_interface": "ホストは次の識別情報でプラグインを検出して呼び出します",

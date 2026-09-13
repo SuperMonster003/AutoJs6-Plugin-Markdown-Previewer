@@ -5,7 +5,7 @@
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>파일 관리자 플러그인. Markdown 파일의 안전한 읽기 전용 미리보기</p>
+  <p>Markdown 문서 미리보기</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer?label=Release"/></a>
@@ -172,6 +172,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 - CSP와 요청 가로채기가 리소스 로드를 이중으로 제한합니다: 내장 스타일시트, 문서 디렉터리 안의 리소스, `data:` 이미지, `https` 이미지만 통과하며 그 외 요청은 모두 거부됩니다.
 - 원격 이미지는 사설/예약 주소 필터 (SSRF 방지)를 거치고 no-referrer 정책으로 로드됩니다. 외부 링크는 시스템 브라우저로만 열 수 있습니다.
 - 입력에는 상한이 있습니다: Markdown은 8 MiB까지, 사용자 지정 CSS는 256 KiB까지이며 표시 이름과 경로 길이도 제한됩니다.
+- HTTPS 리소스의 공용 DNS 주소와 각 리디렉션을 검증하고 WebView 직접 통신 차단; 리소스 요청은 GET 및 HEAD만 지원
 
 ******
 
@@ -208,6 +209,15 @@ Explorer Action v2는 단일 파일의 기본 미리보기 버튼과 메뉴를 �
 
 ******
 
+#### v1.2.0
+
+###### 2026/09/13
+
+* `기능` 화면에서 현지화된 로컬 릴리스 기록을 표시하고 영어 대체 제공
+* `수정` HTTPS 리소스의 공용 DNS 주소와 각 리디렉션을 검증하고 WebView 직접 통신 차단; 리소스 요청은 GET 및 HEAD만 지원
+* `개선` 릴리스 서명 설정, 예상 APK 구성 및 문서 재생성 결과 검증
+* `의존성` 제어된 HTTPS 리소스 로드를 위해 OkHttp 4.12.0 추가
+
 #### v1.1.0
 
 ###### 2026/09/11
@@ -228,18 +238,6 @@ Explorer Action v2는 단일 파일의 기본 미리보기 버튼과 메뉴를 �
 
 * `수정` AutoJs6 플러그인 센터에서 플러그인을 활성화할 때 서비스가 빈 바인딩 (onNullBinding)을 반환하여 활성화에 실패하던 문제
 * `개선` 플러그인 이름과 설명을 간결하게 다듬고 각 언어 사용자 문서의 표현을 통일
-
-#### v1.0.0
-
-###### 2026/08/06
-
-* `기능` Markdown Previewer 첫 릴리스: AutoJs6 파일 관리자에 단일 문서를 읽기 전용으로 렌더링하는 `Markdown 미리보기` 더보기 메뉴 동작 제공
-* `기능` md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd 등 10가지 확장자와 `text/markdown` 및 `text/x-markdown` MIME 유형 인식
-* `기능` 표, 작업 목록, 취소선, 자동 링크, 제목 앵커, 문서 내 이미지 렌더링 지원
-* `기능` GitHub (자동 / 라이트 / 다크), 종이, 세피아 테마 내장, 사용자 지정 CSS 가져오기, 수동 새로 고침, 전체 화면 모드 지원
-* `기능` 허용 목록 정화, CSP 제약, JavaScript 및 저장소 비활성화, 사설 주소 필터링, 입력 상한 (Markdown 8 MiB, CSS 256 KiB)으로 읽기 전용 보안 샌드박스 구축
-* `기능` `org.autojs.plugin.EXPLORER_ACTION` 프로토콜로 플러그인 서비스를 등록하고 호스트가 부여한 임시 content URI로 선택한 파일과 상위 디렉터리에 접근
-* `기능` 플러그인 정보, UI, 사용 설명, 문서를 중국어 간체, 중국어 번체 (홍콩 / 대만), 영어, 프랑스어, 스페인어, 일본어, 한국어, 러시아어, 아랍어로 지원
 
 ##### 전체 기록
 

@@ -8,7 +8,7 @@ import org.autojs.plugin.explorer.api.IExplorerActionPlugin
 class ExplorerActionService : Service() {
 
     private val binder = object : IExplorerActionPlugin.Stub() {
-        override fun getInfo() = markdownPreviewerPluginInfo()
+        override fun getInfo() = markdownPreviewerPluginInfo().apply { supportedAbis = emptyArray() }
 
         override fun getActionCatalog() = markdownPreviewerActionCatalog()
     }

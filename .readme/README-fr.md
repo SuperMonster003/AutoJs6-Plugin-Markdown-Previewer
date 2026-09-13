@@ -5,7 +5,7 @@
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>Plugin de gestionnaire de fichiers. Aperçu sécurisé en lecture seule des fichiers Markdown</p>
+  <p>Affiche un aperçu des documents Markdown</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer?label=Release"/></a>
@@ -172,6 +172,7 @@ La visionneuse applique le principe du refus par défaut. Toutes les mesures sui
 - La CSP et l'interception des requêtes limitent doublement le chargement des ressources: seuls les styles intégrés, les ressources du dossier du document, les images `data:` et les images `https` passent; toute autre requête est rejetée.
 - Les images distantes sont filtrées contre les adresses privées et réservées (anti-SSRF) et chargées avec une politique no-referrer; les liens externes ne peuvent s'ouvrir que dans le navigateur du système.
 - Les entrées sont bornées: Markdown jusqu'à 8 MiB, CSS personnalisé jusqu'à 256 KiB, avec des longueurs de noms et de chemins également limitées.
+- Les ressources HTTPS utilisent des adresses DNS publiques vérifiées et chaque redirection est contrôlée; le réseau direct de WebView est bloqué et seuls GET et HEAD sont autorisés
 
 ******
 
@@ -208,6 +209,15 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 
 ******
 
+#### v1.2.0
+
+###### 2026/09/13
+
+* `Fonctionnalité` Historique local accessible depuis l'interface, avec traductions et repli en anglais
+* `Correctif` Les ressources HTTPS utilisent des adresses DNS publiques vérifiées et chaque redirection est contrôlée; le réseau direct de WebView est bloqué et seuls GET et HEAD sont autorisés
+* `Amélioration` Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation
+* `Dépendance` Ajout de OkHttp 4.12.0 pour le chargement contrôlé des ressources HTTPS
+
 #### v1.1.0
 
 ###### 2026/09/11
@@ -228,18 +238,6 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 
 * `Correctif` Échec de l'activation du plugin dans le centre des plugins d'AutoJs6 car le service renvoyait une liaison vide (onNullBinding)
 * `Amélioration` Simplification du nom et de la description du plugin et harmonisation de la documentation utilisateur entre les langues
-
-#### v1.0.0
-
-###### 2026/08/06
-
-* `Fonctionnalité` Première version de Markdown Previewer: une action de menu secondaire `Prévisualiser Markdown` pour le gestionnaire de fichiers d'AutoJs6 qui affiche un document en lecture seule
-* `Fonctionnalité` Reconnaissance de 10 extensions (md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd) ainsi que des types MIME `text/markdown` et `text/x-markdown`
-* `Fonctionnalité` Rendu des tableaux, listes de tâches, texte barré, liens automatiques, ancres de titres et images du document
-* `Fonctionnalité` Thèmes GitHub (Auto / clair / sombre), Papier et Sépia, avec import de CSS personnalisé, actualisation manuelle et mode plein écran
-* `Fonctionnalité` Bac à sable en lecture seule avec assainissement par liste d'autorisation, contraintes CSP, JavaScript et stockage désactivés, filtrage des adresses privées et limites d'entrée (Markdown 8 MiB, CSS 256 KiB)
-* `Fonctionnalité` Enregistrement du service du plugin via le protocole `org.autojs.plugin.EXPLORER_ACTION` et accès au fichier choisi et à son dossier parent par des URI de contenu temporaires accordés par l'hôte
-* `Fonctionnalité` Localisation des informations du plugin, de l'interface, des instructions et de la documentation en chinois simplifié, chinois traditionnel (Hong Kong / Taïwan), anglais, français, espagnol, japonais, coréen, russe et arabe
 
 ##### Historique complet
 

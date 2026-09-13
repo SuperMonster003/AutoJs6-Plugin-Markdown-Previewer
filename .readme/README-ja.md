@@ -5,7 +5,7 @@
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
-  <p>ファイルマネージャープラグイン. Markdown ファイルを安全に読み取り専用でプレビュー</p>
+  <p>Markdown ドキュメントをプレビュー</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer?label=Release"/></a>
@@ -172,6 +172,7 @@ md, markdown, mdown, mkd, mkdn, mdwn, mdtext, mdtxt, rmd, qmd
 - CSP とリクエスト遮断がリソース読み込みを二重に制限します: 内蔵スタイル, 文書ディレクトリ内のリソース, `data:` 画像, `https` 画像のみを許可し, それ以外のリクエストはすべて拒否します.
 - リモート画像はプライベート/予約アドレスのフィルター (SSRF 対策) を通し, no-referrer ポリシーで読み込みます. 外部リンクはシステムブラウザでのみ開けます.
 - 入力には上限があります: Markdown は 8 MiB まで, カスタム CSS は 256 KiB まで, 表示名とパスの長さも制限されます.
+- HTTPS リソースの接続先 DNS アドレスと各リダイレクトを検証し, WebView の直接通信を無効化; リソース要求は GET と HEAD のみ対応
 
 ******
 
@@ -208,6 +209,15 @@ Explorer Action v2 は単一ファイルのメインプレビューボタンと�
 
 ******
 
+#### v1.2.0
+
+###### 2026/09/13
+
+* `機能` 画面からローカルのリリース履歴を表示し, 各言語と英語へのフォールバックに対応
+* `修正` HTTPS リソースの接続先 DNS アドレスと各リダイレクトを検証し, WebView の直接通信を無効化; リソース要求は GET と HEAD のみ対応
+* `改善` リリース署名の設定, APK の構成, ドキュメントの再生成結果を検証
+* `依存関係` 制御された HTTPS リソース読み込みに OkHttp 4.12.0 を追加
+
 #### v1.1.0
 
 ###### 2026/09/11
@@ -228,18 +238,6 @@ Explorer Action v2 は単一ファイルのメインプレビューボタンと�
 
 * `修正` AutoJs6 プラグインセンターでプラグインを有効化する際, サービスが空のバインディング (onNullBinding) を返して有効化に失敗する問題
 * `改善` プラグインの名称と説明を簡潔にし, 各言語のユーザードキュメントの表現を統一
-
-#### v1.0.0
-
-###### 2026/08/06
-
-* `機能` Markdown Previewer 初回リリース: AutoJs6 ファイルマネージャーに単一文書を読み取り専用で表示する `Markdown をプレビュー` オーバーフローメニューアクションを提供
-* `機能` md / markdown / mdown / mkd / mkdn / mdwn / mdtext / mdtxt / rmd / qmd の 10 種類の拡張子と `text/markdown` および `text/x-markdown` MIME タイプを認識
-* `機能` 表, タスクリスト, 取り消し線, 自動リンク, 見出しアンカー, 文書内画像のレンダリングに対応
-* `機能` GitHub (自動 / ライト / ダーク), ペーパー, セピアのテーマを搭載し, カスタム CSS のインポート, 手動再読み込み, 全画面モードに対応
-* `機能` 許可リストによるサニタイズ, CSP 制約, JavaScript とストレージの無効化, プライベートアドレスのフィルタリング, 入力上限 (Markdown 8 MiB, CSS 256 KiB) による読み取り専用サンドボックスを構築
-* `機能` `org.autojs.plugin.EXPLORER_ACTION` プロトコルでプラグインサービスを登録し, ホストが付与する一時的な content URI で選択ファイルと親ディレクトリにアクセス
-* `機能` プラグイン情報, UI, 使用説明, ドキュメントを簡体字中国語, 繁体字中国語 (香港 / 台湾), 英語, フランス語, スペイン語, 日本語, 韓国語, ロシア語, アラビア語に対応
 
 ##### 完全な履歴
 

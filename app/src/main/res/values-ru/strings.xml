@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="action_markdown_previewer">Предпросмотр Markdown</string>
-    <string name="app_name">Средство просмотра Markdown</string>
     <string name="dialog_button_cancel">Отмена</string>
     <string name="dialog_button_confirm">Подтвердить</string>
     <string name="error_custom_css_file_too_large">Файл CSS превышает ограничение %1$s</string>
     <string name="error_markdown_file_too_large">Файл Markdown превышает ограничение просмотра %1$s</string>
-    <string name="plugin_description">Плагин файлового менеджера. Безопасный просмотр файлов Markdown только для чтения</string>
+    <string name="plugin_description">Предпросмотр документов Markdown</string>
+    <string name="release_history">История выпусков</string>
+    <string name="release_history_unavailable">История выпусков недоступна</string>
     <string name="text_cannot_open_link">Не удалось открыть ссылку</string>
     <string name="text_cannot_print_document">Не удалось запустить печать</string>
     <string name="text_cannot_read_file">Не удалось прочитать файл Markdown</string>
@@ -14,18 +15,17 @@
     <string name="text_custom_css_cleared">Пользовательский CSS удален</string>
     <string name="text_custom_css_imported">Пользовательский CSS импортирован</string>
     <string name="text_document_outline">Структура документа</string>
-    <string name="text_yaml_metadata">Метаданные YAML</string>
+    <string name="text_failed_to_import">Не удалось импортировать файл CSS</string>
     <string name="text_find_close">Закрыть поиск</string>
-    <string name="text_find_counting">…</string>
+    <string name="text_find_counting" tools:ignore="TypographyEllipsis">...</string>
     <string name="text_find_in_page">Найти на странице</string>
-    <string name="text_font_size">Размер шрифта</string>
-    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_find_match_count">%1$d/%2$d</string>
     <string name="text_find_match_count_initial">0/0</string>
     <string name="text_find_next">Следующее совпадение</string>
     <string name="text_find_previous">Предыдущее совпадение</string>
+    <string name="text_font_size">Размер шрифта</string>
+    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_fullscreen_mode">Полноэкранный режим</string>
-    <string name="text_failed_to_import">Не удалось импортировать файл CSS</string>
     <string name="text_import_custom_css">Импортировать пользовательский CSS</string>
     <string name="text_previewer">Средство просмотра</string>
     <string name="text_previewer_theme">Тема просмотра</string>
@@ -39,4 +39,5 @@
     <string name="text_refresh">Обновить</string>
     <string name="text_settings">Настройки</string>
     <string name="text_start_in_fullscreen_mode">Запускать в полноэкранном режиме</string>
+    <string name="text_yaml_metadata">Метаданные YAML</string>
 </resources>

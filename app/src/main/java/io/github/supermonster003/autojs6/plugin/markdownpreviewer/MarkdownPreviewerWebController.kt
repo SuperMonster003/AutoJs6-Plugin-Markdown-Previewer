@@ -50,6 +50,10 @@ internal class MarkdownPreviewerWebController(
 
     private val documentPathHandler = MarkdownPreviewerDocumentPathHandler(context.contentResolver, resourceRoot)
 
+    private val publicHttpsClient = PublicHttpsClient(allowedUrl = { url ->
+        MarkdownPreviewerRequestPolicy.shouldLetWebViewLoadHttpsSubresource(url, false)
+    })
+
     private val assetLoader = WebViewAssetLoader.Builder()
         .setDomain(MarkdownPreviewerWebOrigin.DOMAIN)
         .addPathHandler(
@@ -82,7 +86,7 @@ internal class MarkdownPreviewerWebController(
             allowUniversalAccessFromFileURLs = false
             mixedContentMode = WebSettings.MIXED_CONTENT_NEVER_ALLOW
             blockNetworkImage = false
-            blockNetworkLoads = false
+            blockNetworkLoads = true
 
             setSupportMultipleWindows(false)
             setSupportZoom(true)
@@ -126,7 +130,14 @@ internal class MarkdownPreviewerWebController(
                         request.isForMainFrame,
                     )
                 ) {
-                    return null
+                    return try {
+                        val resource = publicHttpsClient.open(uri.toString(), request.method, request.requestHeaders)
+                        WebResourceResponse(resource.mimeType, resource.encoding, 200, "OK", resource.headers, resource.body)
+                    } catch (_: java.io.IOException) {
+                        forbidden()
+                    } catch (_: IllegalArgumentException) {
+                        forbidden()
+                    }
                 }
                 return forbidden()
             }

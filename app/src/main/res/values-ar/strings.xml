@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="action_markdown_previewer">معاينة Markdown</string>
-    <string name="app_name">عارض Markdown</string>
     <string name="dialog_button_cancel">إلغاء</string>
     <string name="dialog_button_confirm">تأكيد</string>
     <string name="error_custom_css_file_too_large">يتجاوز ملف CSS حد %1$s</string>
     <string name="error_markdown_file_too_large">يتجاوز ملف Markdown حد المعاينة %1$s</string>
-    <string name="plugin_description">ملحق مدير الملفات. معاينة آمنة للقراءة فقط لملفات Markdown</string>
+    <string name="plugin_description">معاينة مستندات Markdown</string>
+    <string name="release_history">سجل الإصدارات</string>
+    <string name="release_history_unavailable">سجل الإصدارات غير متاح</string>
     <string name="text_cannot_open_link">تعذر فتح الرابط</string>
     <string name="text_cannot_print_document">تعذر بدء الطباعة</string>
     <string name="text_cannot_read_file">تعذرت قراءة ملف Markdown</string>
@@ -14,18 +15,17 @@
     <string name="text_custom_css_cleared">تم مسح CSS المخصص</string>
     <string name="text_custom_css_imported">تم استيراد CSS المخصص</string>
     <string name="text_document_outline">مخطط المستند</string>
-    <string name="text_yaml_metadata">بيانات YAML الوصفية</string>
+    <string name="text_failed_to_import">تعذر استيراد ملف CSS</string>
     <string name="text_find_close">إغلاق البحث</string>
-    <string name="text_find_counting">…</string>
+    <string name="text_find_counting" tools:ignore="TypographyEllipsis">...</string>
     <string name="text_find_in_page">بحث في الصفحة</string>
-    <string name="text_font_size">حجم الخط</string>
-    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_find_match_count">%1$d/%2$d</string>
     <string name="text_find_match_count_initial">0/0</string>
     <string name="text_find_next">التطابق التالي</string>
     <string name="text_find_previous">التطابق السابق</string>
+    <string name="text_font_size">حجم الخط</string>
+    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_fullscreen_mode">وضع ملء الشاشة</string>
-    <string name="text_failed_to_import">تعذر استيراد ملف CSS</string>
     <string name="text_import_custom_css">استيراد CSS مخصص</string>
     <string name="text_previewer">عارض</string>
     <string name="text_previewer_theme">سمة المعاينة</string>
@@ -39,4 +39,5 @@
     <string name="text_refresh">تحديث</string>
     <string name="text_settings">الإعدادات</string>
     <string name="text_start_in_fullscreen_mode">البدء في وضع ملء الشاشة</string>
+    <string name="text_yaml_metadata">بيانات YAML الوصفية</string>
 </resources>

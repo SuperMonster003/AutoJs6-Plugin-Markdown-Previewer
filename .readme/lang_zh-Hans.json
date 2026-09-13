@@ -1,7 +1,7 @@
 {
   "$name": "简体中文",
   "text_current_lowercase": "当前",
-  "text_plugin_synopsis": "文件管理器插件. 安全只读预览 Markdown 文件",
+  "text_plugin_synopsis": "预览 Markdown 文档",
   "h3_languages_with_ascii": "语言 (Languages)",
   "p_languages_all_supported_for_readme": "当前 README.md 支持以下语言",
   "h3_introduction": "简介",
@@ -70,7 +70,8 @@
     "仅凭宿主授予的临时 content URI 读取所选文件及其所在目录, 不接收文件系统路径, 也不申请额外运行时权限.",
     "CSP 与请求拦截双重限制资源加载: 仅放行内置样式, 文档目录内资源, `data:` 与 `https` 图片, 其余请求一律拒绝.",
     "远程图片经私网与保留地址过滤 (防 SSRF), 以 no-referrer 策略加载; 外部链接仅能交由系统浏览器打开.",
-    "输入有界: Markdown 上限 {{ limit_markdown_size }}, 自定义 CSS 上限 {{ limit_custom_css_size }}, 显示名与路径长度同样受限."
+    "输入有界: Markdown 上限 {{ limit_markdown_size }}, 自定义 CSS 上限 {{ limit_custom_css_size }}, 显示名与路径长度同样受限.",
+    "HTTPS 资源连接仅使用经检查的公网 DNS 地址并逐次校验重定向; 禁止 WebView 直接联网, 资源请求仅支持 GET 和 HEAD"
   ],
   "h3_plugin_interface": "插件接口 (面向开发者)",
   "p_plugin_interface": "宿主通过以下标识发现并调用插件",

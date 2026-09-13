@@ -530,7 +530,7 @@ class MarkdownPreviewerWebControllerInstrumentationTest {
                     assertFalse(allowFileAccessFromFileURLs)
                     assertFalse(allowUniversalAccessFromFileURLs)
                     assertFalse(blockNetworkImage)
-                    assertFalse(blockNetworkLoads)
+                    assertTrue(blockNetworkLoads)
                     assertEquals(WebSettings.MIXED_CONTENT_NEVER_ALLOW, mixedContentMode)
                 }
             } finally {

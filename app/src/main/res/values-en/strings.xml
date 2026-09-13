@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="action_markdown_previewer">Markdown Previewer</string>
-    <string name="app_name">Markdown Previewer</string>
     <string name="dialog_button_cancel">Cancel</string>
     <string name="dialog_button_confirm">Confirm</string>
     <string name="error_custom_css_file_too_large">The CSS file exceeds the %1$s limit</string>
     <string name="error_markdown_file_too_large">The Markdown file exceeds the %1$s previewer limit</string>
-    <string name="plugin_description">File manager plugin. Secure read-only previewer for Markdown files</string>
+    <string name="plugin_description">Preview Markdown documents</string>
+    <string name="release_history">Release history</string>
+    <string name="release_history_unavailable">Release history is unavailable</string>
     <string name="text_cannot_open_link">Cannot open the link</string>
     <string name="text_cannot_print_document">Cannot start printing</string>
     <string name="text_cannot_read_file">Cannot read the Markdown file</string>
@@ -14,18 +15,17 @@
     <string name="text_custom_css_cleared">Custom CSS cleared</string>
     <string name="text_custom_css_imported">Custom CSS imported</string>
     <string name="text_document_outline">Document outline</string>
-    <string name="text_yaml_metadata">YAML metadata</string>
+    <string name="text_failed_to_import">Failed to import the CSS file</string>
     <string name="text_find_close">Close find</string>
-    <string name="text_find_counting">…</string>
+    <string name="text_find_counting" tools:ignore="TypographyEllipsis">...</string>
     <string name="text_find_in_page">Find in page</string>
-    <string name="text_font_size">Font size</string>
-    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_find_match_count">%1$d/%2$d</string>
     <string name="text_find_match_count_initial">0/0</string>
     <string name="text_find_next">Next match</string>
     <string name="text_find_previous">Previous match</string>
+    <string name="text_font_size">Font size</string>
+    <string name="text_font_size_percentage">%1$d%%</string>
     <string name="text_fullscreen_mode">Fullscreen mode</string>
-    <string name="text_failed_to_import">Failed to import the CSS file</string>
     <string name="text_import_custom_css">Import custom CSS</string>
     <string name="text_previewer">Previewer</string>
     <string name="text_previewer_theme">Previewer theme</string>
@@ -39,4 +39,5 @@
     <string name="text_refresh">Refresh</string>
     <string name="text_settings">Settings</string>
     <string name="text_start_in_fullscreen_mode">Start in fullscreen mode</string>
+    <string name="text_yaml_metadata">YAML metadata</string>
 </resources>
