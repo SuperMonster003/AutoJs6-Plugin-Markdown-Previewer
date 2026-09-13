@@ -6,6 +6,7 @@
 
 * `Feature` Local release history is available from the interface, with localized text and an English fallback
 * `Fix` HTTPS resources use verified public DNS addresses with every redirect checked; direct WebView networking is blocked and resource requests support GET and HEAD only
+* `Fix` Preserve HTTP 206 and other successful status codes when loading remote resources
 * `Improvement` Release packages are checked for a complete signing configuration, exact APK contents and reproducible documentation
 * `Dependency` Add OkHttp 4.12.0 for controlled HTTPS resource loading
 

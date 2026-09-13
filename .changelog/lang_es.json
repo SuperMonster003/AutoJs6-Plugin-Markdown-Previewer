@@ -11,7 +11,8 @@
         "Historial de versiones local desde la interfaz con traducciones y alternativa en inglés"
       ],
       "fix": [
-        "Los recursos HTTPS usan direcciones DNS públicas verificadas y se comprueba cada redirección; se bloquea la red directa de WebView y solo se admiten GET y HEAD"
+        "Los recursos HTTPS usan direcciones DNS públicas verificadas y se comprueba cada redirección; se bloquea la red directa de WebView y solo se admiten GET y HEAD",
+        "Conservar HTTP 206 y otros estados correctos al cargar recursos remotos"
       ],
       "improvement": [
         "Comprobación de la firma completa, los APK esperados y la documentación reproducible de cada versión"
