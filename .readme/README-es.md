@@ -209,6 +209,12 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 
 ******
 
+#### v1.2.2
+
+###### 2026/09/16
+
+* `Mejora` Tras compileSdk, targetSdk sube a 37 (Android 17); el comportamiento del plugin no depende del nuevo objetivo
+
 #### v1.2.1
 
 ###### 2026/09/15
@@ -224,20 +230,6 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 * `Corrección` Conservar HTTP 206 y otros estados correctos al cargar recursos remotos
 * `Mejora` Comprobación de la firma completa, los APK esperados y la documentación reproducible de cada versión
 * `Dependencia` Añadir OkHttp 4.12.0 para la carga controlada de recursos HTTPS
-
-#### v1.1.0
-
-###### 2026/09/11
-
-* `Función` Se añadieron el esquema del documento, la búsqueda en la página, el zoom de texto persistente y el resaltado de sintaxis durante el renderizado sin habilitar JavaScript
-* `Función` Se añadió la navegación segura a documentos Markdown relativos dentro del directorio autorizado por el host, con historial interno y manejo de anclas
-* `Función` Se añadieron la impresión de Android / exportación a PDF y la visualización acotada de front matter YAML
-* `Función` Se añadieron notas al pie definidas y en línea con enlaces de retorno bidireccionales saneados
-* `Corrección` Corregidos el rechazo de protocolo del botón principal y los cierres de ajustes; sincronizados la apariencia de AutoJs6, las barras y los controles monocromos
-* `Mejora` Se reforzó la validación de intents explorer-action v1, URI, rutas, enlaces, recursos, HTML y notas al pie, manteniendo el límite de solo lectura de un archivo
-* `Mejora` Se añadieron una Roadmap verificable, 4 capturas reales con datos sintéticos y generación reproducible de README / CHANGELOG para 10 idiomas
-* `Mejora` La verificación de compilación rechaza dependencias nativas accidentales y genera un informe JSON
-* `Dependencia` Se migró CommonMark del fork heredado de Atlassian 0.9.0 a los módulos oficiales core y extensiones 0.30.0 de Maven Central, con core library desugaring para API 24
 
 ##### Historial completo
 
