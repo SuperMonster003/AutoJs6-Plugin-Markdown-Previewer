@@ -209,6 +209,12 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 
 ******
 
+#### v1.2.1
+
+###### 2026/09/15
+
+* `Mejora` compileSdk sube a 37 (Android 17); targetSdk se mantiene en 36 hasta verificar el comportamiento que depende del objetivo
+
 #### v1.2.0
 
 ###### 2026/09/13
@@ -232,13 +238,6 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 * `Mejora` Se añadieron una Roadmap verificable, 4 capturas reales con datos sintéticos y generación reproducible de README / CHANGELOG para 10 idiomas
 * `Mejora` La verificación de compilación rechaza dependencias nativas accidentales y genera un informe JSON
 * `Dependencia` Se migró CommonMark del fork heredado de Atlassian 0.9.0 a los módulos oficiales core y extensiones 0.30.0 de Maven Central, con core library desugaring para API 24
-
-#### v1.0.1
-
-###### 2026/08/08
-
-* `Corrección` Fallo al activar el complemento en el centro de plugins de AutoJs6 porque el servicio devolvía un enlace vacío (onNullBinding)
-* `Mejora` Se simplificaron el nombre y la descripción del complemento y se unificó la redacción de la documentación de usuario en todos los idiomas
 
 ##### Historial completo
 

@@ -209,6 +209,12 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 
 ******
 
+#### v1.2.1
+
+###### 2026/09/15
+
+* `Amélioration` compileSdk passe à 37 (Android 17) ; targetSdk reste à 36 jusqu'à la vérification du comportement dépendant de la cible
+
 #### v1.2.0
 
 ###### 2026/09/13
@@ -232,13 +238,6 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 * `Amélioration` Ajout d'une Roadmap à cocher, de 4 captures réelles sur appareil utilisant uniquement des données synthétiques et de la génération reproductible README / CHANGELOG pour 10 langues
 * `Amélioration` La vérification de compilation rejette les dépendances natives involontaires et produit un rapport JSON
 * `Dépendance` Migration de l'ancien fork Atlassian CommonMark 0.9.0 vers les modules officiels core et extensions 0.30.0 de Maven Central, avec core library desugaring pour l'API 24
-
-#### v1.0.1
-
-###### 2026/08/08
-
-* `Correctif` Échec de l'activation du plugin dans le centre des plugins d'AutoJs6 car le service renvoyait une liaison vide (onNullBinding)
-* `Amélioration` Simplification du nom et de la description du plugin et harmonisation de la documentation utilisateur entre les langues
 
 ##### Historique complet
 

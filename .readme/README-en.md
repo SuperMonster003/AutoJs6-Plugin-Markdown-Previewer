@@ -209,6 +209,12 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 ******
 
+#### v1.2.1
+
+###### 2026/09/15
+
+* `Improvement` Raise compileSdk to 37 (Android 17); targetSdk stays at 36 until the behavior that depends on the target is verified
+
 #### v1.2.0
 
 ###### 2026/09/13
@@ -232,13 +238,6 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 * `Improvement` Added a checkable Roadmap, 4 synthetic-data real-device screenshots, and reproducible README / CHANGELOG generation for 10 languages
 * `Improvement` Build verification rejects accidental native dependencies and produces a JSON report
 * `Dependency` Migrated CommonMark from the legacy Atlassian 0.9.0 fork to the official Maven Central 0.30.0 core and extension modules, with core library desugaring for API 24
-
-#### v1.0.1
-
-###### 2026/08/08
-
-* `Fix` Plugin enablement failing in the AutoJs6 plugin center because the service returned an empty binding (onNullBinding)
-* `Improvement` Streamlined the plugin name and description and unified the wording of user documentation across languages
 
 ##### Full history
 
