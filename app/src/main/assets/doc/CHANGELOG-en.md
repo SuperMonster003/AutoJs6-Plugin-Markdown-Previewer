@@ -1,5 +1,11 @@
 # Release History
 
+## v1.2.1
+
+###### 2026/09/15
+
+* `Improvement` Raise compileSdk to 37 (Android 17); targetSdk stays at 36 until the behavior that depends on the target is verified
+
 ## v1.2.0
 
 ###### 2026/09/13
