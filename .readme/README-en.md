@@ -209,6 +209,12 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 ******
 
+#### v1.2.2
+
+###### 2026/09/16
+
+* `Improvement` Raise targetSdk to 37 (Android 17) after compileSdk; the plugin's behavior does not depend on the new target
+
 #### v1.2.1
 
 ###### 2026/09/15
@@ -224,20 +230,6 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 * `Fix` Preserve HTTP 206 and other successful status codes when loading remote resources
 * `Improvement` Release packages are checked for a complete signing configuration, exact APK contents and reproducible documentation
 * `Dependency` Add OkHttp 4.12.0 for controlled HTTPS resource loading
-
-#### v1.1.0
-
-###### 2026/09/11
-
-* `Feature` Added a document outline, in-page search, persistent text zoom, and render-time syntax highlighting without enabling JavaScript
-* `Feature` Added safe navigation to relative Markdown documents inside the host-authorized directory, with in-viewer history and anchor handling
-* `Feature` Added Android printing / PDF export and bounded YAML front matter rendering
-* `Feature` Added definition and inline Footnotes with sanitized bidirectional backlinks
-* `Fix` Fixed primary previewer protocol rejection and settings crashes; synchronized the host appearance, page chrome, and monochrome dialog controls
-* `Improvement` Hardened explorer-action v1 Intent, URI, path, link, resource, HTML, and Footnotes validation while preserving the single-file read-only boundary
-* `Improvement` Added a checkable Roadmap, 4 synthetic-data real-device screenshots, and reproducible README / CHANGELOG generation for 10 languages
-* `Improvement` Build verification rejects accidental native dependencies and produces a JSON report
-* `Dependency` Migrated CommonMark from the legacy Atlassian 0.9.0 fork to the official Maven Central 0.30.0 core and extension modules, with core library desugaring for API 24
 
 ##### Full history
 

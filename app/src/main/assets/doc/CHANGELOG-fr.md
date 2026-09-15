@@ -1,5 +1,11 @@
 # Historique des versions
 
+## v1.2.2
+
+###### 2026/09/16
+
+* `Amélioration` Après compileSdk, targetSdk passe à 37 (Android 17) ; le comportement du plugin ne dépend pas de la nouvelle cible
+
 ## v1.2.1
 
 ###### 2026/09/15
