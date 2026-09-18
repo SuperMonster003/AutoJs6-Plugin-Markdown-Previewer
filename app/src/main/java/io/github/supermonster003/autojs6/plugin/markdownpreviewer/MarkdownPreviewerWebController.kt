@@ -38,6 +38,7 @@ internal class MarkdownPreviewerWebController(
     initialTextZoomPercent: Int = MarkdownPreviewerTextZoom.DEFAULT_PERCENT,
     private val onPageFinished: () -> Unit = {},
     private val onFindResult: (MarkdownPreviewerFindResult) -> Unit = {},
+    private val onPageCommitVisible: () -> Unit = {},
 ) {
 
     private var activeFindQuery: String? = null
@@ -150,6 +151,12 @@ internal class MarkdownPreviewerWebController(
                 isForMainFrame = request.isForMainFrame,
                 hasGesture = request.hasGesture(),
             )
+
+            override fun onPageCommitVisible(view: WebView, url: String) {
+                if (isActiveDocumentUrl(url.toUri())) {
+                    onPageCommitVisible()
+                }
+            }
 
             override fun onPageFinished(view: WebView, url: String) {
                 if (isActiveDocumentUrl(url.toUri())) {

@@ -209,6 +209,12 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 ******
 
+#### v1.2.3
+
+###### 2026/09/18
+
+* `Fix` Status and navigation bar colors follow the rendered page background without waiting for images and other resources to finish loading
+
 #### v1.2.2
 
 ###### 2026/09/16
@@ -220,16 +226,6 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 ###### 2026/09/15
 
 * `Improvement` Raise compileSdk to 37 (Android 17); targetSdk stays at 36 until the behavior that depends on the target is verified
-
-#### v1.2.0
-
-###### 2026/09/13
-
-* `Feature` Local release history is available from the interface, with localized text and an English fallback
-* `Fix` HTTPS resources use verified public DNS addresses with every redirect checked; direct WebView networking is blocked and resource requests support GET and HEAD only
-* `Fix` Preserve HTTP 206 and other successful status codes when loading remote resources
-* `Improvement` Release packages are checked for a complete signing configuration, exact APK contents and reproducible documentation
-* `Dependency` Add OkHttp 4.12.0 for controlled HTTPS resource loading
 
 ##### Full history
 

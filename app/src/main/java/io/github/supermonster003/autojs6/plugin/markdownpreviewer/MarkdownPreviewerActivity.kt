@@ -127,6 +127,8 @@ class MarkdownPreviewerActivity : PreviewerHostActivity() {
             onExternalLink = ::openExternalLink,
             onDocumentLink = ::openDocumentLink,
             initialTextZoomPercent = preferences.textZoomPercent,
+            // Match the visible background even while images or other subresources are loading.
+            onPageCommitVisible = { chrome.samplePage() },
             onPageFinished = {
                 binding.loadingIndicator.isVisible = false
                 documentReady = true

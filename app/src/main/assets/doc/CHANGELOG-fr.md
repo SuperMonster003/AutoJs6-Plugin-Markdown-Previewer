@@ -1,5 +1,11 @@
 # Historique des versions
 
+## v1.2.3
+
+###### 2026/09/18
+
+* `Correctif` Les couleurs des barres de statut et de navigation suivent le fond de la page dès son affichage, sans attendre la fin du chargement des images et autres ressources
+
 ## v1.2.2
 
 ###### 2026/09/16
