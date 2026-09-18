@@ -1,5 +1,11 @@
 # Historial de versiones
 
+## v1.2.3
+
+###### 2026/09/18
+
+* `Corrección` Los colores de las barras de estado y navegación se adaptan al fondo de la página en cuanto se muestra, sin esperar a que terminen de cargar las imágenes y otros recursos
+
 ## v1.2.2
 
 ###### 2026/09/16

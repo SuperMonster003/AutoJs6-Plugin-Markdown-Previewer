@@ -209,6 +209,12 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 
 ******
 
+#### v1.2.3
+
+###### 2026/09/18
+
+* `Corrección` Los colores de las barras de estado y navegación se adaptan al fondo de la página en cuanto se muestra, sin esperar a que terminen de cargar las imágenes y otros recursos
+
 #### v1.2.2
 
 ###### 2026/09/16
@@ -220,16 +226,6 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 ###### 2026/09/15
 
 * `Mejora` compileSdk sube a 37 (Android 17); targetSdk se mantiene en 36 hasta verificar el comportamiento que depende del objetivo
-
-#### v1.2.0
-
-###### 2026/09/13
-
-* `Función` Historial de versiones local desde la interfaz con traducciones y alternativa en inglés
-* `Corrección` Los recursos HTTPS usan direcciones DNS públicas verificadas y se comprueba cada redirección; se bloquea la red directa de WebView y solo se admiten GET y HEAD
-* `Corrección` Conservar HTTP 206 y otros estados correctos al cargar recursos remotos
-* `Mejora` Comprobación de la firma completa, los APK esperados y la documentación reproducible de cada versión
-* `Dependencia` Añadir OkHttp 4.12.0 para la carga controlada de recursos HTTPS
 
 ##### Historial completo
 

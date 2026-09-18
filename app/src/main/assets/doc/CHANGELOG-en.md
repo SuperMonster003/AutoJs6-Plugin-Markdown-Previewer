@@ -1,5 +1,11 @@
 # Release History
 
+## v1.2.3
+
+###### 2026/09/18
+
+* `Fix` Status and navigation bar colors follow the rendered page background without waiting for images and other resources to finish loading
+
 ## v1.2.2
 
 ###### 2026/09/16

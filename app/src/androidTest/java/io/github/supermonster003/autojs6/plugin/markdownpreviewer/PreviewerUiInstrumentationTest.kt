@@ -5,6 +5,7 @@ package io.github.supermonster003.autojs6.plugin.markdownpreviewer
 import android.content.ClipData
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
@@ -23,10 +24,90 @@ import org.junit.Assert.*
 import org.junit.Assume.assumeTrue
 import org.junit.Test
 import java.io.File
+import java.util.concurrent.CountDownLatch
+import java.util.concurrent.TimeUnit
 
 class PreviewerUiInstrumentationTest {
     private val instrumentation = InstrumentationRegistry.getInstrumentation()
     private val context = instrumentation.targetContext
+
+    @Test
+    fun systemBarsMatchVisibleBackgroundWhileImageIsStillLoading() {
+        val preferences = MarkdownPreviewerPreferences(context)
+        val originalTheme = preferences.theme
+        val originalCss = preferences.readCustomCss()
+        val originalFullscreen = preferences.startInFullscreenMode
+        val imageRequested = CountDownLatch(1)
+        val releaseImage = CountDownLatch(1)
+        try {
+            preferences.importCustomCss("html, body, .markdown-body { background: #123456 !important; color: white !important; }".byteInputStream())
+            preferences.theme = MarkdownPreviewerTheme.CUSTOM
+            preferences.startInFullscreenMode = false
+            val request = request(MarkdownPreviewerPlugin.PRIMARY_ACTION_ID, "# Loading image\n\n![Delayed image](slow-chrome.png)")
+            val imageFile = File(context.filesDir, "markdown-previewer-instrumentation/appearance/slow-chrome.png")
+            val image = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
+            try {
+                image.eraseColor(0xFFFF0000.toInt())
+                imageFile.outputStream().use { image.compress(Bitmap.CompressFormat.PNG, 100, it) }
+            } finally {
+                image.recycle()
+            }
+            MarkdownPreviewerTestFileProvider.beforeOpenFile = { uri ->
+                if (uri.lastPathSegment == "slow-chrome.png") {
+                    imageRequested.countDown()
+                    check(releaseImage.await(30, TimeUnit.SECONDS)) { "Image was never released" }
+                }
+            }
+            val activity = instrumentation.startActivitySync(request) as MarkdownPreviewerActivity
+            try {
+                assertTrue("The delayed image must be requested", imageRequested.await(10, TimeUnit.SECONDS))
+                val location = IntArray(2)
+                main {
+                    val webView = activity.findViewById<WebView>(R.id.previewer_web_view)
+                    webView.getLocationOnScreen(location)
+                    assertFalse(webView.settings.javaScriptEnabled)
+                }
+                // Verify the displayed background independently of page-completion callbacks.
+                val deadline = SystemClock.uptimeMillis() + 10000
+                var painted = false
+                while (!painted && SystemClock.uptimeMillis() < deadline) {
+                    val screenshot = requireNotNull(instrumentation.uiAutomation.takeScreenshot())
+                    try {
+                        painted = screenshot.getPixel(location[0] + 4, location[1] + 40) == 0xFF123456.toInt()
+                    } finally {
+                        screenshot.recycle()
+                    }
+                    if (!painted) SystemClock.sleep(50)
+                }
+                assertTrue("The Markdown background must be visible before releasing the image", painted)
+                await("System bars must match the visible Markdown before the image finishes loading") {
+                    (activity.findViewById<View>(R.id.toolbar).background as? android.graphics.drawable.ColorDrawable)?.color == 0xFF123456.toInt()
+                }
+                main {
+                    assertEquals("Page completion must still be pending", View.VISIBLE, activity.findViewById<View>(R.id.loading_indicator).visibility)
+                    val contentRoot = activity.findViewById<android.view.ViewGroup>(android.R.id.content).getChildAt(0)
+                    assertEquals(0xFF123456.toInt(), (contentRoot.background as android.graphics.drawable.ColorDrawable).color)
+                    if (Build.VERSION.SDK_INT < 35) {
+                        assertEquals(0xFF123456.toInt(), activity.window.statusBarColor)
+                        assertEquals(0xFF123456.toInt(), activity.window.navigationBarColor)
+                    }
+                    assertFalse(androidx.core.view.WindowInsetsControllerCompat(activity.window, activity.window.decorView).isAppearanceLightStatusBars)
+                }
+                releaseImage.countDown()
+                await { activity.findViewById<View>(R.id.loading_indicator).visibility != View.VISIBLE }
+            } finally {
+                releaseImage.countDown()
+                main { activity.finish() }
+                instrumentation.waitForIdleSync()
+            }
+        } finally {
+            releaseImage.countDown()
+            MarkdownPreviewerTestFileProvider.beforeOpenFile = null
+            if (originalCss != null) preferences.importCustomCss(originalCss.byteInputStream()) else preferences.clearCustomCss()
+            preferences.theme = originalTheme
+            preferences.startInFullscreenMode = originalFullscreen
+        }
+    }
 
     @Test
     fun primaryAndOverflowIntentsBothOpenAndSettingsCanBeCancelled() {
@@ -173,9 +254,9 @@ class PreviewerUiInstrumentationTest {
         }
     }
 
-    private fun request(actionId: String): Intent {
+    private fun request(actionId: String, markdown: String = "# Appearance\n\nSettings regression test."): Intent {
         val directory = File(context.filesDir, "markdown-previewer-instrumentation/appearance").apply { mkdirs() }
-        val file = File(directory, "appearance.md").apply { writeText("# Appearance\n\nSettings regression test.") }
+        val file = File(directory, "appearance.md").apply { writeText(markdown) }
         val documentUri = FileProvider.getUriForFile(context, context.packageName + ".test.files", file)
         val parentUri = FileProvider.getUriForFile(context, context.packageName + ".test.files", directory)
         return Intent(context, MarkdownPreviewerActivity::class.java)
@@ -197,7 +278,7 @@ class PreviewerUiInstrumentationTest {
     private fun dialogButton(): Button? = WindowInspector.getGlobalWindowViews()
         .firstNotNullOfOrNull { it.findViewById<Button>(android.R.id.button1)?.takeIf(View::isShown) }
 
-    private fun await(condition: () -> Boolean) {
+    private fun await(message: String = "Timed out waiting for the viewer or settings dialog", condition: () -> Boolean) {
         val deadline = SystemClock.uptimeMillis() + 10000
         while (SystemClock.uptimeMillis() < deadline) {
             var ready = false
@@ -205,7 +286,7 @@ class PreviewerUiInstrumentationTest {
             if (ready) return
             SystemClock.sleep(50)
         }
-        fail("Timed out waiting for the viewer or settings dialog")
+        fail(message)
     }
 
     private fun main(action: () -> Unit) = instrumentation.runOnMainSync(action)
