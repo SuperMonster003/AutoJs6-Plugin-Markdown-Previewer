@@ -209,25 +209,24 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 
 ******
 
+#### v1.2.4
+
+###### 2026/11/04
+
+* `Mejora` Los iconos de información de la aplicación de Android comparten las imágenes y los fondos claros y oscuros de Icon Studio, conservando las imágenes transparentes del centro de plugins y las opciones del lanzador
+
 #### v1.2.3
 
-###### 2026/10/05
+###### 2026/09/19
 
 * `Corrección` Los colores de las barras de estado y navegación se adaptan al fondo de la página en cuanto se muestra, sin esperar a que terminen de cargar las imágenes y otros recursos
 * `Corrección` Advertencias de lectura de SDK XML v4 con AGP 9.1 y comprobaciones de alineación nativa de APK activadas por error al ensamblar pruebas unitarias JVM, mediante los plugins de compilación compartidos 1.8.3
-* `Mejora` Los iconos de información de la aplicación de Android comparten las imágenes y los fondos claros y oscuros de Icon Studio, conservando las imágenes transparentes del centro de plugins y las opciones del lanzador
 
 #### v1.2.2
 
 ###### 2026/09/16
 
 * `Mejora` Tras compileSdk, targetSdk sube a 37 (Android 17); el comportamiento del plugin no depende del nuevo objetivo
-
-#### v1.2.1
-
-###### 2026/09/15
-
-* `Mejora` compileSdk sube a 37 (Android 17); targetSdk se mantiene en 36 hasta verificar el comportamiento que depende del objetivo
 
 ##### Historial completo
 

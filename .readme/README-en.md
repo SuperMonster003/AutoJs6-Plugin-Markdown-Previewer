@@ -209,25 +209,24 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 ******
 
+#### v1.2.4
+
+###### 2026/11/04
+
+* `Improvement` Android App info icons share Icon Studio artwork and light/dark backgrounds while preserving transparent Plugin Center artwork and existing launcher choices
+
 #### v1.2.3
 
-###### 2026/10/05
+###### 2026/09/19
 
 * `Fix` Status and navigation bar colors follow the rendered page background without waiting for images and other resources to finish loading
 * `Fix` SDK XML v4 parsing warnings with AGP 9.1 and APK native alignment checks incorrectly triggered by JVM unit-test assembly tasks, using shared build plugins 1.8.3
-* `Improvement` Android App info icons share Icon Studio artwork and light/dark backgrounds while preserving transparent Plugin Center artwork and existing launcher choices
 
 #### v1.2.2
 
 ###### 2026/09/16
 
 * `Improvement` Raise targetSdk to 37 (Android 17) after compileSdk; the plugin's behavior does not depend on the new target
-
-#### v1.2.1
-
-###### 2026/09/15
-
-* `Improvement` Raise compileSdk to 37 (Android 17); targetSdk stays at 36 until the behavior that depends on the target is verified
 
 ##### Full history
 
