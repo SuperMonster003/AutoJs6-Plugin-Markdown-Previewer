@@ -61,6 +61,13 @@ class PluginContractInstrumentationTest {
         assertEquals(MarkdownPreviewerPlugin.ACTIVITY_CLASS_NAME, primary?.getString(ExplorerActionCatalogKeys.ACTIVITY_CLASS_NAME))
 
         assertEquals(MarkdownPreviewerPlugin.PROTOCOL_VERSION, catalog.getInt(ExplorerActionCatalogKeys.PROTOCOL_VERSION))
+        // The first-level menu in the host's file menu (host explorer-action protocol v27), named like the plugin.
+        assertEquals("app_name", catalog.getString("menuGroupLabelResourceName"))
+        assertEquals("Markdown Previewer", catalog.getString("menuGroupLabelFallback"))
+        assertEquals(
+            InstrumentationRegistry.getInstrumentation().targetContext.getString(R.string.app_name),
+            catalog.getString("menuGroupLabelFallback"),
+        )
         assertNotNull(action)
         assertEquals(MarkdownPreviewerPlugin.ID, action?.getString(ExplorerActionCatalogKeys.ID))
         assertEquals(

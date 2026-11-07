@@ -29,7 +29,7 @@
     "Download and install the plugin APK. The plugin has no launcher icon; after installation it is managed entirely by AutoJs6.",
     "Open AutoJs6, enter the `Plugin center`, locate `Markdown Previewer`, and enable it.",
     "In the AutoJs6 file manager, locate any Markdown file (such as `README.md`) and open its overflow menu.",
-    "Select `Markdown Previewer`. The document opens rendered in a dedicated viewer."
+    "Select `Markdown Previewer` (under the top-level menu `Markdown Previewer` since AutoJs6 6.8.1). The document opens rendered in a dedicated viewer."
   ],
   "p_usage_viewer_tips": "Inside the viewer, the top-right menu offers `Refresh`, `Previewer theme`, `Import custom CSS`, `Fullscreen mode`, and `Settings`, where `Settings` provides the `Start in fullscreen mode` switch. http/https links in the document open in the system browser, while heading anchor links jump within the viewer. Explorer Action v2 supports both the primary previewer button and the overflow menu for a single file, using temporary read grants for the document and its parent directory. AutoJs6 build 5269 or later is required.",
   "h3_supported_formats": "Supported Formats",

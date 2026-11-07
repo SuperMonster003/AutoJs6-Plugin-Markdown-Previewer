@@ -110,7 +110,7 @@ Il faut 4 étapes entre l'installation et le premier document affiché:
 1. Téléchargez et installez l'APK du plugin. Le plugin n'a pas d'icône de lanceur; après l'installation, il est entièrement géré par AutoJs6.
 2. Ouvrez AutoJs6, accédez au `Centre des plugins`, repérez `Aperçu Markdown` et activez-le.
 3. Dans le gestionnaire de fichiers d'AutoJs6, localisez un fichier Markdown (par exemple `README.md`) et ouvrez son menu secondaire.
-4. Sélectionnez `Prévisualiser Markdown`. Le document s'ouvre mis en forme dans une visionneuse dédiée.
+4. Sélectionnez `Prévisualiser Markdown` (depuis AutoJs6 6.8.1, dans le menu de premier niveau `Markdown Previewer`). Le document s'ouvre mis en forme dans une visionneuse dédiée.
 
 Dans la visionneuse, le menu en haut à droite propose `Actualiser`, `Thème de prévisualisation`, `Importer un CSS personnalisé`, `Mode plein écran` et `Paramètres`, où `Paramètres` contient l'option `Démarrer en mode plein écran`. Les liens http/https du document s'ouvrent dans le navigateur du système, tandis que les liens d'ancres de titres restent dans la visionneuse. Explorer Action v2 prend en charge le bouton principal et le menu contextuel pour un fichier, avec une autorisation temporaire de lecture du document et de son dossier parent. AutoJs6 build 5269 ou ultérieur est requis.
 
@@ -209,6 +209,12 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 
 ******
 
+#### v1.2.5
+
+###### 2026/11/07
+
+* `Amélioration` Dans le menu de fichier d'AutoJs6 6.8.1 et versions ultérieures, "Prévisualiser Markdown" se trouve dans le menu de premier niveau "Markdown Previewer" (inchangé dans les versions antérieures d'AutoJs6)
+
 #### v1.2.4
 
 ###### 2026/11/04
@@ -221,12 +227,6 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 
 * `Correctif` Les couleurs des barres de statut et de navigation suivent le fond de la page dès son affichage, sans attendre la fin du chargement des images et autres ressources
 * `Correctif` Avertissements de lecture SDK XML v4 avec AGP 9.1 et contrôles d'alignement natif des APK déclenchés par erreur lors de l'assemblage des tests unitaires JVM, avec les plugins de compilation partagés 1.8.3
-
-#### v1.2.2
-
-###### 2026/09/16
-
-* `Amélioration` Après compileSdk, targetSdk passe à 37 (Android 17) ; le comportement du plugin ne dépend pas de la nouvelle cible
 
 ##### Historique complet
 

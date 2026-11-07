@@ -110,7 +110,7 @@ Desde la instalación hasta el primer documento renderizado hay 4 pasos:
 1. Descargue e instale el APK del complemento. El complemento no tiene icono de inicio; tras la instalación queda gestionado por completo por AutoJs6.
 2. Abra AutoJs6, entre en el `Centro de plugins`, localice `Vista previa de Markdown` y actívelo.
 3. En el gestor de archivos de AutoJs6, localice cualquier archivo Markdown (por ejemplo `README.md`) y abra su menú secundario.
-4. Seleccione `Vista previa de Markdown`. El documento se abre renderizado en un visor dedicado.
+4. Seleccione `Vista previa de Markdown` (desde AutoJs6 6.8.1, dentro del menú de primer nivel `Markdown Previewer`). El documento se abre renderizado en un visor dedicado.
 
 Dentro del visor, el menú superior derecho ofrece `Actualizar`, `Tema de vista previa`, `Importar CSS personalizado`, `Modo de pantalla completa` y `Configuración`, donde `Configuración` incluye el interruptor `Iniciar en modo de pantalla completa`. Los enlaces http/https del documento se abren en el navegador del sistema, mientras que los enlaces de anclas de encabezado saltan dentro del visor. Explorer Action v2 admite el botón principal y el menú contextual para un archivo, con permisos temporales de lectura del documento y su carpeta. Se requiere AutoJs6 build 5269 o posterior.
 
@@ -209,6 +209,12 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 
 ******
 
+#### v1.2.5
+
+###### 2026/11/07
+
+* `Mejora` En el menú de archivos de AutoJs6 6.8.1 y posteriores, "Vista previa de Markdown" está en el menú de primer nivel "Markdown Previewer" (sin cambios en versiones anteriores de AutoJs6)
+
 #### v1.2.4
 
 ###### 2026/11/04
@@ -221,12 +227,6 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 
 * `Corrección` Los colores de las barras de estado y navegación se adaptan al fondo de la página en cuanto se muestra, sin esperar a que terminen de cargar las imágenes y otros recursos
 * `Corrección` Advertencias de lectura de SDK XML v4 con AGP 9.1 y comprobaciones de alineación nativa de APK activadas por error al ensamblar pruebas unitarias JVM, mediante los plugins de compilación compartidos 1.8.3
-
-#### v1.2.2
-
-###### 2026/09/16
-
-* `Mejora` Tras compileSdk, targetSdk sube a 37 (Android 17); el comportamiento del plugin no depende del nuevo objetivo
 
 ##### Historial completo
 

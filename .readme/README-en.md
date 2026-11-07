@@ -110,7 +110,7 @@ It takes 4 steps from installation to your first rendered document:
 1. Download and install the plugin APK. The plugin has no launcher icon; after installation it is managed entirely by AutoJs6.
 2. Open AutoJs6, enter the `Plugin center`, locate `Markdown Previewer`, and enable it.
 3. In the AutoJs6 file manager, locate any Markdown file (such as `README.md`) and open its overflow menu.
-4. Select `Markdown Previewer`. The document opens rendered in a dedicated viewer.
+4. Select `Markdown Previewer` (under the top-level menu `Markdown Previewer` since AutoJs6 6.8.1). The document opens rendered in a dedicated viewer.
 
 Inside the viewer, the top-right menu offers `Refresh`, `Previewer theme`, `Import custom CSS`, `Fullscreen mode`, and `Settings`, where `Settings` provides the `Start in fullscreen mode` switch. http/https links in the document open in the system browser, while heading anchor links jump within the viewer. Explorer Action v2 supports both the primary previewer button and the overflow menu for a single file, using temporary read grants for the document and its parent directory. AutoJs6 build 5269 or later is required.
 
@@ -209,6 +209,12 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 ******
 
+#### v1.2.5
+
+###### 2026/11/07
+
+* `Improvement` "Markdown Previewer" now sits under the top-level menu "Markdown Previewer" in the file menu of AutoJs6 6.8.1 and later (unchanged in older AutoJs6 versions)
+
 #### v1.2.4
 
 ###### 2026/11/04
@@ -221,12 +227,6 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 * `Fix` Status and navigation bar colors follow the rendered page background without waiting for images and other resources to finish loading
 * `Fix` SDK XML v4 parsing warnings with AGP 9.1 and APK native alignment checks incorrectly triggered by JVM unit-test assembly tasks, using shared build plugins 1.8.3
-
-#### v1.2.2
-
-###### 2026/09/16
-
-* `Improvement` Raise targetSdk to 37 (Android 17) after compileSdk; the plugin's behavior does not depend on the new target
 
 ##### Full history
 

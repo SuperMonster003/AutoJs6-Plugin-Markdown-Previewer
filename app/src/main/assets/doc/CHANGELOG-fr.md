@@ -1,5 +1,11 @@
 # Historique des versions
 
+## v1.2.5
+
+###### 2026/11/07
+
+* `Amélioration` Dans le menu de fichier d'AutoJs6 6.8.1 et versions ultérieures, "Prévisualiser Markdown" se trouve dans le menu de premier niveau "Markdown Previewer" (inchangé dans les versions antérieures d'AutoJs6)
+
 ## v1.2.4
 
 ###### 2026/11/04

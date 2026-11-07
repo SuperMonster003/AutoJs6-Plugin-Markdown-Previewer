@@ -20,6 +20,10 @@ internal object MarkdownPreviewerPlugin {
     const val REQUIRED_HOST_VERSION = 5269L
     const val LABEL_RESOURCE_NAME = "action_markdown_previewer"
     const val LABEL_FALLBACK = "Markdown Previewer"
+
+    // First-level menu of the plugin's action in the host's file menu (AutoJs6 6.8.1+): the display name, as in
+    // the Plugin Center. Older hosts ignore it, so the catalog keeps its protocol version.
+    val MENU_GROUP_LABEL = ExplorerMenuGroupKeys.entries(resourceName = "app_name", fallback = "Markdown Previewer")
     const val ACTIVITY_CLASS_NAME =
         "io.github.supermonster003.autojs6.plugin.markdownpreviewer.MarkdownPreviewerActivity"
 
@@ -88,6 +92,7 @@ internal fun markdownPreviewerActionCatalog(): Bundle {
     }
     return Bundle().apply {
         putInt(ExplorerActionCatalogKeys.PROTOCOL_VERSION, MarkdownPreviewerPlugin.PROTOCOL_VERSION)
+        MarkdownPreviewerPlugin.MENU_GROUP_LABEL.forEach { (key, value) -> putString(key, value) }
         putParcelableArrayList(
             ExplorerActionCatalogKeys.ACTIONS,
             arrayListOf(

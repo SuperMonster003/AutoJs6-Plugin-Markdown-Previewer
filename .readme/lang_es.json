@@ -29,7 +29,7 @@
     "Descargue e instale el APK del complemento. El complemento no tiene icono de inicio; tras la instalación queda gestionado por completo por AutoJs6.",
     "Abra AutoJs6, entre en el `Centro de plugins`, localice `Vista previa de Markdown` y actívelo.",
     "En el gestor de archivos de AutoJs6, localice cualquier archivo Markdown (por ejemplo `README.md`) y abra su menú secundario.",
-    "Seleccione `Vista previa de Markdown`. El documento se abre renderizado en un visor dedicado."
+    "Seleccione `Vista previa de Markdown` (desde AutoJs6 6.8.1, dentro del menú de primer nivel `Markdown Previewer`). El documento se abre renderizado en un visor dedicado."
   ],
   "p_usage_viewer_tips": "Dentro del visor, el menú superior derecho ofrece `Actualizar`, `Tema de vista previa`, `Importar CSS personalizado`, `Modo de pantalla completa` y `Configuración`, donde `Configuración` incluye el interruptor `Iniciar en modo de pantalla completa`. Los enlaces http/https del documento se abren en el navegador del sistema, mientras que los enlaces de anclas de encabezado saltan dentro del visor. Explorer Action v2 admite el botón principal y el menú contextual para un archivo, con permisos temporales de lectura del documento y su carpeta. Se requiere AutoJs6 build 5269 o posterior.",
   "h3_supported_formats": "Formatos compatibles",

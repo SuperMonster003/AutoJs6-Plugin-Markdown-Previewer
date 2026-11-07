@@ -29,7 +29,7 @@
     "Téléchargez et installez l'APK du plugin. Le plugin n'a pas d'icône de lanceur; après l'installation, il est entièrement géré par AutoJs6.",
     "Ouvrez AutoJs6, accédez au `Centre des plugins`, repérez `Aperçu Markdown` et activez-le.",
     "Dans le gestionnaire de fichiers d'AutoJs6, localisez un fichier Markdown (par exemple `README.md`) et ouvrez son menu secondaire.",
-    "Sélectionnez `Prévisualiser Markdown`. Le document s'ouvre mis en forme dans une visionneuse dédiée."
+    "Sélectionnez `Prévisualiser Markdown` (depuis AutoJs6 6.8.1, dans le menu de premier niveau `Markdown Previewer`). Le document s'ouvre mis en forme dans une visionneuse dédiée."
   ],
   "p_usage_viewer_tips": "Dans la visionneuse, le menu en haut à droite propose `Actualiser`, `Thème de prévisualisation`, `Importer un CSS personnalisé`, `Mode plein écran` et `Paramètres`, où `Paramètres` contient l'option `Démarrer en mode plein écran`. Les liens http/https du document s'ouvrent dans le navigateur du système, tandis que les liens d'ancres de titres restent dans la visionneuse. Explorer Action v2 prend en charge le bouton principal et le menu contextuel pour un fichier, avec une autorisation temporaire de lecture du document et de son dossier parent. AutoJs6 build 5269 ou ultérieur est requis.",
   "h3_supported_formats": "Formats pris en charge",

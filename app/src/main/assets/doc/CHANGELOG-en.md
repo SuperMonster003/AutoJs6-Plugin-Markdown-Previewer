@@ -1,5 +1,11 @@
 # Release History
 
+## v1.2.5
+
+###### 2026/11/07
+
+* `Improvement` "Markdown Previewer" now sits under the top-level menu "Markdown Previewer" in the file menu of AutoJs6 6.8.1 and later (unchanged in older AutoJs6 versions)
+
 ## v1.2.4
 
 ###### 2026/11/04
