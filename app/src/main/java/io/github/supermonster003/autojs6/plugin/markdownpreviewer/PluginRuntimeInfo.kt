@@ -19,7 +19,7 @@ internal object MarkdownPreviewerPlugin {
     const val PROTOCOL_VERSION = 2
     const val REQUIRED_HOST_VERSION = 5269L
     const val LABEL_RESOURCE_NAME = "action_markdown_previewer"
-    const val LABEL_FALLBACK = "Markdown Previewer"
+    const val LABEL_FALLBACK = "Preview Markdown"
 
     // First-level menu of the plugin's action in the host's file menu (AutoJs6 6.8.1+): the display name, as in
     // the Plugin Center. Older hosts ignore it, so the catalog keeps its protocol version.

@@ -1,5 +1,11 @@
 # Historique des versions
 
+## v1.2.6
+
+###### 2026/11/08
+
+* `Amélioration` Dans l'interface en anglais, l'action du menu de fichier s'appelle désormais "Preview Markdown" au lieu de reprendre le nom du menu de premier niveau "Markdown Previewer"
+
 ## v1.2.5
 
 ###### 2026/11/07

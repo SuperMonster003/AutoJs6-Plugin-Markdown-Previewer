@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="action_markdown_previewer">Markdown Previewer</string>
+    <string name="action_markdown_previewer">Preview Markdown</string>
     <string name="dialog_button_cancel">Cancel</string>
     <string name="dialog_button_confirm">Confirm</string>
     <string name="error_custom_css_file_too_large">The CSS file exceeds the %1$s limit</string>

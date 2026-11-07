@@ -2,7 +2,7 @@ Use Markdown Previewer from the file manager:
 
 1. Install and enable the `Markdown Previewer` plugin.
 2. Open the overflow menu for one supported Markdown file.
-3. Select `Markdown Previewer` (under the top-level menu `Markdown Previewer` since AutoJs6 6.8.1).
+3. Select `Preview Markdown` (under the top-level menu `Markdown Previewer` since AutoJs6 6.8.1).
 
 The plugin receives temporary read access to the selected file and its parent directory through content URIs. It does not receive a raw filesystem path.
 
