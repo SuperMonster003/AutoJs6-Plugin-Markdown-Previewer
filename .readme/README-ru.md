@@ -247,7 +247,7 @@ Explorer Action v2 поддерживает основную кнопку и к�
 .\gradlew.bat :app:assembleRelease
 ```
 
-Параметры сборки задаются в `version.properties`. Текущий минимальный SDK равен 24, целевой SDK равен 36.
+Параметры сборки задаются в `version.properties`. Текущий минимальный SDK равен 24, целевой SDK равен 37.
 
 ******
 

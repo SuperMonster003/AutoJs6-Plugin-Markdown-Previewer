@@ -247,7 +247,7 @@ Compilation Release:
 .\gradlew.bat :app:assembleRelease
 ```
 
-Les paramètres de compilation proviennent de `version.properties`. Le SDK minimum actuel est 24 et le SDK cible est 36.
+Les paramètres de compilation proviennent de `version.properties`. Le SDK minimum actuel est 24 et le SDK cible est 37.
 
 ******
 

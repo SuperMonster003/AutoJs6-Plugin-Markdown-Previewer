@@ -247,7 +247,7 @@ Release 構建:
 .\gradlew.bat :app:assembleRelease
 ```
 
-構建參數來自 `version.properties`, 目前最低 SDK 為 24, 目標 SDK 為 36.
+構建參數來自 `version.properties`, 目前最低 SDK 為 24, 目標 SDK 為 37.
 
 ******
 

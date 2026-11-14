@@ -247,7 +247,7 @@ Release 构建:
 .\gradlew.bat :app:assembleRelease
 ```
 
-构建参数来自 `version.properties`, 当前最低 SDK 为 24, 目标 SDK 为 36.
+构建参数来自 `version.properties`, 当前最低 SDK 为 24, 目标 SDK 为 37.
 
 ******
 

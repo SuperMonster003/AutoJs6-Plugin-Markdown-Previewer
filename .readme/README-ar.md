@@ -247,7 +247,7 @@ required host build: 5269
 .\gradlew.bat :app:assembleRelease
 ```
 
-تأتي معلمات البناء من `version.properties`. الحد الأدنى الحالي لـ SDK هو 24 والـ SDK المستهدف هو 36.
+تأتي معلمات البناء من `version.properties`. الحد الأدنى الحالي لـ SDK هو 24 والـ SDK المستهدف هو 37.
 
 ******
 

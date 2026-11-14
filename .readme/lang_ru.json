@@ -83,7 +83,7 @@
   "h5_for_more_release_history": "Полная история",
   "h3_build": "Сборка",
   "text_release_build": "Сборка Release",
-  "p_build_params": "Параметры сборки задаются в `version.properties`. Текущий минимальный SDK равен 24, целевой SDK равен 36",
+  "p_build_params": "Параметры сборки задаются в `version.properties`. Текущий минимальный SDK равен 24, целевой SDK равен 37",
   "h3_resource_layout": "Структура ресурсов",
   "p_resource_layout": "`strings.xml` локализует сведения о плагине и интерфейс средства просмотра, а `plugin_instruction.md` содержит инструкции, показываемые хостом. Все файлы README и CHANGELOG генерируются из JSON-источников скриптом `.python/generate_markdown.py`: для изменения документации редактируйте файлы `lang_*.json` в `.readme` и `.changelog` и запускайте скрипт заново, не редактируя сгенерированные файлы Markdown",
   "h3_links": "Ссылки",

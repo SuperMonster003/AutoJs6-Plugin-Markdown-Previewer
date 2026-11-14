@@ -83,7 +83,7 @@
   "h5_for_more_release_history": "السجل الكامل",
   "h3_build": "البناء",
   "text_release_build": "بناء Release",
-  "p_build_params": "تأتي معلمات البناء من `version.properties`. الحد الأدنى الحالي لـ SDK هو 24 والـ SDK المستهدف هو 36",
+  "p_build_params": "تأتي معلمات البناء من `version.properties`. الحد الأدنى الحالي لـ SDK هو 24 والـ SDK المستهدف هو 37",
   "h3_resource_layout": "هيكل الموارد",
   "p_resource_layout": "يوطن `strings.xml` معلومات الملحق وواجهة العارض, بينما يوفر `plugin_instruction.md` تعليمات الاستخدام التي يعرضها المضيف. تولد جميع ملفات README و CHANGELOG من مصادر JSON بواسطة `.python/generate_markdown.py`: لتعديل الوثائق, حرر ملفات `lang_*.json` تحت `.readme` و `.changelog` ثم أعد تشغيل السكربت بدلا من تحرير ملفات Markdown المولدة",
   "h3_links": "الروابط",
