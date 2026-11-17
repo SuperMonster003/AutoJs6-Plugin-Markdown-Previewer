@@ -2,6 +2,7 @@
 
 <div align="center">
   <p>
+    <source srcset="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap-night/ic_launcher.png?raw=true" media="(prefers-color-scheme: dark)" />
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
@@ -209,6 +210,12 @@ Explorer Action v2 同時支援單檔案的主預覽按鈕和溢出選單, 透�
 
 ******
 
+#### v1.2.7
+
+###### 2026/11/17
+
+* `優化` 外掛程式圖示重新設計為透明背景的單色圖案, 在淺色與深色主題下均清晰可辨
+
 #### v1.2.6
 
 ###### 2026/11/08
@@ -220,12 +227,6 @@ Explorer Action v2 同時支援單檔案的主預覽按鈕和溢出選單, 透�
 ###### 2026/11/07
 
 * `優化` AutoJs6 6.8.1 及以上版本的檔案選單中, "預覽 Markdown" 位於一級選單 "Markdown Previewer" 之下 (舊版本 AutoJs6 中位置不變)
-
-#### v1.2.4
-
-###### 2026/11/04
-
-* `優化` Android 系統應用程式資訊圖示與圖示工作台共用圖稿及明暗底色, 保留外掛程式中心透明圖稿與現有啟動器選項
 
 ##### 完整記錄
 

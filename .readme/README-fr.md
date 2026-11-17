@@ -2,6 +2,7 @@
 
 <div align="center">
   <p>
+    <source srcset="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap-night/ic_launcher.png?raw=true" media="(prefers-color-scheme: dark)" />
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
@@ -209,6 +210,12 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 
 ******
 
+#### v1.2.7
+
+###### 2026/11/17
+
+* `Amélioration` Icône du plugin redessinée en un motif monochrome sur fond transparent, bien lisible avec les thèmes clair et sombre
+
 #### v1.2.6
 
 ###### 2026/11/08
@@ -220,12 +227,6 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 ###### 2026/11/07
 
 * `Amélioration` Dans le menu de fichier d'AutoJs6 6.8.1 et versions ultérieures, "Prévisualiser Markdown" se trouve dans le menu de premier niveau "Markdown Previewer" (inchangé dans les versions antérieures d'AutoJs6)
-
-#### v1.2.4
-
-###### 2026/11/04
-
-* `Amélioration` Les icônes des informations d'application Android utilisent les illustrations et les fonds clairs et sombres d'Icon Studio, en conservant les images transparentes du centre de plugins et les choix du lanceur
 
 ##### Historique complet
 

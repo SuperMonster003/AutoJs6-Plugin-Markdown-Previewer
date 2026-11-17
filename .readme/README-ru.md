@@ -2,6 +2,7 @@
 
 <div align="center">
   <p>
+    <source srcset="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap-night/ic_launcher.png?raw=true" media="(prefers-color-scheme: dark)" />
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
@@ -209,6 +210,12 @@ Explorer Action v2 поддерживает основную кнопку и к�
 
 ******
 
+#### v1.2.7
+
+###### 2026/11/17
+
+* `Улучшение` Значок плагина перерисован в виде одноцветного изображения на прозрачном фоне и хорошо различим в светлой и тёмной темах
+
 #### v1.2.6
 
 ###### 2026/11/08
@@ -220,12 +227,6 @@ Explorer Action v2 поддерживает основную кнопку и к�
 ###### 2026/11/07
 
 * `Улучшение` В меню файла AutoJs6 6.8.1 и новее пункт "Предпросмотр Markdown" находится в меню первого уровня "Markdown Previewer" (в более ранних версиях AutoJs6 без изменений)
-
-#### v1.2.4
-
-###### 2026/11/04
-
-* `Улучшение` Значки в сведениях о приложении Android используют изображения и светлый и тёмный фон Icon Studio, сохраняя прозрачные изображения центра плагинов и существующие варианты значков лаунчера
 
 ##### Полная история
 

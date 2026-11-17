@@ -2,6 +2,7 @@
 
 <div align="center">
   <p>
+    <source srcset="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap-night/ic_launcher.png?raw=true" media="(prefers-color-scheme: dark)" />
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
@@ -209,6 +210,12 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 ******
 
+#### v1.2.7
+
+###### 2026/11/17
+
+* `Improvement` Redesigned the plugin icon as a single-color glyph on a transparent background that stays clear in both light and dark themes
+
 #### v1.2.6
 
 ###### 2026/11/08
@@ -220,12 +227,6 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 ###### 2026/11/07
 
 * `Improvement` "Markdown Previewer" now sits under the top-level menu "Markdown Previewer" in the file menu of AutoJs6 6.8.1 and later (unchanged in older AutoJs6 versions)
-
-#### v1.2.4
-
-###### 2026/11/04
-
-* `Improvement` Android App info icons share Icon Studio artwork and light/dark backgrounds while preserving transparent Plugin Center artwork and existing launcher choices
 
 ##### Full history
 

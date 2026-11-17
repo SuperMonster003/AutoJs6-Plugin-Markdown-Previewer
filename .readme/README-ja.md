@@ -2,6 +2,7 @@
 
 <div align="center">
   <p>
+    <source srcset="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap-night/ic_launcher.png?raw=true" media="(prefers-color-scheme: dark)" />
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
@@ -209,6 +210,12 @@ Explorer Action v2 は単一ファイルのメインプレビューボタンと�
 
 ******
 
+#### v1.2.7
+
+###### 2026/11/17
+
+* `改善` プラグインのアイコンを透明な背景の単色の図案に作り直し, ライトテーマとダークテーマのどちらでも見やすく
+
 #### v1.2.6
 
 ###### 2026/11/08
@@ -220,12 +227,6 @@ Explorer Action v2 は単一ファイルのメインプレビューボタンと�
 ###### 2026/11/07
 
 * `改善` AutoJs6 6.8.1 以降のファイルメニューでは, "Markdown をプレビュー" を最上位メニュー "Markdown Previewer" の中に表示 (以前の AutoJs6 では位置は変わらない)
-
-#### v1.2.4
-
-###### 2026/11/04
-
-* `改善` Android のアプリ情報アイコンに Icon Studio と共通の図案と明暗の背景色を使用し, プラグインセンターの透明な図案と既存のランチャー設定を維持
 
 ##### 完全な履歴
 

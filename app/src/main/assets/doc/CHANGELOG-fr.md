@@ -1,5 +1,11 @@
 # Historique des versions
 
+## v1.2.7
+
+###### 2026/11/17
+
+* `Amélioration` Icône du plugin redessinée en un motif monochrome sur fond transparent, bien lisible avec les thèmes clair et sombre
+
 ## v1.2.6
 
 ###### 2026/11/08

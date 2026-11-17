@@ -2,6 +2,7 @@
 
 <div align="center">
   <p>
+    <source srcset="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap-night/ic_launcher.png?raw=true" media="(prefers-color-scheme: dark)" />
     <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Markdown-Previewer/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="markdown-previewer-ic-launcher" border="0" width="128" />
   </p>
 
@@ -209,6 +210,12 @@ required host build: 5269
 
 ******
 
+#### v1.2.7
+
+###### 2026/11/17
+
+* `تحسين` أُعيد تصميم أيقونة الملحق كرسم بلون واحد على خلفية شفافة يظهر بوضوح في السمتين الفاتحة والداكنة
+
 #### v1.2.6
 
 ###### 2026/11/08
@@ -220,12 +227,6 @@ required host build: 5269
 ###### 2026/11/07
 
 * `تحسين` في قائمة الملف في AutoJs6 6.8.1 والإصدارات الأحدث, يقع "معاينة Markdown" ضمن القائمة من المستوى الأول "Markdown Previewer" (دون تغيير في إصدارات AutoJs6 الأقدم)
-
-#### v1.2.4
-
-###### 2026/11/04
-
-* `تحسين` تستخدم أيقونات معلومات التطبيق في Android صور Icon Studio وخلفياته الفاتحة والداكنة مع الحفاظ على الصور الشفافة في مركز الملحقات وخيارات المشغل الحالية
 
 ##### السجل الكامل
 
