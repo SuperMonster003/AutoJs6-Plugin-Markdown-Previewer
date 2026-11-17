@@ -212,7 +212,7 @@ Completed capabilities and upcoming plans are maintained as a checkable list in 
 
 #### v1.2.7
 
-###### 2026/11/17
+###### 2026/11/18
 
 * `Improvement` Redesigned the plugin icon as a single-color glyph on a transparent background that stays clear in both light and dark themes
 
