@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="action_markdown_previewer">Предпросмотр Markdown</string>
+    <string name="action_navigate_up">Перейти на уровень выше</string>
     <string name="dialog_button_cancel">Отмена</string>
     <string name="dialog_button_confirm">Подтвердить</string>
     <string name="error_custom_css_file_too_large">Файл CSS превышает ограничение %1$s</string>
     <string name="error_markdown_file_too_large">Файл Markdown превышает ограничение просмотра %1$s</string>
     <string name="plugin_description">Предпросмотр документов Markdown</string>
     <string name="release_history">История выпусков</string>
-    <string name="release_history_unavailable">История выпусков недоступна</string>
+    <string name="release_history_collapse_all">Свернуть всё</string>
+    <string name="release_history_collapsed">Свёрнуто</string>
+    <string name="release_history_expand_all">Развернуть всё</string>
+    <string name="release_history_expanded">Развёрнуто</string>
+    <string name="release_history_load_failed">Не удалось загрузить историю выпусков</string>
     <string name="text_cannot_open_link">Не удалось открыть ссылку</string>
     <string name="text_cannot_print_document">Не удалось запустить печать</string>
     <string name="text_cannot_read_file">Не удалось прочитать файл Markdown</string>

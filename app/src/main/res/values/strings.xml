@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="action_markdown_previewer">Preview Markdown</string>
+    <string name="action_navigate_up">Navigate up</string>
     <string name="dialog_button_cancel">Cancel</string>
     <string name="dialog_button_confirm">Confirm</string>
     <string name="error_custom_css_file_too_large">The CSS file exceeds the %1$s limit</string>
     <string name="error_markdown_file_too_large">The Markdown file exceeds the %1$s previewer limit</string>
     <string name="plugin_description">Preview Markdown documents</string>
     <string name="release_history">Release history</string>
-    <string name="release_history_unavailable">Release history is unavailable</string>
+    <string name="release_history_collapse_all">Collapse all</string>
+    <string name="release_history_collapsed">Collapsed</string>
+    <string name="release_history_expand_all">Expand all</string>
+    <string name="release_history_expanded">Expanded</string>
+    <string name="release_history_load_failed">Unable to load the release history</string>
     <string name="text_cannot_open_link">Cannot open the link</string>
     <string name="text_cannot_print_document">Cannot start printing</string>
     <string name="text_cannot_read_file">Cannot read the Markdown file</string>

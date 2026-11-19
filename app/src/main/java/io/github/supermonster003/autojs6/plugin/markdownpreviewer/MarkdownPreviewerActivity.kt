@@ -162,7 +162,7 @@ class MarkdownPreviewerActivity : PreviewerHostActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
-        R.id.action_release_history -> { showReleaseHistory(); true }
+        R.id.action_release_history -> { openReleaseHistory(); true }
         android.R.id.home -> true.also {
             if (!navigateBack()) finish()
         }

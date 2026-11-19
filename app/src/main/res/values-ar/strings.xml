@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="action_markdown_previewer">معاينة Markdown</string>
+    <string name="action_navigate_up">الانتقال إلى المستوى الأعلى</string>
     <string name="dialog_button_cancel">إلغاء</string>
     <string name="dialog_button_confirm">تأكيد</string>
     <string name="error_custom_css_file_too_large">يتجاوز ملف CSS حد %1$s</string>
     <string name="error_markdown_file_too_large">يتجاوز ملف Markdown حد المعاينة %1$s</string>
     <string name="plugin_description">معاينة مستندات Markdown</string>
     <string name="release_history">سجل الإصدارات</string>
-    <string name="release_history_unavailable">سجل الإصدارات غير متاح</string>
+    <string name="release_history_collapse_all">طيّ الكل</string>
+    <string name="release_history_collapsed">مطوي</string>
+    <string name="release_history_expand_all">توسيع الكل</string>
+    <string name="release_history_expanded">موسَّع</string>
+    <string name="release_history_load_failed">تعذر تحميل سجل الإصدارات</string>
     <string name="text_cannot_open_link">تعذر فتح الرابط</string>
     <string name="text_cannot_print_document">تعذر بدء الطباعة</string>
     <string name="text_cannot_read_file">تعذرت قراءة ملف Markdown</string>
