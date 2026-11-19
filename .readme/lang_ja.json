@@ -85,9 +85,54 @@
   "text_release_build": "Release ビルド",
   "p_build_params": "ビルド設定は `version.properties` から読み込みます. 現在の最小 SDK は 24, ターゲット SDK は 37 です",
   "h3_resource_layout": "リソース構成",
-  "p_resource_layout": "`strings.xml` はプラグイン情報とビューアー UI をローカライズし, `plugin_instruction.md` はホストに表示する使用説明を提供します. すべての README と CHANGELOG は `.python/generate_markdown.py` が JSON ソースから生成します: ドキュメントを変更するときは `.readme` と `.changelog` 配下の `lang_*.json` を編集してスクリプトを再実行し, 生成済み Markdown ファイルを直接編集しないでください",
+  "p_resource_layout": "`strings.xml` はプラグイン情報とビューアー UI をローカライズし, `plugin_instruction.md` はホストに表示する使用説明を提供します. すべての README, CHANGELOG, `plugin_instruction.md` は `.python/generate_markdown.py` が JSON ソースから生成します: ドキュメントを変更するときは `.readme` と `.changelog` 配下の `lang_*.json` を編集してスクリプトを再実行し, 生成済み Markdown ファイルを直接編集しないでください",
   "h3_links": "リンク",
   "text_link_autojs6_docs": "AutoJs6 ドキュメント",
   "text_link_format_reference": "CommonMark 仕様",
-  "text_link_html_previewer": "HTML Previewer プラグイン (HTML ファイルのプレビュー)"
+  "text_link_html_previewer": "HTML Previewer プラグイン (HTML ファイルのプレビュー)",
+  "instruction_p_what": "Markdown Previewer は, AutoJs6 の中で Markdown ドキュメントを整形された表示でプレビューします. 表, タスクリスト, 脚注, コードのハイライトに対応し, ドキュメントのアウトライン, ページ内検索, 複数のプレビューテーマ, PDF へのエクスポートも使えます. プレビューは読み取りのみで, 元のファイルは変更しません.",
+  "instruction_h3_start": "はじめに",
+  "instruction_start_steps": [
+    "AutoJs6 の \"プラグインセンター\" で本プラグインが有効になっていることを確認します.",
+    "AutoJs6 のファイルマネージャーを開き, Markdown ファイルを探します.",
+    "ファイルメニューから \"Markdown をプレビュー\" を選びます (AutoJs6 6.8.1 以降では最上位メニュー \"Markdown Previewer\" の中にあります).",
+    "プレビュー画面右上のメニューから, 検索, アウトライン, テーマ, PDF のエクスポート, \"設定\" などを使います."
+  ],
+  "instruction_h3_features": "主な機能",
+  "instruction_features": [
+    "**ページ内検索**: 入力した語句に一致する箇所を強調表示し, 一致箇所の間を移動できます.",
+    "**ドキュメントのアウトライン**: ドキュメントの見出しを階層ごとに一覧表示し, タップするとその位置へ移動します.",
+    "**プレビューテーマ**: \"プレビューテーマ\" で \"GitHub (自動)\", \"GitHub ライト\", \"GitHub ダーク\", \"ペーパー\", \"セピア\" から選びます. \"GitHub (自動)\" は AutoJs6 のダークモードに従います.",
+    "**カスタム CSS**: \"カスタム CSS をインポート\" で {{ limit_custom_css_size }} 以下のスタイルシートを選ぶと, プレビューが \"カスタム CSS\" テーマに切り替わります. \"カスタム CSS を消去\" を選ぶと \"GitHub (自動)\" に戻ります.",
+    "**印刷と PDF のエクスポート**: \"印刷 / PDF にエクスポート\" でシステムの印刷画面を開き, 印刷するか PDF として保存できます. プラグインにストレージの権限は不要です.",
+    "**拡張構文**: 表, 取り消し線, タスクリスト, 脚注, 自動リンク, コードのハイライトに対応します. ドキュメント先頭の YAML メタデータは, 展開できる \"YAML メタデータ\" ブロックに表示されます.",
+    "**リンクと画像**: 同じフォルダーかそのサブフォルダーにある Markdown ファイルへのリンクはプレビューの中で開き, Web リンクはブラウザーで開きます. ドキュメントと同じフォルダーの画像と HTTPS の画像を表示できます.",
+    "**文字サイズと全画面**: \"設定\" で \"文字サイズ\" を調整し, 必要なら \"全画面モードで開始\" をオンにします. \"全画面モード\" はツールバーとシステムバーを隠し, 戻るキーで終了します."
+  ],
+  "instruction_h3_requirements": "動作要件",
+  "instruction_requirements": [
+    "Android 7.0 以降.",
+    "AutoJs6 6.8.0 以降.",
+    "ストレージの権限は不要です. プラグインは選んだファイルとそのフォルダーだけを読み取り, ネットワークはドキュメント内の HTTPS 画像を読み込むときだけ使います."
+  ],
+  "instruction_h3_faq": "よくある質問",
+  "instruction_faq": [
+    {
+      "q": "ファイルメニューに \"Markdown をプレビュー\" がない理由",
+      "a": "本プラグインが扱うのは拡張子が {{ supported_formats }} のファイルだけです. ファイルの拡張子を確認し, \"プラグインセンター\" で本プラグインが有効になっていることを確認してください."
+    },
+    {
+      "q": "一部の画像が表示されない理由",
+      "a": "ローカルの画像は, Markdown ファイルと同じフォルダーかそのサブフォルダーに置く必要があります. ネットワーク画像は公開された HTTPS のアドレスだけに対応し, HTTP やローカルネットワークのアドレスは読み込みません."
+    },
+    {
+      "q": "ファイルがプレビューの上限を超えると表示される理由",
+      "a": "{{ limit_markdown_size }} を超える Markdown ファイルはプレビューしません. ドキュメントをいくつかの小さなファイルに分け, リンクでつないでください."
+    },
+    {
+      "q": "HTML ファイルをプレビューする方法",
+      "a": "本プラグインがプレビューするのは Markdown ドキュメントだけです. HTML と MHTML ファイルには [HTML Previewer]({{ html_previewer_repo_url }}) プラグインを使ってください."
+    }
+  ],
+  "instruction_p_more": "詳しくは [プロジェクトページ]({{ repo_url }}) をご覧ください."
 }

@@ -85,9 +85,54 @@
   "text_release_build": "Release build",
   "p_build_params": "Build parameters come from `version.properties`. The current minimum SDK is 24 and the target SDK is 37",
   "h3_resource_layout": "Resource Layout",
-  "p_resource_layout": "`strings.xml` localizes plugin metadata and the viewer UI, while `plugin_instruction.md` provides the usage instructions shown by the host. All README and CHANGELOG files are generated from JSON sources by `.python/generate_markdown.py`: to change the docs, edit the `lang_*.json` files under `.readme` and `.changelog` and rerun the script instead of editing the generated Markdown files",
+  "p_resource_layout": "`strings.xml` localizes plugin metadata and the viewer UI, while `plugin_instruction.md` provides the usage instructions shown by the host. All README, CHANGELOG and `plugin_instruction.md` files are generated from JSON sources by `.python/generate_markdown.py`: to change the docs, edit the `lang_*.json` files under `.readme` and `.changelog` and rerun the script instead of editing the generated Markdown files",
   "h3_links": "Links",
   "text_link_autojs6_docs": "AutoJs6 documentation",
   "text_link_format_reference": "CommonMark specification",
-  "text_link_html_previewer": "HTML Previewer plugin (renders HTML files)"
+  "text_link_html_previewer": "HTML Previewer plugin (renders HTML files)",
+  "instruction_p_what": "Markdown Previewer shows Markdown documents in AutoJs6 as formatted pages, with tables, task lists, footnotes and code highlighting, plus a document outline, find in page, several preview themes and PDF export. Previewing only reads the file and never changes the original.",
+  "instruction_h3_start": "Getting started",
+  "instruction_start_steps": [
+    "Make sure this plugin is enabled in AutoJs6 \"Plugin Center\".",
+    "Open the AutoJs6 file manager and locate the Markdown file.",
+    "Choose \"Preview Markdown\" from the file menu (in AutoJs6 6.8.1 and later it is under the top-level menu \"Markdown Previewer\").",
+    "Use the menu at the top right of the preview for find, outline, themes, PDF export, \"Settings\" and more."
+  ],
+  "instruction_h3_features": "Main features",
+  "instruction_features": [
+    "**Find in page**: highlights the matches of the text you type and lets you jump between them.",
+    "**Document outline**: lists the headings of the document by level; tap one to jump to it.",
+    "**Previewer theme**: in \"Previewer theme\", choose \"GitHub (Auto)\", \"GitHub Light\", \"GitHub Dark\", \"Paper\" or \"Sepia\"; \"GitHub (Auto)\" follows the AutoJs6 dark mode.",
+    "**Custom CSS**: after you pick a style sheet of up to {{ limit_custom_css_size }} with \"Import custom CSS\", the preview switches to the \"Custom CSS\" theme; choose \"Clear custom CSS\" to return to \"GitHub (Auto)\".",
+    "**Print and PDF export**: \"Print / Export PDF\" opens the system print screen, where you can print or save as PDF; the plugin needs no storage permission.",
+    "**Extended syntax**: tables, strikethrough, task lists, footnotes, autolinks and code highlighting are supported; YAML metadata at the start of a document is shown in an expandable \"YAML metadata\" block.",
+    "**Links and images**: links to Markdown files in the same folder or its subfolders open in the previewer, and web links open in the browser; images from the document folder and HTTPS images are shown.",
+    "**Font size and fullscreen**: adjust \"Font size\" in \"Settings\" and optionally turn on \"Start in fullscreen mode\"; \"Fullscreen mode\" hides the toolbar and system bars, and the Back key leaves it."
+  ],
+  "instruction_h3_requirements": "Requirements",
+  "instruction_requirements": [
+    "Android 7.0 or later.",
+    "AutoJs6 6.8.0 or later.",
+    "No storage permission is needed; the plugin only reads the selected file and its folder, and uses the network only to load HTTPS images in the document."
+  ],
+  "instruction_h3_faq": "FAQ",
+  "instruction_faq": [
+    {
+      "q": "Why \"Preview Markdown\" is missing from the file menu",
+      "a": "The plugin only handles files with the extensions {{ supported_formats }}. Check the file extension, and make sure the plugin is enabled in \"Plugin Center\"."
+    },
+    {
+      "q": "Why some images are missing",
+      "a": "Local images must be in the folder of the Markdown file or one of its subfolders. Network images must use public HTTPS addresses; HTTP and local network addresses are not loaded."
+    },
+    {
+      "q": "Why a file is reported as over the preview limit",
+      "a": "Markdown files larger than {{ limit_markdown_size }} are not previewed. Split the document into a few smaller files and link them to each other."
+    },
+    {
+      "q": "How to preview HTML files",
+      "a": "This plugin previews Markdown documents only. To preview HTML and MHTML files, use the [HTML Previewer]({{ html_previewer_repo_url }}) plugin."
+    }
+  ],
+  "instruction_p_more": "See the [project homepage]({{ repo_url }}) for more details."
 }

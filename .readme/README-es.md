@@ -265,7 +265,7 @@ app/src/main/res/values-*/strings.xml
 app/src/main/res/raw-*/plugin_instruction.md
 ```
 
-`strings.xml` localiza la información del complemento y la interfaz del visor, mientras que `plugin_instruction.md` proporciona las instrucciones mostradas por el anfitrión. Todos los archivos README y CHANGELOG se generan desde fuentes JSON con `.python/generate_markdown.py`: para modificar la documentación, edite los archivos `lang_*.json` de `.readme` y `.changelog` y vuelva a ejecutar el script en lugar de editar los archivos Markdown generados.
+`strings.xml` localiza la información del complemento y la interfaz del visor, mientras que `plugin_instruction.md` proporciona las instrucciones mostradas por el anfitrión. Todos los archivos README, CHANGELOG y `plugin_instruction.md` se generan desde fuentes JSON con `.python/generate_markdown.py`: para modificar la documentación, edite los archivos `lang_*.json` de `.readme` y `.changelog` y vuelva a ejecutar el script en lugar de editar los archivos Markdown generados.
 
 ******
 

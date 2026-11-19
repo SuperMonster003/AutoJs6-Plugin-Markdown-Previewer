@@ -45,6 +45,23 @@ PROHIBITED_SYMBOL_PATTERN = re.compile(
 )
 ANDROID_RESOURCE_ALLOWED_SYMBOLS = ("’", "…")
 
+# Plugin Center instruction copy lives in its own keys and never borrows README fields
+# (D:/idea-projects/AUTOJS6_PLUGIN_INSTRUCTION_AGENTS.md).
+INSTRUCTION_KEY_PREFIX = "instruction_"
+INSTRUCTION_LIST_KEYS = [
+    "instruction_start_steps",
+    "instruction_features",
+    "instruction_requirements",
+]
+INSTRUCTION_FAQ_KEY = "instruction_faq"
+INSTRUCTION_REQUIRED_KEYS = [
+    "instruction_p_what",
+    "instruction_h3_start",
+    "instruction_start_steps",
+    "instruction_h3_requirements",
+    "instruction_requirements",
+]
+
 
 def project_root() -> Path:
     return Path(__file__).resolve().parents[1]
@@ -168,14 +185,56 @@ def changelog_version_name() -> str:
     return version_name if version_name.startswith("v") else f"v{version_name}"
 
 
+def shape_of(value):
+    if isinstance(value, dict):
+        return ("dict", tuple(sorted(value)))
+    if isinstance(value, list):
+        return ("list", len(value), tuple(shape_of(item) for item in value))
+    return type(value).__name__
+
+
+def validate_instruction_sources(raw_languages: dict):
+    reference = {k: v for k, v in raw_languages[LANGUAGE_CODE_DEFAULT].items() if k.startswith(INSTRUCTION_KEY_PREFIX)}
+    for code, content in raw_languages.items():
+        instruction = {k: v for k, v in content.items() if k.startswith(INSTRUCTION_KEY_PREFIX)}
+        for key in INSTRUCTION_REQUIRED_KEYS:
+            if key not in instruction:
+                raise ValueError(f"Instruction language {code!r} is missing {key!r}")
+        if set(instruction) != set(reference):
+            raise ValueError(f"Instruction keys of {code!r} differ from {LANGUAGE_CODE_DEFAULT!r}: {sorted(set(instruction) ^ set(reference))}")
+        for key, value in instruction.items():
+            if shape_of(value) != shape_of(reference[key]):
+                raise ValueError(f"Instruction field {key!r} of {code!r} does not match the {LANGUAGE_CODE_DEFAULT!r} shape")
+            if key in INSTRUCTION_LIST_KEYS:
+                valid = isinstance(value, list) and value and all(isinstance(item, str) and item for item in value)
+            elif key == INSTRUCTION_FAQ_KEY:
+                valid = isinstance(value, list) and value and all(
+                    isinstance(item, dict) and set(item) == {"q", "a"} and all(isinstance(text, str) and text for text in item.values())
+                    for item in value
+                )
+            else:
+                valid = isinstance(value, str) and value
+            if not valid:
+                raise ValueError(f"Instruction field {key!r} of {code!r} is empty or malformed")
+            # UI names are quoted with ASCII double quotes; an odd count means a quote was swallowed on the way in.
+            texts = [value] if isinstance(value, str) else [
+                text for item in value for text in (item.values() if isinstance(item, dict) else [item])
+            ]
+            for text in texts:
+                if text.count('"') % 2:
+                    raise ValueError(f"Instruction field {key!r} of {code!r} has an unpaired double quote: {text[:60]!r}")
+
+
 def load_languages():
     common = load_json(README_DIR / "common.json")
+    raw_languages = {code: load_json(README_DIR / f"lang_{code}.json") for code in LANGUAGE_CODES}
+    validate_instruction_sources(raw_languages)
     languages = {}
     changelogs = {}
     expected_version = changelog_version_name()
     expected_version_names = None
     for code in LANGUAGE_CODES:
-        raw_lang = load_json(README_DIR / f"lang_{code}.json")
+        raw_lang = raw_languages[code]
         merged_lang = {**common, **raw_lang}
         languages[code] = render_dynamic(merged_lang, merged_lang)
 
@@ -298,6 +357,22 @@ def build_readme_values(code, languages, changelogs):
     return content
 
 
+def instruction_faq(items):
+    return "\n\n".join(f"**{item['q']}**\n\n{item['a']}" for item in items)
+
+
+def build_instruction_values(code, languages):
+    """Only instruction_* keys reach the instruction template, so it cannot borrow README copy."""
+    values = {key: value for key, value in languages[code].items() if key.startswith(INSTRUCTION_KEY_PREFIX)}
+    for key in INSTRUCTION_LIST_KEYS:
+        if key in values:
+            render = numbered_list if key == "instruction_start_steps" else bullet_list
+            values[f"placeholder_{key}"] = render(values[key])
+    if INSTRUCTION_FAQ_KEY in values:
+        values[f"placeholder_{INSTRUCTION_FAQ_KEY}"] = instruction_faq(values[INSTRUCTION_FAQ_KEY])
+    return values
+
+
 def write_text(path: Path, text: str):
     GENERATED_PATHS.add(path)
     if CHECK_MODE:
@@ -339,6 +414,18 @@ def generate_changelogs(languages, changelogs):
             write_text(ANDROID_CHANGELOG_DIR / "CHANGELOG.md", output)
 
 
+def generate_instructions(languages):
+    """Writes raw-<qualifier>/plugin_instruction.md for every language, plus raw/ as the English default."""
+    template = load_template(README_DIR / "template_plugin_instruction.md")
+    for code, qualifier in ANDROID_RESOURCE_QUALIFIERS.items():
+        output = render_template(template, build_instruction_values(code, languages))
+        if "{{" in output or "}}" in output:
+            raise ValueError(f"Unrendered placeholder in the {code!r} instruction")
+        write_text(ANDROID_RES_DIR / f"raw-{qualifier}" / "plugin_instruction.md", output)
+        if code == "en":
+            write_text(ANDROID_RES_DIR / "raw" / "plugin_instruction.md", output)
+
+
 def main():
     if LANGUAGE_CODE_DEFAULT not in LANGUAGE_CODES:
         raise ValueError(f"Default language code {LANGUAGE_CODE_DEFAULT!r} is not in LANGUAGE_CODES")
@@ -347,6 +434,7 @@ def main():
     validate_android_resources(languages)
     generate_changelogs(languages, changelogs)
     generate_readmes(languages, changelogs)
+    generate_instructions(languages)
 
 
 

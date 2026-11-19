@@ -85,9 +85,54 @@
   "text_release_build": "Compilación Release",
   "p_build_params": "Los parámetros de compilación provienen de `version.properties`. El SDK mínimo actual es 24 y el SDK de destino es 37",
   "h3_resource_layout": "Estructura de recursos",
-  "p_resource_layout": "`strings.xml` localiza la información del complemento y la interfaz del visor, mientras que `plugin_instruction.md` proporciona las instrucciones mostradas por el anfitrión. Todos los archivos README y CHANGELOG se generan desde fuentes JSON con `.python/generate_markdown.py`: para modificar la documentación, edite los archivos `lang_*.json` de `.readme` y `.changelog` y vuelva a ejecutar el script en lugar de editar los archivos Markdown generados",
+  "p_resource_layout": "`strings.xml` localiza la información del complemento y la interfaz del visor, mientras que `plugin_instruction.md` proporciona las instrucciones mostradas por el anfitrión. Todos los archivos README, CHANGELOG y `plugin_instruction.md` se generan desde fuentes JSON con `.python/generate_markdown.py`: para modificar la documentación, edite los archivos `lang_*.json` de `.readme` y `.changelog` y vuelva a ejecutar el script en lugar de editar los archivos Markdown generados",
   "h3_links": "Enlaces",
   "text_link_autojs6_docs": "Documentación de AutoJs6",
   "text_link_format_reference": "Especificación CommonMark",
-  "text_link_html_previewer": "Complemento HTML Previewer (vista previa de archivos HTML)"
+  "text_link_html_previewer": "Complemento HTML Previewer (vista previa de archivos HTML)",
+  "instruction_p_what": "Markdown Previewer muestra documentos Markdown con formato en AutoJs6, con tablas, listas de tareas, notas al pie y resaltado de código, además de un esquema del documento, búsqueda en la página, varios temas y exportación a PDF. La vista previa solo lee el archivo y nunca modifica el original.",
+  "instruction_h3_start": "Primeros pasos",
+  "instruction_start_steps": [
+    "Comprueba que este plugin esté activado en el \"Centro de plugins\" de AutoJs6.",
+    "Abre el gestor de archivos de AutoJs6 y busca el archivo Markdown.",
+    "Elige \"Vista previa de Markdown\" en el menú del archivo (en AutoJs6 6.8.1 y posteriores está en el menú de primer nivel \"Markdown Previewer\").",
+    "Usa el menú de la esquina superior derecha de la vista previa para buscar, ver el esquema, cambiar de tema, exportar a PDF, abrir la \"Configuración\" y más."
+  ],
+  "instruction_h3_features": "Funciones principales",
+  "instruction_features": [
+    "**Buscar en la página**: resalta las coincidencias del texto que escribes y permite saltar entre ellas.",
+    "**Esquema del documento**: muestra los encabezados del documento por niveles; toca uno para ir a él.",
+    "**Tema de vista previa**: en \"Tema de vista previa\", elige \"GitHub (Auto)\", \"GitHub claro\", \"GitHub oscuro\", \"Papel\" o \"Sepia\"; \"GitHub (Auto)\" sigue el modo oscuro de AutoJs6.",
+    "**CSS personalizado**: tras elegir una hoja de estilos de hasta {{ limit_custom_css_size }} con \"Importar CSS personalizado\", la vista previa pasa al tema \"CSS personalizado\"; elige \"Borrar CSS personalizado\" para volver a \"GitHub (Auto)\".",
+    "**Impresión y exportación a PDF**: \"Imprimir / exportar PDF\" abre la pantalla de impresión del sistema, donde puedes imprimir o guardar como PDF; el plugin no necesita permiso de almacenamiento.",
+    "**Sintaxis ampliada**: admite tablas, tachado, listas de tareas, notas al pie, enlaces automáticos y resaltado de código; los metadatos YAML al principio del documento se muestran en un bloque desplegable \"Metadatos YAML\".",
+    "**Enlaces e imágenes**: los enlaces a archivos Markdown de la misma carpeta o de sus subcarpetas se abren en la vista previa, y los enlaces web en el navegador; se muestran las imágenes de la carpeta del documento y las imágenes HTTPS.",
+    "**Tamaño de fuente y pantalla completa**: ajusta el \"Tamaño de fuente\" en la \"Configuración\" y, si quieres, activa \"Iniciar en modo de pantalla completa\"; el \"Modo de pantalla completa\" oculta la barra de herramientas y las barras del sistema, y se sale con la tecla Atrás."
+  ],
+  "instruction_h3_requirements": "Requisitos",
+  "instruction_requirements": [
+    "Android 7.0 o posterior.",
+    "AutoJs6 6.8.0 o posterior.",
+    "No necesita permiso de almacenamiento; el plugin solo lee el archivo seleccionado y su carpeta, y usa la red únicamente para cargar las imágenes HTTPS del documento."
+  ],
+  "instruction_h3_faq": "Preguntas frecuentes",
+  "instruction_faq": [
+    {
+      "q": "Por qué falta \"Vista previa de Markdown\" en el menú del archivo",
+      "a": "El plugin solo procesa archivos con las extensiones {{ supported_formats }}. Comprueba la extensión del archivo y que el plugin esté activado en el \"Centro de plugins\"."
+    },
+    {
+      "q": "Por qué faltan algunas imágenes",
+      "a": "Las imágenes locales deben estar en la carpeta del archivo Markdown o en una de sus subcarpetas. Las imágenes de red deben usar direcciones HTTPS públicas; las direcciones HTTP y las de la red local no se cargan."
+    },
+    {
+      "q": "Por qué un archivo supera el límite de vista previa",
+      "a": "Los archivos Markdown de más de {{ limit_markdown_size }} no se previsualizan. Divide el documento en varios archivos más pequeños enlazados entre sí."
+    },
+    {
+      "q": "Cómo previsualizar archivos HTML",
+      "a": "Este plugin solo previsualiza documentos Markdown. Para archivos HTML y MHTML, usa el plugin [HTML Previewer]({{ html_previewer_repo_url }})."
+    }
+  ],
+  "instruction_p_more": "Más detalles en la [página del proyecto]({{ repo_url }})."
 }

@@ -85,9 +85,54 @@
   "text_release_build": "Release 構建",
   "p_build_params": "構建參數來自 `version.properties`, 目前最低 SDK 為 24, 目標 SDK 為 37",
   "h3_resource_layout": "資源結構",
-  "p_resource_layout": "`strings.xml` 提供插件資訊與檢視器介面的本地化, `plugin_instruction.md` 提供宿主側展示的使用說明. 全部 README 與 CHANGELOG 由 `.python/generate_markdown.py` 依據 JSON 源生成: 修改文件時請編輯 `.readme` 與 `.changelog` 下的 `lang_*.json` 並重新執行指令碼, 不要直接編輯生成的 Markdown 檔案",
+  "p_resource_layout": "`strings.xml` 提供插件資訊與檢視器介面的本地化, `plugin_instruction.md` 提供宿主側展示的使用說明. 全部 README, CHANGELOG 與 `plugin_instruction.md` 由 `.python/generate_markdown.py` 依據 JSON 源生成: 修改文件時請編輯 `.readme` 與 `.changelog` 下的 `lang_*.json` 並重新執行指令碼, 不要直接編輯生成的 Markdown 檔案",
   "h3_links": "相關連結",
   "text_link_autojs6_docs": "AutoJs6 文件",
   "text_link_format_reference": "CommonMark 規範",
-  "text_link_html_previewer": "HTML Previewer 插件 (預覽 HTML 檔案)"
+  "text_link_html_previewer": "HTML Previewer 插件 (預覽 HTML 檔案)",
+  "instruction_p_what": "Markdown Previewer 在 AutoJs6 中按排版效果預覽 Markdown 文件, 支援表格, 工作清單, 註腳與程式碼突出顯示, 並提供文件大綱, 頁內尋找, 多種預覽主題與匯出 PDF. 預覽全程唯讀, 不修改原檔案.",
+  "instruction_h3_start": "開始使用",
+  "instruction_start_steps": [
+    "在 AutoJs6 的 \"插件中心\" 中確認本插件已啓用.",
+    "開啟 AutoJs6 的檔案管理器, 找到要預覽的 Markdown 檔案.",
+    "在檔案選單中選擇 \"預覽 Markdown\" (AutoJs6 6.8.1 或更高版本中位於一級選單 \"Markdown Previewer\" 之下).",
+    "在預覽頁右上角的選單中使用尋找, 大綱, 主題, 匯出 PDF 與 \"設定\" 等功能."
+  ],
+  "instruction_h3_features": "主要功能",
+  "instruction_features": [
+    "**在頁面中尋找**: 輸入關鍵字後突出顯示相符項目, 並可在相符項目之間跳轉.",
+    "**文件大綱**: 按層級列出文件中的標題, 點按即可跳到對應位置.",
+    "**預覽主題**: 在 \"預覽主題\" 中選擇 \"GitHub (自動)\", \"GitHub 淺色\", \"GitHub 深色\", \"紙張\" 或 \"棕褐色\"; \"GitHub (自動)\" 跟隨 AutoJs6 的深色模式.",
+    "**自訂 CSS**: 用 \"匯入自訂 CSS\" 選擇不超過 {{ limit_custom_css_size }} 的樣式檔案後, 預覽會切換到 \"自訂 CSS\" 主題; 選擇 \"清除自訂 CSS\" 即恢復 \"GitHub (自動)\".",
+    "**列印與匯出 PDF**: \"列印 / 匯出 PDF\" 開啟系統列印介面, 可以列印或另存為 PDF; 插件不需要儲存空間權限.",
+    "**擴充語法**: 支援表格, 刪除線, 工作清單, 註腳, 自動連結與程式碼突出顯示; 文件開頭的 YAML 中繼資料顯示在可展開的 \"YAML 中繼資料\" 區塊中.",
+    "**連結與圖片**: 指向同一目錄或其子目錄中 Markdown 檔案的連結會在預覽器內開啟, 網頁連結交給瀏覽器; 可顯示文件所在目錄中的圖片與 HTTPS 圖片.",
+    "**字體大小與全螢幕**: 在 \"設定\" 中調整 \"字體大小\", 亦可開啟 \"以全螢幕模式啟動\"; \"全螢幕模式\" 隱藏工具列與系統列, 按返回鍵退出."
+  ],
+  "instruction_h3_requirements": "運行要求",
+  "instruction_requirements": [
+    "Android 7.0 或更高版本.",
+    "AutoJs6 6.8.0 或更高版本.",
+    "不需要儲存空間權限; 插件只讀取所選檔案及其所在目錄, 網絡只用於載入文件中的 HTTPS 圖片."
+  ],
+  "instruction_h3_faq": "常見問題",
+  "instruction_faq": [
+    {
+      "q": "檔案選單中沒有 \"預覽 Markdown\" 的原因",
+      "a": "本插件只處理副檔名為 {{ supported_formats }} 的檔案. 請確認檔案的副檔名, 並在 \"插件中心\" 中確認本插件已啓用."
+    },
+    {
+      "q": "部分圖片沒有顯示的原因",
+      "a": "本機圖片需要位於 Markdown 檔案所在的目錄或其子目錄中. 網絡圖片只支援公共網絡的 HTTPS 地址, HTTP 與區域網絡地址不會載入."
+    },
+    {
+      "q": "提示檔案超過預覽限制的原因",
+      "a": "超過 {{ limit_markdown_size }} 的 Markdown 檔案不會預覽. 可以把文件拆分為幾個較小的檔案, 再用連結互相跳轉."
+    },
+    {
+      "q": "HTML 檔案的預覽方式",
+      "a": "本插件只預覽 Markdown 文件. 預覽 HTML 與 MHTML 檔案請使用 [HTML Previewer]({{ html_previewer_repo_url }}) 插件."
+    }
+  ],
+  "instruction_p_more": "更多說明見 [項目主頁]({{ repo_url }})."
 }

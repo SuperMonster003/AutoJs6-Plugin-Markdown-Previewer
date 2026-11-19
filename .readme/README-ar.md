@@ -265,7 +265,7 @@ app/src/main/res/values-*/strings.xml
 app/src/main/res/raw-*/plugin_instruction.md
 ```
 
-يوطن `strings.xml` معلومات الملحق وواجهة العارض, بينما يوفر `plugin_instruction.md` تعليمات الاستخدام التي يعرضها المضيف. تولد جميع ملفات README و CHANGELOG من مصادر JSON بواسطة `.python/generate_markdown.py`: لتعديل الوثائق, حرر ملفات `lang_*.json` تحت `.readme` و `.changelog` ثم أعد تشغيل السكربت بدلا من تحرير ملفات Markdown المولدة.
+يوطن `strings.xml` معلومات الملحق وواجهة العارض, بينما يوفر `plugin_instruction.md` تعليمات الاستخدام التي يعرضها المضيف. تولد جميع ملفات README و CHANGELOG و `plugin_instruction.md` من مصادر JSON بواسطة `.python/generate_markdown.py`: لتعديل الوثائق, حرر ملفات `lang_*.json` تحت `.readme` و `.changelog` ثم أعد تشغيل السكربت بدلا من تحرير ملفات Markdown المولدة.
 
 ******
 

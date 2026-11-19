@@ -265,7 +265,7 @@ app/src/main/res/values-*/strings.xml
 app/src/main/res/raw-*/plugin_instruction.md
 ```
 
-`strings.xml`은 플러그인 정보와 뷰어 UI를 현지화하고, `plugin_instruction.md`는 호스트가 표시하는 사용 설명을 제공합니다. 모든 README와 CHANGELOG는 `.python/generate_markdown.py`가 JSON 소스에서 생성합니다: 문서를 수정할 때는 `.readme`와 `.changelog` 아래의 `lang_*.json`을 편집한 뒤 스크립트를 다시 실행하고, 생성된 Markdown 파일을 직접 편집하지 마세요.
+`strings.xml`은 플러그인 정보와 뷰어 UI를 현지화하고, `plugin_instruction.md`는 호스트가 표시하는 사용 설명을 제공합니다. 모든 README, CHANGELOG, `plugin_instruction.md`는 `.python/generate_markdown.py`가 JSON 소스에서 생성합니다: 문서를 수정할 때는 `.readme`와 `.changelog` 아래의 `lang_*.json`을 편집한 뒤 스크립트를 다시 실행하고, 생성된 Markdown 파일을 직접 편집하지 마세요.
 
 ******
 

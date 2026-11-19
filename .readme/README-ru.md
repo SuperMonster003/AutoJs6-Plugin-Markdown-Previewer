@@ -265,7 +265,7 @@ app/src/main/res/values-*/strings.xml
 app/src/main/res/raw-*/plugin_instruction.md
 ```
 
-`strings.xml` локализует сведения о плагине и интерфейс средства просмотра, а `plugin_instruction.md` содержит инструкции, показываемые хостом. Все файлы README и CHANGELOG генерируются из JSON-источников скриптом `.python/generate_markdown.py`: для изменения документации редактируйте файлы `lang_*.json` в `.readme` и `.changelog` и запускайте скрипт заново, не редактируя сгенерированные файлы Markdown.
+`strings.xml` локализует сведения о плагине и интерфейс средства просмотра, а `plugin_instruction.md` содержит инструкции, показываемые хостом. Все файлы README, CHANGELOG и `plugin_instruction.md` генерируются из JSON-источников скриптом `.python/generate_markdown.py`: для изменения документации редактируйте файлы `lang_*.json` в `.readme` и `.changelog` и запускайте скрипт заново, не редактируя сгенерированные файлы Markdown.
 
 ******
 
