@@ -210,6 +210,15 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 
 ******
 
+#### v1.2.8
+
+###### 2026/11/20
+
+* `Mejora` El historial de versiones es ahora una página propia en lugar de un diálogo con el texto sin formato, y se expande o contrae por versión: una versión contraída muestra su fecha y el número de entradas por categoría, una expandida nombra cada categoría una sola vez; todas las versiones se pueden expandir o contraer a la vez, la más reciente se abre expandida y el subtítulo muestra el nombre del plugin
+* `Mejora` Se reescribieron las instrucciones del Centro de plugins en cuatro partes: primeros pasos, funciones principales, requisitos y preguntas frecuentes
+* `Dependencia` Se añadió Jetpack Compose BOM 2026.09.00 (página Historial de versiones)
+* `Dependencia` Se actualizaron los plugins de compilación compartidos versión 1.9.0 -> 1.9.1
+
 #### v1.2.7
 
 ###### 2026/11/18
@@ -221,12 +230,6 @@ Las capacidades completadas y los planes futuros se mantienen como una lista ver
 ###### 2026/11/08
 
 * `Mejora` En la interfaz en inglés, la acción del menú de archivos se llama ahora "Preview Markdown" en lugar de repetir el nombre del menú de primer nivel "Markdown Previewer"
-
-#### v1.2.5
-
-###### 2026/11/07
-
-* `Mejora` En el menú de archivos de AutoJs6 6.8.1 y posteriores, "Vista previa de Markdown" está en el menú de primer nivel "Markdown Previewer" (sin cambios en versiones anteriores de AutoJs6)
 
 ##### Historial completo
 

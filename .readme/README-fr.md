@@ -210,6 +210,15 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 
 ******
 
+#### v1.2.8
+
+###### 2026/11/20
+
+* `Amélioration` L'historique des versions est désormais une page à part au lieu d'une boîte de dialogue affichant le texte brut, et se développe ou se réduit par version: une version réduite affiche sa date et le nombre d'entrées par catégorie, une version développée ne nomme chaque catégorie qu'une fois; toutes les versions peuvent être développées ou réduites d'un coup, la plus récente s'ouvre développée et le sous-titre affiche le nom du plugin
+* `Amélioration` Réécriture des instructions affichées dans le Centre des plugins en quatre parties: prise en main, fonctionnalités principales, prérequis et questions fréquentes
+* `Dépendance` Ajout de Jetpack Compose BOM 2026.09.00 (page Historique des versions)
+* `Dépendance` Mise à niveau des plugins de compilation partagés version 1.9.0 -> 1.9.1
+
 #### v1.2.7
 
 ###### 2026/11/18
@@ -221,12 +230,6 @@ Les capacités achevées et les projets à venir sont tenus sous forme de liste 
 ###### 2026/11/08
 
 * `Amélioration` Dans l'interface en anglais, l'action du menu de fichier s'appelle désormais "Preview Markdown" au lieu de reprendre le nom du menu de premier niveau "Markdown Previewer"
-
-#### v1.2.5
-
-###### 2026/11/07
-
-* `Amélioration` Dans le menu de fichier d'AutoJs6 6.8.1 et versions ultérieures, "Prévisualiser Markdown" se trouve dans le menu de premier niveau "Markdown Previewer" (inchangé dans les versions antérieures d'AutoJs6)
 
 ##### Historique complet
 
